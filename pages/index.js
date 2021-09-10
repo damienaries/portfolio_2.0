@@ -8,7 +8,7 @@ export default function Home() {
     <HomePage>
       <Banner />
       <About />
-      <SkillsBanner />
+     {/* <SkillsBanner /> use next to projects */}
     </HomePage>
   )
 }

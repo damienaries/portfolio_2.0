@@ -49,8 +49,9 @@ body {
 			var(--color-blue),
 			var(--color-blue-dark)
 		),
-		url('../public/assets/images/Landing2.jpg');
+		url('../public/assets/images/Landing.jpg');
 	line-height: 1.4;
+	background-size: cover;
 	/* mix-blend-mode: luminosity; || hard-light || exclusion || difference || color-dodge; */
 }
 

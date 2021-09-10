@@ -6,7 +6,7 @@ import { FaReact } from "react-icons/fa";
 import { FaJsSquare } from "react-icons/fa";
 import { SiMongodb } from 'react-icons/si';
 import { DiNodejs } from 'react-icons/di';
-import { rotate } from '../styles/animations';
+import { rotateBadge } from '../styles/animations';
 
 /***************** 
  TODO
@@ -16,7 +16,7 @@ import { rotate } from '../styles/animations';
 export default function SkillsBanner() {
     return (
         <StyledSkills>
-            <FaHtml5 />
+            <FaHtml5 className="skill-badge"/>
             <FaCss3Alt />
             <FaReact />
             <FaJsSquare />
@@ -30,9 +30,12 @@ const StyledSkills = styled.section`
     width: 100%;
     border: 1px solid yellow;
     font-size: 8rem;
-    padding: 2rem 0;
+    padding: 4rem 0;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    animation: ${rotate} 3s ease;
+
+    .skill-badge {
+        animation: ${rotateBadge} 2s ease-out;
+    }
 `

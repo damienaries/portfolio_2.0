@@ -41,3 +41,14 @@ export const rotate = keyframes`
         transform: translateX(0);
     }
 `
+
+export const rotateBadge = keyframes`
+    0% {
+        opacity: 0;
+        transform: rotateY(180deg);
+    }
+    100% {
+        opacity: 1;
+        transform: rotateY(0);
+    }
+`

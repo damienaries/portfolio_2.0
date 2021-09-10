@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { useRouter} from 'next/router';
 import styled from '@emotion/styled';
+import useWindowDimensions from '../hooks/useWindowDimensions';
+import { FaBars } from "react-icons/fa"; // replace with mobile nav component
 
 /******************
  TODO
@@ -10,12 +12,21 @@ import styled from '@emotion/styled';
 
 export default function Navbar() {
     const router = useRouter();
+    const { width } = useWindowDimensions();
+    const [navOpen, setIsNavOpen] = useState(false);
+
+    // open mobile nav
+    const toggleNav = () => {
+        alert('opening Nav!');
+    }
+
     return (
         <StyledNav>
             <h1 className="topbar-left" onClick={() => router.push('/')}>
                 Damien<span className="name-logo">Aries</span>
             </h1>
-            <div className="topbar-right">
+            { width > 600 ? (
+                <div className="topbar-right">
                 <Link href='/'>
                     <a className="topbar-right-link">Home</a>
                 </Link>
@@ -32,6 +43,9 @@ export default function Navbar() {
                     <a className="topbar-right-link">Blog</a>
                 </Link>*/}
             </div>
+            ) : (
+                <FaBars className="hamburger" onClick={toggleNav} />
+            )}
         </StyledNav>
     )
 }
@@ -43,7 +57,6 @@ const StyledNav = styled.nav`
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem;
-    position: fixed;
     z-index: 5;
 
     .topbar-left {
@@ -71,5 +84,9 @@ const StyledNav = styled.nav`
             border-bottom: 2px solid var(--color-white);
             box-shadow: 0 1rem 2rem rgba(253, 253, 253, .5);
         }
+    }
+
+    .hamburger {
+        font-size: 1.8rem;
     }
 `

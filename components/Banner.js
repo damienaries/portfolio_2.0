@@ -26,14 +26,16 @@ export default function Banner() {
 const Hero = styled.section`
     height: 100vh;
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: relative;
 
     .title-box {
       padding: 3rem;
       width: fit-content;
       text-align: center;
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
 
       .header-title {
         &-welcome {
