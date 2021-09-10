@@ -11,5 +11,4 @@ export default function Contact() {
 const StyledContact = styled.div`
     height: 50px;
     width: 50px;
-    background-color: lightblue;
 `

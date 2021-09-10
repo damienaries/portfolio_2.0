@@ -12,5 +12,4 @@ export default function Projects() {
 const StyledProjects = styled.div`
     width: 100%;
     height: calc(100vh - 60px);
-    background-color: lightgreen;
 `

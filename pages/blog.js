@@ -11,5 +11,4 @@ export default function Blog() {
 const StyledBlog = styled.div`
     width: 100%;
     height: calc(100vh - 60px);
-    background-color: purple;
 `
