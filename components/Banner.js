@@ -38,6 +38,7 @@ const Hero = styled.section`
       transform: translate(-50%, -50%);
 
       .header-title {
+
         &-welcome {
           font-size: 6rem;
           font-weight: var(--weight-thin);
@@ -57,11 +58,20 @@ const Hero = styled.section`
         &-sub {
           font-size: 2rem;
           letter-spacing: .5rem;
+          font-weight: var(--weight-thin);
           animation: ${moveInBottom} 1s ease-in-out;
           animation-delay: 1s;
           animation-fill-mode: backwards;
         }
       }
+
+      @media screen and (max-width: 600px) {
+        .header-title-sub {
+          display: none;
+        }
+      }
     }
+
+    
 `
 

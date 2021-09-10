@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 
 const Layout = ({ children }) => {
     const router = useRouter();
-    const pageTitle = router.pathname === '/' ? 'HOME' : router.pathname.substring(1).toUpperCase();
+    const pageTitle = router.pathname === '/' ? 'Welcome' : router.pathname.substring(1).toUpperCase();
 
     return (
         <>  
