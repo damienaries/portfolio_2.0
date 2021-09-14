@@ -1,5 +1,5 @@
 import { css } from '@emotion/react';
-import bgImage from '../public/assets/images/Landing.jpg';
+// import bgImage from '../public/assets/images/Landing.jpg';
 
 export const GlobalStyles = css`
     @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200;400;700&family=Titillium+Web:wght@200;400;600;700&display=swap');
@@ -27,8 +27,8 @@ export const GlobalStyles = css`
 
 	/* Colors */
 	/* Dark blue theme */
-	--color-blue: rgba(0, 15, 85, 0.8);
-	--color-blue-light: rgba(62, 107, 158, 0.8);
+	--color-blue: rgba(0, 15, 85, 0.7);
+	--color-blue-light: rgba(62, 107, 158, 0.7);
 	--color-blue-dark: rgba(0, 30, 64, 0.7);
 	--color-white: rgb(253, 253, 253);
 	--color-accent: #d29700;
@@ -52,11 +52,8 @@ body {
 			to bottom,
 			var(--color-blue),
 			var(--color-blue-dark)
-		),
-		url('${bgImage}');
+		);
 	line-height: 1.4;
-	background-size: cover;
-    background-repeat: no-repeat;
 	/* mix-blend-mode: luminosity; || hard-light || exclusion || difference || color-dodge; */
 }
 
