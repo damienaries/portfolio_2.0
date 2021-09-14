@@ -6,7 +6,6 @@ import groq from 'groq';
 export default function Blog(props) {
     const { posts = [] } = props;
 
-    console.log(posts);
     return (
         <StyledBlog>
                 <h1>Blog Posts Page</h1>
