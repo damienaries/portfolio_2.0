@@ -39,9 +39,9 @@ export default function Navbar() {
                 <Link href='#footer'>
                     <a className="topbar-right-link">Contact</a>
                 </Link>
-                {/*<Link href='/blog'>
+                <Link href='/blog'>
                     <a className="topbar-right-link">Blog</a>
-                </Link>*/}
+                </Link>
             </div>
             ) : (
                 <FaBars className="hamburger" onClick={toggleNav} />

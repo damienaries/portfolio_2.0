@@ -53,9 +53,10 @@ body {
 			var(--color-blue),
 			var(--color-blue-dark)
 		),
-		url(${bgImage});
+		url('${bgImage}');
 	line-height: 1.4;
 	background-size: cover;
+    background-repeat: no-repeat;
 	/* mix-blend-mode: luminosity; || hard-light || exclusion || difference || color-dodge; */
 }
 
@@ -74,7 +75,7 @@ ul {
 @media screen and (max-width: 600px) {
 	html,
 	body {
-		font-size: 65%;
+		font-size: 70%;
 	}
 }
 

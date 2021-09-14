@@ -1,14 +1,14 @@
 import styled from '@emotion/styled';
 import Banner from '../components/Banner';
 import About from '../components/About';
-import SkillsBanner from '../components/SkillsBanner';
+import Featured from '../components/Featured';
 
 export default function Home() {
   return (
     <HomePage>
       <Banner />
+      <Featured />
       <About />
-     {/* <SkillsBanner /> use next to projects */}
     </HomePage>
   )
 }
@@ -16,8 +16,5 @@ export default function Home() {
 // Page Styles
 const HomePage = styled.main`
     width: 100%;
-    /* height: 100vh; */
     position: relative;
-
-    
 `

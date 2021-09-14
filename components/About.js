@@ -40,7 +40,6 @@ const StyledAbout = styled.section`
 
     .section-title {
         font-size: 2.5rem;
-        position: sticky;
         top: 1rem;
         text-align: center;
         margin-bottom: 4rem;
