@@ -30,13 +30,13 @@ export default function Navbar() {
                 <Link href='/'>
                     <a className="topbar-right-link">Home</a>
                 </Link>
-                <Link href='#about'>
-                    <a className="topbar-right-link">About</a>
-                </Link>
                 <Link href='/projects'>
                     <a className="topbar-right-link">Work</a>
                 </Link>
-                <Link href='#footer'>
+                <Link href='/resume'>
+                    <a className="topbar-right-link">Resume</a>
+                </Link>
+                <Link href='#contact'>
                     <a className="topbar-right-link">Contact</a>
                 </Link>
                 <Link href='/blog'>

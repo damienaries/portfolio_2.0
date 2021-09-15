@@ -14,7 +14,7 @@ export default function Featured({ projects }) {
     return (
         <StyledFeatured>
             <h1 className="section-title">
-                Here is a selection of my favorite projects
+                Some Recent Work
             </h1>
             <section className="cards-container">
                 {projects.map(project => project.slug && (

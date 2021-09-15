@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 export default function Footer() {
     return (
-        <StyledFooter id='footer'>
+        <StyledFooter id='contact'>
             <h4 style={{ fontSize: '3rem', textAlign: 'center' }}className="section-title">
                 Get in touch
             </h4>
