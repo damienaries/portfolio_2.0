@@ -55,6 +55,7 @@ const StyledAbout = styled.section`
 
 		p {
 			padding: 1rem;
+            font-size: var(--size-body);
 		}
     }
 

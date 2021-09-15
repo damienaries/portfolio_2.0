@@ -24,7 +24,7 @@ export default function Banner() {
 }
 
 const Hero = styled.section`
-    height: 100vh;
+    height: 85vh;
     width: 100%;
     position: relative;
 

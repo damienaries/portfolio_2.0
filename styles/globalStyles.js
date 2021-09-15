@@ -20,7 +20,7 @@ export const GlobalStyles = css`
 	/* Typography */
 	--weight-thin: 200;
 	--weight-bold: 600;
-	--size-body: 1.6rem;
+	--size-body: 1.2rem;
 	--size-title-main: 4rem;
 	--size-title-section: 2.5rem;
 	--size-subtitle: 2rem;
@@ -28,7 +28,7 @@ export const GlobalStyles = css`
 	/* Colors */
 	/* Dark blue theme */
 	--color-blue: rgba(0, 15, 85, 0.7);
-	--color-blue-light: rgba(62, 107, 158, 0.7);
+	--color-blue-light: rgba(62, 107, 158, 0.2);
 	--color-blue-dark: rgba(0, 30, 64, 0.7);
 	--color-white: rgb(253, 253, 253);
 	--color-accent: #d29700;

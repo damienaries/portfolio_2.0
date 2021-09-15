@@ -44,6 +44,11 @@ export default {
         of: [{type: 'reference', to: {type: 'technology'}}],
       },
       {
+        name: 'featured',
+        title: 'Featured',
+        type: 'boolean',
+      },
+      {
         name: 'publishedAt',
         title: 'Published at',
         type: 'datetime',

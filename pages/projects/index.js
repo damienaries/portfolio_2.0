@@ -1,6 +1,6 @@
 
 import styled from '@emotion/styled';
-import sanityClient from '../client';
+import sanityClient from '../../client';
 import Link from 'next/link';
 import groq from 'groq';
 
@@ -12,7 +12,7 @@ export default function Projects(props) {
     return (
         <StyledProjects>
             <h1 className="page-title">
-                Here is a selection of my favorite projects
+                Current And Past Work
             </h1>
             <section className="projects-container">
                 {
@@ -34,7 +34,7 @@ export default function Projects(props) {
 
 Projects.getInitialProps = async () => ({
     projects: await sanityClient.fetch(groq`
-        *[_type == "project" && publishedAt < now()]|order(publishedAt asc)
+        *[_type == "project" && publishedAt < now()]|order(publishedAt desc)
     `)
 })
 

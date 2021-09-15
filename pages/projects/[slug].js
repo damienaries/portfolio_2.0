@@ -6,7 +6,7 @@ import BlockContent from '@sanity/block-content-to-react';
 
 /*******************
  TODO 
-    add stack data to sanity as array of techs used
+    Style Single project page
  *********************/
 
 function urlFor(source) {

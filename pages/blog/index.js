@@ -1,4 +1,4 @@
-import sanityClient from '../client';
+import sanityClient from '../../client';
 import styled from '@emotion/styled';
 import Link from 'next/link';
 import groq from 'groq';
