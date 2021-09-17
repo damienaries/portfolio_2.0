@@ -1,6 +1,11 @@
 import styled from '@emotion/styled';
 import Image from 'next/image';
 
+/******************************
+ TODO 
+    Add skills, exp, education to sanity
+ ********************************/
+
 export default function Resume() {
     return (
         <StyledResume>
@@ -10,6 +15,14 @@ export default function Resume() {
                     width={600}
                     height={800}
                     alt="resume" className="resume"/>
+            </section>
+            <section className="resume-container">
+                <div className="resume-skills">
+                    <h2 className="section-title">Skills</h2>
+                    <ul className="skills-list">
+                        <li></li>
+                    </ul>
+                </div>
             </section>
         </StyledResume>
     )
@@ -34,7 +47,8 @@ const StyledResume = styled.div`
             var(--color-blue-light),
             var(--color-blue-light)
         );
-        backdrop-filter: blur(2px);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
 
         .resume {
             margin: 0 auto;

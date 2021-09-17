@@ -14,13 +14,19 @@ export default function Footer() {
             </Link>
             <div>
                 <Link href="https://www.linkedin.com/in/damien-aries">
-                    <a className="social-link"><FaLinkedinIn /></a>
+                    <a target="_blank" className="social-link">
+                        <FaLinkedinIn />
+                    </a>
                 </Link>
                 <Link href="https://github.com/damienaries">
-                    <a className="social-link"><FaGithub /></a>
+                    <a target="_blank" className="social-link">
+                        <FaGithub />
+                    </a>
                 </Link>
                 <Link href="https://twitter.com/DamienAries">
-                    <a className="social-link"><FaTwitter /></a>
+                    <a target="_blank" className="social-link">
+                        <FaTwitter />
+                    </a>
                 </Link>
             </div>
         </StyledFooter>
@@ -49,8 +55,8 @@ const StyledFooter = styled.div`
         font-size: 1.8rem;
         letter-spacing: .5px;
         margin-bottom: 1rem;
-        border-radius: 50px;
-        padding: .5rem 1rem;
+        border-radius: var(--radius);
+        padding: .5rem .75rem;
         transition: all .1s ease-out;
         
         &:hover {
@@ -60,17 +66,19 @@ const StyledFooter = styled.div`
         }
     }
 
-    .social-link {
-        font-size: 2rem;
-        margin: 2rem;
-        padding: .5rem .75rem;
-        border-radius: 50%;
-        transition: all .1s ease-out;
+    .social-link { 
+        & > svg {
+            font-size: 5rem;
+            margin: 2rem;
+            padding: .75rem;
+            border-radius: var(--radius);
+            transition: all .1s ease-out;
 
-        &:hover {
-            filter: brightness(110%);
-            cursor: pointer;
-            box-shadow: var(--shadow-light);
+            &:hover {
+                filter: brightness(110%);
+                cursor: pointer;
+                box-shadow: var(--shadow-light);
+            }
         }
     }
 
