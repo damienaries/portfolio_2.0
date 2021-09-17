@@ -9,9 +9,9 @@ export default {
         type: 'string',
       },
       {
-        name: 'description',
-        title: 'Description',
-        type: 'text',
+        name: 'category',
+        title: 'Category',
+        type: 'string',
       },
     ],
   }
