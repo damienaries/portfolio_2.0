@@ -49,7 +49,7 @@ Projects.getInitialProps = async () => ({
         *[_type == "project"]
     `),
     technology: await sanityClient.fetch(groq`
-            *[_type == "technology"]
+        *[_type == "technology"]
     `)
 })
 

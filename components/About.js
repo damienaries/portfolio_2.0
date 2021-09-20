@@ -1,28 +1,38 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import Image from 'next/image';
-import Me from '../public/assets/images/DamienPic1.jpg'; 
+import sanityClient from '../client';
+import ImageUrlBuilder from '@sanity/image-url';
+import BlockContent from '@sanity/block-content-to-react';
 
-/********************** 
-  TODO
-    Setup bio & image from Sanity
-    Also resume fields from sanity?
-************************/
+function urlFor(source) {
+    return ImageUrlBuilder(sanityClient).image(source);
+}
 
-export default function About() {
-    return (
+export default function About({ author }) {
+    
+    return author && (
         <StyledAbout id="about">
             <h2 className="section-title">About me</h2>
             <div className="flex-container">
                 <div className="about-left">
-                    <p>
-                        I am a Front End focused MERN Stack developer, I love to build beautiful, smooth interfaces and experiences in JavaScript and React.
-                    </p>
+                    <BlockContent 
+                        className="bio-content"
+                        blocks={author.bio}
+                        imageOptions={{ w:320, h: 240, fit: 'max' }}
+                        {...sanityClient.config()}
+                    />
                 </div>
                 <div className="about-right">
-                    <div className="image-container">
-                        <Image src={Me} className="my-pic" alt="Sort of recent picture of me" />
-                    </div>
+                    { author.image && (
+                        <div className="image-container">
+                            <img 
+                                className="my-pic"
+                                alt="Sort of recent picture of me"
+                                src={urlFor(author.image)
+                                    .width(250)
+                                .url()} />
+                        </div>
+                    )}
                 </div>
             </div>    
         </StyledAbout>
@@ -36,6 +46,8 @@ const StyledAbout = styled.section`
     .flex-container {
         display: flex;
         justify-content: space-between;
+        width: 80%;
+        margin: 0 auto 2rem;
     }
 
     .section-title {
@@ -48,31 +60,35 @@ const StyledAbout = styled.section`
 
     .about-left {
         height: 100%;
-		width: 60%;
+		flex: 2;
 		margin: 0 auto;
 		font-size: 1.6rem;
 		letter-spacing: 1.5px;
 
-		p {
+		.bio-content {
 			padding: 1rem;
             font-size: var(--size-body);
 		}
     }
 
     .about-right {
+        flex: 1;
 
         .image-container {
-            width: 35%;
-            /* margin: 0 auto; */
-            margin: 2rem auto;
-
+            text-align: center;
         }
 
         .my-pic {
-            /* width: 100%; */
             max-width: 15rem;
-            height: auto;
             border-radius: var(--radius);
+        }
+    }
+
+    @media screen and (max-width: 800px) {
+        margin-bottom: 3rem;
+
+        .about-left {
+            padding: 2rem;
         }
     }
 
