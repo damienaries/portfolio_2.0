@@ -1,13 +1,5 @@
-import Link from 'next/link';
 import styled from '@emotion/styled';
-import ImageUrlBuilder from '@sanity/image-url';
-import sanitySlient from '../client';
-
-// show tech stack, link to live project and repo
-
-function urlFor(source) {
-    return ImageUrlBuilder(sanitySlient).image(source);
-}
+import Project from '../components/Project';
 
 export default function Featured({ projects }) {
     
@@ -17,20 +9,8 @@ export default function Featured({ projects }) {
                 Some Recent Work
             </h1>
             <section className="cards-container">
-                {projects.map(project => project.slug && (
-                    <Link href={`/projects/${project.slug.current}`}>
-                        <article className="project-card" key={project.title}>
-                            <h4 className="project-card-title">{project.title}</h4>
-                            {project.mainImage && (
-                                <img 
-                                    className="project-card-img"
-                                    src={urlFor(project.mainImage)
-                                        .height(250)
-                                        .width(250)
-                                        .url()} />
-                            )}  
-                        </article>
-                    </Link>
+                {projects && projects.map(project => (
+                    <Project project={project} />
                 ))}
             </section>
         </StyledFeatured>
@@ -41,6 +21,7 @@ const StyledFeatured = styled.ul`
     width: 100%;
     padding: 3rem;
     text-align: center;
+    margin-bottom: 5rem;
 
     .section-title {
         font-size: 2.5rem;
@@ -54,27 +35,5 @@ const StyledFeatured = styled.ul`
         display: flex;
         justify-content: space-evenly;
         flex-wrap: wrap;
-
-        .project-card {
-            margin: 2rem;
-            border-radius: 10px;
-            padding: 3rem 5rem 4rem;
-            transition: all .2s ease-out;
-            
-            &:hover {
-                background-color: var(--color-blue-light);
-                cursor: pointer;
-            }
-
-            &-img {
-                border-radius: var(--radius);
-            }
-
-            &-title {
-                font-size: 2rem;
-                letter-spacing: 1px;
-                margin-bottom: 2rem;
-            }
-        }
     }
 `

@@ -1,18 +1,30 @@
-
+import { useState, useEffect } from 'react';
 import styled from '@emotion/styled';
 import sanityClient from '../../client';
 import Link from 'next/link';
 import groq from 'groq';
+import Project from '../../components/Project';
 
 export default function Projects(props) {
-    const { projects = [] } = props;
+    const { projects = [], technology = [] } = props;
+    const [skills, setSkills] = useState([]);
 
-    console.log('projects', projects);
+    useEffect(() => {
+        let temp = [];
+        technology.forEach(tech => temp.push(tech.title))
+        setSkills(temp);
+    }, [])
 
     return (
         <StyledProjects>
-            <h1 className="page-title">
-                Current And Past Work
+            <h1 className="section-title">Skills & Stack</h1>
+            <div className="skills-container">
+                {skills && skills.map(skill => (
+                    <span className="skill">{skill}</span>
+                ))}
+            </div>
+            <h1 className="section-title">
+                Projects
             </h1>
             <section className="projects-container">
                 {
@@ -34,7 +46,10 @@ export default function Projects(props) {
 
 Projects.getInitialProps = async () => ({
     projects: await sanityClient.fetch(groq`
-        *[_type == "project" && publishedAt < now()]|order(publishedAt desc)
+        *[_type == "project"]
+    `),
+    technology: await sanityClient.fetch(groq`
+            *[_type == "technology"]
     `)
 })
 
@@ -44,23 +59,34 @@ const StyledProjects = styled.div`
     text-align: center;
     padding: 4rem;
 
-    .page-title {
+    .section-title {
         font-size: 2rem;
         font-weight: var(--weight-thin);
     }
 
-    .projects-container {
+    .projects-container,
+    .skills-container {
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-wrap: wrap;
         width: 90%;
         margin: 3rem auto;
         border: 1px solid yellow;
+        line-height: 2;
 
         .project-card {
             border: 1px solid orange;
             padding: 1rem;
             margin: 2rem;
+        }
+
+        .skill {
+            font-size: 1.5rem;
+            padding: .5rem 1rem;
+            background-color: var(--color-blue-light);
+            margin: 1rem;
+            border-radius: var(--radius);
         }
     }
 `

@@ -18,12 +18,6 @@ export default {
         },
       },
       {
-        name: 'author',
-        title: 'Author',
-        type: 'reference',
-        to: {type: 'author'},
-      },
-      {
         name: 'mainImage',
         title: 'Main image',
         type: 'image',
@@ -57,6 +51,16 @@ export default {
         name: 'body',
         title: 'Body',
         type: 'blockContent',
+      },
+      {
+        name: 'githubLink',
+        title: 'Github Link',
+        type: 'string',
+      },
+      {
+        name: 'liveLink',
+        title: 'Live Link',
+        type: 'string',
       },
     ],
   
