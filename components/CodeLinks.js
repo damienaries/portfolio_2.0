@@ -31,7 +31,7 @@ const StyledLinks = styled.div`
     padding: 1rem;
 
     .code-link {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
         padding: .5rem 1.5rem;
         margin: .5rem;
         border-radius: 50px;
