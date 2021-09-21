@@ -92,7 +92,7 @@ const StyledProject = styled.section`
     align-items: center;
 
     .project-container {
-        width: 60%;
+        width: 65%;
         padding: 4rem;
         text-align: center;
         border-radius: var(--radius);
@@ -161,8 +161,9 @@ const StyledProject = styled.section`
         }
 
         .bottom-grid {
-            display: flex;
-            justify-content: space-evenly;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 1rem;
             margin-top: 2rem;
 
             .image {
@@ -170,14 +171,13 @@ const StyledProject = styled.section`
                 height: auto;
                 border-radius: var(--radius);
             }
-
+        
             .description {
                 font-size: 1.3rem;
                 padding: 0 2rem;
                 text-align: left;
                 line-height: 1.5;
             }
-
         }
     }
 

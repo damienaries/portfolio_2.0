@@ -20,7 +20,7 @@ export const GlobalStyles = css`
 	/* Typography */
 	--weight-thin: 200;
 	--weight-bold: 600;
-	--size-body: 1.2rem;
+	--size-body: 1.3rem;
 	--size-title-main: 4rem;
 	--size-title-section: 2.5rem;
 	--size-subtitle: 2rem;

@@ -3,7 +3,14 @@ import styled from '@emotion/styled';
 import sanityClient from '../../client';
 import groq from 'groq';
 import Project from '../../components/Project';
+import Job from '../../components/Job';
 
+/***************** 
+ TODO
+    Add more projects!
+    create jobs in sanity
+    Work skills section design. Icons? hover effect? Sort? 
+*************************/
 export default function Projects(props) {
     const { projects = [], technology = [] } = props;
     const [skills, setSkills] = useState([]);
@@ -21,14 +28,8 @@ export default function Projects(props) {
 
     return (
         <StyledProjects>
-            <h1 className="section-title">My Quiver</h1>
-            <div className="skills-container">
-                {skills && skills.map(skill => (
-                    <span className="skill">{skill}</span>
-                ))}
-            </div>
             <h1 className="section-title">
-                My Projects
+                Some Recent Projects
             </h1>
             <section className="projects-container">
             {
@@ -36,12 +37,21 @@ export default function Projects(props) {
                     <Project project={project} key={project._id} />
                 ))
             }
+            <h1 className="section-title">
+                Skills & Techs & Tools i  like to work with
+            </h1>
+            <div className="skills-container">
+                {skills && skills.map(skill => (
+                    <span className="skill">{skill}</span>
+                ))}
+            </div>
             </section>
             <h1 className="section-title">
-                My Experience
+                Work Experience
             </h1>
             <section className="exp-container">
-                <p className="exp">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea nulla iusto aspernatur cum sint eum nisi explicabo, molestiae assumenda illo cumque debitis doloribus culpa minima eveniet aut in consequatur possimus quas, laboriosam quia obcaecati sapiente! Aliquam voluptatem incidunt deleniti itaque.</p>
+                {/* Loop over jobs / example Concept */}
+                <Job />
             </section>
         </StyledProjects>
     )
@@ -64,6 +74,8 @@ const StyledProjects = styled.div`
     .section-title {
         font-size: 2rem;
         font-weight: var(--weight-thin);
+        text-transform: capitalize;
+        margin: 5rem auto 1rem;
     }
 
     .projects-container,
@@ -72,8 +84,8 @@ const StyledProjects = styled.div`
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
-        width: 100%;
-        margin: 3rem auto 5rem;
+        width: 90%;
+        margin: 2rem auto;
         line-height: 2;
 
         .skill {
@@ -85,7 +97,4 @@ const StyledProjects = styled.div`
         }
     }
 
-    .exp-container {
-        border: 1px solid yellow;
-    }
 `

@@ -27,18 +27,6 @@ export default function Project({ project }) {
                     )} 
                 </article>
             </Link>
-            {/*<div className="links">
-                {githubLink !== undefined && (
-                    <Link href={`${githubLink}`}>
-                        <a className="code-link" target="_blank">See Repo</a>
-                    </Link>
-                )}
-                {liveLink !== undefined && (
-                    <Link href={`${liveLink}`}>
-                    <a className="code-link" target="_blank">Visit Site</a>
-                </Link>
-                )}
-                </div>*/}
             <CodeLinks githubLink={githubLink} liveLink={liveLink} />
         </StyledProject>
     )
