@@ -1,9 +1,10 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import ImageUrlBuilder from '@sanity/image-url';
-import sanityClient from '../client';
+import sanityClient from '../lib/client';
 import Link from 'next/link';
 import CodeLinks from './CodeLinks';
+import useWindowDimensions from '../hooks/useWindowDimensions';
 
 function urlFor(source) {
     return ImageUrlBuilder(sanityClient).image(source);
@@ -11,6 +12,7 @@ function urlFor(source) {
 
 export default function Project({ project }) {
     const { slug, title, mainImage, liveLink, githubLink } = project;
+    const { width } = useWindowDimensions();
 
     return (
         <StyledProject>
@@ -21,8 +23,8 @@ export default function Project({ project }) {
                         <img 
                             className="project-img"
                             src={urlFor(mainImage)
-                                .height(250)
-                                .width(250)
+                                .height(width > 900 || width < 700 ? 250 : 200)
+                                .width(width > 900 || width < 700 ? 250 : 200)
                                 .url()} />
                     )} 
                 </article>
@@ -51,5 +53,10 @@ const StyledProject = styled.article`
             font-size: 2rem;
             letter-spacing: 1px;
             margin-bottom: 2rem;
+        }
+
+        @media screen and (max-width: 900px) {
+            margin: 1rem;
+            padding: 2rem 3rem 1rem;
         }
 `

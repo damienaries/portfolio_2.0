@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import client from '../../client';
+import sanityClient from '../../lib/client';
 import groq from 'groq';
 import ImageUrlBuilder from '@sanity/image-url';
 import BlockContent from '@sanity/block-content-to-react';
@@ -8,7 +8,7 @@ import {FaChevronLeft} from 'react-icons/fa';
 import { useRouter } from 'next/router';
 
 function urlFor(source) {
-    return ImageUrlBuilder(client).image(source);
+    return ImageUrlBuilder(sanityClient).image(source);
 }
 
 const Project = (props) => {
@@ -81,7 +81,7 @@ const query = groq`*[_type == "project" && slug.current == $slug][0]{
 Project.getInitialProps = async function(context) {
     // default the slug so it does not return undefined
     const { slug = "" } = context.query;
-    return await client.fetch(query, { slug });
+    return await sanityClient.fetch(query, { slug });
 }
 
 const StyledProject = styled.section`

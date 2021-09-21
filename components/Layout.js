@@ -28,12 +28,6 @@ const Layout = ({ children }) => {
 const StyledLayout = styled.body`
     position: relative;
 
-    .bg-image {
-        position: absolute;
-        z-index: -1;
-        height: 100%;
-    }
-
 `
 
 export default Layout;

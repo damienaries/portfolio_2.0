@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import styled from '@emotion/styled';
-import sanityClient from '../../client';
+import sanityClient from '../../lib/client';
 import groq from 'groq';
 import Project from '../../components/Project';
 import Job from '../../components/Job';
@@ -10,6 +10,7 @@ import Job from '../../components/Job';
     Add more projects!
     create jobs in sanity
     Work skills section design. Icons? hover effect? Sort? 
+    Add Blurb about prev experience
 *************************/
 export default function Projects(props) {
     const { projects = [], technology = [] } = props;
@@ -37,15 +38,15 @@ export default function Projects(props) {
                     <Project project={project} key={project._id} />
                 ))
             }
+            </section>
             <h1 className="section-title">
-                Skills & Techs & Tools i  like to work with
+                Skills & Techs & Tools i like to work with
             </h1>
             <div className="skills-container">
                 {skills && skills.map(skill => (
                     <span className="skill">{skill}</span>
                 ))}
             </div>
-            </section>
             <h1 className="section-title">
                 Work Experience
             </h1>
@@ -57,14 +58,20 @@ export default function Projects(props) {
     )
 }
 
-Projects.getInitialProps = async () => ({
-    projects: await sanityClient.fetch(groq`
+export async function getStaticProps() {
+    const projects = await sanityClient.fetch(groq`
         *[_type == "project"]
-    `),
-    technology: await sanityClient.fetch(groq`
+      `)
+    const technology = await sanityClient.fetch(groq`
         *[_type == "technology"]
-    `)
-})
+      `)
+    return {
+      props: {
+        projects,
+        technology
+      }
+    }
+  }
 
 const StyledProjects = styled.div`
     width: 100%;
@@ -84,7 +91,7 @@ const StyledProjects = styled.div`
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
-        width: 90%;
+        width: 100%;
         margin: 2rem auto;
         line-height: 2;
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import sanityClient from '../client';
+import sanityClient from '../lib/client';
 import ImageUrlBuilder from '@sanity/image-url';
 import BlockContent from '@sanity/block-content-to-react';
 

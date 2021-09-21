@@ -4,24 +4,23 @@ import styled from '@emotion/styled';
 
 const Background = () => {
     return (
-        <>
-            <BgWrap>
-                <Image 
-                    alt="LA background"
-                    src={bgImage}
-                    layout="fill"
-                    objectFit="cover"
-                    quality={100}
-                />
-            </BgWrap>
-        </>
+        <BgWrap>
+            <Image 
+                alt="LA background"
+                src={bgImage}
+                layout="fill"
+                objectFit="cover"
+                quality={100}
+                placeholder="blur"
+            />
+        </BgWrap>
     )
 }
 
 const BgWrap = styled.div`
-    position: fixed;
-    height: 100vh;
-    width: 100vw;
+    position: absolute;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
     z-index: -1;
 `

@@ -1,7 +1,10 @@
 import styled from '@emotion/styled';
 import Project from '../components/Project';
+import sanityClient from '../lib/client';
+import groq from 'groq';
 
 export default function Featured({ projects }) {
+    console.log('from featured:', projects);
     
     return (
         <StyledFeatured>
@@ -10,14 +13,24 @@ export default function Featured({ projects }) {
             </h1>
             <section className="cards-container">
                 {projects && projects.map(project => (
-                    <Project project={project} />
+                    <Project project={project} key={project._id}/>
                 ))}
             </section>
         </StyledFeatured>
     )
 }
 
-const StyledFeatured = styled.ul`
+export async function getStaticProps() {
+    const projects = await sanityClient.fetch(groq`
+        *[_type == "project"]
+    `);
+    
+    return {
+        projects
+    } 
+}
+
+const StyledFeatured = styled.div`
     width: 100%;
     padding: 3rem;
     text-align: center;

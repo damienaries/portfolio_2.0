@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import Banner from '../components/Banner';
 import About from '../components/About';
 import Featured from '../components/Featured';
-import sanityClient from '../client';
+import sanityClient from '../lib/client';
 import groq from 'groq';
 
 export default function Home(props) {
@@ -10,6 +10,7 @@ export default function Home(props) {
   
   // filter featured projects
   const featured = projects.filter(p => p.featured === true);
+  console.log('from index:', featured, author );
 
   return (
     <HomePage>
@@ -20,16 +21,20 @@ export default function Home(props) {
   )
 }
 
-// Load all projects and author data
-Home.getInitialProps = async () => ({
-  projects: await sanityClient.fetch(groq`
+export async function getStaticProps() {
+  const projects = await sanityClient.fetch(groq`
       *[_type == "project"]
-  `),
-  author: await sanityClient.fetch(groq`
+    `)
+  const author = await sanityClient.fetch(groq`
       *[_type == "author" && name == "Damien"]
-  `)
-})
-
+    `)
+  return {
+    props: {
+      projects,
+      author
+    }
+  }
+}
 
 // Page Styles
 const HomePage = styled.main`
