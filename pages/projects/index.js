@@ -22,10 +22,6 @@ export default function Projects(props) {
         setSkills(temp);
     }, [])
 
-    // filter non featured projects since they show on home page
-    const otherProjects = projects.filter(p => {
-        return p.featured === false;
-    })
 
     return (
         <StyledProjects>
@@ -34,7 +30,7 @@ export default function Projects(props) {
             </h1>
             <section className="projects-container">
             {
-                otherProjects.map(project => (
+                projects.map(project => (
                     <Project project={project} key={project._id} />
                 ))
             }
@@ -44,7 +40,7 @@ export default function Projects(props) {
             </h1>
             <div className="skills-container">
                 {skills && skills.map(skill => (
-                    <span className="skill">{skill}</span>
+                    <span className="skill" key={skill._id}>{skill}</span>
                 ))}
             </div>
             <h1 className="section-title">
@@ -60,7 +56,7 @@ export default function Projects(props) {
 
 export async function getStaticProps() {
     const projects = await sanityClient.fetch(groq`
-        *[_type == "project"]
+        *[_type == "project" && featured != true]
       `)
     const technology = await sanityClient.fetch(groq`
         *[_type == "technology"]

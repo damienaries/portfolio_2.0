@@ -22,6 +22,7 @@ export default function Project({ project }) {
                     {mainImage && (
                         <img 
                             className="project-img"
+                            alt={title}
                             src={urlFor(mainImage)
                                 .height(width > 900 || width < 700 ? 250 : 200)
                                 .width(width > 900 || width < 700 ? 250 : 200)

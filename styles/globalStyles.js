@@ -29,7 +29,7 @@ export const GlobalStyles = css`
 	/* Dark blue theme */
 	--color-blue: rgba(0, 15, 85, 0.7);
 	--color-blue-light: rgba(62, 107, 158, 0.2);
-	--color-blue-dark: rgba(0, 30, 64, 0.7);
+	--color-blue-dark: rgba(0, 30, 64, 0.6);
 	--color-white: rgb(253, 253, 253);
 	--color-accent: #d29700;
 	--color-black: #222;
@@ -48,11 +48,6 @@ body {
 	scroll-behavior: smooth;
 	font-family: var(--ff-body);
 	color: var(--color-white);
-	background-image: linear-gradient(
-			to bottom,
-			var(--color-blue),
-			var(--color-blue-dark)
-		);
 	line-height: 1.4;
 	/* mix-blend-mode: luminosity; || hard-light || exclusion || difference || color-dodge; */
 }

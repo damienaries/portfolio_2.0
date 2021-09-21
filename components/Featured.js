@@ -4,7 +4,6 @@ import sanityClient from '../lib/client';
 import groq from 'groq';
 
 export default function Featured({ projects }) {
-    console.log('from featured:', projects);
     
     return (
         <StyledFeatured>
@@ -18,16 +17,6 @@ export default function Featured({ projects }) {
             </section>
         </StyledFeatured>
     )
-}
-
-export async function getStaticProps() {
-    const projects = await sanityClient.fetch(groq`
-        *[_type == "project"]
-    `);
-    
-    return {
-        projects
-    } 
 }
 
 const StyledFeatured = styled.div`

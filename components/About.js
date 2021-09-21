@@ -10,27 +10,29 @@ function urlFor(source) {
 
 export default function About({ author }) {
     
-    return author && (
+    return (
         <StyledAbout id="about">
             <h2 className="section-title">About me</h2>
             <div className="flex-container">
                 <div className="about-left">
                     <BlockContent 
                         className="bio-content"
-                        blocks={author.bio}
+                        blocks={author?.bio}
                         imageOptions={{ w:320, h: 240, fit: 'max' }}
                         {...sanityClient.config()}
                     />
                 </div>
                 <div className="about-right">
-                    { author.image && (
+                    { author?.image && (
                         <div className="image-container">
                             <img 
                                 className="my-pic"
                                 alt="Sort of recent picture of me"
-                                src={urlFor(author.image)
+                                src={urlFor(author?.image)
                                     .width(250)
-                                .url()} />
+                                    .height(250)
+                                    .url()}
+                                />
                         </div>
                     )}
                 </div>

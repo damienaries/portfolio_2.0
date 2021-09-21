@@ -14,7 +14,7 @@ const Layout = ({ children }) => {
         <StyledLayout>  
             <Head>
                 <title>Damien Aries | {pageTitle}</title>
-                <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+                <meta name="viewport" lang="eng" content="initial-scale=1.0, width=device-width" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <Background />
@@ -25,9 +25,13 @@ const Layout = ({ children }) => {
     )
 };
 
-const StyledLayout = styled.body`
+const StyledLayout = styled.div`
     position: relative;
-
+    background-image: linear-gradient(
+			to bottom right,
+			var(--color-blue-light),
+			var(--color-blue)
+		);
 `
 
 export default Layout;

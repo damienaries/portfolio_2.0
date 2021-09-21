@@ -7,15 +7,11 @@ import groq from 'groq';
 
 export default function Home(props) {
   const { projects = [], author = [] } = props;
-  
-  // filter featured projects
-  const featured = projects.filter(p => p.featured === true);
-  console.log('from index:', featured, author );
 
   return (
     <HomePage>
       <Banner />
-      <Featured projects={featured} />
+      <Featured projects={projects} />
       <About author={author[0]}/>
     </HomePage>
   )
@@ -23,7 +19,7 @@ export default function Home(props) {
 
 export async function getStaticProps() {
   const projects = await sanityClient.fetch(groq`
-      *[_type == "project"]
+      *[_type == "project" && featured == true]
     `)
   const author = await sanityClient.fetch(groq`
       *[_type == "author" && name == "Damien"]

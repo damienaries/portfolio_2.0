@@ -9,8 +9,7 @@ const Background = () => {
                 alt="LA background"
                 src={bgImage}
                 layout="fill"
-                objectFit="cover"
-                quality={100}
+                quality={75}
                 placeholder="blur"
             />
         </BgWrap>
@@ -18,7 +17,7 @@ const Background = () => {
 }
 
 const BgWrap = styled.div`
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     overflow: hidden;
