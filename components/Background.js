@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import bgImage from '../public/assets/images/Landing.jpg';
+import bgImage from '../public/assets/images/bgImage.jpg';
 import styled from '@emotion/styled';
 
 const Background = () => {
