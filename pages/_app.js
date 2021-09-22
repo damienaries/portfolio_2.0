@@ -1,5 +1,5 @@
 import { Global } from '@emotion/react';
-import { GlobalStyles } from '../styles/GlobalStyles';
+import { GlobalStyles } from '../styles/globalStyles';
 import Layout from '../components/Layout';
 
 function MyApp({ Component, pageProps }) {

@@ -1,5 +1,4 @@
 import { css } from '@emotion/react';
-// import bgImage from '../public/assets/images/Landing.jpg';
 
 export const GlobalStyles = css`
     @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200;400;700&family=Titillium+Web:wght@200;400;600;700&display=swap');
