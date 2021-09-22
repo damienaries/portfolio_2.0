@@ -7,11 +7,15 @@ import CodeLinks from '../../components/CodeLinks';
 import {FaChevronLeft} from 'react-icons/fa';
 import { useRouter } from 'next/router';
 
+/*************************
+ TODO:  REFACTOR && SPLIT
+ *************************/
+
 function urlFor(source) {
     return ImageUrlBuilder(sanityClient).image(source);
 }
 
-const Project = (props) => {
+const Project = ({project}) => {
     const { 
         title = 'Missing Title', 
         categories,
@@ -20,7 +24,7 @@ const Project = (props) => {
         body = [],
         githubLink,
         liveLink
-    } = props;
+    } = project;
     const router = useRouter();
 
     return (
@@ -78,20 +82,27 @@ const query = groq`*[_type == "project" && slug.current == $slug][0]{
     liveLink,
 }`
 
-export async function getStaticProps(context) {
+// preload all projects and grab slug
+export async function getStaticPaths() {
+    const projects = await sanityClient.fetch(groq`
+        *[_type == "project"]
+    `)
+
+    const paths = projects.map(project => ({
+        params: { slug: project.slug.current }
+    }))
+
+    return { paths, fallback: false }
+}
+
+export async function getStaticProps({ params }) {
     // default the slug so it does not return undefined
-    const { slug = "" } = context.query;
+    const slug  = params.slug;
     const project = await sanityClient.fetch(query, { slug });
 
     return {
         props: {
-            title,
-            categories,
-            mainImage,
-            technologies,
-            body,
-            githubLink,
-            liveLink
+            project
         }
     }
 }
