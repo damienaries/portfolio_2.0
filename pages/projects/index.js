@@ -9,7 +9,7 @@ import Job from '../../components/Job';
  TODO
     Add more projects!
     create jobs in sanity
-    Work skills section design. Icons? hover effect? Sort? 
+    Work skills section design. Icons? hover effect? Sort? Separate skill into component
     Add Blurb about prev experience
 *************************/
 export default function Projects(props) {
@@ -29,19 +29,23 @@ export default function Projects(props) {
                 Some Recent Projects
             </h1>
             <section className="projects-container">
-            {
-                projects.map(project => (
-                    <Project project={project} key={project._id} />
-                ))
-            }
+                {
+                    projects.map(project => (
+                        <Project project={project} key={project._id} />
+                    ))
+                }
             </section>
             <h1 className="section-title">
-                Skills & Techs & Tools i like to work with
+                Skills & Techs & Tools i work with
             </h1>
             <div className="skills-container">
-                {skills && skills.map(skill => (
-                    <span className="skill" key={skill._id}>{skill}</span>
-                ))}
+                {
+                    skills && skills.map(skill => (
+                        <span className="skill" key={skill._id}>
+                            {skill}
+                        </span>
+                    ))
+                }
             </div>
             <h1 className="section-title">
                 Work Experience
@@ -98,6 +102,15 @@ const StyledProjects = styled.div`
             margin: 1rem;
             border-radius: var(--radius);
         }
+    }
+
+    .exp-container {
+        padding: 1rem;
+    }
+
+    @media screen and (max-width: 700px) {
+        padding: 2rem;
+
     }
 
 `

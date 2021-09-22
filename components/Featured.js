@@ -1,7 +1,5 @@
 import styled from '@emotion/styled';
 import Project from '../components/Project';
-import sanityClient from '../lib/client';
-import groq from 'groq';
 
 export default function Featured({ projects }) {
     

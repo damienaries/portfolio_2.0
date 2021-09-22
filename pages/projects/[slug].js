@@ -8,7 +8,7 @@ import {FaChevronLeft} from 'react-icons/fa';
 import { useRouter } from 'next/router';
 
 /*************************
- TODO:  REFACTOR && SPLIT && responsive styles
+ TODO:  REFACTOR && SPLIT
  *************************/
 
 function urlFor(source) {

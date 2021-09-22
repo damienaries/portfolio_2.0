@@ -3,28 +3,47 @@ import styled from '@emotion/styled';
 
 export default function Job() {
     return (
-        <JobCard>
-            <div className="info">
-                <h3 className="job">
-                    Full Stack Developer - Intern -  CONCEPT.app
-                </h3>
-                <span className="dates">Jan 2021 - July 2021</span>
-            </div>
-            
-            <p className="description">{/*TODO REWRITE DESCRIPTION */}
-                Concept is a social platform for human flourishing
-                built in JavaScript, React and Firebase. My role there
-                as a member of the startup’s founding dev team was
-                distributed across the stack, with a Front-End focus to
-                build foundational features like a forum page and our
-                onboarding slides.
-            </p>
-        </JobCard>
+        <>
+            <JobCard>
+                <div className="info">
+                    <h3 className="job">
+                        Full Stack Developer - Intern -  CONCEPT.app
+                    </h3>
+                    <span className="dates">Jan 2021 - July 2021</span>
+                </div>
+                
+                <p className="description">
+                    Concept is a social platform for human flourishing
+                    built in JavaScript, React and Firebase. My role there
+                    as a member of the startup’s founding dev team was
+                    distributed across the stack, with a Front-End focus to
+                    build foundational features like a forum page and our
+                    onboarding slides.
+                </p>
+            </JobCard>
+            <JobCard>
+                <div className="info">
+                    <h3 className="job">
+                        Full Stack Developer - Intern -  CONCEPT.app
+                    </h3>
+                    <span className="dates">Jan 2021 - July 2021</span>
+                </div>
+                
+                <p className="description">
+                    Concept is a social platform for human flourishing
+                    built in JavaScript, React and Firebase. My role there
+                    as a member of the startup’s founding dev team was
+                    distributed across the stack, with a Front-End focus to
+                    build foundational features like a forum page and our
+                    onboarding slides.
+                </p>
+            </JobCard>
+        </>
     )
 }
 
 const JobCard = styled.article`
-    width: 60%;
+    width: 70%;
     margin: 2rem auto;
     padding: 2rem 3rem;
     background-image: linear-gradient(
@@ -44,5 +63,14 @@ const JobCard = styled.article`
     .description {
         text-align: left;
         font-size: var(--size-body);
+    }
+
+    @media screen and (max-width: 900px) {
+        width: 90%;
+
+        .info {
+            flex-direction: column;
+            align-items: flex-start;
+        }
     }
 `
