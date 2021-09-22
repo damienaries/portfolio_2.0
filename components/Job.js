@@ -24,18 +24,14 @@ export default function Job() {
             <JobCard>
                 <div className="info">
                     <h3 className="job">
-                        Full Stack Developer - Intern -  CONCEPT.app
+                        Bartender - Bar Manager
                     </h3>
-                    <span className="dates">Jan 2021 - July 2021</span>
+                    <span className="dates">From 2005 to 2020</span>
                 </div>
                 
                 <p className="description">
-                    Concept is a social platform for human flourishing
-                    built in JavaScript, React and Firebase. My role there
-                    as a member of the startup’s founding dev team was
-                    distributed across the stack, with a Front-End focus to
-                    build foundational features like a forum page and our
-                    onboarding slides.
+                    Before I made the decision to return to a previous career plan and learned to code, I enjoyed a long international career tending and running cocktail bars in Paris, NYC, Montreal, St Barts - and many other places. Those were good years that led me where I am today and I&apo;m always happy to talk about them.<br/>
+                    As a developer, I bring along a solid work ethic, and some invaluable skills acquired through all these years of customer facing & team leading roles.
                 </p>
             </JobCard>
         </>
