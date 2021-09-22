@@ -11,7 +11,7 @@ const Layout = ({ children }) => {
     const pageTitle = router.pathname === '/' ? 'Welcome' : router.pathname.substring(1).toUpperCase();
 
     return (
-        <StyledLayout>  
+        <StyledLayout id="layout">  
             <Head>
                 <title>Damien Aries | {pageTitle}</title>
                 <meta name="viewport" lang="eng" content="initial-scale=1.0, width=device-width" />
@@ -29,7 +29,7 @@ const StyledLayout = styled.div`
     position: relative;
     background-image: linear-gradient(
 			to bottom right,
-			var(--color-blue-light),
+			var(--color-blue-dark),
 			var(--color-blue)
 		);
 `

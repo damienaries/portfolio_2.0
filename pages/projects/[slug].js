@@ -78,10 +78,22 @@ const query = groq`*[_type == "project" && slug.current == $slug][0]{
     liveLink,
 }`
 
-Project.getInitialProps = async function(context) {
+export async function getStaticProps(context) {
     // default the slug so it does not return undefined
     const { slug = "" } = context.query;
-    return await sanityClient.fetch(query, { slug });
+    const project = await sanityClient.fetch(query, { slug });
+
+    return {
+        props: {
+            title,
+            categories,
+            mainImage,
+            technologies,
+            body,
+            githubLink,
+            liveLink
+        }
+    }
 }
 
 const StyledProject = styled.section`
@@ -122,6 +134,7 @@ const StyledProject = styled.section`
             padding: .5rem;
             transition: all .2s ease-out;
 
+            &:hover,
             &:active {
                 box-shadow: var(--shadow-light);
                 cursor: pointer;
