@@ -38,4 +38,8 @@ const StyledFeatured = styled.div`
         justify-content: space-evenly;
         flex-wrap: wrap;
     }
+
+    @media screen and (max-width: 600px) {
+        padding: 3rem 1rem;
+    }
 `

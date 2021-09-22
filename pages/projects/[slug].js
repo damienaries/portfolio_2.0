@@ -8,7 +8,7 @@ import {FaChevronLeft} from 'react-icons/fa';
 import { useRouter } from 'next/router';
 
 /*************************
- TODO:  REFACTOR && SPLIT
+ TODO:  REFACTOR && SPLIT && responsive styles
  *************************/
 
 function urlFor(source) {
@@ -44,7 +44,7 @@ const Project = ({project}) => {
                 {technologies && (
                     <ul className="technologies">
                         {technologies.map(tech => (
-                            <div className="tech" key={tech}>{tech}</div>
+                            <li className="tech" key={tech}>{tech}</li>
                         ))}
                     </ul>
                 )}
@@ -116,7 +116,7 @@ const StyledProject = styled.section`
 
     .project-container {
         width: 65%;
-        padding: 4rem;
+        padding: 4rem 2rem;
         text-align: center;
         border-radius: var(--radius);
         background-image: linear-gradient(
@@ -154,8 +154,10 @@ const StyledProject = styled.section`
 
         .categories {
             position: absolute;
-            top: 2rem;
-            right: 2rem;
+            top: 1.5rem;
+            right: 1.5rem;
+            display: flex;
+            flex-direction: column;
 
             .categories-item {
                 padding: .5rem;
@@ -211,21 +213,37 @@ const StyledProject = styled.section`
         }
     }
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 700px) {
+        padding: 2rem;
+
         .project-container {
-            width: 90%;
+            width: 100%;
+            padding: 2rem;
+
+            .icon-back {
+                font-size: 2.5rem;
+                top: 1.5rem;
+                left: 1rem;
+            }
+
+            .categories {
+                flex-direction: row;
+                top: 1rem;
+                right: 1rem;
+            }
+
+            .title {
+                margin-top: 3rem;
+            }
         }
     }
 
     @media screen and (max-width: 600px) {
-        .bottom-grid {
-            flex-direction: column;
+        .project-container {
+            .bottom-grid {
+                grid-template-columns: 1fr;
+            }
         }
-
-        .categories {
-            display: none;
-        }
-
     }
 `
 

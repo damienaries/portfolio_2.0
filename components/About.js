@@ -90,7 +90,7 @@ const StyledAbout = styled.section`
         margin-bottom: 3rem;
 
         .about-left {
-            padding: 2rem;
+            padding: 0 2rem 2rem;
         }
     }
 

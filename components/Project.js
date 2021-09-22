@@ -14,6 +14,8 @@ export default function Project({ project }) {
     const { slug, title, mainImage, liveLink, githubLink } = project;
     const { width } = useWindowDimensions();
 
+    const imageSize = width > 900 || width < 700 ? 300 : 200;
+
     return (
         <StyledProject>
             <Link href={`/projects/${slug.current}`}>
@@ -24,8 +26,8 @@ export default function Project({ project }) {
                             className="project-img"
                             alt={title}
                             src={urlFor(mainImage)
-                                .height(width > 900 || width < 700 ? 250 : 200)
-                                .width(width > 900 || width < 700 ? 250 : 200)
+                                .height(imageSize)
+                                .width(imageSize)
                                 .url()} />
                     )} 
                 </article>

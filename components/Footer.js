@@ -12,19 +12,28 @@ export default function Footer() {
             <Link href="mailto:damien.aries@gmail.com">
                 <a className="footer-email">damien.aries@gmail.com</a>
             </Link>
-            <div>
+            <div className="social-links">
                 <Link href="https://www.linkedin.com/in/damien-aries">
-                    <a target="_blank" className="social-link">
+                    <a target="_blank" 
+                        rel="noopener" 
+                        className="social-link"
+                        aria-label="Linkedin profile">
                         <FaLinkedinIn />
                     </a>
                 </Link>
                 <Link href="https://github.com/damienaries">
-                    <a target="_blank" className="social-link">
+                    <a target="_blank" 
+                        rel="noopener" 
+                        className="social-link"
+                        aria-label="Github profile">
                         <FaGithub />
                     </a>
                 </Link>
                 <Link href="https://twitter.com/DamienAries">
-                    <a target="_blank" className="social-link">
+                    <a target="_blank" 
+                        rel="noopener" 
+                        className="social-link"
+                        aria-label="Twitter profile">
                         <FaTwitter />
                     </a>
                 </Link>
@@ -66,10 +75,16 @@ const StyledFooter = styled.div`
         }
     }
 
+    .social-links {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 90%;
+    }
+
     .social-link { 
         & > svg {
             font-size: 5rem;
-            margin: 2rem;
             padding: .75rem;
             border-radius: var(--radius);
             transition: all .1s ease-out;

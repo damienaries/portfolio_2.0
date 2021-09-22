@@ -9,7 +9,8 @@ const Background = () => {
                 alt="LA background"
                 src={bgImage}
                 layout="fill"
-                quality={75}
+                quality={100}
+                objectFit="cover"
                 placeholder="blur"
             />
         </BgWrap>
