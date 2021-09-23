@@ -1,20 +1,16 @@
 import React from 'react';
+import Image from 'next/image';
 import styled from '@emotion/styled';
-import ImageUrlBuilder from '@sanity/image-url';
 import sanityClient from '../lib/client';
 import Link from 'next/link';
 import CodeLinks from './CodeLinks';
-import useWindowDimensions from '../hooks/useWindowDimensions';
-
-function urlFor(source) {
-    return ImageUrlBuilder(sanityClient).image(source);
-}
+import { useNextSanityImage } from 'next-sanity-image';
 
 export default function Project({ project }) {
     const { slug, title, mainImage, liveLink, githubLink } = project;
-    const { width } = useWindowDimensions();
-
-    const imageSize = width > 900 || width < 700 ? 300 : 200;
+    const imageProps = useNextSanityImage(
+        sanityClient, mainImage
+    )
 
     return (
         <StyledProject>
@@ -22,13 +18,14 @@ export default function Project({ project }) {
                 <article key={title}>
                     <h4 className="project-title">{title}</h4>
                     {mainImage && (
-                        <img 
+                        <Image 
                             className="project-img"
                             alt={title}
-                            src={urlFor(mainImage)
-                                .height(imageSize)
-                                .width(imageSize)
-                                .url()} />
+                            layout="intrinsic"
+                            sizes="(max-width: 600px) 100vw, 600px"
+                            {...imageProps}
+                        />
+                        
                     )} 
                 </article>
             </Link>

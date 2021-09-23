@@ -6,7 +6,7 @@ export default function Featured({ projects }) {
     return (
         <StyledFeatured>
             <h1 className="section-title">
-                Some Recent Work
+                Featured Work
             </h1>
             <section className="cards-container">
                 {projects && projects.map(project => (

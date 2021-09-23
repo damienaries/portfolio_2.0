@@ -32,6 +32,10 @@ export const GlobalStyles = css`
 	--color-white: rgb(253, 253, 253);
 	--color-accent: #d29700;
 	--color-black: #222;
+	/* Colors no transparency */
+	--color-blue-opaque: rgb(0, 15, 85);
+	--color-blue-light-opaque: rgb(62, 107, 158);
+	--color-blue-dark-opaque: rgb(0, 30, 64);
 	/* Opposite theme TBD */
 
 	/* Shadows and border radius*/

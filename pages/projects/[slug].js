@@ -1,19 +1,17 @@
 import styled from '@emotion/styled';
 import sanityClient from '../../lib/client';
 import groq from 'groq';
-import ImageUrlBuilder from '@sanity/image-url';
 import BlockContent from '@sanity/block-content-to-react';
 import CodeLinks from '../../components/CodeLinks';
 import {FaChevronLeft} from 'react-icons/fa';
 import { useRouter } from 'next/router';
+import Image from 'next/image';
+import { useNextSanityImage } from 'next-sanity-image';
+
 
 /*************************
  TODO:  REFACTOR && SPLIT
  *************************/
-
-function urlFor(source) {
-    return ImageUrlBuilder(sanityClient).image(source);
-}
 
 const Project = ({project}) => {
     const { 
@@ -26,6 +24,9 @@ const Project = ({project}) => {
         liveLink
     } = project;
     const router = useRouter();
+    const imageProps = useNextSanityImage(
+        sanityClient, mainImage
+    )
 
     return (
         <StyledProject>
@@ -51,10 +52,12 @@ const Project = ({project}) => {
                 <div className="bottom-grid">
                     <div className="left-container">
                         {mainImage && (
-                            <img 
+                            <Image 
                                 className="image"
-                                src={urlFor(mainImage)
-                                    .url()}
+                                alt={title}
+                                layout="responsive"
+                                sizes="(max-width: 600px) 80vw, 300px"
+                                {...imageProps}
                             />
                         )}
                     <CodeLinks 

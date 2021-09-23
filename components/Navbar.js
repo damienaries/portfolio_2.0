@@ -1,23 +1,32 @@
-import React, { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter} from 'next/router';
 import styled from '@emotion/styled';
 import useWindowDimensions from '../hooks/useWindowDimensions';
-import { FaBars } from "react-icons/fa"; // replace with mobile nav component
-
-/******************
- TODO
-    uncomment Blog when some content is there :)
- *****************/
+import { FaBars } from "react-icons/fa";
+import { MdClose } from 'react-icons/md';
+import { fadeIn } from '../styles/animations';
 
 export default function Navbar() {
     const router = useRouter();
     const { width } = useWindowDimensions();
     const [navOpen, setIsNavOpen] = useState(false);
 
-    // open mobile nav
+    // Lock scroll
+    useEffect(() => {
+        if (navOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {   
+            document.body.style.overflow = 'unset';
+        }   
+    },[navOpen])
+
+    // toggle mobile nav, auto close 15sec
     const toggleNav = () => {
-        alert('opening Nav!');
+        setIsNavOpen(prevState => !prevState);   
+        setTimeout(() => {
+            setIsNavOpen(false)
+        }, 15000);
     }
 
     return (
@@ -25,24 +34,53 @@ export default function Navbar() {
             <h1 className="topbar-left" onClick={() => router.push('/')}>
                 Damien<span className="name-logo">Aries</span>
             </h1>
-            { width > 600 ? (
-                <div className="topbar-right">
-                <Link href='/'>
-                    <a className="topbar-right-link">Home</a>
-                </Link>
-                <Link href='/projects'>
-                    <a className="topbar-right-link">Work</a>
-                </Link>
-                <Link href='#contact'>
-                    <a className="topbar-right-link">Contact</a>
-                </Link>
-              {/*  <Link href='/blog'>
-                    <a className="topbar-right-link">Blog</a>
-            </Link>*/}
+            
+            <div className="topbar-right">
+                { width > 600 ? (
+                    <>
+                        {/* full size nav */}
+                        <Link href='/'>
+                            <a className="topbar-right-link">Home</a>
+                        </Link>
+                        <Link href='/projects'>
+                            <a className="topbar-right-link">Work</a>
+                        </Link>
+                        <Link href='#contact'>
+                            <a className="topbar-right-link">Contact</a>
+                        </Link> 
+                    </>
+                ) : (
+                    <div className="mobile-nav-action">
+                    {
+                        !navOpen ? (
+                            <FaBars className="action-button" onClick={toggleNav} />
+                        ) : (
+                            <MdClose className="action-button" onClick={toggleNav} />
+                        )
+                    }
+                    </div>
+                )}    
+                 
             </div>
-            ) : (
-                <FaBars className="hamburger" onClick={toggleNav} />
-            )}
+            {/* Mobile Nav full screen Modal */}
+            {
+                navOpen && (
+                    <div 
+                        className="mobile-nav" 
+                        style={{ right: !navOpen ? '-100%' : 0 }}
+                        >
+                        <Link href='/'>
+                            <a className="mobile-nav-link" onClick={toggleNav}>Home</a>
+                        </Link>
+                        <Link href='/projects'>
+                            <a className="mobile-nav-link" onClick={toggleNav}>Work</a>
+                        </Link>
+                        <Link href='#contact'>
+                            <a className="mobile-nav-link" onClick={toggleNav}>Contact</a>
+                        </Link>
+                    </div>
+                )
+            }       
         </StyledNav>
     )
 }
@@ -54,7 +92,7 @@ const StyledNav = styled.nav`
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem;
-    z-index: 5;
+    position: relative;
 
     .topbar-left {
         font-size: var(--size-subtitle);
@@ -71,8 +109,12 @@ const StyledNav = styled.nav`
         }
     }
 
+    .topbar-right {
+        position: relative;
+    }
+
     .topbar-right-link {
-        margin-right: 2rem;
+        margin: 1rem;
         font-size: var(--size-body);
         letter-spacing: 2px;
         transition: box-shadow .3s ease;
@@ -83,7 +125,53 @@ const StyledNav = styled.nav`
         }
     }
 
-    .hamburger {
-        font-size: 1.8rem;
+    .action-button {
+        font-size: 2rem;
+        position: fixed;
+        top: 2rem;
+        right: 1.5rem;
+        z-index: 15;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+    }
+
+    .mobile-nav {
+        position: fixed;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem 1rem;
+        height: 100vh;
+        width: 100vw;
+        background-image: linear-gradient(
+            to right bottom,
+            var(--color-blue),
+            var(--color-blue-light-opaque),
+            var(--color-blue-dark-opaque)
+        );
+        animation: ${fadeIn} .2s ease-out; 
+        z-index: 10;
+        
+        &-link {
+            padding: 1rem 3rem;
+            text-align: center;
+            width: fit-content;
+            margin: 1rem auto;
+            font-size: 2.5rem;
+            letter-spacing: 3px;
+            border-radius: var(--radius);
+
+            &:focus,
+            &:active,
+            &:hover {
+                border-bottom: 2px solid var(--color-white);
+                box-shadow: 0 1rem 2rem rgba(253, 253, 253, .5);
+            }
+        }
     }
 `

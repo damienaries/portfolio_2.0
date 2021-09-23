@@ -10,14 +10,14 @@ export default function CodeLinks({ githubLink, liveLink }) {
                 {githubLink !== undefined && (
                     <Link href={`${githubLink}`}>
                         <a className="code-link" target="_blank">
-                            See Repo <MdOpenInNew className="icon" />
+                            Code <MdOpenInNew className="icon" />
                         </a>
                     </Link>
                 )}
                 {liveLink !== undefined && (
                     <Link href={`${liveLink}`}>
                     <a className="code-link" target="_blank">
-                        Visit Site <MdOpenInNew className="icon" />
+                        Site <MdOpenInNew className="icon" />
                     </a>
                 </Link>
                 )}
@@ -47,5 +47,9 @@ const StyledLinks = styled.div`
         &:hover {
             background-color: var(--color-blue-dark);
         }
+    }
+
+    @media screen and (max-width: 600px) {
+        padding: 1rem 0;
     }
 `

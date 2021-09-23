@@ -26,12 +26,12 @@ export default function Projects(props) {
     return (
         <StyledProjects>
             <h1 className="section-title">
-                Some Recent Projects
+                Recent Projects
             </h1>
             <section className="projects-container">
                 {
                     projects.map(project => (
-                        <Project project={project} key={project._id} />
+                        <Project project={project} key={project} />
                     ))
                 }
             </section>
@@ -41,7 +41,7 @@ export default function Projects(props) {
             <div className="skills-container">
                 {
                     skills && skills.map(skill => (
-                        <span className="skill" key={skill._id}>
+                        <span className="skill" key={skill}>
                             {skill}
                         </span>
                     ))
