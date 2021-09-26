@@ -5,12 +5,15 @@ import sanityClient from '../lib/client';
 import Link from 'next/link';
 import CodeLinks from './CodeLinks';
 import { useNextSanityImage } from 'next-sanity-image';
+import useWindowDimensions from '../hooks/useWindowDimensions';
 
 export default function Project({ project }) {
     const { slug, title, mainImage, liveLink, githubLink } = project;
     const imageProps = useNextSanityImage(
         sanityClient, mainImage
     )
+    const {width} = useWindowDimensions();
+    const imageSize = width > 1000 || width < 600 ? '350' : '250'
 
     return (
         <StyledProject>
@@ -21,9 +24,11 @@ export default function Project({ project }) {
                         <Image 
                             className="project-img"
                             alt={title}
+                            src={imageProps.src}
                             layout="intrinsic"
-                            sizes="(max-width: 600px) 100vw, 600px"
-                            {...imageProps}
+                            height={imageSize}
+                            width={imageSize}
+                            objectFit="contain"
                         />
                         
                     )} 
@@ -47,12 +52,13 @@ const StyledProject = styled.article`
 
         .project-img {
             border-radius: var(--radius);
+            border: 2px solid white;
         }
 
         .project-title {
             font-size: 2rem;
             letter-spacing: 1px;
-            margin-bottom: 2rem;
+            /* margin-bottom: 2rem; */
         }
 
         @media screen and (max-width: 900px) {

@@ -31,7 +31,7 @@ export default function Projects(props) {
             <section className="projects-container">
                 {
                     projects.map(project => (
-                        <Project project={project} key={project} />
+                        <Project project={project} key={project._id} />
                     ))
                 }
             </section>
@@ -41,7 +41,7 @@ export default function Projects(props) {
             <div className="skills-container">
                 {
                     skills && skills.map(skill => (
-                        <span className="skill" key={skill}>
+                        <span className="skill" key={skill._id}>
                             {skill}
                         </span>
                     ))

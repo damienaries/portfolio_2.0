@@ -45,7 +45,7 @@ const Project = ({project}) => {
                 {technologies && (
                     <ul className="technologies">
                         {technologies.map(tech => (
-                            <li className="tech" key={tech}>{tech}</li>
+                            <li className="tech" key={tech._id}>{tech}</li>
                         ))}
                     </ul>
                 )}
