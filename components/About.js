@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 import sanityClient from '../lib/client';
 import ImageUrlBuilder from '@sanity/image-url';
 import BlockContent from '@sanity/block-content-to-react';
+import Image from 'next/image';
 
 function urlFor(source) {
     return ImageUrlBuilder(sanityClient).image(source);
@@ -12,7 +13,6 @@ export default function About({ author }) {
     
     return (
         <StyledAbout id="about">
-            <h2 className="section-title">About me</h2>
             <div className="flex-container">
                 <div className="about-left">
                     <BlockContent 
@@ -25,12 +25,13 @@ export default function About({ author }) {
                 <div className="about-right">
                     { author?.image && (
                         <div className="image-container">
-                            <img 
+                            <Image 
                                 className="my-pic"
                                 alt="Sort of recent picture of me"
+                                layout="intrinsic"
+                                width={200}
+                                height={200}
                                 src={urlFor(author?.image)
-                                    .width(250)
-                                    .height(250)
                                     .url()}
                                 />
                         </div>
@@ -43,7 +44,6 @@ export default function About({ author }) {
 
 const StyledAbout = styled.section`
     width: 100%;
-    padding: 2rem 4rem;
 
     .flex-container {
         display: flex;
@@ -53,7 +53,7 @@ const StyledAbout = styled.section`
     }
 
     .section-title {
-        font-size: 2.5rem;
+        font-size: var(--size-title-section);
         top: 1rem;
         text-align: center;
         margin-bottom: 4rem;
@@ -61,15 +61,12 @@ const StyledAbout = styled.section`
     }
 
     .about-left {
-        height: 100%;
 		flex: 2;
-		margin: 0 auto;
-		font-size: 1.6rem;
-		letter-spacing: 1.5px;
 
 		.bio-content {
-			padding: 1rem;
             font-size: var(--size-body);
+            letter-spacing: 1.5px;
+            margin-right: 2rem;
 		}
     }
 
@@ -81,7 +78,7 @@ const StyledAbout = styled.section`
         }
 
         .my-pic {
-            max-width: 15rem;
+            max-width: 10rem;
             border-radius: var(--radius);
         }
     }
@@ -97,6 +94,12 @@ const StyledAbout = styled.section`
     @media screen and (max-width: 600px) {
         .flex-container {
             flex-direction: column;
+        }
+
+        .about-left {
+            .bio-content {
+                margin-bottom: 2rem;
+            }
         }
     }
 `

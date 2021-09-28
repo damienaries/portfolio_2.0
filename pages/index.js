@@ -11,8 +11,8 @@ export default function Home(props) {
   return (
     <HomePage>
       <Banner />
-      <Featured projects={projects} />
       <About author={author[0]}/>
+      <Featured projects={projects} />
     </HomePage>
   )
 }

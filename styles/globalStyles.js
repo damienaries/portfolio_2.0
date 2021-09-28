@@ -19,10 +19,10 @@ export const GlobalStyles = css`
 	/* Typography */
 	--weight-thin: 200;
 	--weight-bold: 600;
-	--size-body: 1.3rem;
-	--size-title-main: 4rem;
-	--size-title-section: 2.5rem;
-	--size-subtitle: 2rem;
+	--size-body: 1.6rem;
+	--size-title-main: 6rem;
+	--size-title-section: 3.5rem;
+	--size-subtitle: 1.8rem;
 
 	/* Colors */
 	/* Dark blue theme */

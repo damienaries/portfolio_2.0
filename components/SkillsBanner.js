@@ -1,41 +1,46 @@
-import React from 'react';
+import { useEffect } from 'react';
 import styled from '@emotion/styled';
-import { FaHtml5 } from "react-icons/fa";
-import { FaCss3Alt } from "react-icons/fa";
-import { FaReact } from "react-icons/fa";
-import { FaJsSquare } from "react-icons/fa";
-import { SiMongodb } from 'react-icons/si';
-import { DiNodejs } from 'react-icons/di';
-import { rotateBadge } from '../styles/animations';
 
-/***************** 
- TODO
-    grab more icons and rotate banner
-**********************/
+export default function SkillsBanner({ skills }) {
+    console.log(skills[0].icon)
+    // make icon string into component
 
-export default function SkillsBanner() {
+    // need to generate <MdOpenInNew className="icon" /> 
+    /*
+        useEffect(() => {
+            let icon = '';
+            skills.map(skill => {
+                return `<${skill.icon} className="skill"/>`
+            })
+        },[])
+    
+    
+    */
+
     return (
         <StyledSkills>
-            <FaHtml5 className="skill-badge"/>
-            <FaCss3Alt />
-            <FaReact />
-            <FaJsSquare />
-            <SiMongodb />
-            <DiNodejs />
+            {skills && skills.map((skill) => (
+                <skill.icon key={skill._id}className="skill"/>
+            ))}
         </StyledSkills>
     )
 }
 
 const StyledSkills = styled.section`
-    width: 100%;
-    border: 1px solid yellow;
-    font-size: 8rem;
-    padding: 4rem 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 100%;
+        margin: 2rem auto;
+        line-height: 2;
 
-    .skill-badge {
-        animation: ${rotateBadge} 2s ease-out;
-    }
+        .skill {
+            font-size: var(--size-body);
+            padding: .5rem 1rem;
+            background-color: var(--color-blue-light);
+            margin: 1rem;
+            border-radius: var(--radius);
+        }
+
 `

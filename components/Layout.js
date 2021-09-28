@@ -15,7 +15,7 @@ const Layout = ({ children }) => {
             <Head>
                 <title>Damien Aries | {pageTitle}</title>
                 <meta name="viewport" lang="eng" content="initial-scale=1.0, width=device-width" />
-                <link rel="icon" href="/favicon.ico" />
+                <link rel="icon" href="/flux-capacitor.svg" />
             </Head>
             <Background />
             <Navbar />

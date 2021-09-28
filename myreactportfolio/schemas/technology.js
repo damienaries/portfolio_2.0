@@ -13,6 +13,11 @@ export default {
         title: 'Category',
         type: 'string',
       },
+      {
+        name:'icon',
+        title: 'Icon',
+        type: 'string',
+      },
     ],
   }
   

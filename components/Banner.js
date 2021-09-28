@@ -3,7 +3,8 @@ import styled from '@emotion/styled';
 import { moveInTop, fadeIn, moveInBottom } from '../styles/animations';
 
 
-export default function Banner() {
+export default function Banner() {  
+
     return (
         <Hero>
             <div className="title-box">
@@ -12,12 +13,13 @@ export default function Banner() {
                         Welcome
                     </h1>
                     <h2 className="header-title-me">
-                        I&apos;m Damien
+                       Hi, I&apos;m Damien
                     </h2>
-                    <h3 className="header-title-sub">
+                    {/*<h3 className="header-title-sub">
                         Web developer based in Los Angeles
-                    </h3>
+                    </h3>*/}
                 </div>
+
             </div>
         </Hero>
     )
@@ -40,13 +42,13 @@ const Hero = styled.section`
       .header-title {
 
         &-welcome {
-          font-size: 6rem;
+          font-size: var(--size-title-main);
           font-weight: var(--weight-thin);
-          animation: ${moveInTop} 1.5s ease-in-out;
+          animation: ${moveInTop} 1s ease-in-out;
         }
 
         &-me {
-          font-size: 3.5rem;
+          font-size: var(--size-title-section);
           font-weight: var(--weight-thin);
           letter-spacing: .5rem;
           margin: 2rem auto;
@@ -56,10 +58,10 @@ const Hero = styled.section`
         }
 
         &-sub {
-          font-size: 2rem;
+          font-size: var(--size-subtitle);
           letter-spacing: .5rem;
           font-weight: var(--weight-thin);
-          animation: ${moveInBottom} 1s ease-in-out;
+          animation: ${fadeIn} 1.5s ease-in-out;
           animation-delay: 1s;
           animation-fill-mode: backwards;
         }

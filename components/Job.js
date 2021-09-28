@@ -6,9 +6,9 @@ export default function Job() {
         <>
             <JobCard>
                 <div className="info">
-                    <h3 className="job">
-                        Full Stack Developer - Intern -  CONCEPT.app
-                    </h3>
+                    <h4 className="job">
+                        Full Stack Intern - CONCEPT.app
+                    </h4>
                     <span className="dates">Jan 2021 - July 2021</span>
                 </div>
                 
@@ -23,9 +23,9 @@ export default function Job() {
             </JobCard>
             <JobCard>
                 <div className="info">
-                    <h3 className="job">
+                    <h4 className="job">
                         Bartender - Bar Manager
-                    </h3>
+                    </h4>
                     <span className="dates">From 2005 to 2020</span>
                 </div>
                 
@@ -39,7 +39,7 @@ export default function Job() {
 }
 
 const JobCard = styled.article`
-    width: 70%;
+    width: 80%;
     margin: 2rem auto;
     padding: 2rem 3rem;
     background-image: linear-gradient(
@@ -52,8 +52,9 @@ const JobCard = styled.article`
     .info {
         display: flex;
         justify-content: space-between;
-        font-size: 1.4rem;
+        font-size: var(--size-subtitle);
         padding-bottom: 1rem;
+        letter-spacing: 1px;
     }
 
     .description {
@@ -67,6 +68,12 @@ const JobCard = styled.article`
         .info {
             flex-direction: column;
             align-items: flex-start;
+            
+
+            .job {
+                margin-bottom: .5rem;
+                text-align: left;
+            }
         }
     }
 `

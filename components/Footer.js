@@ -6,9 +6,9 @@ import Link from 'next/link';
 export default function Footer() {
     return (
         <StyledFooter id='contact'>
-            <h4 style={{ fontSize: '3rem', textAlign: 'center' }}className="section-title">
+            <h3 className="section-title">
                 Get in touch
-            </h4>
+            </h3>
             <Link href="mailto:damien.aries@gmail.com">
                 <a className="footer-email">damien.aries@gmail.com</a>
             </Link>
@@ -53,19 +53,18 @@ const StyledFooter = styled.div`
     line-height: 2;
 
     .section-title {
-        font-size: 2.5rem;
+        font-size: var(--size-title-section);
         top: 1rem;
         text-align: center;
-        margin-bottom: 4rem;
         font-weight: var(--weight-thin);
     }
 
     .footer-email {
-        font-size: 1.8rem;
+        font-size: var(--size-subtitle);
         letter-spacing: .5px;
-        margin-bottom: 1rem;
-        border-radius: var(--radius);
-        padding: .5rem .75rem;
+        margin: 2rem auto;
+        border-radius: 50px;
+        padding: .5rem 1.5rem;
         transition: all .1s ease-out;
         
         &:hover {

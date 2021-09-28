@@ -32,7 +32,7 @@ export default function Navbar() {
     return (
         <StyledNav>
             <h1 className="topbar-left" onClick={() => router.push('/')}>
-                Damien<span className="name-logo">Aries</span>
+                D<span className="name-logo">A</span>
             </h1>
             
             <div className="topbar-right">
@@ -91,7 +91,7 @@ const StyledNav = styled.nav`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem;
+    padding: 2.5rem;
     position: relative;
 
     .topbar-left {
@@ -116,12 +116,12 @@ const StyledNav = styled.nav`
     .topbar-right-link {
         margin: 1rem;
         font-size: var(--size-body);
-        letter-spacing: 2px;
+        letter-spacing: 3px;
         transition: box-shadow .3s ease;
 
         &:hover {
-            border-bottom: 2px solid var(--color-white);
-            box-shadow: 0 1rem 2rem rgba(253, 253, 253, .5);
+            border-bottom: 3px solid var(--color-white);
+            box-shadow: 0 .5rem 1rem rgba(253, 253, 253, .3);
         }
     }
 
@@ -158,19 +158,17 @@ const StyledNav = styled.nav`
         z-index: 10;
         
         &-link {
-            padding: 1rem 3rem;
             text-align: center;
             width: fit-content;
             margin: 1rem auto;
             font-size: 2.5rem;
             letter-spacing: 3px;
-            border-radius: var(--radius);
 
             &:focus,
             &:active,
             &:hover {
-                border-bottom: 2px solid var(--color-white);
-                box-shadow: 0 1rem 2rem rgba(253, 253, 253, .5);
+                border-bottom: 1px solid var(--color-white);
+                /* box-shadow: 0 .5rem 1rem rgba(253, 253, 253, .5); */
             }
         }
     }
