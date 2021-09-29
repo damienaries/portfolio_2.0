@@ -6,7 +6,7 @@ export default function Featured({ projects }) {
     return (
         <StyledFeatured>
             <h3 className="section-title">
-                Featured Work
+                Recent Work
             </h3>
             <section className="cards-container">
                 {projects && projects.map(project => (
@@ -21,7 +21,7 @@ const StyledFeatured = styled.div`
     width: 100%;
     padding: 3rem;
     text-align: center;
-    margin-bottom: 5rem;
+    margin: 4rem auto 5rem;
 
     .section-title {
         font-size: var(--size-title-section);

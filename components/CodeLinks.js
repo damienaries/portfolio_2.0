@@ -2,15 +2,18 @@ import React from 'react';
 import styled from '@emotion/styled';
 import Link from 'next/link';
 import {MdOpenInNew} from 'react-icons/md'
+import {FaGithub} from 'react-icons/fa'
 
 export default function CodeLinks({ githubLink, liveLink }) {
+    
+
 
     return (
         <StyledLinks>
                 {githubLink && (
                     <Link href={`${githubLink}`}>
                         <a className="code-link" target="_blank">
-                            Code <MdOpenInNew className="icon" />
+                            Code <FaGithub className="icon" />
                         </a>
                     </Link>
                 )}
@@ -31,7 +34,7 @@ const StyledLinks = styled.div`
     padding: 1rem;
 
     .code-link {
-        font-size: var(--size-body);
+        font-size: var(--size-subtitle);
         padding: .5rem 1.5rem;
         margin: .5rem;
         border-radius: 50px;

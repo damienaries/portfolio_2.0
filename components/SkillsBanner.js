@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 import styled from '@emotion/styled';
 
 export default function SkillsBanner({ skills }) {
-    console.log(skills[0].icon)
     // make icon string into component
 
     // need to generate <MdOpenInNew className="icon" /> 
@@ -20,7 +19,7 @@ export default function SkillsBanner({ skills }) {
     return (
         <StyledSkills>
             {skills && skills.map((skill) => (
-                <skill.icon key={skill._id}className="skill"/>
+                <span className="skill">{skill}</span>
             ))}
         </StyledSkills>
     )
@@ -42,5 +41,4 @@ const StyledSkills = styled.section`
             margin: 1rem;
             border-radius: var(--radius);
         }
-
 `

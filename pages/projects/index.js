@@ -13,6 +13,14 @@ import SkillsBanner from '../../components/SkillsBanner';
 *************************/
 export default function Projects(props) {
     const { projects = [], technology = [] } = props;
+    const [skills, setSkills] = useState([]);
+
+    useEffect(() => {
+        let temp = [];
+        technology.map(tech => temp.push(tech.title));
+        setSkills(temp);
+    }, [])
+    
 
     return (
         <StyledProjects>
@@ -32,7 +40,7 @@ export default function Projects(props) {
             </h3>
             {
                 technology && 
-                    <SkillsBanner skills={technology} />
+                    <SkillsBanner skills={skills} />
             }
             <h3 className="section-title">
                 Work Experience

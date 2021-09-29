@@ -7,6 +7,7 @@ import {FaChevronLeft} from 'react-icons/fa';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
 import { useNextSanityImage } from 'next-sanity-image';
+import SkillsBanner from '../../components/SkillsBanner';
 
 
 /*************************
@@ -32,7 +33,7 @@ const Project = ({project}) => {
         <StyledProject>
             <div className="project-container">
                 <FaChevronLeft className="icon-back" onClick={() => router.back()}/>
-                <h1 className="title">{title}</h1>
+                <h3 className="title">{title}</h3>
                 {categories && (
                     <ul className="categories">
                         {categories.map(category => (
@@ -43,11 +44,7 @@ const Project = ({project}) => {
                     </ul>
                 )}
                 {technologies && (
-                    <ul className="technologies">
-                        {technologies.map(tech => (
-                            <li className="tech" key={tech._id}>{tech}</li>
-                        ))}
-                    </ul>
+                    <SkillsBanner skills={technologies} />
                 )}
                 <div className="bottom-grid">
                     <div className="left-container">
@@ -119,7 +116,7 @@ const StyledProject = styled.section`
 
     .project-container {
         width: 65%;
-        padding: 4rem 2rem;
+        padding: 2rem 4rem;
         text-align: center;
         border-radius: var(--radius);
         background-image: linear-gradient(
@@ -128,11 +125,11 @@ const StyledProject = styled.section`
             var(--color-blue-light)
         );
         backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(10px);
         position: relative;
 
         .title {
-            font-size: 2rem;
+            font-size: var(--size-title-section);
             font-weight: var(--weight-thin);
             margin-bottom: 2rem;
             padding-bottom: 2rem;
@@ -144,13 +141,12 @@ const StyledProject = styled.section`
             top: 2rem;
             left: 2rem;
             font-size: 3rem;
-            border-radius: 50%;
             padding: .5rem;
             transition: all .2s ease-out;
 
             &:hover,
             &:active {
-                box-shadow: var(--shadow-light);
+                filter: drop-shadow(0 0.25rem .5rem var(--color-white));
                 cursor: pointer;
             }
         }
@@ -164,28 +160,11 @@ const StyledProject = styled.section`
 
             .categories-item {
                 padding: .5rem;
-                font-size: 1rem;
+                font-size: var(--size-body);
                 padding: .5rem 1.5rem;
                 margin: .5rem;
                 border-radius: 50px;
                 background-color: var(--color-blue-light);
-            }
-        }
-
-        .technologies {
-            display: flex;
-            justify-content: space-evenly;
-            padding: 1rem;
-            font-size: 1.5rem;
-            flex-wrap: wrap;
-            height: auto;
-
-            .tech {
-                font-size: 1.3rem;
-                padding: .5rem 1.5rem;
-                background-color: var(--color-blue-light);
-                margin: 1rem;
-                border-radius: var(--radius);
             }
         }
 
@@ -196,14 +175,12 @@ const StyledProject = styled.section`
             margin-top: 2rem;
 
             .image {
-                width: 100%;
-                height: auto;
                 border-radius: var(--radius);
             }
         
             .description {
-                font-size: 1.3rem;
-                padding: 0 2rem;
+                font-size: var(--size-body);
+                padding: 0 1rem;
                 text-align: left;
                 line-height: 1.5;
             }

@@ -117,11 +117,12 @@ const StyledNav = styled.nav`
         margin: 1rem;
         font-size: var(--size-body);
         letter-spacing: 3px;
-        transition: box-shadow .3s ease;
+        transition: filter .3s ease;
+        padding-bottom: .5rem;
 
         &:hover {
-            border-bottom: 3px solid var(--color-white);
-            box-shadow: 0 .5rem 1rem rgba(253, 253, 253, .3);
+            border-bottom: 2px solid var(--color-white);
+            filter: drop-shadow(0 0.25rem .5rem var(--color-white));
         }
     }
 

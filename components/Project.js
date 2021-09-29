@@ -18,7 +18,7 @@ export default function Project({ project }) {
     return (
         <StyledProject>
             <Link href={`/projects/${slug.current}`}>
-                <article key={title}>
+                <article key={title} className="project">
                     <h4 className="project-title">{title}</h4>
                     {mainImage && (
                         <Image 
@@ -28,7 +28,7 @@ export default function Project({ project }) {
                             layout="intrinsic"
                             height={imageSize}
                             width={imageSize}
-                            objectFit="contain"
+                            objectFit="cover"
                         />
                         
                     )} 
@@ -52,13 +52,12 @@ const StyledProject = styled.article`
 
         .project-img {
             border-radius: var(--radius);
-            border: 2px solid white;
         }
 
         .project-title {
-            font-size: 2rem;
+            font-size: var(--size-subtitle);
             letter-spacing: 1px;
-            /* margin-bottom: 2rem; */
+            padding: 1rem;
         }
 
         @media screen and (max-width: 900px) {

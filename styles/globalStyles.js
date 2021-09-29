@@ -21,7 +21,7 @@ export const GlobalStyles = css`
 	--weight-bold: 600;
 	--size-body: 1.6rem;
 	--size-title-main: 6rem;
-	--size-title-section: 3.5rem;
+	--size-title-section: 3rem;
 	--size-subtitle: 1.8rem;
 
 	/* Colors */

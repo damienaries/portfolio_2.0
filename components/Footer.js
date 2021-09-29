@@ -61,16 +61,15 @@ const StyledFooter = styled.div`
 
     .footer-email {
         font-size: var(--size-subtitle);
-        letter-spacing: .5px;
+        letter-spacing: 2px;
         margin: 2rem auto;
         border-radius: 50px;
         padding: .5rem 1.5rem;
         transition: all .1s ease-out;
         
         &:hover {
-            filter: brightness(110%);
+            filter: drop-shadow(0 0.25rem .5rem var(--color-white));
             cursor: pointer;
-            box-shadow: var(--shadow-light);
         }
     }
 
@@ -83,15 +82,12 @@ const StyledFooter = styled.div`
 
     .social-link { 
         & > svg {
-            font-size: 5rem;
-            padding: .75rem;
-            border-radius: var(--radius);
-            transition: all .1s ease-out;
+            font-size: 3rem;
+            transition: all .1s ease;
 
             &:hover {
-                filter: brightness(110%);
                 cursor: pointer;
-                box-shadow: var(--shadow-light);
+                filter: drop-shadow(0 0.25rem .5rem var(--color-white));
             }
         }
     }

@@ -13,6 +13,7 @@ export default function About({ author }) {
     
     return (
         <StyledAbout id="about">
+            <h3 className="section-title">About me</h3>
             <div className="flex-container">
                 <div className="about-left">
                     <BlockContent 
