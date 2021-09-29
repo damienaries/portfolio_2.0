@@ -21,9 +21,10 @@ export default function Projects(props) {
             </h3>
             <section className="projects-container">
                 {
-                    projects.map(project => (
-                        <Project project={project} key={project._id} />
-                    ))
+                    projects && 
+                        projects.map(project => (
+                            <Project project={project} key={project._id} />
+                        ))
                 }
             </section>
             <h3 className="section-title">
