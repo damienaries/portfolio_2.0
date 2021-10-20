@@ -19,9 +19,9 @@ export default function Featured({ projects }) {
 
 const StyledFeatured = styled.div`
     width: 100%;
-    padding: 3rem;
+    padding: 1rem 3rem;
     text-align: center;
-    margin: 4rem auto 5rem;
+    margin: 2rem auto 10rem;
 
     .section-title {
         font-size: var(--size-title-section);

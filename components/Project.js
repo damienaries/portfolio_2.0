@@ -13,7 +13,7 @@ export default function Project({ project }) {
         sanityClient, mainImage
     )
     const {width} = useWindowDimensions();
-    const imageSize = width > 1000 || width < 600 ? '350' : '250'
+    const imageSize = width > 1000 || width < 600 ? '300' : '250'
 
     return (
         <StyledProject>
@@ -30,7 +30,6 @@ export default function Project({ project }) {
                             width={imageSize}
                             objectFit="cover"
                         />
-                        
                     )} 
                 </article>
             </Link>
@@ -42,7 +41,7 @@ export default function Project({ project }) {
 const StyledProject = styled.article`
     margin: 2rem;
     border-radius: 10px;
-    padding: 3rem 5rem 1rem;
+    padding: 1rem 3rem;
     transition: all .2s ease-out;
     
         &:hover {

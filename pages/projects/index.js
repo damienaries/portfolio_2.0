@@ -9,7 +9,6 @@ import SkillsBanner from '../../components/SkillsBanner';
 /***************** 
  TODO
     Add more projects!
-    create jobs in sanity
 *************************/
 export default function Projects(props) {
     const { projects = [], technology = [] } = props;
@@ -20,7 +19,6 @@ export default function Projects(props) {
         technology.map(tech => temp.push(tech.title));
         setSkills(temp);
     }, [])
-    
 
     return (
         <StyledProjects>
@@ -36,7 +34,7 @@ export default function Projects(props) {
                 }
             </section>
             <h3 className="section-title">
-                Skills & Techs
+                Skills & Techs I love to work with
             </h3>
             {
                 technology && 
@@ -70,7 +68,6 @@ export async function getStaticProps() {
 const StyledProjects = styled.div`
     width: 100%;
     text-align: center;
-    padding: 2rem;
 
     .section-title {
         font-size: var(--size-title-section);
@@ -85,16 +82,18 @@ const StyledProjects = styled.div`
         align-items: center;
         flex-wrap: wrap;
         width: 100%;
-        margin: 2rem auto;
+        margin: 2rem auto 10rem;
         line-height: 2;
     }
 
     .exp-container {
         padding: 1rem;
+        margin: 2rem auto 10rem;
     }
 
-    @media screen and (max-width: 700px) {
-        padding: 1rem;
+    @media only screen and (max-width: 600px) {
+        .section-title {
+            font-size: calc(var(--size-body) + .75rem);
+        }
     }
-
 `

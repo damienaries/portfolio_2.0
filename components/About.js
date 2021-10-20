@@ -45,6 +45,7 @@ export default function About({ author }) {
 
 const StyledAbout = styled.section`
     width: 100%;
+    margin: 2rem auto 10rem;
 
     .flex-container {
         display: flex;
@@ -63,12 +64,9 @@ const StyledAbout = styled.section`
 
     .about-left {
 		flex: 2;
-
-		.bio-content {
-            font-size: var(--size-body);
-            letter-spacing: 1.5px;
-            margin-right: 2rem;
-		}
+        font-size: var(--size-body);
+        letter-spacing: 1.5px;
+        margin-right: 2rem;
     }
 
     .about-right {
@@ -85,10 +83,11 @@ const StyledAbout = styled.section`
     }
 
     @media screen and (max-width: 800px) {
-        margin-bottom: 3rem;
+        margin-bottom: 10rem;
 
         .about-left {
             padding: 0 2rem 2rem;
+            margin-bottom: 5rem;
         }
     }
 

@@ -36,9 +36,9 @@ export const GlobalStyles = css`
 	--color-blue-opaque: rgb(0, 15, 85);
 	--color-blue-light-opaque: rgb(62, 107, 158);
 	--color-blue-dark-opaque: rgb(0, 30, 64);
-	/* Opposite theme TBD */
+	/* Opposite Light theme TBD */
 
-	/* Shadows and border radius*/
+	/* Shadows and border radius */
 	--radius: 8px;
 	--shadow-low: 0px 2px 10px 0px rgba(34, 34, 34, 0.5);
 	--shadow-high: 0px 5px 10px 0px rgba(34, 34, 34, 0.55);
@@ -52,7 +52,6 @@ body {
 	font-family: var(--ff-body);
 	color: var(--color-white);
 	line-height: 1.4;
-	/* mix-blend-mode: luminosity; || hard-light || exclusion || difference || color-dodge; */
 }
 
 a,
