@@ -11,6 +11,7 @@ import SkillsBanner from '../../components/SkillsBanner';
 
 
 /*************************
+ Project Page 
  TODO:  REFACTOR && SPLIT
  *************************/
 
@@ -28,6 +29,8 @@ const Project = ({project}) => {
     const imageProps = useNextSanityImage(
         sanityClient, mainImage
     )
+
+    console.log('project', project);
 
     return (
         <StyledProject>

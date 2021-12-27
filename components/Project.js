@@ -7,8 +7,13 @@ import CodeLinks from './CodeLinks';
 import { useNextSanityImage } from 'next-sanity-image';
 import useWindowDimensions from '../hooks/useWindowDimensions';
 
+/*******************************
+ TODO add skills to project Card
+ ********************************/
+
 export default function Project({ project }) {
     const { slug, title, mainImage, liveLink, githubLink } = project;
+
     const imageProps = useNextSanityImage(
         sanityClient, mainImage
     )

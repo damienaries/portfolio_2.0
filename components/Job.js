@@ -1,6 +1,10 @@
 import React from 'react';
 import styled from '@emotion/styled';
 
+/**
+ *TODO add dynamoc jobs from sanity
+ */
+
 export default function Job() {
     return (
         <>

@@ -1,26 +1,17 @@
+import parse from 'html-react-parser';
 import styled from '@emotion/styled';
 import { SiMaterialUi, SiAmazonaws, SiReact, SiHtml5, SiCss3, SiNodeDotJs, SiNextDotJs, SiJavascript, SiTypescript, SiMongodb, SiTailwindcss, SiFirebase, SiStyledComponents, SiFigma } from 'react-icons/si';
 
 export default function SkillsBanner({ skills }) {
     // TODO generate dynamic icon imports + make icon string into component
+    console.log(skills);
 
     return (
         <StyledSkills>
             <span className="skill-scrolling">
-                <SiHtml5 className="skill" />
-                <SiCss3 className="skill" />
-                <SiJavascript className="skill" />
-                <SiTypescript className="skill" />
-                <SiReact className="skill"/>
-                <SiNextDotJs className="skill" />
-                <SiMaterialUi className="skill" />
-                <SiTailwindcss className="skill" />
-                <SiStyledComponents className="skill" />
-                <SiFigma className="skill" />
-                <SiAmazonaws className="skill" />
-                <SiMongodb className="skill" />
-                <SiFirebase className="skill" />
-                <SiNodeDotJs className="skill" />
+                {
+                    skills && skills.map(s => parse(`<${s} className="skill />`) )
+                }
             </span>
             <span className="skill-scrolling">
                 <SiHtml5 className="skill" />
@@ -56,6 +47,7 @@ const StyledSkills = styled.ul`
             display: flex;
             justify-content: center;
             align-items: center;
+            border: 1px solid yellow;
         }
 
         .skill {

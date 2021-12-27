@@ -14,9 +14,10 @@ export default function Projects(props) {
     const { projects = [], technology = [] } = props;
     const [skills, setSkills] = useState([]);
 
+    // Grab & save in state icon slug
     useEffect(() => {
         let temp = [];
-        technology.map(tech => temp.push(tech.title));
+        technology.map(tech => temp.push(tech.icon));
         setSkills(temp);
     }, [])
 
