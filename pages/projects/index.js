@@ -3,15 +3,11 @@ import styled from '@emotion/styled';
 import sanityClient from '../../lib/client';
 import groq from 'groq';
 import Project from '../../components/Project';
-import Job from '../../components/Job';
+import Jobs from '../../components/Jobs';
 import SkillsBanner from '../../components/SkillsBanner';
 
-/***************** 
- TODO
-    Add more projects!
-*************************/
 export default function Projects(props) {
-    const { projects = [], technology = [] } = props;
+    const { projects = [], technology = [], jobs = [] } = props;
     const [skills, setSkills] = useState([]);
 
     // Grab & save in state icon slug
@@ -45,7 +41,7 @@ export default function Projects(props) {
                 Work Experience
             </h3>
             <section className="exp-container">
-                <Job />
+                <Jobs jobs={jobs} />
             </section>
         </StyledProjects>
     )
@@ -58,10 +54,15 @@ export async function getStaticProps() {
     const technology = await sanityClient.fetch(groq`
         *[_type == "technology"]
       `)
+    const jobs = await sanityClient.fetch(groq`
+        *[_type == "job"]
+    `)
+
     return {
       props: {
         projects,
-        technology
+        technology,
+        jobs
       }
     }
   }
