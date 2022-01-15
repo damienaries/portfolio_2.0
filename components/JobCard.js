@@ -13,11 +13,11 @@ import client from '../lib/client';
  ******************************************/
 
 export default function JobCard({ job }) {
+    const { title, company, to, from, body } = job;
     
-    console.log(job)
     return (
         <StyledJobCard>
-            {/*<div className="info">
+            <div className="info">
                 <h4 className="job">
                     { title } - { company }
                 </h4>
@@ -26,9 +26,9 @@ export default function JobCard({ job }) {
                 </span>
             </div>
             
-            <p className="description">
+            <div className="description">
                 <BlockContent blocks={body} {...client.config()} />
-    </p>*/}
+            </div>
         </StyledJobCard>
     )
 }

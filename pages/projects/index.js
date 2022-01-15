@@ -55,7 +55,7 @@ export async function getStaticProps() {
         *[_type == "technology"]
       `)
     const jobs = await sanityClient.fetch(groq`
-        *[_type == "job"]
+        *[_type == "job"] | order(from desc)
     `)
 
     return {
