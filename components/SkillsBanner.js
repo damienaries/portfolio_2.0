@@ -1,12 +1,25 @@
+import { useState, useEffect } from 'react';
 import styled from '@emotion/styled';
+import parse from 'html-react-parser';
 import { SiMaterialUi, SiAmazonaws, SiReact, SiHtml5, SiCss3, SiNodeDotJs, SiNextDotJs, SiJavascript, SiTypescript, SiMongodb, SiTailwindcss, SiFirebase, SiStyledComponents, SiFigma } from 'react-icons/si';
 
 export default function SkillsBanner({ skills }) {
-    // TODO generate dynamic icon imports + make icon string into component
+    const [skillIcons, setSkillIcons] = useState([]);
+
+    // render icons, parse string
+    // only on work page rotate animation?
+    useEffect(() => {
+        let temp = [];
+        skills.forEach(s => {
+            s !== undefined ? temp.push(`<${s} className="skill" />`) : temp.push(`<SiReact className="skill" />`);
+        });
+        setSkillIcons(temp);
+    }, [])
+    
 
     return (
         <StyledSkills>
-            <span className="skill-scrolling">
+            {/*<span className="skill-scrolling">
                 <SiHtml5 className="skill" />
                 <SiCss3 className="skill" />
                 <SiJavascript className="skill" />
@@ -21,23 +34,13 @@ export default function SkillsBanner({ skills }) {
                 <SiMongodb className="skill" />
                 <SiFirebase className="skill" />
                 <SiNodeDotJs className="skill" />
-            </span>   
+    </span>  */}
+            
             
             <span className="skill-scrolling">
-                <SiHtml5 className="skill" />
-                <SiCss3 className="skill" />
-                <SiJavascript className="skill" />
-                <SiTypescript className="skill" />
-                <SiReact className="skill" />
-                <SiNextDotJs className="skill" />
-                <SiMaterialUi className="skill" />
-                <SiTailwindcss className="skill" />
-                <SiStyledComponents className="skill" />
-                <SiFigma className="skill" />
-                <SiAmazonaws className="skill" />
-                <SiMongodb className="skill" />
-                <SiFirebase className="skill" />
-                <SiNodeDotJs className="skill" />
+                {
+                    skillIcons && skillIcons.map(icon => parse(`<div>${icon}</div>`))
+                } 
             </span>      
         </StyledSkills>
     )
