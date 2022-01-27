@@ -18,6 +18,11 @@ export default {
         title: 'Icon',
         type: 'string',
       },
+      {
+        name:'icon',
+        title: 'Icon',
+        type: 'iconPicker'
+      },
     ],
   }
   
