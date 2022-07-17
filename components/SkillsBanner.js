@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from '@emotion/styled';
-// import parse from 'html-react-parser';
-import * as SimpleIcon from 'react-icons/si';
+import parse from 'html-react-parser';
 import { SiMaterialUi, SiAmazonaws, SiReact, SiHtml5, SiCss3, SiNodeDotJs, SiNextDotJs, SiJavascript, SiTypescript, SiMongodb, SiTailwindcss, SiFirebase, SiStyledComponents, SiFigma } from 'react-icons/si';
 
 export default function SkillsBanner({ skills }) {
-    console.log(skills);
+    console.log('skills', skills);
+    // build icon string
+    const iconString = '<' + skills.join(' className="skill" /><');
 
     return (
         <StyledSkills>
