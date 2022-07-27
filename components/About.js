@@ -32,6 +32,7 @@ export default function About({ author }) {
                                 layout="intrinsic"
                                 width={200}
                                 height={200}
+                                priority="true"
                                 src={urlFor(author?.image)
                                     .url()}
                                 />

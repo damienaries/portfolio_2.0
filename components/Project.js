@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import SkillsBanner from '../components/SkillsBanner';
 import styled from '@emotion/styled';
 import sanityClient from '../lib/client';
 import Link from 'next/link';
@@ -12,7 +13,7 @@ import useWindowDimensions from '../hooks/useWindowDimensions';
  ********************************/
 
 export default function Project({ project }) {
-    const { slug, title, mainImage, liveLink, githubLink } = project;
+    const { slug, title, mainImage, technologies, liveLink, githubLink } = project;
 
     const imageProps = useNextSanityImage(
         sanityClient, mainImage
@@ -34,10 +35,12 @@ export default function Project({ project }) {
                             height={imageSize}
                             width={imageSize}
                             objectFit="cover"
+                            priority="true"
                         />
                     )} 
                 </article>
             </Link>
+            {/*<SkillsBanner />*/}
             <CodeLinks githubLink={githubLink} liveLink={liveLink} />
         </StyledProject>
     )

@@ -6,7 +6,7 @@ import { SiMaterialUi, SiAmazonaws, SiReact, SiHtml5, SiCss3, SiNodeDotJs, SiNex
 export default function SkillsBanner({ skills }) {
     console.log('skills', skills);
     // build icon string
-    const iconString = '<' + skills.join(' className="skill" /><');
+    // const iconString = '<' + skills.join(' className="skill" /><');
 
     return (
         <StyledSkills>
