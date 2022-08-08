@@ -40,7 +40,6 @@ export default function Project({ project }) {
                     )} 
                 </article>
             </Link>
-            {/*<SkillsBanner />*/}
             <CodeLinks githubLink={githubLink} liveLink={liveLink} />
         </StyledProject>
     )

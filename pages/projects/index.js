@@ -31,7 +31,7 @@ export default function Projects(props) {
                 }
             </section>
             <h3 className="section-title">
-                Skills & Techs I love to work with
+                Technologies I love to work with
             </h3>
             {
                 technology && 
@@ -65,7 +65,7 @@ export async function getStaticProps() {
         jobs
       }
     }
-  }
+}
 
 const StyledProjects = styled.div`
     width: 100%;

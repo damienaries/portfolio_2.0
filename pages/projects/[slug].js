@@ -9,7 +9,6 @@ import Image from 'next/image';
 import { useNextSanityImage } from 'next-sanity-image';
 import SkillsBanner from '../../components/SkillsBanner';
 
-
 /*************************
  Project Page 
  TODO:  REFACTOR && SPLIT
@@ -29,8 +28,6 @@ const Project = ({project}) => {
     const imageProps = useNextSanityImage(
         sanityClient, mainImage
     )
-
-    console.log('project', project);
 
     return (
         <StyledProject>
@@ -58,12 +55,10 @@ const Project = ({project}) => {
                                 layout="responsive"
                                 sizes="(max-width: 600px) 80vw, 300px"
                                 {...imageProps}
+                                priority="true"
                             />
                         )}
-                    <CodeLinks 
-                        githubLink={githubLink} 
-                        liveLink={liveLink}
-                    />
+                        <CodeLinks githubLink={githubLink} liveLink={liveLink} />
                     </div>
                     
                     <div className="description">
@@ -74,6 +69,8 @@ const Project = ({project}) => {
         </StyledProject>
     )
 }
+
+export default Project;
 
 const query = groq`*[_type == "project" && slug.current == $slug][0]{
     title, 
@@ -229,5 +226,3 @@ const StyledProject = styled.section`
         }
     }
 `
-
-export default Project;

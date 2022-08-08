@@ -1,21 +1,24 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 import styled from '@emotion/styled';
-import parse from 'html-react-parser';
 import { SiMaterialUi, SiAmazonaws, SiReact, SiHtml5, SiCss3, SiNodeDotJs, SiNextDotJs, SiJavascript, SiTypescript, SiMongodb, SiTailwindcss, SiFirebase, SiStyledComponents, SiFigma } from 'react-icons/si';
 
 export default function SkillsBanner({ skills }) {
-    console.log('skills', skills);
-    // build icon string
-    // const iconString = '<' + skills.join(' className="skill" /><');
+    const [isScrolling, setIsScrolling] = useState(true);
+    const { pathname }  = useRouter();
 
+    console.log(skills);
+
+     useEffect(() => {
+        if(pathname === '/projects/slug') {
+            setIsScrolling(false);
+        }
+        return isScrolling;
+    },[pathname])
+    
     return (
         <StyledSkills>
-            {/*
-                skills && skills.map(s => (
-                    React.createElement(s)
-                ))
-                */}
-            <span className="skill-scrolling">
+            <span className={isScrolling ? 'skill-scrolling' : ''}>
                 <SiHtml5 className="skill" />
                 <SiCss3 className="skill" />
                 <SiJavascript className="skill" />
@@ -31,7 +34,8 @@ export default function SkillsBanner({ skills }) {
                 <SiFirebase className="skill" />
                 <SiNodeDotJs className="skill" />
             </span>
-            <span className="skill-scrolling">
+
+            <span className={isScrolling ? 'skill-scrolling' : ''}>
                 <SiHtml5 className="skill" />
                 <SiCss3 className="skill" />
                 <SiJavascript className="skill" />
