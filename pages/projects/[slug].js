@@ -43,9 +43,11 @@ const Project = ({project}) => {
                         ))}
                     </ul>
                 )}
-                {technologies && (
-                    <SkillsBanner skills={technologies} />
-                )}
+                <div className="tech-pills">
+                    {technologies && technologies.map(t => (
+                        <div className="tech-pill">{t}</div>
+                    ))}
+                </div>
                 <div className="bottom-grid">
                     <div className="left-container">
                         {mainImage && (
@@ -150,6 +152,27 @@ const StyledProject = styled.section`
                 cursor: pointer;
             }
         }
+
+        .tech-pills {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+            .tech-pill {
+                padding: .5rem 1rem;
+                margin: .5rem;
+                font-size: 1.5rem;
+                background-image: linear-gradient(
+                    to bottom right,
+                    var(--color-blue-light),
+                    var(--color-blue-light)
+                );
+                border-radius: 50px;
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+            }
+        
 
         .categories {
             position: absolute;

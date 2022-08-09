@@ -9,7 +9,7 @@ export default function SkillsBanner({ skills }) {
 
     console.log(skills);
 
-     useEffect(() => {
+    useEffect(() => {
         if(pathname === '/projects/slug') {
             setIsScrolling(false);
         }

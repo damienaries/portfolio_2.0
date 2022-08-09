@@ -20,6 +20,7 @@ export default function Project({ project }) {
     )
     const {width} = useWindowDimensions();
     const imageSize = width > 1000 || width < 600 ? '300' : '250'
+    console.log(liveLink);
 
     return (
         <StyledProject>
