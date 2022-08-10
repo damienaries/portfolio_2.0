@@ -176,16 +176,16 @@ const StyledProject = styled.section`
 
         .categories {
             position: absolute;
-            top: 1.5rem;
-            right: 1.5rem;
+            top: 1rem;
+            right: 1rem;
             display: flex;
             flex-direction: column;
 
             .categories-item {
                 padding: .5rem;
                 font-size: var(--size-body);
-                padding: .5rem 1.5rem;
-                margin: .5rem;
+                padding: .25rem 1.25rem;
+                margin: .25rem;
                 border-radius: 50px;
                 background-color: var(--color-blue-light);
             }

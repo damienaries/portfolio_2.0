@@ -1,24 +1,11 @@
-import { useState, useEffect } from 'react';
-import { useRouter } from 'next/router';
 import styled from '@emotion/styled';
 import { SiMaterialUi, SiAmazonaws, SiReact, SiHtml5, SiCss3, SiNodeDotJs, SiNextDotJs, SiJavascript, SiTypescript, SiMongodb, SiTailwindcss, SiFirebase, SiStyledComponents, SiFigma } from 'react-icons/si';
 
 export default function SkillsBanner({ skills }) {
-    const [isScrolling, setIsScrolling] = useState(true);
-    const { pathname }  = useRouter();
-
-    console.log(skills);
-
-    useEffect(() => {
-        if(pathname === '/projects/slug') {
-            setIsScrolling(false);
-        }
-        return isScrolling;
-    },[pathname])
     
     return (
         <StyledSkills>
-            <span className={isScrolling ? 'skill-scrolling' : ''}>
+            <span className="skill-scrolling">
                 <SiHtml5 className="skill" />
                 <SiCss3 className="skill" />
                 <SiJavascript className="skill" />
@@ -35,7 +22,7 @@ export default function SkillsBanner({ skills }) {
                 <SiNodeDotJs className="skill" />
             </span>
 
-            <span className={isScrolling ? 'skill-scrolling' : ''}>
+            <span className="skill-scrolling">
                 <SiHtml5 className="skill" />
                 <SiCss3 className="skill" />
                 <SiJavascript className="skill" />

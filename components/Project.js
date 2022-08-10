@@ -9,7 +9,7 @@ import { useNextSanityImage } from 'next-sanity-image';
 import useWindowDimensions from '../hooks/useWindowDimensions';
 
 /*******************************
- TODO add skills to project Card
+ TODO add tech icons to project Card
  ********************************/
 
 export default function Project({ project }) {
@@ -20,7 +20,6 @@ export default function Project({ project }) {
     )
     const {width} = useWindowDimensions();
     const imageSize = width > 1000 || width < 600 ? '300' : '250'
-    console.log(liveLink);
 
     return (
         <StyledProject>
