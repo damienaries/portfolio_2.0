@@ -6,8 +6,6 @@ import {FaGithub} from 'react-icons/fa'
 
 export default function CodeLinks({ githubLink, liveLink }) {
     
-
-
     return (
         <StyledLinks>
                 {githubLink && (

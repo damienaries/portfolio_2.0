@@ -3,13 +3,8 @@ import styled from '@emotion/styled';
 import BlockContent from '@sanity/block-content-to-react';
 import client from '../lib/client';
 
-// <BlockContent 
-//                 blocks={body}
-//                 imageOptions={{ w:320, h: 240, fit: 'max' }}
-//                 {...client.config()}
-//             />
 /****************************************
-    Also have access to technologies and categories in props
+    Can access to technologies and categories in props
  ******************************************/
 
 export default function JobCard({ job }) {
