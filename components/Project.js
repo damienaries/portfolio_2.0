@@ -1,25 +1,24 @@
-import React from 'react';
-import Image from 'next/image';
-import SkillsBanner from '../components/SkillsBanner';
 import styled from '@emotion/styled';
-import sanityClient from '../lib/client';
-import Link from 'next/link';
-import CodeLinks from './CodeLinks';
 import { useNextSanityImage } from 'next-sanity-image';
+import Image from 'next/image';
+import Link from 'next/link';
+import React from 'react';
 import useWindowDimensions from '../hooks/useWindowDimensions';
+import sanityClient from '../lib/client';
+import CodeLinks from './CodeLinks';
 
-/*******************************
- TODO add tech icons to project Card
- ********************************/
+/*
+    TODO make project page into modal test
+*/
 
 export default function Project({ project }) {
-    const { slug, title, mainImage, technologies, liveLink, githubLink } = project;
+    const { slug, title, mainImage, liveLink, githubLink } = project;
 
     const imageProps = useNextSanityImage(
         sanityClient, mainImage
     )
     const {width} = useWindowDimensions();
-    const imageSize = width > 1000 || width < 600 ? '300' : '250'
+    const imageSize = width > 1000 || width < 600 ? '300' : '250';
 
     return (
         <StyledProject>
@@ -50,7 +49,7 @@ const StyledProject = styled.article`
     border-radius: 10px;
     padding: 1rem 3rem;
     transition: all .2s ease-out;
-    
+        
         &:hover {
             background-color: var(--color-blue-light);
             cursor: pointer;
