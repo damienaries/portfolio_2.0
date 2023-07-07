@@ -12,61 +12,61 @@ import CodeLinks from './CodeLinks';
 */
 
 export default function Project({ project }) {
-    const { slug, title, mainImage, liveLink, githubLink } = project;
+	const { slug, title, mainImage, liveLink, githubLink } = project;
 
-    const imageProps = useNextSanityImage(
-        sanityClient, mainImage
-    )
-    const {width} = useWindowDimensions();
-    const imageSize = width > 1000 || width < 600 ? '300' : '250';
+	const imageProps = useNextSanityImage(sanityClient, mainImage);
+	const { width } = useWindowDimensions();
+	const imageSize = width > 1000 || width < 600 ? '300' : '250';
 
-    return (
-        <StyledProject>
-            <Link href={`/projects/${slug.current}`}>
-                <article key={title} className="project">
-                    <h4 className="project-title">{title}</h4>
-                    {mainImage && (
-                        <Image 
-                            className="project-img"
-                            alt={title}
-                            src={imageProps.src}
-                            layout="intrinsic"
-                            height={imageSize}
-                            width={imageSize}
-                            objectFit="cover"
-                            priority="true"
-                        />
-                    )} 
-                </article>
-            </Link>
-            <CodeLinks githubLink={githubLink} liveLink={liveLink} />
-        </StyledProject>
-    )
+	return (
+		project && (
+			<StyledProject>
+				<Link href={`/projects/${slug.current}`}>
+					<article key={title} className="project">
+						<h4 className="project-title">{title}</h4>
+						{mainImage && (
+							<Image
+								className="project-img"
+								alt={title}
+								src={imageProps.src}
+								layout="intrinsic"
+								height={imageSize}
+								width={imageSize}
+								objectFit="cover"
+								priority="true"
+							/>
+						)}
+					</article>
+				</Link>
+				<CodeLinks githubLink={githubLink} liveLink={liveLink} />
+			</StyledProject>
+		)
+	);
 }
 
 const StyledProject = styled.article`
-    margin: 2rem;
-    border-radius: 10px;
-    padding: 1rem 3rem;
-    transition: all .2s ease-out;
-        
-        &:hover {
-            background-color: var(--color-blue-light);
-            cursor: pointer;
-        }
+	margin: 2rem;
+	border-radius: 10px;
+	padding: 1rem 3rem;
+	transition: all 0.2s ease-out;
 
-        .project-img {
-            border-radius: var(--radius);
-        }
+	&:hover {
+		background-color: var(--color-blue-light);
+		cursor: pointer;
+	}
 
-        .project-title {
-            font-size: var(--size-subtitle);
-            letter-spacing: 1px;
-            padding: 1rem;
-        }
+	.project-img {
+		border-radius: var(--radius);
+	}
 
-        @media screen and (max-width: 900px) {
-            margin: 1rem;
-            padding: 2rem 3rem 1rem;
-        }
-`
+	.project-title {
+		font-size: var(--size-subtitle);
+		letter-spacing: 1px;
+		padding: 1rem;
+	}
+
+	@media screen and (max-width: 900px) {
+		margin: 1rem;
+		padding: 2rem 3rem 1rem;
+	}
+`;
