@@ -2,12 +2,24 @@ import { css } from '@emotion/react';
 
 export const lightTheme = {
 	background: 'rgb(253, 253, 253)',
-	text: '#222'
+	text: '#222',
+	iconHover: 'rgba(0, 30, 64, 0.9)',
+	cardBackground: 'var(--color-gray-light)',
+	buttonBg: 'rgba(69, 90, 100, .7)',
+	buttonText: '#fafafa',
+	buttonBgHover: 'rgba(69, 90, 100, 1)',
+	borderColor: '#222'
 };
 
 export const darkTheme = {
 	background: 'rgba(0, 30, 64, 0.9)',
-	text: 'rgb(253, 253, 253)'
+	text: 'rgb(253, 253, 253)',
+	iconHover: 'rgba(62, 107, 158, 0.4)',
+	cardBackground: 'var(--color-blue-light)',
+	buttonBg: 'var(--color-blue-light)',
+	buttonText: '#fafafa',
+	buttonBgHover: 'var(--color-blue-dark)',
+	borderColor: 'rgb(253, 253, 253)'
 };
 
 export const GlobalStyles = (theme) => css`
@@ -37,14 +49,11 @@ export const GlobalStyles = (theme) => css`
 		/* Colors */
 
 		/* Dark Theme */
-		--color-background: #222;
-		--color-text: rgb(253, 253, 253);
-
-		/* Dark blue (v2) theme */
-		--color-blue: rgba(0, 15, 85, 0.9);
 		--color-blue-light: rgba(62, 107, 158, 0.4);
 		--color-blue-dark: rgba(0, 30, 64, 0.9);
-		--color-accent: #d29700;
+
+		/* Light theme */
+		--color-gray-light: rgba(207, 216, 220, 0.4);
 
 		/* Colors no transparency */
 		--color-blue-opaque: rgb(0, 15, 85);
@@ -81,6 +90,10 @@ export const GlobalStyles = (theme) => css`
 
 	ul {
 		list-style-type: none;
+	}
+
+	svg:hover {
+		fill: ${theme.iconHover};
 	}
 
 	/* Change rem size for better text fit */

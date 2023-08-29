@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps }) {
 		<ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
 			<Layout toggleTheme={toggleTheme} theme={theme}>
 				<Global styles={GlobalStyles} />
-				<Component {...pageProps} />
+				<Component {...pageProps} theme={theme} />
 			</Layout>
 		</ThemeProvider>
 	);

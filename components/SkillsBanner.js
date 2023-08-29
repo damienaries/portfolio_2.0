@@ -13,7 +13,7 @@ import {
 	SiReact,
 	SiStyledcomponents,
 	SiTailwindcss,
-	SiTypescript,
+	SiTypescript
 } from 'react-icons/si';
 
 export default function SkillsBanner() {
@@ -62,7 +62,7 @@ const StyledSkills = styled.ul`
 	padding: 2rem;
 	margin: 2rem 0 8rem;
 	line-height: 2;
-	background-color: var(--color-blue-light);
+	background-color: ${(props) => props.theme.cardBackground};
 	overflow-x: scroll;
 
 	.skill-scrolling {

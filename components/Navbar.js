@@ -136,12 +136,11 @@ const StyledNav = styled.nav`
 		margin: 1rem;
 		font-size: var(--size-body);
 		letter-spacing: 3px;
-		transition: filter 0.3s ease;
-		padding-bottom: 0.5rem;
+		transition: filter 0.5s ease;
+		padding-bottom: 0.25rem;
 
-		&:hover {
-			border-bottom: 2px solid var(--color-white);
-			filter: drop-shadow(0 0.25rem 0.5rem var(--color-white));
+		&:hover:not(.theme-toggler) {
+			border-bottom: 2px solid ${(props) => props.theme.borderColor};
 		}
 	}
 

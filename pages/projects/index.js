@@ -51,8 +51,8 @@ export async function getStaticProps() {
 		props: {
 			projects,
 			technology,
-			jobs,
-		},
+			jobs
+		}
 	};
 }
 

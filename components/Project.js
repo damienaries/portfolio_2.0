@@ -51,7 +51,7 @@ const StyledProject = styled.article`
 	transition: all 0.2s ease-out;
 
 	&:hover {
-		background-color: var(--color-blue-light);
+		background-color: ${(props) => props.theme.cardBackground};
 		cursor: pointer;
 	}
 
