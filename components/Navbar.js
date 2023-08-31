@@ -12,7 +12,7 @@ import { fadeIn } from '../styles/animations';
     restyle mobile nav
 */
 
-export default function Navbar({ theme, toggleTheme }) {
+export default function Navbar({ theme, toggleTheme, toggleAbout}) {
 	const router = useRouter();
 	const { width } = useWindowDimensions();
 	const [navOpen, setIsNavOpen] = useState(false);
@@ -34,6 +34,7 @@ export default function Navbar({ theme, toggleTheme }) {
 		}, 15000);
 	};
 
+
 	return (
 		<StyledNav>
 			<div className="topbar-left" onClick={() => router.push('/')}>
@@ -53,6 +54,12 @@ export default function Navbar({ theme, toggleTheme }) {
 						<Link href="#contact">
 							<a className="topbar-right-link">Contact</a>
 						</Link>
+						<div
+							className="topbar-right-link modal-btn"
+							onClick={toggleAbout}
+						>
+							About
+						</div>
 						<div
 							className="topbar-right-link theme-toggler"
 							onClick={toggleTheme}

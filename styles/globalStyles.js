@@ -8,7 +8,8 @@ export const lightTheme = {
 	buttonBg: 'rgba(69, 90, 100, .7)',
 	buttonText: '#fafafa',
 	buttonBgHover: 'rgba(69, 90, 100, 1)',
-	borderColor: '#222'
+	borderColor: '#222',
+	overlay: 'var(--color-gray-dark)'
 };
 
 export const darkTheme = {
@@ -19,7 +20,8 @@ export const darkTheme = {
 	buttonBg: 'var(--color-blue-light)',
 	buttonText: '#fafafa',
 	buttonBgHover: 'var(--color-blue-dark)',
-	borderColor: 'rgb(253, 253, 253)'
+	borderColor: 'rgb(253, 253, 253)',
+	overlay: 'var(--color-gray-light)'
 };
 
 export const GlobalStyles = (theme) => css`
@@ -54,6 +56,7 @@ export const GlobalStyles = (theme) => css`
 
 		/* Light theme */
 		--color-gray-light: rgba(207, 216, 220, 0.4);
+		--color-gray-dark: rgba(69, 90, 100, 0.7);
 
 		/* Colors no transparency */
 		--color-blue-opaque: rgb(0, 15, 85);

@@ -1,15 +1,23 @@
 import styled from '@emotion/styled';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
+import { useState } from 'react';
+import AboutModal from '../components/AboutModal';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 
 const Layout = ({ children, theme, toggleTheme }) => {
 	const router = useRouter();
+	const [aboutOpen, setAboutOpen] = useState(true);
+
 	const pageTitle =
 		router.pathname === '/'
 			? 'Welcome'
 			: router.pathname.substring(1).toUpperCase();
+
+	const toggleAbout = () => {
+		setAboutOpen(!aboutOpen)
+	}
 
 	return (
 		<StyledLayout id="layout">
@@ -22,9 +30,10 @@ const Layout = ({ children, theme, toggleTheme }) => {
 				/>
 				<link rel="icon" href="/flux-capacitor.svg" />
 			</Head>
-			<Navbar theme={theme} toggleTheme={toggleTheme} />
+			<Navbar theme={theme} toggleTheme={toggleTheme} toggleAbout={toggleAbout}/>
 			{children}
 			<Footer />
+			<AboutModal aboutOpen={aboutOpen} toggleAbout={toggleAbout} />
 		</StyledLayout>
 	);
 };
