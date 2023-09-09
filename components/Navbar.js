@@ -31,7 +31,7 @@ export default function Navbar({ theme, toggleTheme, toggleAbout}) {
 		setIsNavOpen((prevState) => !prevState);
 		setTimeout(() => {
 			setIsNavOpen(false);
-		}, 15000);
+		}, 15000000);
 	};
 
 
@@ -96,6 +96,18 @@ export default function Navbar({ theme, toggleTheme, toggleAbout}) {
 							Contact
 						</a>
 					</Link>
+					<div
+							className="mobile-nav-link modal-btn"
+							onClick={toggleAbout}
+						>
+							About
+						</div>
+						<div
+							className="mobile-nav-link theme-toggler"
+							onClick={toggleTheme}
+						>
+							{theme === 'dark' ? <FaSun /> : <FaMoon />}
+						</div>
 				</div>
 			)}
 		</StyledNav>
@@ -156,7 +168,7 @@ const StyledNav = styled.nav`
 		position: fixed;
 		top: 2rem;
 		right: 1.5rem;
-		z-index: 15;
+		z-index: 1500;
 
 		&:hover {
 			cursor: pointer;
@@ -173,14 +185,9 @@ const StyledNav = styled.nav`
 		padding: 2rem 1rem;
 		height: 100vh;
 		width: 100vw;
-		background-image: linear-gradient(
-			to right bottom,
-			var(--color-blue),
-			var(--color-blue-light-opaque),
-			var(--color-blue-dark-opaque)
-		);
-		animation: ${fadeIn} 0.2s ease-out;
-		z-index: 10;
+		background-image: ${(props) => props.theme.backgroundGradient};
+		animation: ${fadeIn} 0.3s ease-out;
+		z-index: 100;
 
 		&-link {
 			text-align: center;
@@ -190,8 +197,7 @@ const StyledNav = styled.nav`
 			letter-spacing: 3px;
 
 			&:focus,
-			&:active,
-			&:hover {
+			&:active {
 				border-bottom: 1px solid var(--color-white);
 			}
 		}

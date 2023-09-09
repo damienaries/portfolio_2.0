@@ -9,7 +9,8 @@ export const lightTheme = {
 	buttonText: '#fafafa',
 	buttonBgHover: 'rgba(69, 90, 100, 1)',
 	borderColor: '#222',
-	overlay: 'var(--color-gray-dark)'
+	overlay: 'var(--color-gray-dark)',
+	backgroundGradient: 'linear-gradient(to right bottom, rgb(253, 253, 253),rgb(253, 253, 253));'
 };
 
 export const darkTheme = {
@@ -21,7 +22,8 @@ export const darkTheme = {
 	buttonText: '#fafafa',
 	buttonBgHover: 'var(--color-blue-dark)',
 	borderColor: 'rgb(253, 253, 253)',
-	overlay: 'var(--color-gray-light)'
+	overlay: 'var(--color-gray-light)',
+	backgroundGradient: 'linear-gradient(to right bottom, var(--color-blue-light-opaque), var(--color-blue-light-opaque), var(--color-blue-dark-opaque));'
 };
 
 export const GlobalStyles = (theme) => css`
