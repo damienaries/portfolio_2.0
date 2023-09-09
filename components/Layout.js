@@ -8,7 +8,7 @@ import Navbar from '../components/Navbar';
 
 const Layout = ({ children, theme, toggleTheme }) => {
 	const router = useRouter();
-	const [aboutOpen, setAboutOpen] = useState(true);
+	const [aboutOpen, setAboutOpen] = useState(false);
 
 	const pageTitle =
 		router.pathname === '/'

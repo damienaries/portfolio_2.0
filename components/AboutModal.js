@@ -17,7 +17,6 @@ function AboutModal({toggleAbout, aboutOpen}) {
             </p>
 				</div>
 				<div className="about-right">
-					
 				</div>
 			</div>
 		</StyledAbout>
@@ -32,7 +31,7 @@ const StyledAboutModal = styled.div`
 position: fixed;
 inset: 0;
 height: 100vh;
-max-height: 100vw;
+width: 100vw;
 z-index: 100;
 display: flex;
 align-items: center;
@@ -52,83 +51,79 @@ background: ${(props) => props.theme.background};
 color: ${(props) => props.theme.text};
 position: absolute;
 border-radius: 3px;
-background-image: linear-gradient(to bottom right, rgba(238, 238, 238, .5), rgba(238, 238, 238, .5)), url('assets/images/about-modal-bg.png');
-background-position: right bottom;
-background-repeat: no-repeat;
-background-size: 60%;
 }
 
 .close-icon {
   position: absolute;
   top: 2rem;
   right: 2rem;
-  font-size: 2rem;
+  font-size: 3rem;
+  padding: .5rem;
   color: inherit;
   cursor: pointer;
+  border-radius: 100px;
+  transition: .2s ease;
 
   &:hover {
     color: ${(props) => props.theme.iconHover};
+    border: 1px solid ${(props) => props.theme.iconHover}; 
   }
 }
 `
 
 const StyledAbout = styled.section`
-	width: 100%;
-	margin: 2rem auto 10rem;
-
 	.flex-container {
 		display: flex;
 		justify-content: space-between;
-		width: 80%;
-		margin: 0 auto 2rem;
+    align-items: flex-start;
+		margin: 0 auto;
+    height: 70vh;
 	}
 
 	.section-title {
 		font-size: var(--size-title-section);
-		top: 1rem;
 		text-align: left;
 		margin-bottom: 4rem;
 		font-weight: var(--weight-thin);
+    padding: 2rem;
 	}
 
 	.about-left {
-		flex: 2;
+    width: 40%;
 		font-size: var(--size-body);
 		letter-spacing: 1.5px;
-		margin-right: 2rem;
+    margin-right: 2rem;
+    padding: 0 2rem;
 	}
 
 	.about-right {
-		flex: 1;
-
-		.image-container {
-			text-align: center;
-		}
-
-		.my-pic {
-			max-width: 10rem;
-			border-radius: var(--radius);
-		}
+		width: 60%;
+    height: 500px;
+		background-image: linear-gradient(to bottom right, rgba(238, 238, 238, .5), rgba(238, 238, 238, .3)),  
+    url('/assets/images/about-modal-bg.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 	}
 
-	@media screen and (max-width: 800px) {
-		margin-bottom: 10rem;
+	@media screen and (max-width: 768px) {
 
-		.about-left {
-			padding: 0 2rem 2rem;
-			margin-bottom: 5rem;
-		}
-	}
+    .about-modal {
+      width: 95vw;
+      height: 95vh;
+      top: 1rem;
+      left: 1rem;
+      transform: translate(0, 0);
+    }
 
-	@media screen and (max-width: 600px) {
 		.flex-container {
 			flex-direction: column;
 		}
 
-		.about-left {
-			.bio-content {
-				margin-bottom: 2rem;
-			}
+		.about-left,
+    .about-right {
+      width: 100%;
+      padding: 1rem 2rem;
 		}
 	}
 `;

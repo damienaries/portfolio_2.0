@@ -13,9 +13,9 @@ export const lightTheme = {
 };
 
 export const darkTheme = {
-	background: 'rgba(0, 30, 64, 0.9)',
+	background: 'rgb(0, 30, 64)',
 	text: 'rgb(253, 253, 253)',
-	iconHover: 'rgba(62, 107, 158, 0.4)',
+	iconHover: 'var(--color-blue-light-opaque)',
 	cardBackground: 'var(--color-blue-light)',
 	buttonBg: 'var(--color-blue-light)',
 	buttonText: '#fafafa',
