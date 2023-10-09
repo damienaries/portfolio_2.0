@@ -4,53 +4,62 @@ import {
 	SiCss3,
 	SiFigma,
 	SiFirebase,
-	SiHtml5,
 	SiJavascript,
+	SiLaravel,
 	SiMongodb,
 	SiMui,
 	SiNextdotjs,
 	SiNodedotjs,
+	SiPhp,
 	SiReact,
 	SiStyledcomponents,
 	SiTailwindcss,
-	SiTypescript
+	SiTypescript,
+	SiVuedotjs
 } from 'react-icons/si';
 
+// Todo 
+// block scroll? hide scrollbar, or fix empty space on the right
+// blur border edges 
 export default function SkillsBanner() {
 	return (
 		<StyledSkills>
 			<span className="skill-scrolling">
-				<SiHtml5 className="skill" />
-				<SiCss3 className="skill" />
 				<SiJavascript className="skill" />
 				<SiTypescript className="skill" />
+				<SiPhp className="skill" />
+				<SiVuedotjs className="skill" />
+				<SiLaravel className="skill" />
 				<SiReact className="skill" />
 				<SiNextdotjs className="skill" />
-				<SiMui className="skill" />
+				<SiCss3 className="skill" />
 				<SiTailwindcss className="skill" />
+				<SiMui className="skill" />
 				<SiStyledcomponents className="skill" />
-				<SiFigma className="skill" />
 				<SiAmazonaws className="skill" />
 				<SiMongodb className="skill" />
 				<SiFirebase className="skill" />
 				<SiNodedotjs className="skill" />
+				<SiFigma className="skill" />
 			</span>
 
 			<span className="skill-scrolling">
-				<SiHtml5 className="skill" />
-				<SiCss3 className="skill" />
 				<SiJavascript className="skill" />
 				<SiTypescript className="skill" />
+				<SiPhp className="skill" />
+				<SiVuedotjs className="skill" />
+				<SiLaravel className="skill" />
 				<SiReact className="skill" />
 				<SiNextdotjs className="skill" />
-				<SiMui className="skill" />
+				<SiCss3 className="skill" />
 				<SiTailwindcss className="skill" />
+				<SiMui className="skill" />
 				<SiStyledcomponents className="skill" />
-				<SiFigma className="skill" />
 				<SiAmazonaws className="skill" />
 				<SiMongodb className="skill" />
 				<SiFirebase className="skill" />
 				<SiNodedotjs className="skill" />
+				<SiFigma className="skill" />
 			</span>
 		</StyledSkills>
 	);

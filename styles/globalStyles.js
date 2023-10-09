@@ -10,7 +10,7 @@ export const lightTheme = {
 	buttonBgHover: 'rgba(69, 90, 100, 1)',
 	borderColor: '#222',
 	overlay: 'var(--color-gray-dark)',
-	backgroundGradient: 'linear-gradient(to right bottom, rgb(253, 253, 253),rgb(253, 253, 253));'
+	backgroundGradient: 'linear-gradient(to right, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.4))'
 };
 
 export const darkTheme = {
@@ -23,7 +23,7 @@ export const darkTheme = {
 	buttonBgHover: 'var(--color-blue-dark)',
 	borderColor: 'rgb(253, 253, 253)',
 	overlay: 'var(--color-gray-light)',
-	backgroundGradient: 'linear-gradient(to right bottom, var(--color-blue-light-opaque), var(--color-blue-light-opaque), var(--color-blue-dark-opaque));'
+	backgroundGradient: 'linear-gradient(to right bottom, var(--color-blue-dark), var(--color-blue-light))'
 };
 
 export const GlobalStyles = (theme) => css`
@@ -42,18 +42,19 @@ export const GlobalStyles = (theme) => css`
 		/* Fonts */
 		--ff-body: 'Mulish', sans-serif;
 		--ff-title: 'Titillium Web', sans-serif;
+		
 		/* Typography */
 		--weight-thin: 200;
 		--weight-bold: 600;
 		--size-body: 1.6rem;
-		--size-title-main: 6rem;
+		--size-title-main: 4rem;
 		--size-title-section: 3rem;
 		--size-subtitle: 1.8rem;
 
 		/* Colors */
 
 		/* Dark Theme */
-		--color-blue-light: rgba(62, 107, 158, 0.4);
+		--color-blue-light: rgba(62, 107, 158, 0.3);
 		--color-blue-dark: rgba(0, 30, 64, 0.9);
 
 		/* Light theme */
@@ -99,22 +100,5 @@ export const GlobalStyles = (theme) => css`
 
 	svg:hover {
 		fill: ${theme.iconHover};
-	}
-
-	/* Change rem size for better text fit */
-	/* Mobile */
-	@media screen and (max-width: 600px) {
-		html,
-		body {
-			font-size: 70%;
-		}
-	}
-
-	/* large screen and hi-resolution */
-	@media screen and (min-width: 1500px) {
-		html,
-		body {
-			font-size: 80%;
-		}
 	}
 `;

@@ -55,12 +55,6 @@ export default function Navbar({ theme, toggleTheme, toggleAbout}) {
 							<a className="topbar-right-link">Contact</a>
 						</Link>
 						<div
-							className="topbar-right-link modal-btn"
-							onClick={toggleAbout}
-						>
-							About
-						</div>
-						<div
 							className="topbar-right-link theme-toggler"
 							onClick={toggleTheme}
 						>
@@ -96,12 +90,6 @@ export default function Navbar({ theme, toggleTheme, toggleAbout}) {
 							Contact
 						</a>
 					</Link>
-					<div
-							className="mobile-nav-link modal-btn"
-							onClick={toggleAbout}
-						>
-							About
-						</div>
 						<div
 							className="mobile-nav-link theme-toggler"
 							onClick={toggleTheme}
@@ -114,14 +102,13 @@ export default function Navbar({ theme, toggleTheme, toggleAbout}) {
 	);
 }
 
-const StyledNav = styled.nav`
+const StyledNav = styled.header`
 	width: 100%;
 	height: 60px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	padding: 3rem;
-	position: relative;
 
 	.topbar-left {
 		font-size: var(--size-subtitle);
@@ -146,7 +133,7 @@ const StyledNav = styled.nav`
 		.theme-toggler {
 			transform: translateY(2px);
 			&:hover {
-				cursor: grabbing;
+				cursor: pointer;
 			}
 		}
 	}
@@ -185,7 +172,7 @@ const StyledNav = styled.nav`
 		padding: 2rem 1rem;
 		height: 100vh;
 		width: 100vw;
-		background-image: ${(props) => props.theme.backgroundGradient};
+		background-color: ${(props) => props.theme.background};
 		animation: ${fadeIn} 0.3s ease-out;
 		z-index: 100;
 

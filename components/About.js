@@ -1,104 +1,100 @@
 import styled from '@emotion/styled';
-import BlockContent from '@sanity/block-content-to-react';
-import ImageUrlBuilder from '@sanity/image-url';
-import Image from 'next/image';
-import React from 'react';
-import sanityClient from '../lib/client';
+import Link from 'next/dist/client/link';
 
-function urlFor(source) {
-	return ImageUrlBuilder(sanityClient).image(source);
-}
+function AboutSection() {
 
-export default function About({ author }) {
-	return (
-		<StyledAbout id="about">
-			<h3 className="section-title">About me</h3>
-			<div className="flex-container">
-				<div className="about-left">
-					<BlockContent
-						className="bio-content"
-						blocks={author?.bio}
-						imageOptions={{ w: 320, h: 240, fit: 'max' }}
-						{...sanityClient.config()}
-					/>
-				</div>
-				<div className="about-right">
-					{author?.image && (
-						<div className="image-container">
-							<Image
-								className="my-pic"
-								alt="Sort of recent picture of me"
-								layout="intrinsic"
-								width={200}
-								height={200}
-								priority="true"
-								src={urlFor(author?.image).url()}
-							/>
-						</div>
-					)}
-				</div>
+  return ( 
+  <StyledAboutSection>
+    <div className="about-content">
+			<h1 className="home-title">Welcome</h1>
+			<div className="about-body">
+				<p className="body-paragraph">
+					Hi! I'm Damien. I'm a Full Stack developer in Los Angeles, CA. <br></br>I love writing JavaScript and PhP and specialize in React, Next.js, Vue &amp; Laravel.
+				</p>
+				<p className="body-paragraph">
+					I'm a lifelong learner, passionate about all things Javascript, Climate Tech, Ed Tech and the possibilities of AI. Always looking to grow and improve, 
+					I aspire to take part in building beautiful, fast, fun and exciting programs that will benefit us all. 
+				</p>
+				<p className="body-paragraph">
+					Originally from France, I traveled around Europe and North America during the course of my previous career managing cocktail bars and currently live with my family in California.
+				</p>
+				<Link href="/projects">
+					<button>Want to learn about my work?</button>
+				</Link>
 			</div>
-		</StyledAbout>
-	);
+    </div>
+  </StyledAboutSection>
+  );
 }
 
-const StyledAbout = styled.section`
-	width: 100%;
-	margin: 2rem auto 10rem;
+export default AboutSection;
 
-	.flex-container {
-		display: flex;
-		justify-content: space-between;
-		width: 80%;
-		margin: 0 auto 2rem;
+const StyledAboutSection = styled.section`
+height: calc(100vh - 60px);
+display: flex;
+align-items: start;
+justify-content: center;
+background: ${(props) => props.theme.background};
+
+.about-content {
+	margin: 6rem auto;
+	width: 85vw;
+	max-width: 1400px;
+	height: 75%;
+	background: ${(props) => props.theme.cardBackground};
+	color: ${(props) => props.theme.text};
+	border-radius:  var(--radius);
+	box-shadow: var(--shadow-low);
+	overflow: hidden;
+	background-image: ${(props) => props.theme.backgroundGradient}, url('assets/images/about-bg-ext.webp');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	padding: 4rem;
+
+	.home-title {
+		font-size: var(--size-title-main);
+    font-weight: var(--weight-thin);
+    letter-spacing: .1rem;
+		text-align: left;
 	}
 
-	.section-title {
-		font-size: var(--size-title-section);
-		top: 1rem;
-		text-align: center;
-		margin-bottom: 4rem;
-		font-weight: var(--weight-thin);
-	}
-
-	.about-left {
-		flex: 2;
+	.about-body {
+    width: 55%;
 		font-size: var(--size-body);
-		letter-spacing: 1.5px;
-		margin-right: 2rem;
+
+		.body-paragraph {
+			margin: 2rem 0;
+		}
+
+    button { /* Tbd button to work page? */
+      background-color: transparent;
+      border: .5px solid ${(props) => props.theme.text};
+      outline: transparent;
+      color: ${(props) => props.theme.text};
+      padding: .5rem 1rem;
+      font-size: 1.4rem;
+      border-radius: 20px;
+      margin: 3rem 0 0;
+      
+      &:hover {
+        outline: ${(props) => props.theme.text};
+        cursor: pointer;
+        background-color: ${(props) => props.theme.buttonBgHover}
+      }
+    }
 	}
 
-	.about-right {
-		flex: 1;
+	@media screen and (max-width: 768px) {
+			width: 90vw;
+			height: auto;
+			background-position: 90%;
 
-		.image-container {
-			text-align: center;
-		}
 
-		.my-pic {
-			max-width: 10rem;
-			border-radius: var(--radius);
-		}
-	}
-
-	@media screen and (max-width: 800px) {
-		margin-bottom: 10rem;
-
-		.about-left {
-			padding: 0 2rem 2rem;
-			margin-bottom: 5rem;
+		.about-body {
+      width: 100%;
+			padding: 3rem 1rem 50rem;
 		}
 	}
-
-	@media screen and (max-width: 600px) {
-		.flex-container {
-			flex-direction: column;
-		}
-
-		.about-left {
-			.bio-content {
-				margin-bottom: 2rem;
-			}
-		}
-	}
-`;
+}
+`

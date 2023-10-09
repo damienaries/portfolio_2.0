@@ -36,7 +36,7 @@ export default function Footer() {
 	);
 }
 
-const StyledFooter = styled.div`
+const StyledFooter = styled.footer`
 	width: 100%;
 	padding: 2rem 4rem;
 	font-size: 1.5rem;

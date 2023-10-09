@@ -7,8 +7,9 @@ import sanityClient from '../../lib/client';
 
 /*
     TODO add date to project for sorting
-    fix card size and scrolling grid
     bar exp in array and scroll horizontal, link to services -> consulting
+		instead of project card, loop and list the project on slug. 
+		delete slug project page?
 */
 
 export default function Projects(props) {
@@ -16,6 +17,9 @@ export default function Projects(props) {
 
 	return (
 		<StyledProjects>
+			<h3 className="section-title">Technologies I love to work with</h3>
+			{technology && <SkillsBanner />}
+			
 			<section className="projects-container">
 				<h3 className="section-title">Recent Projects</h3>
 				<div className="projects-grid">
@@ -25,8 +29,6 @@ export default function Projects(props) {
 						))}
 				</div>
 			</section>
-			<h3 className="section-title">Technologies I love to work with</h3>
-			{technology && <SkillsBanner />}
 
 			<section className="exp-container">
 				<h3 className="section-title">Work Experience</h3>
@@ -69,15 +71,16 @@ const StyledProjects = styled.div`
 
 	.projects-container {
 		width: 100%;
-		max-width: 1400px;
+		max-width: 1300px;
 		margin: 2rem auto;
 	}
 
 	.projects-grid {
 		display: grid;
-		grid-template-columns: repeat(4, 1fr);
+		grid-template-columns: repeat(2, 1fr);
 		grid-template-rows: repeat(2, 1fr);
 		overflow-x: scroll;
+		align-content: center;
 	}
 
 	.exp-container {

@@ -1,8 +1,6 @@
-import styled from '@emotion/styled';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
-import AboutModal from '../components/AboutModal';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 
@@ -20,7 +18,7 @@ const Layout = ({ children, theme, toggleTheme }) => {
 	}
 
 	return (
-		<StyledLayout id="layout">
+		<>
 			<Head>
 				<title>Damien Aries | {pageTitle}</title>
 				<meta
@@ -33,13 +31,8 @@ const Layout = ({ children, theme, toggleTheme }) => {
 			<Navbar theme={theme} toggleTheme={toggleTheme} toggleAbout={toggleAbout}/>
 			{children}
 			<Footer />
-			<AboutModal aboutOpen={aboutOpen} toggleAbout={toggleAbout} />
-		</StyledLayout>
+		</>
 	);
 };
-
-const StyledLayout = styled.div`
-	position: relative;
-`;
 
 export default Layout;

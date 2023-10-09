@@ -1,28 +1,14 @@
 import styled from '@emotion/styled';
-import Banner from '../components/Banner';
+import About from '../components/About';
 
-export default function Home(props) {
-  const { projects = [] } = props;
+export default function Home() {
 
 	return (
 		<HomePage>
-			<Banner />
-			{/* <Projects /> */}
+			<About />
 		</HomePage>
 	);
 }
-
-// export async function getStaticProps() {
-// 	const projects = await sanityClient.fetch(groq`
-//       *[_type == "project" && featured == true]
-//     `);
-
-// 	return {
-// 		props: {
-// 			projects,
-// 		}
-// 	};
-// }
 
 // Page Styles
 const HomePage = styled.main`
