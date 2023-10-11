@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 import groq from 'groq';
-import Jobs from '../../components/Jobs';
 import Project from '../../components/Project';
 import SkillsBanner from '../../components/SkillsBanner';
 import sanityClient from '../../lib/client';
@@ -8,31 +7,26 @@ import sanityClient from '../../lib/client';
 /*
     TODO add date to project for sorting
     bar exp in array and scroll horizontal, link to services -> consulting
-		instead of project card, loop and list the project on slug. 
-		delete slug project page?
+		classify project per category, each category becomes a tab : Work, Freelance, Personal project
+		work: ivisa, concept, blurb for previous bar exp with a couple of examples
+		freelance: kyle and dad, sarah and judi
+		personal projects: jamming, space tourism, cocktail app, site template?
 */
 
 export default function Projects(props) {
-	const { projects = [], technology = [], jobs = [] } = props;
+	const { projects = []} = props;
 
 	return (
 		<StyledProjects>
-			<h3 className="section-title">Technologies I love to work with</h3>
-			{technology && <SkillsBanner />}
-			
+			<SkillsBanner />
 			<section className="projects-container">
-				<h3 className="section-title">Recent Projects</h3>
+				<h1 className="page-title">Recent Work</h1>
 				<div className="projects-grid">
 					{projects &&
 						projects.map((project) => (
 							<Project project={project} key={project._id} />
 						))}
 				</div>
-			</section>
-
-			<section className="exp-container">
-				<h3 className="section-title">Work Experience</h3>
-				<Jobs jobs={jobs} />
 			</section>
 		</StyledProjects>
 	);
@@ -42,27 +36,20 @@ export async function getStaticProps() {
 	const projects = await sanityClient.fetch(groq`
         *[_type == "project"] | order(publishedAt desc)
       `);
-	const technology = await sanityClient.fetch(groq`
-        *[_type == "technology"]
-      `);
-	const jobs = await sanityClient.fetch(groq`
-        *[_type == "job"] | order(from desc)
-    `);
 
 	return {
 		props: {
-			projects,
-			technology,
-			jobs
+			projects
 		}
 	};
 }
 
-const StyledProjects = styled.div`
+const StyledProjects = styled.main`
 	width: 100%;
 	text-align: center;
+	display: flex;
 
-	.section-title {
+	.page-title {
 		font-size: var(--size-title-section);
 		font-weight: var(--weight-thin);
 		text-transform: capitalize;
@@ -89,10 +76,6 @@ const StyledProjects = styled.div`
 	}
 
 	@media only screen and (max-width: 600px) {
-		.section-title {
-			font-size: calc(var(--size-body) + 0.75rem);
-		}
-
 		.projects-grid {
 			grid-template-columns: 1fr;
 			grid-template-rows: auto;

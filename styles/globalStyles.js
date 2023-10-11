@@ -29,9 +29,6 @@ export const darkTheme = {
 export const GlobalStyles = (theme) => css`
 	@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200;400;700&family=Titillium+Web:wght@200;400;600;700&display=swap');
 
-	/* font-family: 'Mulish', sans-serif; */
-	/* font-family: 'Titillium Web', sans-serif; */
-
 	* {
 		box-sizing: border-box;
 		padding: 0;
@@ -40,8 +37,7 @@ export const GlobalStyles = (theme) => css`
 
 	:root {
 		/* Fonts */
-		--ff-body: 'Mulish', sans-serif;
-		--ff-title: 'Titillium Web', sans-serif;
+		--ff-main: 'Mulish', sans-serif;
 		
 		/* Typography */
 		--weight-thin: 200;
@@ -77,7 +73,7 @@ export const GlobalStyles = (theme) => css`
 	body {
 		font-size: 62.5%; /* make 1rem = 10px */
 		scroll-behavior: smooth;
-		font-family: var(--ff-body);
+		font-family: var(--ff-main);
 		color: ${theme.text};
 		background-color: ${theme.background};
 		line-height: 1.4;

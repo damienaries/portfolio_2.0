@@ -18,9 +18,6 @@ import {
 	SiVuedotjs
 } from 'react-icons/si';
 
-// Todo 
-// block scroll? hide scrollbar, or fix empty space on the right
-// blur border edges 
 export default function SkillsBanner() {
 	return (
 		<StyledSkills>
@@ -65,24 +62,33 @@ export default function SkillsBanner() {
 	);
 }
 
-const StyledSkills = styled.ul`
+const StyledSkills = styled.aside`
+
+@media screen and (max-width: 768px) {
+	display: none;
+}
+
 	display: flex;
-	width: 100%;
-	padding: 2rem;
-	margin: 2rem 0 8rem;
-	line-height: 2;
+	flex-direction: column;
+	width: 150px;
+	position: sticky;
+	height: fit-content;
+	padding: 0 2rem;
+	margin: 4rem 4rem 0 0;
 	background-color: ${(props) => props.theme.cardBackground};
-	overflow-x: scroll;
+	overflow: hidden;
+  box-shadow: 0 0 5px 10px ${(props) => props.theme.cardBackground};
 
 	.skill-scrolling {
-		animation: scroll 90s linear infinite;
+		animation: scroll 120s linear infinite alternate;
 		display: flex;
+		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 	}
 
 	.skill {
-		font-size: 10rem;
+		font-size: 6rem;
 		margin: 2rem;
 
 		&:hover {
@@ -96,7 +102,7 @@ const StyledSkills = styled.ul`
 			transform: translate3d(0, 0, 0);
 		}
 		100% {
-			transform: translate3d(-100%, 0, 0);
+			transform: translate3d(0, -100%, 0);
 		}
 	}
 `;
