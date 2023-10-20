@@ -74,7 +74,7 @@ const StyledSkills = styled.aside`
 	position: sticky;
 	height: fit-content;
 	padding: 0 2rem;
-	margin: 4rem 4rem 0 0;
+	margin: 4rem 0;
 	background-color: ${(props) => props.theme.cardBackground};
 	overflow: hidden;
   box-shadow: 0 0 5px 10px ${(props) => props.theme.cardBackground};

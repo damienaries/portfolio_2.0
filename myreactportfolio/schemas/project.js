@@ -26,10 +26,9 @@ export default {
         },
       },
       {
-        name: 'categories',
-        title: 'Categories',
-        type: 'array',
-        of: [{type: 'reference', to: {type: 'category'}}],
+        name: 'category',
+        title: 'Category',
+        type: 'string',
       },
       {
         name: 'technologies',

@@ -1,6 +1,12 @@
 import styled from '@emotion/styled';
 import { AiOutlineClose } from 'react-icons/ai';
 
+/*
+TODO
+  refactor into generic modal component, use for mobile contact popup
+
+*/
+
 function AboutModal({toggleAbout, aboutOpen}) {
 
   return aboutOpen && ( 

@@ -1,13 +1,12 @@
 import styled from '@emotion/styled';
-import sanityClient from '../../lib/client';
-import groq from 'groq';
 import BlockContent from '@sanity/block-content-to-react';
-import CodeLinks from '../../components/CodeLinks';
-import {FaChevronLeft} from 'react-icons/fa';
-import { useRouter } from 'next/router';
-import Image from 'next/image';
+import groq from 'groq';
 import { useNextSanityImage } from 'next-sanity-image';
-import SkillsBanner from '../../components/SkillsBanner';
+import Image from 'next/image';
+import { useRouter } from 'next/router';
+import { FaChevronLeft } from 'react-icons/fa';
+import CodeLinks from '../../components/CodeLinks';
+import sanityClient from '../../lib/client';
 
 /*************************
  Project Page 

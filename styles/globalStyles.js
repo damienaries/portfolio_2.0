@@ -8,7 +8,7 @@ export const lightTheme = {
 	buttonBg: 'rgba(69, 90, 100, .7)',
 	buttonText: '#fafafa',
 	buttonBgHover: 'rgba(69, 90, 100, 1)',
-	borderColor: '#222',
+	borderColor: 'var(--color-gray-dark)',
 	overlay: 'var(--color-gray-dark)',
 	backgroundGradient: 'linear-gradient(to right, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.4))'
 };
@@ -41,10 +41,10 @@ export const GlobalStyles = (theme) => css`
 		
 		/* Typography */
 		--weight-thin: 200;
-		--weight-bold: 600;
+		--weight-bold: 500;
 		--size-body: 1.6rem;
 		--size-title-main: 4rem;
-		--size-title-section: 3rem;
+		--size-title-section: 2rem;
 		--size-subtitle: 1.8rem;
 
 		/* Colors */
@@ -55,7 +55,7 @@ export const GlobalStyles = (theme) => css`
 
 		/* Light theme */
 		--color-gray-light: rgba(207, 216, 220, 0.4);
-		--color-gray-dark: rgba(69, 90, 100, 0.7);
+		--color-gray-dark: rgba(69, 90, 100, 0.5);
 
 		/* Colors no transparency */
 		--color-blue-opaque: rgb(0, 15, 85);
