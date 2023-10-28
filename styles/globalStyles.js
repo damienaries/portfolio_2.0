@@ -10,7 +10,7 @@ export const lightTheme = {
 	buttonBgHover: 'rgba(69, 90, 100, 1)',
 	borderColor: 'var(--color-gray-dark)',
 	overlay: 'var(--color-gray-dark)',
-	backgroundGradient: 'linear-gradient(to right, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.4))'
+	backgroundGradient: 'linear-gradient(to right, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.6))'
 };
 
 export const darkTheme = {
@@ -92,9 +92,5 @@ export const GlobalStyles = (theme) => css`
 
 	ul {
 		list-style-type: none;
-	}
-
-	svg:hover {
-		fill: ${theme.iconHover};
 	}
 `;

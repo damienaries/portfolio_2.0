@@ -8,11 +8,11 @@ import useWindowDimensions from '../hooks/useWindowDimensions';
 import { fadeIn } from '../styles/animations';
 
 /*
-    TODO add services link when page is ready
-    restyle mobile nav
+    TODO
+    restyle mobile nav, not fixed on mobile, left aligned under logo. theme switch to the right, for any screen size
 */
 
-export default function Navbar({ theme, toggleTheme, toggleAbout}) {
+export default function Navbar({ theme, toggleTheme }) {
 	const router = useRouter();
 	const { width } = useWindowDimensions();
 	const [navOpen, setIsNavOpen] = useState(false);
@@ -31,7 +31,7 @@ export default function Navbar({ theme, toggleTheme, toggleAbout}) {
 		setIsNavOpen((prevState) => !prevState);
 		setTimeout(() => {
 			setIsNavOpen(false);
-		}, 15000000);
+		}, 15000);
 	};
 
 
@@ -58,7 +58,7 @@ export default function Navbar({ theme, toggleTheme, toggleAbout}) {
 							className="topbar-right-link theme-toggler"
 							onClick={toggleTheme}
 						>
-							{/* TODO geolocalize user to trigger theme change, add info toast */}
+							{/* TODO geolocalize user to trigger theme change, add info toast, upgrade hover effect */}
 							{theme === 'dark' ? <FaSun /> : <FaMoon />}
 						</div>
 					</>
@@ -111,7 +111,7 @@ const StyledNav = styled.header`
 	padding: 3rem;
 
 	.topbar-left {
-		font-size: var(--size-subtitle);
+		font-size: var(--size-title-section);
 		font-weight: var(--weight-thin);
 		letter-spacing: 1px;
 

@@ -3,14 +3,12 @@ import BlockContent from '@sanity/block-content-to-react';
 import { useNextSanityImage } from 'next-sanity-image';
 import Image from 'next/image';
 import React from 'react';
-import useWindowDimensions from '../hooks/useWindowDimensions';
 import sanityClient from '../lib/client';
 import CodeLinks from './CodeLinks';
 
 /*
     TODO add more images per project in modal?
 		fix tech icon part
-		redesign layout
 		multiple image slider?
 */		
 
@@ -18,9 +16,7 @@ export default function Project({ project }) {
 	const { title, mainImage, technologies, body = [], liveLink, githubLink } = project;
 
 	const imageProps = useNextSanityImage(sanityClient, mainImage);
-	const { width } = useWindowDimensions(); // prob dont need this?
-	const imageSize = width > 1000 || width < 600 ? '300' : '250';
-
+	
 	return (
 		<StyledProject>
 			<div className="project-container">
@@ -37,7 +33,7 @@ export default function Project({ project }) {
 								className="image"
 								alt={title}
 								layout="responsive"
-								sizes="(max-width: 600px) 80vw, 300px"
+								sizes="(max-width: 600px) 80vw, 500px"
 								{...imageProps}
 								priority="true"
 							/>
@@ -154,6 +150,10 @@ position: relative;
 
 @media screen and (max-width: 700px) {
 		padding: 2rem;
+
+		::before {
+			width: 80%;
+		}
 
 		.project-container {
 				width: 100%;

@@ -72,7 +72,7 @@ const StyledSkills = styled.aside`
 	flex-direction: column;
 	width: 150px;
 	position: sticky;
-	height: fit-content;
+	height: 100%;
 	padding: 0 2rem;
 	margin: 4rem 0;
 	background-color: ${(props) => props.theme.cardBackground};

@@ -9,17 +9,17 @@ function AboutSection() {
 			<h1 className="home-title">Welcome</h1>
 			<div className="about-body">
 				<p className="body-paragraph">
-					Hi! I'm Damien. I'm a Full Stack developer in Los Angeles, CA. <br></br>I love writing JavaScript and PhP and specialize in React, Next.js, Vue &amp; Laravel.
+					Hi! I'm Damien. I'm a Full Stack developer based in Los Angeles, CA. <br></br>I love writing JavaScript, PhP and CSS and specialize in Laravel, Vue, React &amp; Next.js.
 				</p>
 				<p className="body-paragraph">
 					I'm a lifelong learner, passionate about all things Javascript, Climate Tech, Ed Tech and the possibilities of AI. Always looking to grow and improve, 
 					I aspire to take part in building beautiful, fast, fun and exciting programs that will benefit us all. 
 				</p>
 				<p className="body-paragraph">
-					Originally from France, I traveled around Europe and North America during the course of my previous career managing cocktail bars and currently live with my family in California.
+					Originally from France, I traveled around Europe and North America during the course of my previous career in the cocktail world. I currently live with my family in California and when I'm not coding you can find me on a hike or a bike ride by the beach, enjoying the best LA has to offer.
 				</p>
 				<Link href="/projects">
-					<button>Want to learn about my work?</button>
+					<a className="work-cta">See some recent work</a>
 				</Link>
 			</div>
     </div>
@@ -30,7 +30,7 @@ function AboutSection() {
 export default AboutSection;
 
 const StyledAboutSection = styled.section`
-height: calc(100vh - 60px);
+min-height: calc(100vh - 60px);
 display: flex;
 align-items: start;
 justify-content: center;
@@ -38,9 +38,9 @@ background: ${(props) => props.theme.background};
 
 .about-content {
 	margin: 6rem auto;
-	width: 85vw;
+	width: 80vw;
 	max-width: 1400px;
-	height: 75%;
+	min-height: 80vh;
 	background: ${(props) => props.theme.cardBackground};
 	color: ${(props) => props.theme.text};
 	border-radius:  var(--radius);
@@ -67,33 +67,31 @@ background: ${(props) => props.theme.background};
 			margin: 2rem 0;
 		}
 
-    button { /* Tbd button to work page? */
+    .work-cta {
       background-color: transparent;
-      border: .5px solid ${(props) => props.theme.text};
-      outline: transparent;
+      border: 1px solid ${(props) => props.theme.text};
       color: ${(props) => props.theme.text};
       padding: .5rem 1rem;
       font-size: 1.4rem;
       border-radius: 20px;
-      margin: 3rem 0 0;
+      margin: 4rem 0 0;
       
       &:hover {
-        outline: ${(props) => props.theme.text};
         cursor: pointer;
-        background-color: ${(props) => props.theme.buttonBgHover}
+				transform: scale(.99);
       }
     }
 	}
 
 	@media screen and (max-width: 768px) {
 			width: 90vw;
-			height: auto;
-			background-position: 90%;
-
+			min-height: 100vh;
+			background-position: 85%;
+			padding: 2rem 1rem;
 
 		.about-body {
       width: 100%;
-			padding: 3rem 1rem 50rem;
+			padding: 3rem 1rem;
 		}
 	}
 }

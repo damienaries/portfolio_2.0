@@ -7,9 +7,8 @@ import sanityClient from '../../lib/client';
 
 /*
     TODO
-		work: ivisa, concept, blurb for previous bar exp with a couple of examples
-		freelance: kyle and dad, sarah and judi
-		personal projects: jamming, space tourism, cocktail app, site template?
+		work: blurb for previous bar exp with a couple of examples
+		personal projects: site template?
 */
 
 export default function Projects(props) {
@@ -54,17 +53,17 @@ export default function Projects(props) {
 
 export async function getStaticProps() {
 	const projects = await sanityClient.fetch(groq`
-        *[_type == "project"]{
-					title, 
-					mainImage,
-					category,
-					"technologies": technologies[]->title,
-					body,
-					githubLink,
-					liveLink,
-					publishedAt
-					} | order(publishedAt desc)
-      `);
+		*[_type == "project"]{
+			title, 
+			mainImage,
+			category,
+			"technologies": technologies[]->title,
+			body,
+			githubLink,
+			liveLink,
+			publishedAt
+			} | order(publishedAt desc)
+	`);
 
 	return {
 		props: {
@@ -96,6 +95,10 @@ const StyledProjects = styled.main`
 		align-items: center;
 		justify-content: center;
 		margin: 2rem auto;
+
+		@media only screen and (max-width: 600px){
+			flex-direction: column;
+		}
 	}
 
 	.tab {

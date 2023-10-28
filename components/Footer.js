@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import Link from 'next/link';
+import { BiLogoGmail } from 'react-icons/bi';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 
 export default function Footer() {
@@ -12,20 +13,22 @@ export default function Footer() {
 					<a
 						target="_blank"
 						rel="noopener"
-						className="social-link"
+						className="icon-link"
 						aria-label="Linkedin profile"
 					>
 						<FaLinkedinIn />
 					</a>
 				</Link>
 				<Link href="mailto:damien.aries@gmail.com">
-					<a className="footer-email">damien.aries@gmail.com</a>
+					<a className="icon-link">
+						<BiLogoGmail />
+					</a>
 				</Link>
 				<Link href="https://github.com/damienaries">
 					<a
 						target="_blank"
 						rel="noopener"
-						className="social-link"
+						className="icon-link"
 						aria-label="Github profile"
 					>
 						<FaGithub />
@@ -39,48 +42,30 @@ export default function Footer() {
 const StyledFooter = styled.footer`
 	width: 100%;
 	padding: 2rem 4rem;
-	font-size: 1.5rem;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	line-height: 2;
-	border-top: 1px solid rgba(255, 255, 255, 0.1);
+	border-top: 1px solid ${(props) => props.theme.borderColor};
 
 	.section-title {
 		font-size: var(--size-title-section);
-		top: 1rem;
+		margin: 1rem auto;
 		text-align: center;
 		font-weight: var(--weight-thin);
-	}
-
-	.footer-email {
-		font-size: var(--size-subtitle);
-		letter-spacing: 2px;
-		margin: 2rem auto;
-		border-radius: 50px;
-
-		&:hover {
-			filter: drop-shadow(0 0.25rem 0.5rem var(--color-white));
-			cursor: pointer;
-		}
 	}
 
 	.social-links {
 		display: flex;
 		justify-content: space-evenly;
 		align-items: center;
-		width: 70%;
+		margin: 2rem auto 3rem;
+		font-size: var(--size-body);
 	}
 
-	.social-link {
+	.icon-link {
 		& > svg {
 			font-size: 3rem;
-
-			&:hover {
-				cursor: pointer;
-				filter: drop-shadow(0 0.25rem 0.5rem var(--color-white));
-				color: red;
-			}
 		}
+		
+		&:hover {
+				transform: scale(.95);
+			}
 	}
 `;
