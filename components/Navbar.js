@@ -34,6 +34,10 @@ export default function Navbar({ theme, toggleTheme }) {
 		}, 15000);
 	};
 
+	const handleThemeChange = () => {
+		setIsNavOpen(false);
+		toggleTheme();
+	}
 
 	return (
 		<StyledNav>
@@ -56,7 +60,7 @@ export default function Navbar({ theme, toggleTheme }) {
 						</Link>
 						<div
 							className="topbar-right-link theme-toggler"
-							onClick={toggleTheme}
+							onClick={handleThemeChange}
 						>
 							{/* TODO geolocalize user to trigger theme change, add info toast, upgrade hover effect */}
 							{theme === 'dark' ? <FaSun /> : <FaMoon />}
@@ -92,7 +96,7 @@ export default function Navbar({ theme, toggleTheme }) {
 					</Link>
 						<div
 							className="mobile-nav-link theme-toggler"
-							onClick={toggleTheme}
+							onClick={handleThemeChange}
 						>
 							{theme === 'dark' ? <FaSun /> : <FaMoon />}
 						</div>

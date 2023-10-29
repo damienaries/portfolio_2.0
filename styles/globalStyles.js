@@ -27,7 +27,7 @@ export const darkTheme = {
 };
 
 export const GlobalStyles = (theme) => css`
-	@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200;400;700&family=Titillium+Web:wght@200;400;600;700&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200;400;700&display=swap');
 
 	* {
 		box-sizing: border-box;
@@ -77,7 +77,7 @@ export const GlobalStyles = (theme) => css`
 		color: ${theme.text};
 		background-color: ${theme.background};
 		line-height: 1.4;
-		transition: all 0.3s linear;
+		transition: all 0.2s ease-in-out;
 	}
 
 	body::-webkit-scrollbar {

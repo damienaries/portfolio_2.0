@@ -9,11 +9,10 @@ function AboutSection() {
 			<h1 className="home-title">Welcome</h1>
 			<div className="about-body">
 				<p className="body-paragraph">
-					Hi! I'm Damien. I'm a Full Stack developer based in Los Angeles, CA. <br></br>I love writing JavaScript, PhP and CSS and specialize in Laravel, Vue, React &amp; Next.js.
+					Hi! I'm Damien. I'm a Full Stack Developer based in Los Angeles, CA. <br></br>I love writing JavaScript, PhP and CSS and specialize in Laravel, Vue, React &amp; Next.js.
 				</p>
 				<p className="body-paragraph">
-					I'm a lifelong learner, passionate about all things Javascript, Climate Tech, Ed Tech and the possibilities of AI. Always looking to grow and improve, 
-					I aspire to take part in building beautiful, fast, fun and exciting programs that will benefit us all. 
+					I'm a lifelong learner, passionate about all things Javascript, Climate, Education and the possibilities modern AI tech might bring to these fields. Always looking to grow and improve, I aspire to take part in building beautiful, fast, fun and exciting programs that will benefit us all. 
 				</p>
 				<p className="body-paragraph">
 					Originally from France, I traveled around Europe and North America during the course of my previous career in the cocktail world. I currently live with my family in California and when I'm not coding you can find me on a hike or a bike ride by the beach, enjoying the best LA has to offer.
@@ -68,7 +67,6 @@ background: ${(props) => props.theme.background};
 		}
 
     .work-cta {
-      background-color: transparent;
       border: 1px solid ${(props) => props.theme.text};
       color: ${(props) => props.theme.text};
       padding: .5rem 1rem;
@@ -76,7 +74,8 @@ background: ${(props) => props.theme.background};
       border-radius: 20px;
       margin: 4rem 0 0;
       
-      &:hover {
+      &:hover,
+			&:active {
         cursor: pointer;
 				transform: scale(.99);
       }
