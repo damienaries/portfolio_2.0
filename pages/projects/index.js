@@ -2,13 +2,11 @@ import styled from '@emotion/styled';
 import groq from 'groq';
 import { useEffect, useState } from 'react';
 import Project from '../../components/Project';
-import SkillsBanner from '../../components/SkillsBanner';
 import sanityClient from '../../lib/client';
 
 /*
     TODO
 		work: blurb for previous bar exp with a couple of examples
-		personal projects: site template?
 */
 
 export default function Projects(props) {
@@ -28,7 +26,6 @@ export default function Projects(props) {
 	
 	return (
 		<StyledProjects>
-			<SkillsBanner />
 			<section className="projects-container">
 				<h1 className="page-title">Recent Work</h1>
 				<div className="tabs-container">

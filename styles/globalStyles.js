@@ -3,7 +3,6 @@ import { css } from '@emotion/react';
 export const lightTheme = {
 	background: 'rgb(253, 253, 253)',
 	text: '#222',
-	iconHover: 'rgba(0, 30, 64, 0.9)',
 	cardBackground: 'var(--color-gray-light)',
 	buttonBg: 'rgba(69, 90, 100, .7)',
 	buttonText: '#fafafa',
@@ -16,7 +15,6 @@ export const lightTheme = {
 export const darkTheme = {
 	background: 'rgb(0, 30, 64)',
 	text: 'rgb(253, 253, 253)',
-	iconHover: 'var(--color-blue-light-opaque)',
 	cardBackground: 'var(--color-blue-light)',
 	buttonBg: 'var(--color-blue-light)',
 	buttonText: '#fafafa',
@@ -45,7 +43,6 @@ export const GlobalStyles = (theme) => css`
 		--size-body: 1.6rem;
 		--size-title-main: 4rem;
 		--size-title-section: 2rem;
-		--size-subtitle: 1.8rem;
 
 		/* Colors */
 
@@ -56,11 +53,6 @@ export const GlobalStyles = (theme) => css`
 		/* Light theme */
 		--color-gray-light: rgba(207, 216, 220, 0.4);
 		--color-gray-dark: rgba(69, 90, 100, 0.5);
-
-		/* Colors no transparency */
-		--color-blue-opaque: rgb(0, 15, 85);
-		--color-blue-light-opaque: rgb(62, 107, 158);
-		--color-blue-dark-opaque: rgb(0, 30, 64);
 
 		/* Shadows and border radius */
 		--radius: 8px;
@@ -76,8 +68,7 @@ export const GlobalStyles = (theme) => css`
 		font-family: var(--ff-main);
 		color: ${theme.text};
 		background-color: ${theme.background};
-		line-height: 1.4;
-		transition: all 0.2s ease-in-out;
+		line-height: 1.5;
 	}
 
 	body::-webkit-scrollbar {

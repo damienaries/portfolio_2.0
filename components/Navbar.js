@@ -156,10 +156,6 @@ const StyledNav = styled.header`
 
 	.action-button {
 		font-size: 2rem;
-		position: fixed;
-		top: 2rem;
-		right: 1.5rem;
-		z-index: 1500;
 
 		&:hover {
 			cursor: pointer;

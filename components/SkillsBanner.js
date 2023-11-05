@@ -70,11 +70,11 @@ const StyledSkills = styled.aside`
 
 	display: flex;
 	flex-direction: column;
-	width: 150px;
-	position: sticky;
+	width: 100px;
+	position: fixed;
 	height: 100%;
 	padding: 0 2rem;
-	margin: 4rem 0;
+	margin: 0 4rem 0 0;
 	background-color: ${(props) => props.theme.cardBackground};
 	overflow: hidden;
   box-shadow: 0 0 5px 10px ${(props) => props.theme.cardBackground};
@@ -88,13 +88,8 @@ const StyledSkills = styled.aside`
 	}
 
 	.skill {
-		font-size: 6rem;
+		font-size: 5rem;
 		margin: 2rem;
-
-		&:hover {
-			color: var(--color-blue-dark);
-			filter: drop-shadow(0 0.25rem 0.5rem var(--color-white));
-		}
 	}
 
 	@keyframes scroll {

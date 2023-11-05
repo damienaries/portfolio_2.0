@@ -6,12 +6,6 @@ import React from 'react';
 import sanityClient from '../lib/client';
 import CodeLinks from './CodeLinks';
 
-/*
-    TODO add more images per project in modal?
-		fix tech icon part
-		multiple image slider?
-*/		
-
 export default function Project({ project }) {
 	const { title, mainImage, technologies, body = [], liveLink, githubLink } = project;
 
@@ -22,12 +16,12 @@ export default function Project({ project }) {
 			<div className="project-container">
 				<h3 className="title">{title}</h3>
 				<div className="tech-pills">
-						{technologies && technologies.map(t => (
-								<div className="tech-pill" key={t}>{t}</div>
-						))}
+					{technologies && technologies.map(t => (
+						<div className="tech-pill" key={t}>{t}</div>
+					))}
 				</div>
 				<div className="bottom-grid">
-					<div className="left-container">
+					<div>
 						{mainImage && (
 							<Image 
 								className="image"
@@ -91,97 +85,59 @@ position: relative;
 				align-items: center;
 				flex-wrap: wrap;
 		}
-				.tech-pill {
-						padding: .5rem 1rem;
-						margin: .5rem;
-						font-size: 1.5rem;
-						background-image: linear-gradient(
-								to bottom right,
-								var(--color-blue-light),
-								var(--color-blue-light)
-						);
-						border-radius: 50px;
-						backdrop-filter: blur(10px);
-						-webkit-backdrop-filter: blur(10px);
-				}
-		
-
-		.categories {
-				position: absolute;
-				top: 1rem;
-				right: 1rem;
-				display: flex;
-				flex-direction: column;
-
-				.categories-item {
-						padding: .5rem;
-						font-size: var(--size-body);
-						padding: .25rem 1.25rem;
-						margin: .25rem;
-						border-radius: 50px;
-						background-color: var(--color-blue-light);
-				}
+		.tech-pill {
+				padding: .5rem 1rem;
+				margin: .5rem;
+				font-size: 1.3rem;
+				background-image: linear-gradient(
+						to bottom right,
+						var(--color-blue-light),
+						var(--color-blue-light)
+				);
+				border-radius: 50px;
+				backdrop-filter: blur(10px);
+				-webkit-backdrop-filter: blur(10px);
 		}
 
 		.bottom-grid {
-				display: grid;
-				grid-template-columns: 1fr 1fr;
-				grid-gap: 1rem;
-				margin-top: 2rem;
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			grid-gap: 1rem;
+			margin-top: 2rem;
 
-				.image {
-						border-radius: var(--radius);
-				}
-		
-				.description {
-						font-size: var(--size-body);
-						padding: 0 1rem;
-						text-align: left;
-						line-height: 1.5;
-				}
+			.image {
+				border-radius: var(--radius);
+			}
+	
+			.description {
+				font-size: var(--size-body);
+				padding: 0 1rem;
+				text-align: left;
+			}
 		}
 }
 
 @media screen and (max-width: 900px) {
-		.project-container {
-				width: 80%;
-		}
+	.project-container {
+		width: 90%;
+
+			.bottom-grid {
+				grid-template-columns: 1fr;
+			}
+	}
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 768px) {
+	padding: 2rem;
+
+	::before {
+		width: 80%;
+	}
+
+	.project-container {
+		width: 100%;
 		padding: 2rem;
-
-		::before {
-			width: 80%;
-		}
-
-		.project-container {
-				width: 100%;
-				padding: 2rem;
-
-				.icon-back {
-						font-size: 2.5rem;
-						top: 1.5rem;
-						left: 1rem;
-				}
-
-				.categories {
-						flex-direction: row;
-						top: 1rem;
-						right: 1rem;
-				}
-
-				.title {
-						margin-top: 3rem;
-				}
-		}
+	}
 }
 
-@media screen and (max-width: 600px) {
-		.project-container {
-				.bottom-grid {
-						grid-template-columns: 1fr;
-				}
-		}
-}
 `

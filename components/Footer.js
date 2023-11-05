@@ -42,7 +42,18 @@ export default function Footer() {
 const StyledFooter = styled.footer`
 	width: 100%;
 	padding: 2rem 4rem;
-	border-top: 1px solid ${(props) => props.theme.borderColor};
+	position: relative;
+
+	::before {
+		content: '';
+		height: 1px;
+		width: 80vw;
+		position: absolute;
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		background-color: ${(props) => props.theme.borderColor};
+	}
 
 	.section-title {
 		font-size: var(--size-title-section);
@@ -60,6 +71,8 @@ const StyledFooter = styled.footer`
 	}
 
 	.icon-link {
+		transition: all 0.1s ease-out;
+
 		& > svg {
 			font-size: 3rem;
 		}
