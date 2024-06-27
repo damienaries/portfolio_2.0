@@ -54,6 +54,16 @@ export default function Projects(props) {
 				</div>
 			</section>
 
+			<h3 className="section-title">Coding Contributions</h3>
+			<p className="description">
+				Most of the code I write is in private repositories, so this widget
+				gives you a little insight on what I'm up to on{' '}
+				<a href="https://gitlab.com/damien-aries" target="_blank">
+					Gitlab
+				</a>
+				.
+			</p>
+
 			{calendar && <ContributionCalendar calendar={calendar} />}
 		</StyledProjects>
 	);
@@ -132,5 +142,15 @@ const StyledProjects = styled.main`
 
 	.tabs-body {
 		margin: 2rem auto;
+	}
+
+	.section-title {
+		font-size: var(--size-title-section);
+		font-weight: var(--weight-thin);
+	}
+
+	.description {
+		font-size: var(--size-body);
+		font-weight: var(--weight-thin);
 	}
 `;

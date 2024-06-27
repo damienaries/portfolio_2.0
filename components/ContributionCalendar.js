@@ -8,11 +8,10 @@ const ContributionCalendar = ({ calendar }) => {
 		/* 
     make calendar 365 days, 1 year ago until now
     todo split into hook
-		Make this a grid not flex. 52 cols, start sunday.
     */
 		const now = new Date();
 		const oneYearAgo = new Date(now);
-		const weekdayToStart = oneYearAgo.getDay();
+		const weekdayToStart = oneYearAgo.getDay() - 1;
 
 		oneYearAgo.setFullYear(now.getFullYear() - 1);
 
@@ -31,9 +30,11 @@ const ContributionCalendar = ({ calendar }) => {
 			}
 		}
 		// Add x weekdays to pad flex container with empty days - invisible boxes
-		for (let i = 0; i <= weekdayToStart; i++) {
-			setLocalCalendar({ adjust_for_sunday_start: 'pad', ...localCalendar });
+		const daysAdjustedForSundayStart = {};
+		for (let i = 1; i < weekdayToStart; i++) {
+			daysAdjustedForSundayStart[`paddedDay-${i}`] = `${weekdayToStart}-${i}`;
 		}
+		setLocalCalendar({ ...daysAdjustedForSundayStart, ...localCalendar });
 	}, []);
 
 	const getColor = (value) => {
@@ -41,7 +42,7 @@ const ContributionCalendar = ({ calendar }) => {
 			return 'transparent';
 		}
 		if (value === null || value === undefined || value === 0) {
-			return 'lightgray';
+			return '#eee';
 		} else if (value > 0 && value <= 5) {
 			return 'lightblue';
 		} else if (value > 5 && value <= 10) {
@@ -61,9 +62,7 @@ const ContributionCalendar = ({ calendar }) => {
 						key={index}
 						className="calendarItem"
 						style={{ backgroundColor: getColor(value) }}
-					>
-						<span className="dateValue">{value}</span>
-					</div>
+					></div>
 				))}
 			</StyledCalendar>
 		)
@@ -77,27 +76,19 @@ const StyledCalendar = styled.div`
 	flex-direction: column;
 	flex-wrap: wrap;
 	margin: 3rem auto;
-	width: 75%;
-	max-height: calc(7 * 15px);
+	width: calc(52 * 17px);
+	max-height: calc(7 * 17px);
 
 	.calendarItem {
 		border: 1px solid white;
-		width: 15px;
-		height: 15px;
-		max-width: 15px;
-		max-height: 15px;
+		width: 17px;
+		height: 17px;
+		max-width: 17px;
+		max-height: 17px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		font-size: 0.8rem;
 		position: relative;
-
-		.dateValue {
-			color: transparent;
-		}
-
-		.dateValue:hover {
-			color: white;
-		}
 	}
 `;
