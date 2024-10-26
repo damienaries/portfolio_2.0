@@ -5,15 +5,6 @@ import ContributionCalendar from '../../components/ContributionCalendar';
 import Project from '../../components/Project';
 import sanityClient from '../../lib/client';
 
-/*
-    TODO
-		work: blurb for previous bar exp with a couple of examples
-
-		calendar:
-		ELSE need to track date.now(), create grayed calendar based on that. THEN for each date contributions are made add color class. 
-		Also, eslint!
-*/
-
 export default function Projects(props) {
 	const { projects = [], calendar } = props;
 	const categories = ['work', 'freelance', 'personal'];
