@@ -89,6 +89,7 @@ export async function getStaticProps() {
 
 const StyledProjects = styled.main`
 	width: 100%;
+	padding: 0 2rem;
 	text-align: center;
 
 	.page-title {

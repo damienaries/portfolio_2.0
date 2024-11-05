@@ -56,7 +56,7 @@ export default function Project({ project }) {
 
 const StyledProject = styled.section`
 	width: 100%;
-	padding: 4rem;
+	padding: 4rem 0;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -74,7 +74,7 @@ const StyledProject = styled.section`
 
 	.project-container {
 		width: 80%;
-		padding: 2rem 4rem;
+		padding: 2rem 0;
 		text-align: center;
 		border-radius: var(--radius);
 		background-color: ${(props) => props.theme.cardBackground};
@@ -138,7 +138,7 @@ const StyledProject = styled.section`
 	}
 
 	@media screen and (max-width: 768px) {
-		padding: 2rem;
+		padding: 2rem 0;
 
 		::before {
 			width: 80%;

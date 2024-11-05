@@ -57,13 +57,15 @@ const ContributionCalendar = ({ calendar }) => {
 	return (
 		calendar && (
 			<StyledCalendar>
-				{Object.values(localCalendar).map((value, index) => (
-					<div
-						key={index}
-						className="calendarItem"
-						style={{ backgroundColor: getColor(value) }}
-					></div>
-				))}
+				<div className="calendarTable">
+					{Object.values(localCalendar).map((value, index) => (
+						<div
+							key={index}
+							className="calendarItem"
+							style={{ backgroundColor: getColor(value) }}
+						></div>
+					))}
+				</div>
 			</StyledCalendar>
 		)
 	);
@@ -72,15 +74,20 @@ const ContributionCalendar = ({ calendar }) => {
 export default ContributionCalendar;
 
 const StyledCalendar = styled.div`
-	display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
 	margin: 3rem auto;
-	width: calc(52 * 17px);
-	max-height: calc(7 * 17px);
+	width: 100%;
+	overflow-x: scroll;
+
+	.calendarTable {
+		width: calc(52 * 17px);
+		max-height: calc(7 * 17px);
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+	}
 
 	.calendarItem {
-		border: 1px solid white;
+		border: 0.5px solid white;
 		width: 17px;
 		height: 17px;
 		max-width: 17px;
