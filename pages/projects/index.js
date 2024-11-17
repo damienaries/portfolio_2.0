@@ -8,16 +8,21 @@ import sanityClient from '../../lib/client';
 export default function Projects(props) {
 	const { projects = [], calendar } = props;
 	const categories = ['work', 'freelance', 'personal'];
-	const [currentTab, setCurrentTab] = useState('work');
+	const [currentTab, setCurrentTab] = useState('');
 	const [currentProjects, setCurrentProjects] = useState([]);
 
 	useEffect(() => {
+		// check for tab value in session storage
+		const saved = sessionStorage.getItem('currentTab');
+		setCurrentTab(saved ? saved : 'work');
+
 		//filter projects based on currentTab
 		setCurrentProjects(projects.filter((p) => p.category === currentTab));
 	}, [currentTab]);
 
 	const handleClick = (c) => {
 		setCurrentTab(c);
+		sessionStorage.setItem('currentTab', c);
 	};
 
 	return (
