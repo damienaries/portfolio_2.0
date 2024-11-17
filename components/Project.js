@@ -113,7 +113,7 @@ const StyledProject = styled.section`
 			display: grid;
 			grid-template-columns: 1fr 1fr;
 			grid-gap: 1rem;
-			margin-top: 2rem;
+			padding: 2.5rem;
 
 			.image {
 				border-radius: var(--radius);

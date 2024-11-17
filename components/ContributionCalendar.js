@@ -5,15 +5,12 @@ const ContributionCalendar = ({ calendar }) => {
 	const [localCalendar, setLocalCalendar] = useState({});
 
 	useEffect(() => {
-		/* 
-    make calendar 365 days, 1 year ago until now
-    todo split into hook
-    */
 		const now = new Date();
 		const oneYearAgo = new Date(now);
-		const weekdayToStart = oneYearAgo.getDay() - 1;
-
 		oneYearAgo.setFullYear(now.getFullYear() - 1);
+		const weekdayToStart = oneYearAgo.getDay() + 1;
+
+		debugger;
 
 		// create empty calendar with formatted date keys to compare with gitlab contributions
 		while (oneYearAgo < now) {
@@ -29,7 +26,7 @@ const ContributionCalendar = ({ calendar }) => {
 				localCalendar[dateKey] = calendar[dateKey];
 			}
 		}
-		// Add x weekdays to pad flex container with empty days - invisible boxes
+		// Add x weekdays to pad flex container with empty days
 		const daysAdjustedForSundayStart = {};
 		for (let i = 1; i < weekdayToStart; i++) {
 			daysAdjustedForSundayStart[`paddedDay-${i}`] = `${weekdayToStart}-${i}`;
@@ -84,6 +81,7 @@ const StyledCalendar = styled.div`
 		display: flex;
 		flex-direction: column;
 		flex-wrap: wrap;
+		margin: 0 auto;
 	}
 
 	.calendarItem {
