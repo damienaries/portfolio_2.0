@@ -74,16 +74,18 @@ const StyledCalendar = styled.div`
 	overflow-x: scroll;
 
 	.calendarTable {
-		width: calc(52 * 17px);
-		max-height: calc(7 * 17px);
+		width: calc((52 * 17px) + 10.5px);
+		max-height: calc((7 * 17px) + 10.5px);
 		display: flex;
 		flex-direction: column;
 		flex-wrap: wrap;
-		margin: 0 auto;
+		justify-content: flex-start;
+		align-items: flex-start;
+		gap: 1.5px;
+		margin: 0 20px;
 	}
 
 	.calendarItem {
-		border: 0.5px solid white;
 		width: 17px;
 		height: 17px;
 		max-width: 17px;
@@ -93,5 +95,6 @@ const StyledCalendar = styled.div`
 		justify-content: center;
 		font-size: 0.8rem;
 		position: relative;
+		border-radius: 2px;
 	}
 `;
