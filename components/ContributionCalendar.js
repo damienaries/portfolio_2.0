@@ -10,8 +10,6 @@ const ContributionCalendar = ({ calendar }) => {
 		oneYearAgo.setFullYear(now.getFullYear() - 1);
 		const weekdayToStart = oneYearAgo.getDay() + 1;
 
-		debugger;
-
 		// create empty calendar with formatted date keys to compare with gitlab contributions
 		while (oneYearAgo < now) {
 			const formattedDate = oneYearAgo.toISOString().split('T')[0];
