@@ -1,0 +1,7 @@
+{
+	"git.ignoreLimitWarning": true,
+	"emmet.includeLanguages": {
+		"javascript": "javascriptreact"
+	},
+	"editor.tabSize": 2
+}
