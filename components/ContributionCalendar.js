@@ -74,7 +74,7 @@ const StyledCalendar = styled.div`
 	overflow-x: scroll;
 
 	.calendarTable {
-		width: calc((52 * 17px) + 10.5px);
+		width: calc((52 * 17px) + 78px);
 		max-height: calc((7 * 17px) + 10.5px);
 		display: flex;
 		flex-direction: column;
@@ -82,7 +82,7 @@ const StyledCalendar = styled.div`
 		justify-content: flex-start;
 		align-items: flex-start;
 		gap: 1.5px;
-		margin: 0 20px;
+		margin: 0 auto;
 	}
 
 	.calendarItem {

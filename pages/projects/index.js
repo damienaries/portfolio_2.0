@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import groq from 'groq';
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import ContributionCalendar from '../../components/ContributionCalendar';
 import Project from '../../components/Project';
@@ -54,9 +55,9 @@ export default function Projects(props) {
 			<p className="description">
 				Most of the code I write is in private repositories, so this widget
 				gives you a little insight on what I'm up to on{' '}
-				<a href="https://gitlab.com/damien-aries" target="_blank">
+				<Link href="https://gitlab.com/damien-aries" target="_blank">
 					Gitlab
-				</a>
+				</Link>
 				.
 			</p>
 
