@@ -26,8 +26,8 @@ function AboutSection() {
 						you can find me on a hike or a bike ride by the beach, enjoying the
 						best LA has to offer.
 					</p>
-					<Link href="/projects">
-						<a className="work-cta">See some recent work</a>
+					<Link href="/projects" className="work-cta">
+						See some recent work
 					</Link>
 				</div>
 			</div>

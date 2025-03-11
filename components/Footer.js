@@ -9,30 +9,26 @@ export default function Footer() {
 			<h3 className="section-title">Get in touch</h3>
 
 			<div className="social-links">
-				<Link href="https://www.linkedin.com/in/damien-aries">
-					<a
-						target="_blank"
-						rel="noopener"
-						className="icon-link"
-						aria-label="Linkedin profile"
-					>
-						<FaLinkedinIn />
-					</a>
+				<Link
+					href="https://www.linkedin.com/in/damien-aries"
+					target="_blank"
+					rel="noopener"
+					className="icon-link"
+					aria-label="Linkedin profile"
+				>
+					<FaLinkedinIn />
 				</Link>
-				<Link href="mailto:damien.aries@gmail.com">
-					<a className="icon-link">
-						<BiLogoGmail />
-					</a>
+				<Link href="mailto:damien.aries@gmail.com" className="icon-link">
+					<BiLogoGmail />
 				</Link>
-				<Link href="https://github.com/damienaries">
-					<a
-						target="_blank"
-						rel="noopener"
-						className="icon-link"
-						aria-label="Github profile"
-					>
-						<FaGithub />
-					</a>
+				<Link
+					href="https://github.com/damienaries"
+					target="_blank"
+					rel="noopener"
+					className="icon-link"
+					aria-label="Github profile"
+				>
+					<FaGithub />
 				</Link>
 			</div>
 		</StyledFooter>
@@ -76,9 +72,9 @@ const StyledFooter = styled.footer`
 		& > svg {
 			font-size: 3rem;
 		}
-		
+
 		&:hover {
-				transform: scale(.95);
-			}
+			transform: scale(0.95);
+		}
 	}
 `;
