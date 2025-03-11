@@ -49,14 +49,14 @@ export default function Navbar({ theme, toggleTheme }) {
 				{width > 600 ? (
 					<>
 						{/* full size nav */}
-						<Link href="/">
-							<a className="topbar-right-link">Home</a>
+						<Link href="/" className="topbar-right-link">
+							Home
 						</Link>
-						<Link href="/projects">
-							<a className="topbar-right-link">Work</a>
+						<Link href="/projects" className="topbar-right-link">
+							Work
 						</Link>
-						<Link href="#contact">
-							<a className="topbar-right-link">Contact</a>
+						<Link href="#contact" className="topbar-right-link">
+							Contact
 						</Link>
 						<div
 							className="topbar-right-link theme-toggler"
@@ -79,20 +79,18 @@ export default function Navbar({ theme, toggleTheme }) {
 			{/* Mobile Nav full screen Modal */}
 			{navOpen && (
 				<div className="mobile-nav" style={{ right: !navOpen ? '-100%' : 0 }}>
-					<Link href="/">
-						<a className="mobile-nav-link" onClick={toggleNav}>
-							Home
-						</a>
+					<Link href="/" className="mobile-nav-link" onClick={toggleNav}>
+						Home
 					</Link>
-					<Link href="/projects">
-						<a className="mobile-nav-link" onClick={toggleNav}>
-							Work
-						</a>
+					<Link
+						href="/projects"
+						className="mobile-nav-link"
+						onClick={toggleNav}
+					>
+						Work
 					</Link>
-					<Link href="#contact">
-						<a className="mobile-nav-link" onClick={toggleNav}>
-							Contact
-						</a>
+					<Link href="#contact" className="mobile-nav-link" onClick={toggleNav}>
+						Contact
 					</Link>
 					<div
 						className="mobile-nav-link theme-toggler"
