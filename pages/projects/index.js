@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import ContributionCalendar from '../../components/ContributionCalendar';
 import Project from '../../components/Project';
-import sanityClient from '../../lib/client';
+import createClient from '../../lib/client';
 
 export default function Projects(props) {
 	const { projects = [], calendar } = props;
@@ -44,13 +44,13 @@ export default function Projects(props) {
 					</nav>
 					<section className="tabs-body">
 						{currentProjects &&
-							currentProjects.map((project) => (
-								<Project project={project} key={project._id} />
+							currentProjects.map((project, idx) => (
+								<Project project={project} key={idx} />
 							))}
 					</section>
 				</div>
 			</section>
-
+			{/*
 			<h3 className="section-title">Coding Contributions</h3>
 			<p className="description">
 				Most of the code I write is in private repositories, so this widget
@@ -61,14 +61,14 @@ export default function Projects(props) {
 				.
 			</p>
 
-			{calendar && <ContributionCalendar calendar={calendar} />}
+			 {calendar && <ContributionCalendar calendar={calendar} />} */}
 		</StyledProjects>
 	);
 }
 
 export async function getStaticProps() {
 	// get Project data from sanity
-	const projects = await sanityClient.fetch(groq`
+	const projects = await createClient.fetch(groq`
 		*[_type == "project"]{
 			title, 
 			mainImage,
@@ -88,8 +88,8 @@ export async function getStaticProps() {
 	return {
 		props: {
 			projects,
-			calendar
-		}
+			calendar,
+		},
 	};
 }
 

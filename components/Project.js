@@ -1,9 +1,9 @@
 import styled from '@emotion/styled';
-import BlockContent from '@sanity/block-content-to-react';
+import { PortableText } from '@portabletext/react';
 import { useNextSanityImage } from 'next-sanity-image';
-import Image from 'next/image';
+import Image from 'next/legacy/image';
 import React from 'react';
-import sanityClient from '../lib/client';
+import createClient from '../lib/client';
 import CodeLinks from './CodeLinks';
 
 export default function Project({ project }) {
@@ -13,10 +13,10 @@ export default function Project({ project }) {
 		technologies,
 		body = [],
 		liveLink,
-		githubLink
+		githubLink,
 	} = project;
 
-	const imageProps = useNextSanityImage(sanityClient, mainImage);
+	const imageProps = useNextSanityImage(createClient, mainImage);
 
 	return (
 		<StyledProject>
@@ -46,7 +46,7 @@ export default function Project({ project }) {
 					</div>
 
 					<div className="description">
-						<BlockContent blocks={body} />
+						<PortableText value={body} />
 					</div>
 				</div>
 			</div>

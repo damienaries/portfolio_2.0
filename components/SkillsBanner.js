@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import {
-	SiAmazonaws,
+	SiAmazonwebservices,
 	SiCss3,
 	SiFigma,
 	SiFirebase,
@@ -21,7 +21,7 @@ import {
 export default function SkillsBanner() {
 	return (
 		<StyledSkills>
-			{/* <span className="skill-scrolling">
+			<span className="skill-scrolling">
 				<SiJavascript className="skill" />
 				<SiTypescript className="skill" />
 				<SiPhp className="skill" />
@@ -33,14 +33,14 @@ export default function SkillsBanner() {
 				<SiTailwindcss className="skill" />
 				<SiMui className="skill" />
 				<SiStyledcomponents className="skill" />
-				<SiAmazonaws className="skill" />
+				<SiAmazonwebservices className="skill" />
 				<SiMongodb className="skill" />
 				<SiFirebase className="skill" />
 				<SiNodedotjs className="skill" />
 				<SiFigma className="skill" />
-			</span> */}
+			</span>
 
-			{/* <span className="skill-scrolling">
+			<span className="skill-scrolling">
 				<SiJavascript className="skill" />
 				<SiTypescript className="skill" />
 				<SiPhp className="skill" />
@@ -52,12 +52,12 @@ export default function SkillsBanner() {
 				<SiTailwindcss className="skill" />
 				<SiMui className="skill" />
 				<SiStyledcomponents className="skill" />
-				<SiAmazonaws className="skill" />
+				<SiAmazonwebservices className="skill" />
 				<SiMongodb className="skill" />
 				<SiFirebase className="skill" />
 				<SiNodedotjs className="skill" />
 				<SiFigma className="skill" />
-			</span> */}
+			</span>
 		</StyledSkills>
 	);
 }
