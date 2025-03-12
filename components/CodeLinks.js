@@ -7,17 +7,13 @@ export default function CodeLinks({ githubLink, liveLink }) {
 	return (
 		<StyledLinks>
 			{githubLink && (
-				<Link href={`${githubLink}`}>
-					<a className="code-link" target="_blank">
-						Code <FaGithub className="icon" />
-					</a>
+				<Link href={`${githubLink}`} className="code-link" target="_blank">
+					Code <FaGithub className="icon" />
 				</Link>
 			)}
 			{liveLink && (
-				<Link href={`${liveLink}`}>
-					<a className="code-link" target="_blank">
-						Site <MdOpenInNew className="icon" />
-					</a>
+				<Link href={`${liveLink}`} className="code-link" target="_blank">
+					Site <MdOpenInNew className="icon" />
 				</Link>
 			)}
 		</StyledLinks>
