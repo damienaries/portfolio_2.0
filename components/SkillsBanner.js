@@ -15,13 +15,13 @@ import {
 	SiStyledcomponents,
 	SiTailwindcss,
 	SiTypescript,
-	SiVuedotjs
+	SiVuedotjs,
 } from 'react-icons/si';
 
 export default function SkillsBanner() {
 	return (
 		<StyledSkills>
-			<span className="skill-scrolling">
+			{/* <span className="skill-scrolling">
 				<SiJavascript className="skill" />
 				<SiTypescript className="skill" />
 				<SiPhp className="skill" />
@@ -38,9 +38,9 @@ export default function SkillsBanner() {
 				<SiFirebase className="skill" />
 				<SiNodedotjs className="skill" />
 				<SiFigma className="skill" />
-			</span>
+			</span> */}
 
-			<span className="skill-scrolling">
+			{/* <span className="skill-scrolling">
 				<SiJavascript className="skill" />
 				<SiTypescript className="skill" />
 				<SiPhp className="skill" />
@@ -57,16 +57,15 @@ export default function SkillsBanner() {
 				<SiFirebase className="skill" />
 				<SiNodedotjs className="skill" />
 				<SiFigma className="skill" />
-			</span>
+			</span> */}
 		</StyledSkills>
 	);
 }
 
 const StyledSkills = styled.aside`
-
-@media screen and (max-width: 768px) {
-	display: none;
-}
+	@media screen and (max-width: 768px) {
+		display: none;
+	}
 
 	display: flex;
 	flex-direction: column;
@@ -77,7 +76,7 @@ const StyledSkills = styled.aside`
 	margin: 0 4rem 0 0;
 	background-color: ${(props) => props.theme.cardBackground};
 	overflow: hidden;
-  box-shadow: 0 0 5px 10px ${(props) => props.theme.cardBackground};
+	box-shadow: 0 0 5px 10px ${(props) => props.theme.cardBackground};
 
 	.skill-scrolling {
 		animation: scroll 120s linear infinite alternate;

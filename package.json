@@ -1,29 +1,29 @@
 {
-  "name": "my-react-portfolio",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
-  },
-  "dependencies": {
-    "@emotion/react": "^11.11.1",
-    "@emotion/styled": "^11.14.0",
-    "@netlify/plugin-nextjs": "^3.9.2",
-    "@sanity/block-content-to-react": "^3.0.0",
-    "@sanity/client": "^2.23.2",
-    "@sanity/image-url": "^1.0.2",
-    "cors": "^2.8.5",
-    "eslint-config-next": "^15.2.2",
-    "gitlab-calendar": "^2.0.1",
-    "groq": "^2.33.2",
-    "html-react-parser": "^1.4.14",
-    "next": "^15.2.2",
-    "next-sanity-image": "^3.2.1",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "react-geolocation": "^1.0.4",
-    "react-icons": "^4.10.1"
-  }
+	"name": "my-react-portfolio",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start"
+	},
+	"dependencies": {
+		"@emotion/react": "^11.14.0",
+		"@emotion/styled": "^11.14.0",
+		"@netlify/plugin-nextjs": "^5.10.0",
+		"@sanity/block-content-to-react": "^3.0.0",
+		"@sanity/client": "^6.28.3",
+		"@sanity/image-url": "^1.1.0",
+		"cors": "^2.8.5",
+		"eslint-config-next": "^15.2.2",
+		"gitlab-calendar": "^2.0.1",
+		"groq": "^3.79.0",
+		"next": "^14.2.24",
+		"next-sanity-image": "^6.1.1",
+		"react": "^18.3.1",
+		"react-dom": "^18.3.1",
+		"react-geolocation": "^1.0.4",
+		"react-icons": "^5.5.0",
+		"styled-components": "^6.1.15"
+	}
 }
