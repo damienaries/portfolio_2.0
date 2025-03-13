@@ -9,11 +9,12 @@ export const lightTheme = {
 	buttonBgHover: 'rgba(69, 90, 100, 1)',
 	borderColor: 'var(--color-gray-dark)',
 	overlay: 'var(--color-gray-dark)',
-	backgroundGradient: 'linear-gradient(to right, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.6))'
+	backgroundGradient:
+		'linear-gradient(to right, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.6))',
 };
 
 export const darkTheme = {
-	background: 'rgb(0, 30, 64)',
+	background: 'var(--color-blue-dark)',
 	text: 'rgb(253, 253, 253)',
 	cardBackground: 'var(--color-blue-light)',
 	buttonBg: 'var(--color-blue-light)',
@@ -21,7 +22,8 @@ export const darkTheme = {
 	buttonBgHover: 'var(--color-blue-dark)',
 	borderColor: 'rgb(253, 253, 253)',
 	overlay: 'var(--color-gray-light)',
-	backgroundGradient: 'linear-gradient(to right bottom, var(--color-blue-dark), var(--color-blue-light))'
+	backgroundGradient:
+		'linear-gradient(to right bottom, var(--color-blue-dark), var(--color-blue-light))',
 };
 
 export const GlobalStyles = (theme) => css`
@@ -36,7 +38,7 @@ export const GlobalStyles = (theme) => css`
 	:root {
 		/* Fonts */
 		--ff-main: 'Mulish', sans-serif;
-		
+
 		/* Typography */
 		--weight-thin: 200;
 		--weight-bold: 500;
@@ -48,7 +50,7 @@ export const GlobalStyles = (theme) => css`
 
 		/* Dark Theme */
 		--color-blue-light: rgba(62, 107, 158, 0.3);
-		--color-blue-dark: rgba(0, 30, 64, 0.9);
+		--color-blue-dark: rgba(0, 23, 45);
 
 		/* Light theme */
 		--color-gray-light: rgba(207, 216, 220, 0.4);
