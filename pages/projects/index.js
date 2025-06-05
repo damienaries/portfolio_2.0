@@ -1,13 +1,12 @@
 import styled from '@emotion/styled';
-import groq from 'groq';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import ContributionCalendar from '../../components/ContributionCalendar';
 import Project from '../../components/Project';
-import createClient from '../../lib/client';
+import projectsData from '../../data/portfolio_data_copy.json';
 
 export default function Projects(props) {
-	const { projects = [], calendar } = props;
+	const { calendar } = props;
 	const categories = ['work', 'freelance', 'personal'];
 	const [currentTab, setCurrentTab] = useState('');
 	const [currentProjects, setCurrentProjects] = useState([]);
@@ -18,7 +17,7 @@ export default function Projects(props) {
 		setCurrentTab(saved ? saved : 'work');
 
 		//filter projects based on currentTab
-		setCurrentProjects(projects.filter((p) => p.category === currentTab));
+		setCurrentProjects(projectsData.filter((p) => p.category === currentTab));
 	}, [currentTab]);
 
 	const handleClick = (c) => {
@@ -50,44 +49,17 @@ export default function Projects(props) {
 					</section>
 				</div>
 			</section>
-			{/*
-			<h3 className="section-title">Coding Contributions</h3>
-			<p className="description">
-				Most of the code I write is in private repositories, so this widget
-				gives you a little insight on what I'm up to on{' '}
-				<Link href="https://gitlab.com/damien-aries" target="_blank">
-					Gitlab
-				</Link>
-				.
-			</p>
-
-			 {calendar && <ContributionCalendar calendar={calendar} />} */}
 		</StyledProjects>
 	);
 }
 
 export async function getStaticProps() {
-	// get Project data from sanity
-	const projects = await createClient.fetch(groq`
-		*[_type == "project"]{
-			title, 
-			mainImage,
-			category,
-			"technologies": technologies[]->title,
-			body,
-			githubLink,
-			liveLink,
-			publishedAt
-			} | order(publishedAt desc)
-	`);
-
 	// get Gitlab contributions
 	const res = await fetch(`https://gitlab.com/users/damienaries/calendar.json`);
 	const calendar = await res.json();
 
 	return {
 		props: {
-			projects,
 			calendar,
 		},
 	};

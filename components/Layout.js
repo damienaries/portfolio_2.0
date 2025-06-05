@@ -18,12 +18,14 @@ const Layout = ({ children, theme, toggleTheme }) => {
 			: router.pathname.substring(1).toUpperCase();
 
 	const toggleAbout = () => {
-		setAboutOpen(!aboutOpen)
-	}
+		setAboutOpen(!aboutOpen);
+	};
 
 	useEffect(() => {
-		router.pathname === '/projects' ? setIsWorkPage(true): setIsWorkPage(false);
-	}, [router.pathname])
+		router.pathname === '/projects'
+			? setIsWorkPage(true)
+			: setIsWorkPage(false);
+	}, [router.pathname]);
 
 	return (
 		<>
@@ -34,14 +36,16 @@ const Layout = ({ children, theme, toggleTheme }) => {
 					lang="eng"
 					content="initial-scale=1.0, width=device-width"
 				/>
-				<link rel="icon" href="/flux-capacitor.svg" />
+				<link rel="icon" href="/icons/flux-capacitor.svg" />
 			</Head>
-			
-			{isWorkPage && (
-				<SkillsBanner />
-			)}
-			<div style={{marginLeft: (isWorkPage && width > 768) ? '100px' : 0}}>
-				<Navbar theme={theme} toggleTheme={toggleTheme} toggleAbout={toggleAbout}/>
+
+			{isWorkPage && <SkillsBanner />}
+			<div style={{ marginLeft: isWorkPage && width > 768 ? '100px' : 0 }}>
+				<Navbar
+					theme={theme}
+					toggleTheme={toggleTheme}
+					toggleAbout={toggleAbout}
+				/>
 				{children}
 				<Footer />
 			</div>

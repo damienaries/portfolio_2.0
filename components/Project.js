@@ -1,9 +1,7 @@
 import styled from '@emotion/styled';
 import { PortableText } from '@portabletext/react';
-import { useNextSanityImage } from 'next-sanity-image';
 import Image from 'next/legacy/image';
 import React from 'react';
-import createClient from '../lib/client';
 import CodeLinks from './CodeLinks';
 
 export default function Project({ project }) {
@@ -15,8 +13,6 @@ export default function Project({ project }) {
 		liveLink,
 		githubLink,
 	} = project;
-
-	const imageProps = useNextSanityImage(createClient, mainImage);
 
 	return (
 		<StyledProject>
@@ -35,10 +31,12 @@ export default function Project({ project }) {
 						{mainImage && (
 							<Image
 								className="image"
+								src={mainImage.src}
 								alt={title}
 								layout="responsive"
 								sizes="(max-width: 600px) 80vw, 500px"
-								{...imageProps}
+								width={600}
+								height={400}
 								priority="true"
 							/>
 						)}

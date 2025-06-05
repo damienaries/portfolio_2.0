@@ -55,7 +55,7 @@ const StyledAboutSection = styled.section`
 		box-shadow: var(--shadow-low);
 		overflow: hidden;
 		background-image: ${(props) => props.theme.backgroundGradient},
-			url('assets/images/about-bg-ext.webp');
+			url('/images/about-bg-ext.webp');
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-position: center;

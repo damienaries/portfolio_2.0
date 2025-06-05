@@ -1,0 +1,216 @@
+[
+	{
+		"title": "iVisa.com",
+		"category": "work",
+		"body": [
+			{
+				"_type": "block",
+				"children": [
+					{
+						"_type": "span",
+						"marks": [],
+						"text": "Since November 2021 I have been working at iVisa, an international startup specializing in travel documents. My tasks vary and span our entire stack but my focus leans towards the Front End and I write a lot a Vue and TailwindCSS code every day. \nMy first responsibility was to write a whole suite of UI tests with Laravel Dusk and since then I have grown to work with the team on implementing diverse UI features for small and large parts of the application, such as a new mobile navigation screen, visa selection page or user account experience. \nI also had the chance to work on integrating generative AI to summarize our blogs and improve features for our admin side, like an YouTube iframe generator tool for markdown or document scanning processing."
+					}
+				],
+				"markDefs": [],
+				"style": "normal"
+			}
+		],
+		"technologies": [
+			"Vue.js",
+			"Laravel",
+			"TailwindCSS",
+			"JavaScript",
+			"TypeScript",
+			"AWS"
+		],
+		"liveLink": "https://www.ivisa.com",
+		"mainImage": {
+			"src": "/images/ivisa.png",
+			"alt": "iVisa.com project screenshot"
+		},
+		"publishedAt": "2023-10-26T04:41:00.000Z"
+	},
+	{
+		"title": "Classic Cocktails",
+		"category": "personal",
+		"body": [
+			{
+				"_type": "block",
+				"children": [
+					{
+						"_type": "span",
+						"marks": [],
+						"text": "I am currently building this app for the bartender and manager I used to be.  It helps me to hone my Vue and TS knowledge, as well as learn how to work with Google Firebase. It also gives me the opportunity to use the wealth of beverage knowledge accumulated over a decade of working in the cocktail industry.\nBack when I was in the drinks trade we typically used a spreadsheet listing the house classic drinks recipes, and another for each season of new cocktails. What if we could customize the whole process and also have access to a network of friends' menus, archive and access all former menus and also integrate past seasons? This might be a great tool to identify a picky customer's order, or to save progress on cocktail creations for the spring menu drop, or simply to find your next hit for your home cocktail party"
+					}
+				],
+				"markDefs": [],
+				"style": "normal"
+			}
+		],
+		"technologies": ["Vue.js", "TailwindCSS", "Firebase"],
+		"githubLink": "https://github.com/damienaries/drink_checker",
+		"liveLink": "https://classics-checker.netlify.app/",
+		"mainImage": {
+			"src": "/images/classic-cocktails.png",
+			"alt": "Classic Cocktails app screenshot"
+		},
+		"publishedAt": "2023-10-27T05:17:40.990Z"
+	},
+	{
+		"title": "Carey Corea Art",
+		"category": "freelance",
+		"body": [
+			{
+				"_type": "block",
+				"children": [
+					{
+						"_type": "span",
+						"marks": [],
+						"text": "After a successful project with Kyle Corea in 2022, he and his father contacted me to build a simple portfolio site where they could easily showcase and update Carey's artwork. The result is this one page site where each piece can be looked closer and more information requested. The mobile first design helps Carey's son Kyle spread the word in NYC and the simplicity allows for the artist's work to shine, albeit through a blue light screen."
+					}
+				],
+				"markDefs": [],
+				"style": "normal"
+			}
+		],
+		"technologies": [
+			"Vue.js",
+			"Shopify",
+			"TypeScript",
+			"JavaScript",
+			"TailwindCSS"
+		],
+		"liveLink": "https://www.careycorea.art",
+		"mainImage": {
+			"src": "/images/carey-corea.png",
+			"alt": "Carey Corea Art website screenshot"
+		},
+		"publishedAt": "2023-07-26T05:08:00.000Z"
+	},
+	{
+		"title": "Corea Creative",
+		"category": "freelance",
+		"body": [
+			{
+				"_type": "block",
+				"children": [
+					{
+						"_type": "span",
+						"marks": [],
+						"text": "Built as a freelance for New York City based video producer Kyle Corea, this multi-page portfolio website showcases some video reels from Mr Corea's Vimeo page as well as the services offered by his production studio. \nTechnologies used are Next.js, React in JavaScript and CSS modules for styling, based on an Adobe XD wireframe. "
+					}
+				],
+				"markDefs": [],
+				"style": "normal"
+			}
+		],
+		"technologies": ["Next.js", "React", "CSS"],
+		"liveLink": "https://coreacreative.com/",
+		"mainImage": {
+			"src": "/images/corea-creative.png",
+			"alt": "Corea Creative website screenshot"
+		},
+		"publishedAt": "2022-04-15T06:06:00.000Z"
+	},
+	{
+		"title": "Judi Boisson Home Collection",
+		"category": "freelance",
+		"body": [
+			{
+				"_type": "block",
+				"children": [
+					{
+						"_type": "span",
+						"marks": [],
+						"text": "This project required very little coding per se, but needed all my problem solving skills. Ms Boisson hired me to fix up the website for her mother Judi's quilt and linen brand, which looked like it needed a bit of love and some fresh CSS. \nThe site was just down. Right away I discovered that it was built on Magento 1, and not running at all. The account information was lost, so without access to the codebase I couldn't simply restyle anything. Instead my work here was to help them find the right way to get the store back online. \nSo instead of migrating to Magento 2, I decided to have them make this a Shopify store, much more user friendly, especially if you're a small shop without a tech team handy. Here are the main steps we took for this:"
+					}
+				],
+				"markDefs": [],
+				"style": "normal"
+			}
+		],
+		"technologies": [
+			"Vue.js",
+			"Shopify",
+			"TypeScript",
+			"JavaScript",
+			"TailwindCSS"
+		],
+		"liveLink": "https://www.judiboisson.com/",
+		"mainImage": {
+			"src": "/images/judi-boisson.png",
+			"alt": "Judi Boisson Home Collection website screenshot"
+		},
+		"publishedAt": "2023-08-26T05:27:00.000Z"
+	},
+	{
+		"title": "Space Tourism",
+		"category": "personal",
+		"body": [
+			{
+				"_type": "block",
+				"children": [
+					{
+						"_type": "span",
+						"marks": ["em"],
+						"text": "Front End Mentor Project"
+					},
+					{
+						"_type": "span",
+						"marks": [],
+						"text": "\n"
+					}
+				],
+				"markDefs": [],
+				"style": "normal"
+			},
+			{
+				"_type": "block",
+				"children": [
+					{
+						"_type": "span",
+						"marks": [],
+						"text": "Fictional space tourism agency responsive website, with in-page navigation. Built with Create React App, in JavaScript and Emotion Styled Components."
+					}
+				],
+				"markDefs": [],
+				"style": "normal"
+			}
+		],
+		"technologies": ["React", "JavaScript", "Styled Components", "CSS"],
+		"githubLink": "https://github.com/damienaries/space-tourism",
+		"liveLink": "https://soyouwanttogotospace.netlify.app",
+		"mainImage": {
+			"src": "/images/space-tourism.png",
+			"alt": "Space Tourism website screenshot"
+		},
+		"publishedAt": "2021-06-02T06:06:00.000Z"
+	},
+	{
+		"title": "Jammming",
+		"category": "personal",
+		"body": [
+			{
+				"_type": "block",
+				"children": [
+					{
+						"_type": "span",
+						"marks": [],
+						"text": "Jammming is a playlist builder, connected to your Spotify via the public api .\nBuilt in React, JavaScript and CSS, as capstone project for the CodeCademy Web Development curriculum"
+					}
+				],
+				"markDefs": [],
+				"style": "normal"
+			}
+		],
+		"technologies": ["JavaScript", "React"],
+		"githubLink": "https://github.com/damienaries/jamming",
+		"liveLink": "https://jammingwithdamien.netlify.app/",
+		"mainImage": {
+			"src": "/images/jammming.png",
+			"alt": "Jammming app screenshot"
+		},
+		"publishedAt": "2020-07-22T14:37:00.000Z"
+	}
+]

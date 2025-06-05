@@ -1,0 +1,1499 @@
+[
+	{
+		"_createdAt": "2021-09-13T22:39:16Z",
+		"_id": "drafts.f77e57f7-7651-44d3-8ced-ef88afd79d93",
+		"_rev": "lliz9o-erx-g8x-b2h-oajpm0i3h",
+		"_type": "author",
+		"_updatedAt": "2023-08-27T05:31:17Z",
+		"bio": [
+			{
+				"_key": "d5770b1f7162",
+				"_type": "block",
+				"children": [
+					{
+						"_key": "f9974253fd44",
+						"_type": "span",
+						"marks": [],
+						"text": "Originally from France, I now live with my family in Los Angeles, CA. \nAfter a 15 year international career working in and running cocktail bars I decided to dive into my passion for all things tech and learned to code in 2020. My main focus is the Front End and I love to build beautiful, smooth interfaces and experiences in JavaScript, React and CSS."
+					}
+				],
+				"markDefs": [],
+				"style": "normal"
+			}
+		],
+		"image": {
+			"_sanityAsset": "image@file://./images/4f674a25cf4bff5292efae9aeeca2e568cb030e3-525x550.jpg",
+			"_type": "image"
+		},
+		"name": "Damien",
+		"slug": {
+			"_type": "slug",
+			"current": "damien"
+		}
+	},
+	{
+		"_createdAt": "2021-09-13T22:39:16Z",
+		"_id": "f77e57f7-7651-44d3-8ced-ef88afd79d93",
+		"_rev": "TrMJZl8kHDIulSDqHhOq80",
+		"_type": "author",
+		"_updatedAt": "2021-10-19T20:50:59Z",
+		"bio": [
+			{
+				"_key": "d5770b1f7162",
+				"_type": "block",
+				"children": [
+					{
+						"_key": "f9974253fd44",
+						"_type": "span",
+						"marks": [],
+						"text": "Originally from France, I now live with my family in Los Angeles, CA. \nAfter a 15 year international career working in and running cocktail bars I decided to dive into my passion for all things tech and learned to code in 2020. My main focus is the Front End and I love to build beautiful, smooth interfaces and experiences in JavaScript, React and CSS."
+					}
+				],
+				"markDefs": [],
+				"style": "normal"
+			}
+		],
+		"image": {
+			"_sanityAsset": "image@file://./images/4f674a25cf4bff5292efae9aeeca2e568cb030e3-525x550.jpg",
+			"_type": "image"
+		},
+		"name": "Damien",
+		"slug": {
+			"_type": "slug",
+			"current": "damien"
+		}
+	},
+	{
+		"_createdAt": "2021-09-14T04:29:21Z",
+		"_id": "46c8aaac-8fb1-4dc2-adee-03feeab9adb3",
+		"_rev": "m0DsCPTLF5kCPX2S8hSbqB",
+		"_type": "category",
+		"_updatedAt": "2021-09-14T04:29:21Z",
+		"title": "Full Stack"
+	},
+	{
+		"_createdAt": "2023-10-09T17:47:46Z",
+		"_id": "1cf77473-ad78-4de0-8386-1cbfd8a45397",
+		"_rev": "0b221HOluCFnhy0M1kXbI0",
+		"_type": "category",
+		"_updatedAt": "2023-10-09T17:47:46Z",
+		"title": "Work"
+	},
+	{
+		"_createdAt": "2023-10-09T17:47:56Z",
+		"_id": "35fbd0c2-03f5-4b64-999e-9781d0a24b10",
+		"_rev": "0b221HOluCFnhy0M1kXbPV",
+		"_type": "category",
+		"_updatedAt": "2023-10-09T17:47:56Z",
+		"title": "Freelance"
+	},
+	{
+		"_createdAt": "2021-09-13T23:33:12Z",
+		"_id": "175cdfd2-c457-4bbd-83fe-b0d664d39fca",
+		"_rev": "m0DsCPTLF5kCPX2S8gM9Jt",
+		"_type": "category",
+		"_updatedAt": "2021-09-13T23:33:12Z",
+		"title": "Web Knowledge"
+	},
+	{
+		"_createdAt": "2021-09-13T23:32:53Z",
+		"_id": "c7325c54-f9fa-4612-81aa-c9b2914e6f43",
+		"_rev": "8Jv1ofl0TwgKqmwVJsiy6u",
+		"_type": "category",
+		"_updatedAt": "2021-09-13T23:32:53Z",
+		"title": "Front End"
+	},
+	{
+		"_createdAt": "2023-10-09T17:48:06Z",
+		"_id": "f5124e72-b5c2-47f8-9063-116cb68bbcc5",
+		"_rev": "SmYhtgXzoiZIxm7PiHaKGY",
+		"_type": "category",
+		"_updatedAt": "2023-10-09T17:48:06Z",
+		"title": "Personal"
+	},
+	{
+		"_createdAt": "2022-01-15T18:37:50Z",
+		"_id": "013a2741-70e3-43cf-831b-a3ce234fbdfd",
+		"_rev": "5ozZinO5iuLoAhY9SdVckJ",
+		"_type": "job",
+		"_updatedAt": "2022-10-21T16:34:53Z",
+		"body": [
+			{
+				"_key": "cea60c464b7d",
+				"_type": "block",
+				"children": [
+					{
+						"_key": "15125c08fc45",
+						"_type": "span",
+						"marks": [],
+						"text": "Before I made the decision to return to a previous career plan and learned to code, I enjoyed a long international career tending and running cocktail bars in Paris, NYC, Montreal, St Barts - and many other places. \nDuring those amazing years of travel and learning I developed a solid work ethic and learned invauable skills which translate into technological needs, from team building and leading, cross-functional team collaboration, product creation and customer management, operation and budget management and so on."
+					}
+				],
+				"markDefs": [],
+				"style": "normal"
+			}
+		],
+		"from": "2005",
+		"title": "Bartender - Bar Manager",
+		"to": "2020"
+	},
+	{
+		"_createdAt": "2021-12-19T17:33:05Z",
+		"_id": "1e9afd61-9045-4183-8e6f-9cbb93bd17a6",
+		"_rev": "0o11Qb55ZCsci3v2nHUaMR",
+		"_type": "job",
+		"_updatedAt": "2021-12-31T21:29:16Z",
+		"body": [
+			{
+				"_key": "d738f38c2ff8",
+				"_type": "block",
+				"children": [
+					{
+						"_key": "1e051e7096cc",
+						"_type": "span",
+						"marks": [],
+						"text": "iVisa is the solution to facilitate travel documents to destinations around the globe. The app is built in Laravel, PHP, and Vue.js. My role encompasses optimizing our front end test coverage using Laravel Dusk or implementing best CSS practices into new component designs with Tailwind and Sass"
+					}
+				],
+				"markDefs": [],
+				"style": "normal"
+			}
+		],
+		"categories": [
+			{
+				"_key": "39e8cbd4e3d7",
+				"_ref": "c7325c54-f9fa-4612-81aa-c9b2914e6f43",
+				"_type": "reference"
+			}
+		],
+		"company": "iVisa.com",
+		"from": "November 2021",
+		"technologies": [
+			{
+				"_key": "8170967e9f4b",
+				"_ref": "e7d7e0c5-8daf-4596-9ce3-33d19ec724fb",
+				"_type": "reference"
+			},
+			{
+				"_key": "e72e80ca0c17",
+				"_ref": "cb9d6608-4bf4-46f0-bebc-4cd7040b61e1",
+				"_type": "reference"
+			},
+			{
+				"_key": "0c1e65719177",
+				"_ref": "03266191-9cee-4014-8493-c4a8f48bfa57",
+				"_type": "reference"
+			},
+			{
+				"_key": "0c0a5f1a437d",
+				"_ref": "d4675de7-d937-4c09-ae96-d76e252052ca",
+				"_type": "reference"
+			},
+			{
+				"_key": "c6ea145bf3a8",
+				"_ref": "05009d1f-7bfa-4639-afeb-295332f2a4e7",
+				"_type": "reference"
+			},
+			{
+				"_key": "30b6aaae8971",
+				"_ref": "2ea37ec8-0947-4a20-970f-9b00ed1a5096",
+				"_type": "reference"
+			},
+			{
+				"_key": "9d6a8ffe27c7",
+				"_ref": "7f655353-ea55-4159-ac2c-b02ff91b3e46",
+				"_type": "reference"
+			}
+		],
+		"title": "Front End Web Developer"
+	},
+	{
+		"_createdAt": "2021-09-17T03:47:05Z",
+		"_id": "51b01767-acd0-4530-a409-a91e314f81ce",
+		"_rev": "Z23n0a4sMIyLTdtUfcwb4i",
+		"_type": "job",
+		"_updatedAt": "2022-01-15T18:52:45Z",
+		"body": [
+			{
+				"_key": "6b9e45f70344",
+				"_type": "block",
+				"children": [
+					{
+						"_key": "2e48c4a44334",
+						"_type": "span",
+						"marks": [],
+						"text": "Concept is a social platform for human flourishing built in JavaScript, React and Firebase. My role there as an intern part of the startup’s founding dev team was distributed across the stack, with a Front-End focus to build foundational features like a forum page and our onboarding slides."
+					}
+				],
+				"markDefs": [],
+				"style": "normal"
+			}
+		],
+		"categories": [
+			{
+				"_key": "440bee83f289",
+				"_ref": "46c8aaac-8fb1-4dc2-adee-03feeab9adb3",
+				"_type": "reference"
+			},
+			{
+				"_key": "3964e3fe804b",
+				"_ref": "c7325c54-f9fa-4612-81aa-c9b2914e6f43",
+				"_type": "reference"
+			}
+		],
+		"company": "CONCEPT.app",
+		"from": "January 2021",
+		"technologies": [
+			{
+				"_key": "1a5c8d1ec252",
+				"_ref": "427ed094-b2f1-4ab6-9bca-f89bfcbed8ff",
+				"_type": "reference"
+			},
+			{
+				"_key": "9a062f8f30a7",
+				"_ref": "f20476cf-613c-4ec6-94cf-28447c7b443b",
+				"_type": "reference"
+			},
+			{
+				"_key": "daf460adf0da",
+				"_ref": "546fb345-f90d-477f-98ac-90226881a095",
+				"_type": "reference"
+			},
+			{
+				"_key": "9ae9ce4d4f27",
+				"_ref": "5253e2d5-77ff-4fbd-a299-19845c2b8294",
+				"_type": "reference"
+			},
+			{
+				"_key": "ec130531be9c",
+				"_ref": "e7d7e0c5-8daf-4596-9ce3-33d19ec724fb",
+				"_type": "reference"
+			}
+		],
+		"title": "Founding Developer",
+		"to": "July 2021"
+	},
+	{
+		"_createdAt": "2022-04-05T15:45:01Z",
+		"_id": "f132fea5-0d98-41ee-8a66-b916014cd30a",
+		"_rev": "4XoFYHcCLkaWa2JHTtuFkS",
+		"_type": "job",
+		"_updatedAt": "2022-04-05T15:56:08Z",
+		"body": [
+			{
+				"_key": "6b4588818a85",
+				"_type": "block",
+				"children": [
+					{
+						"_key": "115e9c3677f5",
+						"_type": "span",
+						"marks": [],
+						"text": "For NYC based nutritionist chef Sarah Pachelli I maintain her Shopify storefront ssere.com, a great resource for anyone looking to improve wellbeing by eating well and more. The site is built on a customized template and my role encompasses any  front or back end task necessary, from image update and optimization to site structure or setting up new products etc."
+					}
+				],
+				"markDefs": [],
+				"style": "normal"
+			}
+		],
+		"categories": [
+			{
+				"_key": "5f597aab9657",
+				"_ref": "c7325c54-f9fa-4612-81aa-c9b2914e6f43",
+				"_type": "reference"
+			}
+		],
+		"company": "Ssere.com",
+		"from": "April 2022",
+		"technologies": [
+			{
+				"_key": "c66f69e36164",
+				"_ref": "cda59775-eeec-4717-af0e-7886ceb0566b",
+				"_type": "reference"
+			},
+			{
+				"_key": "1dd82d555cc9",
+				"_ref": "37e2cdd8-061e-4bd8-a632-1e7e944ba837",
+				"_type": "reference"
+			},
+			{
+				"_key": "d9193bfe5290",
+				"_ref": "e7d7e0c5-8daf-4596-9ce3-33d19ec724fb",
+				"_type": "reference"
+			},
+			{
+				"_key": "c1e3c3692062",
+				"_ref": "cb9d6608-4bf4-46f0-bebc-4cd7040b61e1",
+				"_type": "reference"
+			}
+		],
+		"title": "Freelance Developer"
+	},
+	{
+		"_createdAt": "2021-09-13T22:38:43Z",
+		"_id": "d2a980d9-5a74-4cd9-aa9f-951117a08b49",
+		"_rev": "RWJ3eyvxAEQ2PboMtwPrq9",
+		"_type": "post",
+		"_updatedAt": "2021-09-14T04:10:54Z",
+		"author": {
+			"_ref": "f77e57f7-7651-44d3-8ced-ef88afd79d93",
+			"_type": "reference"
+		},
+		"body": [
+			{
+				"_key": "838aa9256cf5",
+				"_type": "block",
+				"children": [
+					{
+						"_key": "f07d0e50798f",
+						"_type": "span",
+						"marks": [],
+						"text": "Write your blog post here! "
+					}
+				],
+				"markDefs": [],
+				"style": "normal"
+			}
+		],
+		"categories": [
+			{
+				"_key": "e5ba3f4620f8",
+				"_ref": "175cdfd2-c457-4bbd-83fe-b0d664d39fca",
+				"_type": "reference"
+			},
+			{
+				"_key": "aa4eb8857f31",
+				"_ref": "c7325c54-f9fa-4612-81aa-c9b2914e6f43",
+				"_type": "reference"
+			}
+		],
+		"mainImage": {
+			"_sanityAsset": "image@file://./images/1b5d7d37dd5a36286f406041cddbbd81eddbd0c2-897x666.png",
+			"_type": "image"
+		},
+		"publishedAt": "2021-09-14T04:10:00.000Z",
+		"slug": {
+			"_type": "slug",
+			"current": "my-very-first-blog-post"
+		},
+		"title": "My very first blog post"
+	},
+	{
+		"_createdAt": "2021-09-14T16:43:11Z",
+		"_id": "a434d806-91f5-4eaa-b870-0e0d02a20e56",
+		"_rev": "L01JTGI5XmHcgnxesso24Q",
+		"_type": "project",
+		"_updatedAt": "2023-10-11T17:38:51Z",
+		"body": [
+			{
+				"_key": "7442d45e82c6",
+				"_type": "block",
+				"children": [
+					{
+						"_key": "29e2119f6f56",
+						"_type": "span",
+						"marks": [],
+						"text": "As part of an Agile work simulation with Hatchawys.io, I was part of building this app in Typescript, React, MongoDB, AWS, Material UI. \nMy role included building the navigation, login/signup pages, parts of the profile on the Front End. \nOn the Back End I set up and connected our MongoDb and S3 bucket to be able to upload profile & other pictures. "
+					}
+				],
+				"markDefs": [],
+				"style": "normal"
+			}
+		],
+		"categories": [
+			{
+				"_key": "333b32af1397",
+				"_ref": "1cf77473-ad78-4de0-8386-1cbfd8a45397",
+				"_type": "reference"
+			}
+		],
+		"category": "work",
+		"featured": false,
+		"githubLink": "https://github.com/damienaries/team-callback-cats",
+		"mainImage": {
+			"_sanityAsset": "image@file://./images/9be82fabdf5d22964e128f9f77ce28c7427f6198-1111x689.png",
+			"_type": "image"
+		},
+		"publishedAt": "2021-09-13T16:55:00.000Z",
+		"slug": {
+			"_type": "slug",
+			"current": "loving-dog-sitter"
+		},
+		"technologies": [
+			{
+				"_key": "5d8827f242c9",
+				"_ref": "1abdc822-2df6-4272-92d1-ed50db2ff919",
+				"_type": "reference"
+			},
+			{
+				"_key": "d660836d1a0d",
+				"_ref": "24da39ab-1783-4328-b42a-f1a6b41efc8f",
+				"_type": "reference"
+			},
+			{
+				"_key": "0b20df1ef4b2",
+				"_ref": "427ed094-b2f1-4ab6-9bca-f89bfcbed8ff",
+				"_type": "reference"
+			},
+			{
+				"_key": "d8fb670d6d40",
+				"_ref": "5253e2d5-77ff-4fbd-a299-19845c2b8294",
+				"_type": "reference"
+			},
+			{
+				"_key": "e583c5c97a07",
+				"_ref": "433c9266-c713-4fe2-a722-d8c694c67e06",
+				"_type": "reference"
+			},
+			{
+				"_key": "049d91b3ae9d",
+				"_ref": "441e8c78-d2b1-4bcf-99a8-43e125522dbc",
+				"_type": "reference"
+			}
+		],
+		"title": "Loving Dog Sitter"
+	},
+	{
+		"_createdAt": "2023-10-26T05:01:55Z",
+		"_id": "d6b161ae-530c-4639-a698-8bb11c5493ca",
+		"_rev": "xPbWUGh7bh7YYkPknAHrYW",
+		"_type": "project",
+		"_updatedAt": "2023-10-28T06:15:24Z",
+		"body": [
+			{
+				"_key": "d56e7e6064af",
+				"_type": "block",
+				"children": [
+					{
+						"_key": "f97541720aeb",
+						"_type": "span",
+						"marks": [],
+						"text": "Since November 2021 I have been working at iVisa, an international startup specializing in travel documents. My tasks vary and span our entire stack but my focus leans towards the Front End and I write a lot a Vue and TailwindCSS code every day. \nMy first responsibility was to write a whole suite of UI tests with Laravel Dusk and since then I have grown to work with the team on implementing diverse UI features for small and large parts of the application, such as a new mobile navigation screen, visa selection page or user account experience. \nI also had the chance to work on integrating generative AI to summarize our blogs and improve features for our admin side, like an YouTube iframe generator tool for markdown or document scanning processing."
+					}
+				],
+				"markDefs": [],
+				"style": "normal"
+			}
+		],
+		"category": "work",
+		"liveLink": "https://www.ivisa.com",
+		"mainImage": {
+			"_sanityAsset": "image@file://./images/4454e264aa0170380811020e1fe40a0fb069a6d1-2784x1518.png",
+			"_type": "image"
+		},
+		"publishedAt": "2023-10-26T04:41:00.000Z",
+		"slug": {
+			"_type": "slug",
+			"current": "ivisa-com"
+		},
+		"technologies": [
+			{
+				"_key": "0b60063b3cf8",
+				"_ref": "03266191-9cee-4014-8493-c4a8f48bfa57",
+				"_type": "reference"
+			},
+			{
+				"_key": "ecbee970082a",
+				"_ref": "05009d1f-7bfa-4639-afeb-295332f2a4e7",
+				"_type": "reference"
+			},
+			{
+				"_key": "54ae9ea1f05d",
+				"_ref": "2ea37ec8-0947-4a20-970f-9b00ed1a5096",
+				"_type": "reference"
+			},
+			{
+				"_key": "2716c18f900e",
+				"_ref": "d4675de7-d937-4c09-ae96-d76e252052ca",
+				"_type": "reference"
+			},
+			{
+				"_key": "204212574c47",
+				"_ref": "e7d7e0c5-8daf-4596-9ce3-33d19ec724fb",
+				"_type": "reference"
+			},
+			{
+				"_key": "ff4494ea0015",
+				"_ref": "441e8c78-d2b1-4bcf-99a8-43e125522dbc",
+				"_type": "reference"
+			}
+		],
+		"title": "iVisa.com"
+	},
+	{
+		"_createdAt": "2023-10-26T05:56:05Z",
+		"_id": "e0ac0c1a-3683-4f3c-8bdb-13b14250543e",
+		"_rev": "cENZqGiMupaxkYR1ahD0Q8",
+		"_type": "project",
+		"_updatedAt": "2023-11-05T15:57:07Z",
+		"body": [
+			{
+				"_key": "cb03e2ac67eb",
+				"_type": "block",
+				"children": [
+					{
+						"_key": "2fd875f71c1d",
+						"_type": "span",
+						"marks": [],
+						"text": "I am currently building this app for the bartender and manager I used to be.  It helps me to hone my Vue and TS knowledge, as well as learn how to work with Google Firebase. It also gives me the opportunity to use the wealth of beverage knowledge accumulated over a decade of working in the cocktail industry.\nBack when I was in the drinks trade we typically used a spreadsheet listing the house classic drinks recipes, and another for each season of new cocktails. What if we could customize the whole process and also have access to a network of friends' menus, archive and access all former menus and also integrate past seasons? This might be a great tool to identify a picky customer's order, or to save progress on cocktail creations for the spring menu drop, or simply to find your next hit for your home cocktail party"
+					}
+				],
+				"markDefs": [],
+				"style": "normal"
+			}
+		],
+		"category": "personal",
+		"githubLink": "https://github.com/damienaries/drink_checker",
+		"liveLink": "https://classics-checker.netlify.app/",
+		"mainImage": {
+			"_sanityAsset": "image@file://./images/b100020b123baf3e3a6be28f9d1d11d6455ce363-2858x1494.png",
+			"_type": "image"
+		},
+		"publishedAt": "2023-10-27T05:17:40.990Z",
+		"slug": {
+			"_type": "slug",
+			"current": "classic-cocktails"
+		},
+		"technologies": [
+			{
+				"_key": "7cc8df53cf4a",
+				"_ref": "2ea37ec8-0947-4a20-970f-9b00ed1a5096",
+				"_type": "reference"
+			},
+			{
+				"_key": "31e4b51a9f01",
+				"_ref": "d4675de7-d937-4c09-ae96-d76e252052ca",
+				"_type": "reference"
+			},
+			{
+				"_key": "55845121999f",
+				"_ref": "f20476cf-613c-4ec6-94cf-28447c7b443b",
+				"_type": "reference"
+			}
+		],
+		"title": "Classic Cocktails"
+	},
+	{
+		"_createdAt": "2022-07-20T14:57:56Z",
+		"_id": "292569c8-d0be-4be1-aae0-34b46a90fbcf",
+		"_rev": "e3JlAWU4zH1i6UbP7dU3OJ",
+		"_type": "project",
+		"_updatedAt": "2023-10-26T05:54:30Z",
+		"body": [
+			{
+				"_key": "e7d5b4e48d61",
+				"_type": "block",
+				"children": [
+					{
+						"_key": "11f4d6fdccbd",
+						"_type": "span",
+						"marks": ["em"],
+						"text": "Front End Mentor Project"
+					},
+					{
+						"_key": "a20fa8f7f45d",
+						"_type": "span",
+						"marks": [],
+						"text": "\n"
+					}
+				],
+				"markDefs": [],
+				"style": "normal"
+			},
+			{
+				"_key": "9f9ed74ba467",
+				"_type": "block",
+				"children": [
+					{
+						"_key": "e174bfe91f4a",
+						"_type": "span",
+						"marks": [],
+						"text": "Fictional space tourism agency responsive website, with in-page navigation. Built with Create React App, in JavaScript and Emotion Styled Components."
+					}
+				],
+				"markDefs": [],
+				"style": "normal"
+			}
+		],
+		"category": "personal",
+		"featured": false,
+		"githubLink": "https://github.com/damienaries/space-tourism",
+		"liveLink": "https://soyouwanttogotospace.netlify.app",
+		"mainImage": {
+			"_sanityAsset": "image@file://./images/edcb5464628182b4dd52775430d9f5a165d5b887-1290x689.png",
+			"_type": "image"
+		},
+		"publishedAt": "2021-06-02T06:06:00.000Z",
+		"slug": {
+			"_type": "slug",
+			"current": "space-tourism"
+		},
+		"technologies": [
+			{
+				"_key": "8b81c3c0edac",
+				"_ref": "427ed094-b2f1-4ab6-9bca-f89bfcbed8ff",
+				"_type": "reference"
+			},
+			{
+				"_key": "84ed03acafa1",
+				"_ref": "e7d7e0c5-8daf-4596-9ce3-33d19ec724fb",
+				"_type": "reference"
+			},
+			{
+				"_key": "d700d60b109e",
+				"_ref": "546fb345-f90d-477f-98ac-90226881a095",
+				"_type": "reference"
+			},
+			{
+				"_key": "002d0d1a35d3",
+				"_ref": "cb9d6608-4bf4-46f0-bebc-4cd7040b61e1",
+				"_type": "reference"
+			}
+		],
+		"title": "Space Tourism"
+	},
+	{
+		"_createdAt": "2021-09-14T04:28:27Z",
+		"_id": "29dd4b52-559d-4a37-a3b9-b61a0e4c23a3",
+		"_rev": "wTa6HlKQs0Xw100j3GvKq4",
+		"_type": "project",
+		"_updatedAt": "2023-10-11T17:38:27Z",
+		"body": [
+			{
+				"_key": "f0e814ba6313",
+				"_type": "block",
+				"children": [
+					{
+						"_key": "a7e0fa918aca",
+						"_type": "span",
+						"marks": [],
+						"text": "Concept is a social platform for human flourishing built in JavaScript, React and Firebase. My role there as a member of the startup’s founding dev team was distributed across the stack, with a Front-End focus to build foundational features like a forum page and our onboarding slides."
+					}
+				],
+				"markDefs": [],
+				"style": "normal"
+			},
+			{
+				"_key": "78a483067781",
+				"_type": "block",
+				"children": [
+					{
+						"_key": "5c8155387b8e0",
+						"_type": "span",
+						"marks": [],
+						"text": "\n"
+					}
+				],
+				"markDefs": [],
+				"style": "normal"
+			}
+		],
+		"categories": [
+			{
+				"_key": "85c6e91a5bc6",
+				"_ref": "1cf77473-ad78-4de0-8386-1cbfd8a45397",
+				"_type": "reference"
+			}
+		],
+		"category": "work",
+		"featured": true,
+		"liveLink": "https://concept.app",
+		"mainImage": {
+			"_sanityAsset": "image@file://./images/acdc7142c44068326c6d92e956b2ca5cdf39d06f-1079x686.png",
+			"_type": "image",
+			"crop": {
+				"_type": "sanity.imageCrop",
+				"bottom": 0.0037978914106887585,
+				"left": 0.08937198067632847,
+				"right": 0,
+				"top": 0
+			},
+			"hotspot": {
+				"_type": "sanity.imageHotspot",
+				"height": 0.9962021085893112,
+				"width": 0.9106280193236715,
+				"x": 0.5446859903381642,
+				"y": 0.4981010542946556
+			}
+		},
+		"publishedAt": "2021-07-03T04:30:00.000Z",
+		"slug": {
+			"_type": "slug",
+			"current": "concept-app"
+		},
+		"technologies": [
+			{
+				"_key": "a57a7b8cc098",
+				"_ref": "24da39ab-1783-4328-b42a-f1a6b41efc8f",
+				"_type": "reference"
+			},
+			{
+				"_key": "009413d10fb3",
+				"_ref": "427ed094-b2f1-4ab6-9bca-f89bfcbed8ff",
+				"_type": "reference"
+			},
+			{
+				"_key": "7506098ff4c6",
+				"_ref": "5253e2d5-77ff-4fbd-a299-19845c2b8294",
+				"_type": "reference"
+			},
+			{
+				"_key": "c73c1f9270fe",
+				"_ref": "546fb345-f90d-477f-98ac-90226881a095",
+				"_type": "reference"
+			},
+			{
+				"_key": "07282218ca28",
+				"_ref": "f20476cf-613c-4ec6-94cf-28447c7b443b",
+				"_type": "reference"
+			}
+		],
+		"title": "Concept.app"
+	},
+	{
+		"_createdAt": "2023-10-26T05:02:05Z",
+		"_id": "7541dfea-1ae0-4fe3-b91a-b4c2b9b6fcb2",
+		"_rev": "e3JlAWU4zH1i6UbP7dTbev",
+		"_type": "project",
+		"_updatedAt": "2023-10-26T05:22:25Z",
+		"body": [
+			{
+				"_key": "ea368db7a7fa",
+				"_type": "block",
+				"children": [
+					{
+						"_key": "8104f467304a",
+						"_type": "span",
+						"marks": [],
+						"text": "After a successful project with Kyle Corea in 2022, he and his father contacted me to build a simple portfolio site where they could easily showcase and update Carey's artwork. The result is this one page site where each piece can be looked closer and more information requested. The mobile first design helps Carey's son Kyle spread the word in NYC and the simplicity allows for the artist's work to shine, albeit through a blue light screen."
+					}
+				],
+				"markDefs": [],
+				"style": "normal"
+			}
+		],
+		"category": "freelance",
+		"liveLink": "https://www.careycorea.art",
+		"mainImage": {
+			"_sanityAsset": "image@file://./images/32af609a7c4ded35ac893618aeaff8e8a9c3f5b0-2834x1510.png",
+			"_type": "image"
+		},
+		"publishedAt": "2023-07-26T05:08:00.000Z",
+		"slug": {
+			"_type": "slug",
+			"current": "carey-corea-art"
+		},
+		"technologies": [
+			{
+				"_key": "96487b19c914",
+				"_ref": "2ea37ec8-0947-4a20-970f-9b00ed1a5096",
+				"_type": "reference"
+			},
+			{
+				"_key": "c06575d36796",
+				"_ref": "4fbeb6cf-e8f7-40ad-abe4-351715a512d7",
+				"_type": "reference"
+			},
+			{
+				"_key": "0e7081f6b917",
+				"_ref": "441e8c78-d2b1-4bcf-99a8-43e125522dbc",
+				"_type": "reference"
+			},
+			{
+				"_key": "38e46b7e651e",
+				"_ref": "e7d7e0c5-8daf-4596-9ce3-33d19ec724fb",
+				"_type": "reference"
+			},
+			{
+				"_key": "4a0f0195ef7a",
+				"_ref": "d4675de7-d937-4c09-ae96-d76e252052ca",
+				"_type": "reference"
+			}
+		],
+		"title": "Carey Corea Art"
+	},
+	{
+		"_createdAt": "2022-07-20T14:48:05Z",
+		"_id": "9486bc91-e22a-49a2-8246-50ebd70126d3",
+		"_rev": "L01JTGI5XmHcgnxesso04J",
+		"_type": "project",
+		"_updatedAt": "2023-10-11T17:38:09Z",
+		"body": [
+			{
+				"_key": "ae2ecaafcb50",
+				"_type": "block",
+				"children": [
+					{
+						"_key": "61ad1a126af8",
+						"_type": "span",
+						"marks": [],
+						"text": "Built as a freelance for New York City based video producer Kyle Corea, this multi-page portfolio website showcases some video reels from Mr Corea's Vimeo page as well as the services offered by his production studio. \nTechnologies used are Next.js, React in JavaScript and CSS modules for styling, based on an Adobe XD wireframe. "
+					}
+				],
+				"markDefs": [],
+				"style": "normal"
+			}
+		],
+		"categories": [
+			{
+				"_key": "41c93e200db0",
+				"_ref": "35fbd0c2-03f5-4b64-999e-9781d0a24b10",
+				"_type": "reference"
+			}
+		],
+		"category": "freelance",
+		"featured": true,
+		"liveLink": "https://coreacreative.com/",
+		"mainImage": {
+			"_sanityAsset": "image@file://./images/bdfcaa60202c2b75ffd434fe7d5d19fa4b4414f9-1372x689.png",
+			"_type": "image"
+		},
+		"publishedAt": "2022-04-15T06:06:00.000Z",
+		"slug": {
+			"_type": "slug",
+			"current": "corea-creative"
+		},
+		"technologies": [
+			{
+				"_key": "d4b1f6db7690",
+				"_ref": "3708012c-c348-4fc3-bcc1-39cd187bc1c5",
+				"_type": "reference"
+			},
+			{
+				"_key": "498e2bca020c",
+				"_ref": "427ed094-b2f1-4ab6-9bca-f89bfcbed8ff",
+				"_type": "reference"
+			},
+			{
+				"_key": "9632d98f456a",
+				"_ref": "cb9d6608-4bf4-46f0-bebc-4cd7040b61e1",
+				"_type": "reference"
+			}
+		],
+		"title": "Corea Creative"
+	},
+	{
+		"_createdAt": "2022-07-20T14:48:05Z",
+		"_id": "drafts.9486bc91-e22a-49a2-8246-50ebd70126d3",
+		"_rev": "t4nwkw-87y-s8b-e5r-6v1pnyqyv",
+		"_type": "project",
+		"_updatedAt": "2023-10-26T05:08:20Z",
+		"body": [
+			{
+				"_key": "ae2ecaafcb50",
+				"_type": "block",
+				"children": [
+					{
+						"_key": "61ad1a126af8",
+						"_type": "span",
+						"marks": [],
+						"text": "Built as a freelance for New York City based video producer Kyle Corea, this multi-page portfolio website showcases some video reels from Mr Corea's Vimeo page as well as the services offered by his production studio. \nTechnologies used are Next.js, React in JavaScript and CSS modules for styling, based on an Adobe XD wireframe. "
+					}
+				],
+				"markDefs": [],
+				"style": "normal"
+			}
+		],
+		"category": "freelance",
+		"featured": false,
+		"liveLink": "https://coreacreative.com/",
+		"mainImage": {
+			"_sanityAsset": "image@file://./images/bdfcaa60202c2b75ffd434fe7d5d19fa4b4414f9-1372x689.png",
+			"_type": "image"
+		},
+		"publishedAt": "2022-04-15T06:06:00.000Z",
+		"slug": {
+			"_type": "slug",
+			"current": "corea-creative"
+		},
+		"technologies": [
+			{
+				"_key": "d4b1f6db7690",
+				"_ref": "3708012c-c348-4fc3-bcc1-39cd187bc1c5",
+				"_type": "reference"
+			},
+			{
+				"_key": "498e2bca020c",
+				"_ref": "427ed094-b2f1-4ab6-9bca-f89bfcbed8ff",
+				"_type": "reference"
+			},
+			{
+				"_key": "9632d98f456a",
+				"_ref": "cb9d6608-4bf4-46f0-bebc-4cd7040b61e1",
+				"_type": "reference"
+			}
+		],
+		"title": "Corea Creative"
+	},
+	{
+		"_createdAt": "2021-09-17T20:46:39Z",
+		"_id": "fda2a2df-0bb9-4c01-9094-5172b350a86f",
+		"_rev": "1PlRYme9TJuwBgC0AKPnTn",
+		"_type": "project",
+		"_updatedAt": "2023-11-03T15:39:51Z",
+		"body": [
+			{
+				"_key": "193357cf8f90",
+				"_type": "block",
+				"children": [
+					{
+						"_key": "dae78aa0c765",
+						"_type": "span",
+						"marks": [],
+						"text": "Jammming is a playlist builder, connected to your Spotify via the public api .\nBuilt in React, JavaScript and CSS, as capstone project for the CodeCademy Web Development curriculum"
+					}
+				],
+				"markDefs": [],
+				"style": "normal"
+			}
+		],
+		"categories": [
+			{
+				"_key": "6ed3211a1c05",
+				"_ref": "f5124e72-b5c2-47f8-9063-116cb68bbcc5",
+				"_type": "reference"
+			}
+		],
+		"category": "personal",
+		"featured": false,
+		"githubLink": "https://github.com/damienaries/jamming",
+		"liveLink": "https://jammingwithdamien.netlify.app/",
+		"mainImage": {
+			"_sanityAsset": "image@file://./images/5f2f1494036860f8e614761ac9b3f914ec7028f3-843x686.png",
+			"_type": "image"
+		},
+		"publishedAt": "2020-07-22T14:37:00.000Z",
+		"slug": {
+			"_type": "slug",
+			"current": "jammming"
+		},
+		"technologies": [
+			{
+				"_key": "4bd3381fe316",
+				"_ref": "e7d7e0c5-8daf-4596-9ce3-33d19ec724fb",
+				"_type": "reference"
+			},
+			{
+				"_key": "1ecc74372cc9",
+				"_ref": "427ed094-b2f1-4ab6-9bca-f89bfcbed8ff",
+				"_type": "reference"
+			}
+		],
+		"title": "Jammming"
+	},
+	{
+		"_createdAt": "2023-10-26T05:26:51Z",
+		"_id": "993e016a-703a-4a4d-9b1e-651bde794124",
+		"_rev": "1PlRYme9TJuwBgC0AKQBiN",
+		"_type": "project",
+		"_updatedAt": "2023-11-03T15:55:27Z",
+		"body": [
+			{
+				"_key": "f607ceab5539",
+				"_type": "block",
+				"children": [
+					{
+						"_key": "561d94d3ccbc",
+						"_type": "span",
+						"marks": [],
+						"text": "This one was not a coding project per se, but required all my problem solving skills. Ms Boisson asked me to work on fixing up the website for her mother Judi's quilt and linen brand, which looked like it needed a bit of love and some fresh CSS. \nRight away I discovered that this site was running on Magento 1, which had been discontinued in 2018. So without access to the codebase I couldn't simply restyle anything. Instead my work here was to help them find the right way to get the store back online. \nSo instead of migrating to Magento 2, I decided to have them make this a Shopify store, much more user friendly, especially if you're a small shop without a tech team handy. Here are the main steps we took for this:\n\n1. Migrate and backup all the data that wasn't lost in the 5 years since Magento died.\n2. Create the store and set up all the Shopify admin details. Payment, domain setup, email tracking etc, so many different pieces that were left unchecked for too long and needed to just work again so clients could be contacted and inventory could start moving again.\n3. Choose a theme and make sure the data wasn't corrupted and the products were represented correctly and attractively.\n4. Start selling, and they have brought since August 2023 over $50K in sales.\nIn the end the job here was to figure out what was wrong with this store, investigate some issues and make sure we documented the new systems and processes to future proof the store. Today they are back on track selling the products that make the Judi Boisson brand amazing."
+					}
+				],
+				"markDefs": [],
+				"style": "normal"
+			}
+		],
+		"category": "freelance",
+		"liveLink": "https://www.judiboisson.com/",
+		"mainImage": {
+			"_sanityAsset": "image@file://./images/dd9f8f11ee21748cf0f8562435d09aac810154c5-2606x1512.png",
+			"_type": "image",
+			"crop": {
+				"_type": "sanity.imageCrop",
+				"bottom": 0,
+				"left": 0,
+				"right": 0,
+				"top": 0
+			},
+			"hotspot": {
+				"_type": "sanity.imageHotspot",
+				"height": 1,
+				"width": 1,
+				"x": 0.5,
+				"y": 0.5
+			}
+		},
+		"publishedAt": "2023-08-26T05:27:00.000Z",
+		"slug": {
+			"_type": "slug",
+			"current": "judi-boisson-home-collection"
+		},
+		"title": "Judi Boisson Home Collection"
+	},
+	{
+		"_createdAt": "2023-10-26T05:26:51Z",
+		"_id": "drafts.993e016a-703a-4a4d-9b1e-651bde794124",
+		"_rev": "ktoq1x-khd-vio-m0z-ltkjt586a",
+		"_type": "project",
+		"_updatedAt": "2024-11-17T16:03:54Z",
+		"body": [
+			{
+				"_key": "f607ceab5539",
+				"_type": "block",
+				"children": [
+					{
+						"_key": "561d94d3ccbc",
+						"_type": "span",
+						"marks": [],
+						"text": "This project required very little coding per se, but needed all my problem solving skills. Ms Boisson hired me to fix up the website for her mother Judi's quilt and linen brand, which looked like it needed a bit of love and some fresh CSS. \nThe site was just down. Right away I discovered that it was built on Magento 1, and not running at all. The account information was lost, so without access to the codebase I couldn't simply restyle anything. Instead my work here was to help them find the right way to get the store back online. \nSo instead of migrating to Magento 2, I decided to have them make this a Shopify store, much more user friendly, especially if you're a small shop without a tech team handy. Here are the main steps we took for this:"
+					}
+				],
+				"markDefs": [],
+				"style": "normal"
+			},
+			{
+				"_key": "6c2122f33a49",
+				"_type": "block",
+				"children": [
+					{
+						"_key": "8e6e6daf6bfa",
+						"_type": "span",
+						"marks": [],
+						"text": "Migrate and backup all the data that wasn't lost in the 5 years since Magento died."
+					}
+				],
+				"level": 1,
+				"listItem": "bullet",
+				"markDefs": [],
+				"style": "normal"
+			},
+			{
+				"_key": "77e169b0d4f3",
+				"_type": "block",
+				"children": [
+					{
+						"_key": "6a4145718236",
+						"_type": "span",
+						"marks": [],
+						"text": "Create the store and set up all the Shopify admin details. Payment, domain setup, email tracking etc, so many different pieces that were left unchecked for too long and needed to just work again so clients could be contacted and inventory could start moving again."
+					}
+				],
+				"level": 1,
+				"listItem": "bullet",
+				"markDefs": [],
+				"style": "normal"
+			},
+			{
+				"_key": "b70845c03b3c",
+				"_type": "block",
+				"children": [
+					{
+						"_key": "c1a1b860cf17",
+						"_type": "span",
+						"marks": [],
+						"text": "Choose a theme and make sure the data wasn't corrupted and the products were represented correctly and attractively."
+					}
+				],
+				"level": 1,
+				"listItem": "bullet",
+				"markDefs": [],
+				"style": "normal"
+			},
+			{
+				"_key": "4b24f93d43c7",
+				"_type": "block",
+				"children": [
+					{
+						"_key": "d3d823766717",
+						"_type": "span",
+						"marks": [],
+						"text": "Start selling! They brought in over $50K in sales in the first 2 months of reopening.\nIn the end the job here was to figure out what was wrong with this store, investigate some issues and make sure we documented the new systems and processes to future proof the store. Today they are back on track selling the products that make the Judi Boisson brand amazing."
+					}
+				],
+				"level": 1,
+				"listItem": "bullet",
+				"markDefs": [],
+				"style": "normal"
+			},
+			{
+				"_key": "e0a9bc9450da",
+				"_type": "block",
+				"children": [
+					{
+						"_key": "bdc004220db5",
+						"_type": "span",
+						"marks": [],
+						"text": "Create the store and set up all the Shopify admin details. Payment, domain setup, email tracking etc, so many different pieces that were left unchecked for too long and needed to just work again so clients could be contacted and inventory could start moving again."
+					}
+				],
+				"level": 1,
+				"listItem": "bullet",
+				"markDefs": [],
+				"style": "normal"
+			},
+			{
+				"_key": "e219f29d5f1a",
+				"_type": "block",
+				"children": [
+					{
+						"_key": "8cae7c5ee2ed",
+						"_type": "span",
+						"marks": [],
+						"text": "Choose a theme and make sure the data wasn't corrupted and the products were represented correctly and attractively."
+					}
+				],
+				"level": 1,
+				"listItem": "bullet",
+				"markDefs": [],
+				"style": "normal"
+			},
+			{
+				"_key": "54e38b087d91",
+				"_type": "block",
+				"children": [
+					{
+						"_key": "b79a12d0a88f",
+						"_type": "span",
+						"marks": [],
+						"text": ""
+					}
+				],
+				"level": 1,
+				"listItem": "bullet",
+				"markDefs": [],
+				"style": "normal"
+			}
+		],
+		"category": "freelance",
+		"liveLink": "https://www.judiboisson.com/",
+		"mainImage": {
+			"_sanityAsset": "image@file://./images/dd9f8f11ee21748cf0f8562435d09aac810154c5-2606x1512.png",
+			"_type": "image",
+			"crop": {
+				"_type": "sanity.imageCrop",
+				"bottom": 0,
+				"left": 0,
+				"right": 0,
+				"top": 0
+			},
+			"hotspot": {
+				"_type": "sanity.imageHotspot",
+				"height": 1,
+				"width": 1,
+				"x": 0.5,
+				"y": 0.5
+			}
+		},
+		"publishedAt": "2023-08-26T05:27:00.000Z",
+		"slug": {
+			"_type": "slug",
+			"current": "judi-boisson-home-collection"
+		},
+		"title": "Judi Boisson Home Collection"
+	},
+	{
+		"_createdAt": "2021-09-14T05:25:44Z",
+		"_id": "4fbeb6cf-e8f7-40ad-abe4-351715a512d7",
+		"_rev": "Ql9pBhXUiKAfQDz2O0n0jM",
+		"_type": "technology",
+		"_updatedAt": "2021-09-27T05:30:00Z",
+		"category": "Back End",
+		"title": "Sanity"
+	},
+	{
+		"_createdAt": "2021-12-19T17:35:52Z",
+		"_id": "2ea37ec8-0947-4a20-970f-9b00ed1a5096",
+		"_rev": "75tJosESYslMRr1bRCIUyG",
+		"_type": "technology",
+		"_updatedAt": "2021-12-19T18:50:02Z",
+		"category": "JS frameworks",
+		"icon": "SiVuedotjs",
+		"title": "Vue.js"
+	},
+	{
+		"_createdAt": "2021-09-14T05:25:15Z",
+		"_id": "66df57a3-c900-4f1b-8017-7d9794e35c1e",
+		"_rev": "iO1zIgharL0fzJ9HJdOVQv",
+		"_type": "technology",
+		"_updatedAt": "2022-01-23T16:56:05Z",
+		"category": "Front End",
+		"icon": {
+			"_type": "iconPicker",
+			"name": "FaHtml5",
+			"provider": "fa"
+		},
+		"title": "HTML"
+	},
+	{
+		"_createdAt": "2021-12-19T17:35:31Z",
+		"_id": "03266191-9cee-4014-8493-c4a8f48bfa57",
+		"_rev": "0o11Qb55ZCsci3v2mhfBIN",
+		"_type": "technology",
+		"_updatedAt": "2021-12-19T18:46:54Z",
+		"category": "Languages",
+		"icon": "SiPhp",
+		"title": "PHP"
+	},
+	{
+		"_createdAt": "2021-12-19T17:37:19Z",
+		"_id": "05009d1f-7bfa-4639-afeb-295332f2a4e7",
+		"_rev": "iO1zIgharL0fzJ9HJdOfwv",
+		"_type": "technology",
+		"_updatedAt": "2022-01-23T16:57:17Z",
+		"category": "Frameworks",
+		"icon": {
+			"_type": "iconPicker",
+			"name": "FaLaravel",
+			"provider": "fa"
+		},
+		"title": "Laravel"
+	},
+	{
+		"_createdAt": "2021-09-14T05:24:28Z",
+		"_id": "1abdc822-2df6-4272-92d1-ed50db2ff919",
+		"_rev": "Ql9pBhXUiKAfQDz2OGY9va",
+		"_type": "technology",
+		"_updatedAt": "2021-09-28T18:22:52Z",
+		"category": "Styling",
+		"icon": "SiMaterialUi",
+		"title": "Material UI"
+	},
+	{
+		"_createdAt": "2021-09-14T05:24:28Z",
+		"_id": "drafts.1abdc822-2df6-4272-92d1-ed50db2ff919",
+		"_rev": "fe8fvb-l4s-rck-s0m-m3t2yan72",
+		"_type": "technology",
+		"_updatedAt": "2022-01-23T16:57:21Z",
+		"category": "Styling",
+		"title": "Material UI"
+	},
+	{
+		"_createdAt": "2021-09-14T05:26:15Z",
+		"_id": "24da39ab-1783-4328-b42a-f1a6b41efc8f",
+		"_rev": "75tJosESYslMRr1bRCFi1p",
+		"_type": "technology",
+		"_updatedAt": "2021-12-19T18:46:39Z",
+		"category": "Back End",
+		"icon": "SiNodedotjs",
+		"title": "Node"
+	},
+	{
+		"_createdAt": "2021-09-14T05:27:37Z",
+		"_id": "32a70532-ed4f-4363-8b35-9dc485591351",
+		"_rev": "75tJosESYslMRr1bRCICql",
+		"_type": "technology",
+		"_updatedAt": "2021-12-19T18:47:55Z",
+		"category": "Back End ",
+		"icon": "SiPostgresql",
+		"title": "PostgreSQL"
+	},
+	{
+		"_createdAt": "2021-09-14T05:28:32Z",
+		"_id": "3708012c-c348-4fc3-bcc1-39cd187bc1c5",
+		"_rev": "91mNbnWW9fkBqVwXvOWSdY",
+		"_type": "technology",
+		"_updatedAt": "2021-09-28T18:23:39Z",
+		"category": "Back End",
+		"icon": "SiNextDotJs",
+		"title": "Next.js"
+	},
+	{
+		"_createdAt": "2022-04-05T15:48:45Z",
+		"_id": "37e2cdd8-061e-4bd8-a632-1e7e944ba837",
+		"_rev": "Zec3MUE91ZTsgw3JofAXHP",
+		"_type": "technology",
+		"_updatedAt": "2022-04-05T15:48:45Z",
+		"category": "Templating languages",
+		"title": "Liquid"
+	},
+	{
+		"_createdAt": "2021-09-14T05:21:55Z",
+		"_id": "427ed094-b2f1-4ab6-9bca-f89bfcbed8ff",
+		"_rev": "A6xK5mJhq9BWoe96rKyARa",
+		"_type": "technology",
+		"_updatedAt": "2021-12-19T18:48:13Z",
+		"category": "Front End",
+		"icon": "SiReact",
+		"title": "React"
+	},
+	{
+		"_createdAt": "2021-09-14T05:27:26Z",
+		"_id": "433c9266-c713-4fe2-a722-d8c694c67e06",
+		"_rev": "0o11Qb55ZCsci3v2mheSAE",
+		"_type": "technology",
+		"_updatedAt": "2021-12-19T18:46:16Z",
+		"category": "Back End",
+		"icon": "SiMongodb",
+		"title": "MongoDB"
+	},
+	{
+		"_createdAt": "2021-09-14T05:27:26Z",
+		"_id": "drafts.433c9266-c713-4fe2-a722-d8c694c67e06",
+		"_rev": "mqx1n0-x2g-81y-pg9-8j6nzjjsa",
+		"_type": "technology",
+		"_updatedAt": "2022-01-23T16:57:41Z",
+		"category": "Back End",
+		"title": "MongoDB"
+	},
+	{
+		"_createdAt": "2021-09-14T16:55:01Z",
+		"_id": "441e8c78-d2b1-4bcf-99a8-43e125522dbc",
+		"_rev": "Ql9pBhXUiKAfQDz2OGZ8SU",
+		"_type": "technology",
+		"_updatedAt": "2021-09-28T18:24:55Z",
+		"category": "Front End",
+		"icon": "SiTypescript",
+		"title": "TypeScript"
+	},
+	{
+		"_createdAt": "2021-09-14T05:24:56Z",
+		"_id": "5253e2d5-77ff-4fbd-a299-19845c2b8294",
+		"_rev": "gEZ3KbE4RQscltmuOyqLmi",
+		"_type": "technology",
+		"_updatedAt": "2022-01-23T16:37:54Z",
+		"category": "Back End",
+		"icon": {
+			"_type": "iconPicker",
+			"name": "FaAws",
+			"provider": "fa"
+		},
+		"title": "AWS - S3"
+	},
+	{
+		"_createdAt": "2021-09-14T05:24:16Z",
+		"_id": "546fb345-f90d-477f-98ac-90226881a095",
+		"_rev": "3nRqoGv37GpODEa7gNZdQ8",
+		"_type": "technology",
+		"_updatedAt": "2023-10-28T14:40:30Z",
+		"category": "Styling",
+		"icon": "SiStyledComponents",
+		"title": "Styled Components"
+	},
+	{
+		"_createdAt": "2021-09-14T05:25:06Z",
+		"_id": "5dcdf551-92d3-43dc-b196-c776efae76b1",
+		"_rev": "iO1zIgharL0fzJ9HJdKvQv",
+		"_type": "technology",
+		"_updatedAt": "2022-01-23T16:38:19Z",
+		"category": "Styling",
+		"title": "Bootstrap"
+	},
+	{
+		"_createdAt": "2021-09-14T05:26:02Z",
+		"_id": "5f9f4e18-71ae-4cf7-a385-299e697369e2",
+		"_rev": "IOfXopc3ydt9Rd80TJyhN0",
+		"_type": "technology",
+		"_updatedAt": "2022-01-23T16:39:24Z",
+		"category": "Back End",
+		"icon": {
+			"_type": "iconPicker",
+			"name": "FaReact",
+			"provider": "fa"
+		},
+		"title": "Express"
+	},
+	{
+		"_createdAt": "2021-09-14T05:26:02Z",
+		"_id": "drafts.5f9f4e18-71ae-4cf7-a385-299e697369e2",
+		"_rev": "q5if59-ijt-hhe-fcl-eew0uw0tl",
+		"_type": "technology",
+		"_updatedAt": "2022-01-23T16:39:32Z",
+		"category": "Back End",
+		"title": "Express"
+	},
+	{
+		"_createdAt": "2021-12-19T17:40:05Z",
+		"_id": "7f655353-ea55-4159-ac2c-b02ff91b3e46",
+		"_rev": "A6xK5mJhq9BWoe96rKyE7C",
+		"_type": "technology",
+		"_updatedAt": "2021-12-19T18:48:37Z",
+		"category": "Front End",
+		"icon": "SiSass",
+		"title": "SASS"
+	},
+	{
+		"_createdAt": "2021-09-14T05:24:03Z",
+		"_id": "cb9d6608-4bf4-46f0-bebc-4cd7040b61e1",
+		"_rev": "IOfXopc3ydt9Rd80TJycts",
+		"_type": "technology",
+		"_updatedAt": "2022-01-23T16:38:32Z",
+		"category": "Styling",
+		"icon": {
+			"_type": "iconPicker",
+			"name": "FaCss3Alt",
+			"provider": "fa"
+		},
+		"title": "CSS"
+	},
+	{
+		"_createdAt": "2022-04-05T15:47:36Z",
+		"_id": "cda59775-eeec-4717-af0e-7886ceb0566b",
+		"_rev": "PgI01tNREf04EWwVK23GB2",
+		"_type": "technology",
+		"_updatedAt": "2022-04-05T15:47:36Z",
+		"category": "Front End",
+		"icon": "SiShopify",
+		"title": "Shopify"
+	},
+	{
+		"_createdAt": "2021-12-19T17:35:17Z",
+		"_id": "d4675de7-d937-4c09-ae96-d76e252052ca",
+		"_rev": "75tJosESYslMRr1bRCISiT",
+		"_type": "technology",
+		"_updatedAt": "2021-12-19T18:49:46Z",
+		"category": "Front End",
+		"icon": "SiTailwindcss",
+		"title": "TailwindCSS"
+	},
+	{
+		"_createdAt": "2021-09-14T05:20:55Z",
+		"_id": "drafts.e7d7e0c5-8daf-4596-9ce3-33d19ec724fb",
+		"_rev": "fh2ox7-ztx-rar-46a-pcuktg8bx",
+		"_type": "technology",
+		"_updatedAt": "2022-01-23T16:56:09Z",
+		"category": "Front End",
+		"title": "JavaScript"
+	},
+	{
+		"_createdAt": "2021-09-14T05:20:55Z",
+		"_id": "e7d7e0c5-8daf-4596-9ce3-33d19ec724fb",
+		"_rev": "A6xK5mJhq9BWoe96rKvEgw",
+		"_type": "technology",
+		"_updatedAt": "2021-12-19T18:45:47Z",
+		"category": "Front End",
+		"icon": "SiJavascript",
+		"title": "JavaScript"
+	},
+	{
+		"_createdAt": "2021-09-14T05:24:45Z",
+		"_id": "drafts.f20476cf-613c-4ec6-94cf-28447c7b443b",
+		"_rev": "ki59l5-kc7-a2u-fst-0uhoi83k9",
+		"_type": "technology",
+		"_updatedAt": "2022-01-23T16:39:47Z",
+		"category": "Back End",
+		"title": "Firebase"
+	},
+	{
+		"_createdAt": "2021-09-14T05:24:45Z",
+		"_id": "f20476cf-613c-4ec6-94cf-28447c7b443b",
+		"_rev": "Ql9pBhXUiKAfQDz2OGXgyQ",
+		"_type": "technology",
+		"_updatedAt": "2021-09-28T18:21:47Z",
+		"category": "Back End",
+		"icon": "SiFirebase",
+		"title": "Firebase"
+	},
+	{
+		"_createdAt": "2021-09-17T21:01:17Z",
+		"_id": "f44f6c4d-2066-49e6-9695-128e15253502",
+		"_rev": "IOfXopc3ydt9Rd80TJyjI6",
+		"_type": "technology",
+		"_updatedAt": "2022-01-23T16:39:44Z",
+		"category": "Front End",
+		"icon": {
+			"_type": "iconPicker",
+			"name": "FaFigma",
+			"provider": "fa"
+		},
+		"title": "Figma"
+	}
+]
