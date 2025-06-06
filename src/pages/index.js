@@ -1,8 +1,7 @@
 import styled from '@emotion/styled';
-import About from '../components/About';
+import About from '../components/ui/About';
 
 export default function Home() {
-
 	return (
 		<HomePage>
 			<About />
