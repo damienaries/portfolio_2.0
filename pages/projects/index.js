@@ -1,9 +1,12 @@
 import styled from '@emotion/styled';
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import Project from '../../components/projects/Project';
-import projectsData from '../../lib/data/portfolio_data_copy.json';
+import ContributionCalendar from '../../components/ContributionCalendar';
+import Project from '../../components/Project';
+import projectsData from '../../data/portfolio_data_copy.json';
 
-export default function Projects() {
+export default function Projects(props) {
+	const { calendar } = props;
 	const categories = ['work', 'freelance', 'personal'];
 	const [currentTab, setCurrentTab] = useState('');
 	const [currentProjects, setCurrentProjects] = useState([]);
@@ -48,6 +51,18 @@ export default function Projects() {
 			</section>
 		</StyledProjects>
 	);
+}
+
+export async function getStaticProps() {
+	// get Gitlab contributions
+	const res = await fetch(`https://gitlab.com/users/damienaries/calendar.json`);
+	const calendar = await res.json();
+
+	return {
+		props: {
+			calendar,
+		},
+	};
 }
 
 const StyledProjects = styled.main`

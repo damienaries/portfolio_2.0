@@ -1,7 +1,6 @@
-/** @type {import('next').NextConfig} */
 const nextConfig = {
 	images: {
-		// No external domains needed
+		domains: ['cdn.sanity.io'],
 	},
 };
 
