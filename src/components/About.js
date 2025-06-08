@@ -54,11 +54,12 @@ const StyledAboutSection = styled.section`
 		border-radius: var(--radius);
 		box-shadow: var(--shadow-low);
 		overflow: hidden;
+		background-color: ${(props) => props.theme.cardBackground};
 		background-image: ${(props) => props.theme.backgroundGradient},
 			url('/images/about-bg-ext.webp');
-		background-size: cover;
-		background-repeat: no-repeat;
-		background-position: center;
+		background-size: cover !important;
+		background-repeat: no-repeat !important;
+		background-position: center !important;
 		padding: 4rem;
 
 		.home-title {
