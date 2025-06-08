@@ -68,17 +68,15 @@ export default function Navbar({ theme, toggleTheme }) {
 					</>
 				) : (
 					<div className="mobile-nav-action">
-						{!navOpen ? (
-							<FaBars className="action-button" onClick={toggleNav} />
-						) : (
-							<MdClose className="action-button" onClick={toggleNav} />
-						)}
+						<FaBars className="action-button" onClick={toggleNav} />
 					</div>
 				)}
 			</div>
 			{/* Mobile Nav full screen Modal */}
 			{navOpen && (
 				<div className="mobile-nav" style={{ right: !navOpen ? '-100%' : 0 }}>
+					<MdClose className="action-button close-btn" onClick={toggleNav} />
+
 					<Link href="/" className="mobile-nav-link" onClick={toggleNav}>
 						Home
 					</Link>
@@ -154,6 +152,7 @@ const StyledNav = styled.header`
 
 	.action-button {
 		font-size: 2rem;
+		z-index: 100;
 
 		&:hover {
 			cursor: pointer;
@@ -172,7 +171,7 @@ const StyledNav = styled.header`
 		width: 100vw;
 		background-color: ${(props) => props.theme.background};
 		animation: ${fadeIn} 0.3s ease-out;
-		z-index: 100;
+		z-index: 50;
 
 		&-link {
 			text-align: center;
@@ -185,6 +184,13 @@ const StyledNav = styled.header`
 			&:active {
 				border-bottom: 1px solid var(--color-white);
 			}
+		}
+
+		.close-btn {
+			position: absolute;
+			top: 2rem;
+			right: 3rem;
+			z-index: 100;
 		}
 	}
 `;

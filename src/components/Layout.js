@@ -30,7 +30,7 @@ const Layout = ({ children, theme, toggleTheme }) => {
 	return (
 		<>
 			<Head>
-				<title>Damien Aries | {pageTitle}</title>
+				<title>{`Damien Aries | ${pageTitle}`}</title>
 				<meta
 					name="viewport"
 					lang="eng"

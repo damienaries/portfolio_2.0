@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import ContributionCalendar from '../../components/ContributionCalendar';
 import Project from '../../components/Project';
-import projectsData from '../../data/portfolio_data_copy.json';
+import projectsData from '../../../data/portfolio_data_copy.json';
 
 export default function Projects(props) {
 	const { calendar } = props;
