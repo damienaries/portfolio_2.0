@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import Project from '../../components/Project';
 import projectsData from '../../../data/portfolio_data_copy.json';
 
-export default function Projects() {
+export default function Projects({ sortedProjects }) {
 	const categories = ['work', 'freelance', 'personal'];
 	const [currentTab, setCurrentTab] = useState('');
 	const [currentProjects, setCurrentProjects] = useState([]);
@@ -15,8 +15,8 @@ export default function Projects() {
 		setCurrentTab(saved ? saved : 'work');
 
 		//filter projects based on currentTab
-		setCurrentProjects(projectsData.filter((p) => p.category === currentTab));
-	}, [currentTab]);
+		setCurrentProjects(sortedProjects.filter((p) => p.category === currentTab));
+	}, [currentTab, sortedProjects]);
 
 	const handleClick = (c) => {
 		setCurrentTab(c);
@@ -49,6 +49,19 @@ export default function Projects() {
 			</section>
 		</StyledProjects>
 	);
+}
+
+export async function getStaticProps() {
+	// Sort projects by publishedAt date in descending order (newest first)
+	const sortedProjects = [...projectsData].sort((a, b) => {
+		return new Date(b.publishedAt) - new Date(a.publishedAt);
+	});
+
+	return {
+		props: {
+			sortedProjects,
+		},
+	};
 }
 
 const StyledProjects = styled.main`

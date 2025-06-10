@@ -4,27 +4,21 @@ import Layout from '../components/Layout';
 import { GlobalStyles, darkTheme, lightTheme } from '../styles/globalStyles';
 
 function MyApp({ Component, pageProps }) {
-	const [theme, setTheme] = useState(null);
-
-	useEffect(() => {
-		const savedValue = localStorage.getItem('theme');
-		setTheme(savedValue ? savedValue : 'light');
-	}, []);
-
-	useEffect(() => {
-		if (typeof theme === 'string') {
-			localStorage.setItem('theme', theme);
+	const [theme, setTheme] = useState(() => {
+		if (typeof window !== 'undefined') {
+			return localStorage.getItem('theme') || 'dark';
 		}
+		return 'dark';
+	});
+
+	useEffect(() => {
+		localStorage.setItem('theme', theme);
 	}, [theme]);
 
-	const toggleTheme = (e) => {
-		if (theme === 'light') {
-			setTheme('dark');
-			localStorage.setItem('theme', 'dark');
-		} else {
-			setTheme('light');
-			localStorage.setItem('theme', 'light');
-		}
+	const toggleTheme = () => {
+		const newTheme = theme === 'light' ? 'dark' : 'light';
+		setTheme(newTheme);
+		localStorage.setItem('theme', newTheme);
 	};
 
 	return (

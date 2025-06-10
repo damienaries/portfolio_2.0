@@ -1,18 +1,11 @@
 import styled from '@emotion/styled';
-import { PortableText } from '@portabletext/react';
 import Image from 'next/legacy/image';
 import React from 'react';
 import CodeLinks from './CodeLinks';
 
 export default function Project({ project }) {
-	const {
-		title,
-		mainImage,
-		technologies,
-		body = [],
-		liveLink,
-		githubLink,
-	} = project;
+	const { title, mainImage, technologies, body, liveLink, githubLink } =
+		project;
 
 	return (
 		<StyledProject>
@@ -32,7 +25,7 @@ export default function Project({ project }) {
 							<Image
 								className="image"
 								src={mainImage.src}
-								alt={title}
+								alt={mainImage.alt}
 								layout="responsive"
 								sizes="(max-width: 600px) 80vw, 500px"
 								width={600}
@@ -43,9 +36,7 @@ export default function Project({ project }) {
 						<CodeLinks githubLink={githubLink} liveLink={liveLink} />
 					</div>
 
-					<div className="description">
-						<PortableText value={body} />
-					</div>
+					<div className="description">{body}</div>
 				</div>
 			</div>
 		</StyledProject>
@@ -124,6 +115,7 @@ const StyledProject = styled.section`
 
 			.bottom-grid {
 				grid-template-columns: 1fr;
+				padding: 2.5rem 0;
 			}
 		}
 	}
