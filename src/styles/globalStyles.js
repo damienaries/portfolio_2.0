@@ -1,29 +1,35 @@
 import { css } from '@emotion/react';
 
 export const lightTheme = {
-	background: 'rgb(253, 253, 253)',
-	text: '#222',
-	cardBackground: 'var(--color-gray-light)',
-	buttonBg: 'rgba(69, 90, 100, .7)',
-	buttonText: '#fafafa',
-	buttonBgHover: 'rgba(69, 90, 100, 1)',
-	borderColor: 'var(--color-gray-dark)',
+	background: 'var(--color-white)',
+	text: 'var(--color-gray-dark)',
+	cardBackground: 'var(--color-white-dark)',
+	buttonBg: 'var(--color-gray-dark)',
+	buttonText: 'var(--color-white)',
+	buttonBgHover: 'var(--color-gray-light)',
+	borderColor: 'var(--color-gray-light)',
 	overlay: 'var(--color-gray-dark)',
 	backgroundGradient:
-		'linear-gradient(to right, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.6))',
+		'linear-gradient(to right, var(--color-white), var(--color-white-dark))',
+	techPillGradient:
+		'linear-gradient(to bottom right, var(--color-accent-2), var(--color-accent-2), var(--color-gray-light))',
+	boxShadow: 'var(--shadow-low)',
 };
 
 export const darkTheme = {
-	background: 'var(--color-blue-dark)',
-	text: 'rgb(253, 253, 253)',
-	cardBackground: 'var(--color-blue-light)',
-	buttonBg: 'var(--color-blue-light)',
-	buttonText: '#fafafa',
-	buttonBgHover: 'var(--color-blue-dark)',
-	borderColor: 'rgb(253, 253, 253)',
+	background: 'var(--color-gray-dark)',
+	text: 'var(--color-white)',
+	cardBackground: 'var(--color-gray-light)',
+	buttonBg: 'var(--color-white-dark)',
+	buttonText: 'var(--color-gray-dark)',
+	buttonBgHover: 'var(--color-white)',
+	borderColor: 'var(--color-white-dark)',
 	overlay: 'var(--color-gray-light)',
 	backgroundGradient:
-		'linear-gradient(to right bottom, var(--color-blue-dark), var(--color-blue-light))',
+		'linear-gradient(to right bottom, var(--color-gray-dark), var(--color-gray-light))',
+	techPillGradient:
+		'linear-gradient(to bottom right, var(--color-gray-light), var(--color-gray-light), var(--color-white-dark))',
+	boxShadow: 'var(--shadow-light)',
 };
 
 export const GlobalStyles = (theme) => css`
@@ -48,19 +54,19 @@ export const GlobalStyles = (theme) => css`
 
 		/* Colors */
 
-		/* Dark Theme */
-		--color-blue-light: rgba(62, 107, 158, 0.3);
-		--color-blue-dark: rgba(0, 23, 45);
+		--color-gray-dark: rgba(30, 35, 41, 1);
+		--color-gray-light: rgba(115, 121, 128, 0.3);
 
-		/* Light theme */
-		--color-gray-light: rgba(207, 216, 220, 0.4);
-		--color-gray-dark: rgba(69, 90, 100, 0.5);
+		--color-white: rgba(251, 252, 253, 1);
+		--color-white-dark: rgba(226, 232, 240, 1);
+
+		--color-accent: rgba(59, 130, 246, 1);
+		--color-accent-2: rgba(203, 213, 225, 1);
 
 		/* Shadows and border radius */
 		--radius: 8px;
 		--shadow-low: 0px 2px 10px 0px rgba(34, 34, 34, 0.5);
-		--shadow-high: 0px 5px 10px 0px rgba(34, 34, 34, 0.55);
-		--shadow-light: 0px 2px 10px 0px rgba(253, 253, 253, 0.8);
+		--shadow-light: 0px 2px 6px 0px rgba(253, 253, 253, 0.5);
 	}
 
 	html,

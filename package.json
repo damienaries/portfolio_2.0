@@ -14,7 +14,6 @@
 		"@portabletext/react": "^3.2.1",
 		"cors": "^2.8.5",
 		"eslint-config-next": "^15.2.2",
-		"gitlab-calendar": "^2.0.1",
 		"next": "^14.2.24",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",

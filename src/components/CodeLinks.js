@@ -30,18 +30,18 @@ const StyledLinks = styled.div`
 		padding: 0.5rem 1.5rem;
 		margin: 0.5rem;
 		border-radius: 50px;
-		background-color: ${(props) => props.theme.buttonBg};
-		color: ${(props) => props.theme.buttonText};
+		background-image: ${(props) => props.theme.techPillGradient};
+		color: ${(props) => props.theme.text};
 		transition: all 0.2s ease-out;
 		display: flex;
 		align-items: center;
+		box-shadow: ${(props) => props.theme.boxShadow};
 
 		.icon {
 			margin-left: 0.5rem;
 		}
 
 		&:hover {
-			color: ${(props) => props.theme.buttonText};
 			background-color: ${(props) => props.theme.buttonBgHover};
 		}
 	}

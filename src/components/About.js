@@ -8,23 +8,29 @@ function AboutSection() {
 				<h1 className="home-title">Welcome</h1>
 				<div className="about-body">
 					<p className="body-paragraph">
-						Hi! I'm Damien. I'm a Full Stack Developer based in Los Angeles, CA.{' '}
-						<br></br>I love writing JavaScript, PhP and CSS and specialize in
-						Laravel, Vue, React &amp; Next.js.
+						Hi! I'm Damien, a Full Stack Developer based in Los Angeles, CA. I
+						specialize in JavaScript, PHP, and CSS with deep expertise in
+						Laravel, Vue, React, and Next.js frameworks.
 					</p>
 					<p className="body-paragraph">
-						I'm a lifelong learner, passionate about all things Javascript,
-						Climate, Education and the possibilities modern AI tech might bring
-						to these fields. Always looking to grow and improve, I aspire to
-						take part in building beautiful, fast, fun and exciting programs
-						that will benefit us all.
+						As a lifelong learner, I'm passionate about leveraging modern web
+						technologies to create meaningful solutions in climate, education,
+						and AI innovation. I'm driven to build beautiful, performant
+						applications that make a real impact—combining technical excellence
+						with user-focused design.
 					</p>
 					<p className="body-paragraph">
-						Originally from France, I traveled around Europe and North America
-						during the course of my previous career in the cocktail world. I
-						currently live with my family in California and when I'm not coding
-						you can find me on a hike or a bike ride by the beach, enjoying the
-						best LA has to offer.
+						My background includes international experience across Europe and
+						North America, where I developed strong problem-solving skills and
+						cultural adaptability in the hospitality industry before
+						transitioning to tech. Now based in California with my family, I
+						bring that same attention to detail and client-focused approach to
+						every development project.
+					</p>
+					<p className="body-paragraph">
+						When I'm not coding, you'll find me exploring LA's trails and
+						beaches—always seeking that perfect balance between innovation and
+						inspiration.
 					</p>
 					<Link href="/projects" className="work-cta">
 						See some recent work
@@ -52,14 +58,10 @@ const StyledAboutSection = styled.section`
 		background: ${(props) => props.theme.cardBackground};
 		color: ${(props) => props.theme.text};
 		border-radius: var(--radius);
-		box-shadow: var(--shadow-low);
+		box-shadow: ${(props) => props.theme.boxShadow};
 		overflow: hidden;
 		background-color: ${(props) => props.theme.cardBackground};
-		background-image: ${(props) => props.theme.backgroundGradient},
-			url('/images/about-bg-ext.webp');
-		background-size: cover !important;
-		background-repeat: no-repeat !important;
-		background-position: center !important;
+		background-image: ${(props) => props.theme.backgroundGradient};
 		padding: 4rem;
 
 		.home-title {
@@ -78,12 +80,13 @@ const StyledAboutSection = styled.section`
 			}
 
 			.work-cta {
-				border: 1px solid ${(props) => props.theme.text};
+				border: 1px solid ${(props) => props.theme.borderColor};
 				color: ${(props) => props.theme.text};
-				padding: 0.5rem 1rem;
+				padding: 1rem 1.5rem;
 				font-size: 1.4rem;
 				border-radius: 20px;
 				margin: 4rem 0 0;
+				box-shadow: ${(props) => props.theme.boxShadow};
 
 				&:hover,
 				&:active {

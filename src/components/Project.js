@@ -76,8 +76,6 @@ const StyledProject = styled.section`
 		text-align: center;
 		border-radius: var(--radius);
 		background-color: ${(props) => props.theme.cardBackground};
-		backdrop-filter: blur(10px);
-		-webkit-backdrop-filter: blur(10px);
 
 		.title {
 			font-size: var(--size-title-section);
@@ -97,14 +95,9 @@ const StyledProject = styled.section`
 			padding: 0.5rem 1rem;
 			margin: 0.5rem;
 			font-size: 1.3rem;
-			background-image: linear-gradient(
-				to bottom right,
-				var(--color-blue-light),
-				var(--color-blue-light)
-			);
 			border-radius: 50px;
-			backdrop-filter: blur(10px);
-			-webkit-backdrop-filter: blur(10px);
+			background-image: ${(props) => props.theme.techPillGradient};
+			box-shadow: ${(props) => props.theme.boxShadow};
 		}
 
 		.bottom-grid {
