@@ -4,22 +4,29 @@ import Layout from '../components/Layout';
 import { GlobalStyles, darkTheme, lightTheme } from '../styles/globalStyles';
 
 function MyApp({ Component, pageProps }) {
-	const [theme, setTheme] = useState(() => {
-		if (typeof window !== 'undefined') {
-			return localStorage.getItem('theme') || 'dark';
-		}
-		return 'dark';
-	});
+	const [mounted, setMounted] = useState(false);
+	const [theme, setTheme] = useState('dark');
 
 	useEffect(() => {
-		localStorage.setItem('theme', theme);
-	}, [theme]);
+		const savedTheme = localStorage.getItem('theme') || 'dark';
+		setTheme(savedTheme);
+		setMounted(true);
+	}, []);
+
+	useEffect(() => {
+		if (mounted) {
+			localStorage.setItem('theme', theme);
+		}
+	}, [theme, mounted]);
 
 	const toggleTheme = () => {
-		const newTheme = theme === 'light' ? 'dark' : 'light';
-		setTheme(newTheme);
-		localStorage.setItem('theme', newTheme);
+		setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
 	};
+
+	// Prevent flash of wrong theme
+	if (!mounted) {
+		return null;
+	}
 
 	return (
 		<ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>

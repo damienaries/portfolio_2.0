@@ -13,7 +13,7 @@
 		],
 		"liveLink": "https://www.ivisa.com",
 		"mainImage": {
-			"src": "/images/ivisa.png",
+			"src": "/images/ivisa.webp",
 			"alt": "iVisa.com project screenshot"
 		},
 		"publishedAt": "2023-10-26T04:41:00.000Z"
@@ -26,7 +26,7 @@
 		"githubLink": "https://github.com/damienaries/drink_checker",
 		"liveLink": "https://classics-checker.netlify.app/",
 		"mainImage": {
-			"src": "/images/classic-cocktails.png",
+			"src": "/images/classic-cocktails.webp",
 			"alt": "Classic Cocktails app screenshot"
 		},
 		"publishedAt": "2023-10-27T05:17:40.990Z"
@@ -44,7 +44,7 @@
 		],
 		"liveLink": "https://www.careycorea.art",
 		"mainImage": {
-			"src": "/images/carey-corea.png",
+			"src": "/images/carey-corea.webp",
 			"alt": "Carey Corea Art website screenshot"
 		},
 		"publishedAt": "2023-07-26T05:08:00.000Z"
@@ -56,7 +56,7 @@
 		"technologies": ["Next.js", "React", "CSS"],
 		"liveLink": "https://coreacreative.com/",
 		"mainImage": {
-			"src": "/images/corea-creative.png",
+			"src": "/images/corea-creative.webp",
 			"alt": "Corea Creative website screenshot"
 		},
 		"publishedAt": "2022-04-15T06:06:00.000Z"
@@ -74,7 +74,7 @@
 		],
 		"liveLink": "https://www.judiboisson.com/",
 		"mainImage": {
-			"src": "/images/judi-boisson.png",
+			"src": "/images/judi-boisson.webp",
 			"alt": "Judi Boisson Home Collection website screenshot"
 		},
 		"publishedAt": "2023-08-26T05:27:00.000Z"
@@ -87,7 +87,7 @@
 		"githubLink": "https://github.com/damienaries/space-tourism",
 		"liveLink": "https://soyouwanttogotospace.netlify.app",
 		"mainImage": {
-			"src": "/images/space-tourism.png",
+			"src": "/images/space-tourism.webp",
 			"alt": "Space Tourism website screenshot"
 		},
 		"publishedAt": "2021-06-02T06:06:00.000Z"
@@ -100,7 +100,7 @@
 		"githubLink": "https://github.com/damienaries/jamming",
 		"liveLink": "https://jammingwithdamien.netlify.app/",
 		"mainImage": {
-			"src": "/images/jammming.png",
+			"src": "/images/jammming.webp",
 			"alt": "Jammming app screenshot"
 		},
 		"publishedAt": "2020-07-22T14:37:00.000Z"
@@ -113,7 +113,7 @@
 		"githubLink": "https://github.com/damienaries/find-unused-images",
 		"liveLink": "https://www.npmjs.com/package/find-unused-images",
 		"mainImage": {
-			"src": "/images/find-unused-images.png",
+			"src": "/images/find-unused-images.webp",
 			"alt": "Find Unused Images app screenshot"
 		},
 		"publishedAt": "2025-03-22T14:37:00.000Z"
@@ -126,7 +126,7 @@
 		"githubLink": "https://github.com/damienaries/habit-tracker",
 		"liveLink": "https://habit-harbor.netlify.app",
 		"mainImage": {
-			"src": "/images/habit-tracker.png",
+			"src": "/images/habit-tracker.webp",
 			"alt": "Habit Tracker app screenshot"
 		},
 		"publishedAt": "2025-05-22T14:37:00.000Z"
