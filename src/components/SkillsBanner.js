@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { motion } from 'motion/react';
 import {
 	SiAmazonwebservices,
 	SiCss3,
@@ -20,45 +21,51 @@ import {
 
 export default function SkillsBanner() {
 	return (
-		<StyledSkills>
-			<span className="skill-scrolling">
-				<SiJavascript className="skill" />
-				<SiTypescript className="skill" />
-				<SiPhp className="skill" />
-				<SiVuedotjs className="skill" />
-				<SiLaravel className="skill" />
-				<SiReact className="skill" />
-				<SiNextdotjs className="skill" />
-				<SiCss3 className="skill" />
-				<SiTailwindcss className="skill" />
-				<SiMui className="skill" />
-				<SiStyledcomponents className="skill" />
-				<SiAmazonwebservices className="skill" />
-				<SiMongodb className="skill" />
-				<SiFirebase className="skill" />
-				<SiNodedotjs className="skill" />
-				<SiFigma className="skill" />
-			</span>
+		<motion.div
+			initial={{ opacity: 0, x: -20 }}
+			animate={{ opacity: 1, x: 0 }}
+			transition={{ duration: 0.4, ease: 'easeOut' }}
+		>
+			<StyledSkills>
+				<span className="skill-scrolling">
+					<SiJavascript className="skill" />
+					<SiTypescript className="skill" />
+					<SiPhp className="skill" />
+					<SiVuedotjs className="skill" />
+					<SiLaravel className="skill" />
+					<SiReact className="skill" />
+					<SiNextdotjs className="skill" />
+					<SiCss3 className="skill" />
+					<SiTailwindcss className="skill" />
+					<SiMui className="skill" />
+					<SiStyledcomponents className="skill" />
+					<SiAmazonwebservices className="skill" />
+					<SiMongodb className="skill" />
+					<SiFirebase className="skill" />
+					<SiNodedotjs className="skill" />
+					<SiFigma className="skill" />
+				</span>
 
-			<span className="skill-scrolling">
-				<SiJavascript className="skill" />
-				<SiTypescript className="skill" />
-				<SiPhp className="skill" />
-				<SiVuedotjs className="skill" />
-				<SiLaravel className="skill" />
-				<SiReact className="skill" />
-				<SiNextdotjs className="skill" />
-				<SiCss3 className="skill" />
-				<SiTailwindcss className="skill" />
-				<SiMui className="skill" />
-				<SiStyledcomponents className="skill" />
-				<SiAmazonwebservices className="skill" />
-				<SiMongodb className="skill" />
-				<SiFirebase className="skill" />
-				<SiNodedotjs className="skill" />
-				<SiFigma className="skill" />
-			</span>
-		</StyledSkills>
+				<span className="skill-scrolling">
+					<SiJavascript className="skill" />
+					<SiTypescript className="skill" />
+					<SiPhp className="skill" />
+					<SiVuedotjs className="skill" />
+					<SiLaravel className="skill" />
+					<SiReact className="skill" />
+					<SiNextdotjs className="skill" />
+					<SiCss3 className="skill" />
+					<SiTailwindcss className="skill" />
+					<SiMui className="skill" />
+					<SiStyledcomponents className="skill" />
+					<SiAmazonwebservices className="skill" />
+					<SiMongodb className="skill" />
+					<SiFirebase className="skill" />
+					<SiNodedotjs className="skill" />
+					<SiFigma className="skill" />
+				</span>
+			</StyledSkills>
+		</motion.div>
 	);
 }
 

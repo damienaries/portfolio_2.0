@@ -1,10 +1,12 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import useWindowDimensions from '../hooks/useWindowDimensions';
 import SkillsBanner from './SkillsBanner';
+import { pageTransition } from '../styles/animations';
 
 const Layout = ({ children, theme, toggleTheme }) => {
 	const router = useRouter();
@@ -46,7 +48,17 @@ const Layout = ({ children, theme, toggleTheme }) => {
 					toggleTheme={toggleTheme}
 					toggleAbout={toggleAbout}
 				/>
-				{children}
+				<AnimatePresence mode="wait">
+					<motion.div
+						key={router.pathname}
+						initial={pageTransition.initial}
+						animate={pageTransition.animate}
+						exit={pageTransition.exit}
+						transition={pageTransition.transition}
+					>
+						{children}
+					</motion.div>
+				</AnimatePresence>
 				<Footer />
 			</div>
 		</>

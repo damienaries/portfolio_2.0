@@ -1,8 +1,10 @@
 import styled from '@emotion/styled';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
 import Project from '../../components/Project';
 import projectsData from '../../../data/portfolio_data_copy.json';
+import { tabTransition } from '../../styles/animations';
 
 export default function Projects({ sortedProjects }) {
 	const categories = ['work', 'freelance', 'personal'];
@@ -30,20 +32,32 @@ export default function Projects({ sortedProjects }) {
 				<div className="tabs-container">
 					<nav className="tabs-head">
 						{categories.map((c, idx) => (
-							<h2
+							<motion.h2
+								key={idx}
 								onClick={() => handleClick(c)}
 								className={'tab' + (currentTab === c ? ' current' : '')}
-								key={idx}
+								whileHover={{ scale: 1.05 }}
+								whileTap={{ scale: 0.95 }}
 							>
 								{c}
-							</h2>
+							</motion.h2>
 						))}
 					</nav>
 					<section className="tabs-body">
-						{currentProjects &&
-							currentProjects.map((project, idx) => (
-								<Project project={project} key={idx} />
-							))}
+						<AnimatePresence mode="wait">
+							<motion.div
+								key={currentTab}
+								initial={tabTransition.initial}
+								animate={tabTransition.animate}
+								exit={tabTransition.exit}
+								transition={tabTransition.transition}
+							>
+								{currentProjects &&
+									currentProjects.map((project, idx) => (
+										<Project project={project} key={idx} />
+									))}
+							</motion.div>
+						</AnimatePresence>
 					</section>
 				</div>
 			</section>
