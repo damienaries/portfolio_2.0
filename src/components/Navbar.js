@@ -2,20 +2,18 @@ import styled from '@emotion/styled';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import { FaBars, FaMoon, FaSun } from 'react-icons/fa';
+import { motion, AnimatePresence } from 'motion/react';
+import { FaBars, FaMoon, FaSun, FaGithub, FaLinkedinIn } from 'react-icons/fa';
+import { BiLogoGmail } from 'react-icons/bi';
 import { MdClose } from 'react-icons/md';
 import useWindowDimensions from '../hooks/useWindowDimensions';
 import { fadeIn } from '../styles/animations';
-
-/*
-    TODO
-    restyle mobile nav, not fixed on mobile, left aligned under logo. theme switch to the right, for any screen size
-*/
 
 export default function Navbar({ theme, toggleTheme }) {
 	const router = useRouter();
 	const { width } = useWindowDimensions();
 	const [navOpen, setIsNavOpen] = useState(false);
+	const [contactOpen, setContactOpen] = useState(false);
 
 	// Lock scroll
 	useEffect(() => {
@@ -25,6 +23,18 @@ export default function Navbar({ theme, toggleTheme }) {
 			document.body.style.overflow = 'unset';
 		}
 	}, [navOpen]);
+
+	// Close contact dropdown when clicking outside
+	useEffect(() => {
+		const handleClickOutside = (event) => {
+			if (contactOpen && !event.target.closest('.contact-dropdown')) {
+				setContactOpen(false);
+			}
+		};
+
+		document.addEventListener('mousedown', handleClickOutside);
+		return () => document.removeEventListener('mousedown', handleClickOutside);
+	}, [contactOpen]);
 
 	// toggle mobile nav, auto close 15sec
 	const toggleNav = () => {
@@ -39,10 +49,14 @@ export default function Navbar({ theme, toggleTheme }) {
 		toggleTheme();
 	};
 
+	const toggleContact = () => {
+		setContactOpen(!contactOpen);
+	};
+
 	return (
 		<StyledNav>
 			<div className="topbar-left" onClick={() => router.push('/')}>
-				D<span className="name-logo">A</span>
+				D<strong>A</strong>
 			</div>
 
 			<div className="topbar-right">
@@ -55,14 +69,54 @@ export default function Navbar({ theme, toggleTheme }) {
 						<Link href="/projects" className="topbar-right-link">
 							Work
 						</Link>
-						<Link href="#contact" className="topbar-right-link">
-							Contact
-						</Link>
+						<div className="contact-dropdown">
+							<div className="topbar-right-link" onClick={toggleContact}>
+								Contact
+							</div>
+							<AnimatePresence>
+								{contactOpen && (
+									<motion.div
+										className="dropdown-menu"
+										initial={{ opacity: 0, y: -10 }}
+										animate={{ opacity: 1, y: 0 }}
+										exit={{ opacity: 0, y: -10 }}
+										transition={{ duration: 0.2 }}
+									>
+										<Link
+											href="mailto:damien@damienaries.com"
+											className="dropdown-item"
+											target="_blank"
+											rel="noopener noreferrer"
+										>
+											<BiLogoGmail className="icon" />
+											Email
+										</Link>
+										<Link
+											href="https://github.com/damienaries"
+											className="dropdown-item"
+											target="_blank"
+											rel="noopener noreferrer"
+										>
+											<FaGithub className="icon" />
+											GitHub
+										</Link>
+										<Link
+											href="https://linkedin.com/in/damienaries"
+											className="dropdown-item"
+											target="_blank"
+											rel="noopener noreferrer"
+										>
+											<FaLinkedinIn className="icon" />
+											LinkedIn
+										</Link>
+									</motion.div>
+								)}
+							</AnimatePresence>
+						</div>
 						<div
 							className="topbar-right-link theme-toggler"
 							onClick={handleThemeChange}
 						>
-							{/* TODO geolocalize user to trigger theme change based on time of day, add info toast, upgrade hover effect */}
 							{theme === 'dark' ? <FaSun /> : <FaMoon />}
 						</div>
 					</>
@@ -87,9 +141,50 @@ export default function Navbar({ theme, toggleTheme }) {
 					>
 						Work
 					</Link>
-					<Link href="#contact" className="mobile-nav-link" onClick={toggleNav}>
-						Contact
-					</Link>
+					<div className="mobile-contact">
+						<div className="mobile-nav-link" onClick={toggleContact}>
+							Contact
+						</div>
+						<AnimatePresence>
+							{contactOpen && (
+								<motion.div
+									className="mobile-contact-options"
+									initial={{ opacity: 0, height: 0 }}
+									animate={{ opacity: 1, height: 'auto' }}
+									exit={{ opacity: 0, height: 0 }}
+									transition={{ duration: 0.2 }}
+								>
+									<Link
+										href="mailto:damien@damienaries.com"
+										className="mobile-nav-link sub-link"
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										<BiLogoGmail className="icon" />
+										Email
+									</Link>
+									<Link
+										href="https://github.com/damienaries"
+										className="mobile-nav-link sub-link"
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										<FaGithub className="icon" />
+										GitHub
+									</Link>
+									<Link
+										href="https://linkedin.com/in/damienaries"
+										className="mobile-nav-link sub-link"
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										<FaLinkedinIn className="icon" />
+										LinkedIn
+									</Link>
+								</motion.div>
+							)}
+						</AnimatePresence>
+					</div>
 					<div
 						className="mobile-nav-link theme-toggler"
 						onClick={handleThemeChange}
@@ -119,10 +214,6 @@ const StyledNav = styled.header`
 			cursor: pointer;
 			filter: brightness(90%);
 		}
-
-		.name-logo {
-			font-weight: var(--weight-bold);
-		}
 	}
 
 	.topbar-right {
@@ -147,6 +238,56 @@ const StyledNav = styled.header`
 
 		&:hover:not(.theme-toggler) {
 			border-bottom: 2px solid ${(props) => props.theme.borderColor};
+		}
+	}
+
+	.contact-dropdown {
+		position: relative;
+		display: inline-block;
+
+		.dropdown-menu {
+			position: absolute;
+			top: 100%;
+			right: 0;
+			transform: translateX(0);
+			background-color: ${(props) => props.theme.cardBackground};
+			border-radius: var(--radius);
+			box-shadow: ${(props) => props.theme.boxShadow};
+			padding: 0.5rem 0;
+			min-width: 150px;
+			z-index: 1000;
+			margin-top: 0.5rem;
+
+			&::before {
+				content: '';
+				position: absolute;
+				top: -5px;
+				right: 20px;
+				transform: translateX(0);
+				border-left: 5px solid transparent;
+				border-right: 5px solid transparent;
+				border-bottom: 5px solid ${(props) => props.theme.cardBackground};
+			}
+		}
+
+		.dropdown-item {
+			display: flex;
+			align-items: center;
+			padding: 0.75rem 1.5rem;
+			color: ${(props) => props.theme.text};
+			text-decoration: none;
+			transition: background-color 0.2s ease;
+			font-size: var(--size-body);
+			letter-spacing: 1px;
+
+			.icon {
+				margin-right: 0.75rem;
+				font-size: 1.4rem;
+			}
+
+			&:hover {
+				background-color: ${(props) => props.theme.background};
+			}
 		}
 	}
 
@@ -191,6 +332,27 @@ const StyledNav = styled.header`
 			top: 2rem;
 			right: 3rem;
 			z-index: 100;
+		}
+	}
+
+	.mobile-contact {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+		padding: 0 2rem;
+
+		.sub-link {
+			font-size: 2rem;
+			margin: 1rem auto;
+			display: flex;
+			align-items: center;
+			width: 100%;
+
+			.icon {
+				margin-right: 1rem;
+				font-size: 1.8rem;
+			}
 		}
 	}
 `;
