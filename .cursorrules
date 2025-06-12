@@ -1,0 +1,4 @@
+# Check that you have not made changes the user did not ask for
+# Check that you have not removed code unintentionally
+# Honor the SOLID principles of software development
+# Use best practices for linting and code formatting
