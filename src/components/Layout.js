@@ -11,7 +11,7 @@ import { pageTransition } from '../styles/animations';
 const Layout = ({ children, theme, toggleTheme }) => {
 	const router = useRouter();
 	const [aboutOpen, setAboutOpen] = useState(false);
-	const [isWorkPage, setIsWorkPage] = useState(false);
+	const [isResumePage, setIsResumePage] = useState(false);
 	const { width } = useWindowDimensions();
 
 	const pageTitle =
@@ -24,9 +24,9 @@ const Layout = ({ children, theme, toggleTheme }) => {
 	};
 
 	useEffect(() => {
-		router.pathname === '/projects'
-			? setIsWorkPage(true)
-			: setIsWorkPage(false);
+		router.pathname === '/resume'
+			? setIsResumePage(true)
+			: setIsResumePage(false);
 	}, [router.pathname]);
 
 	return (
@@ -41,8 +41,8 @@ const Layout = ({ children, theme, toggleTheme }) => {
 				<link rel="icon" href="/icons/flux-capacitor.svg" />
 			</Head>
 
-			{isWorkPage && <SkillsBanner />}
-			<div style={{ marginLeft: isWorkPage && width > 768 ? '100px' : 0 }}>
+			{isResumePage && <SkillsBanner />}
+			<div style={{ marginLeft: isResumePage && width > 768 ? '100px' : 0 }}>
 				<Navbar
 					theme={theme}
 					toggleTheme={toggleTheme}

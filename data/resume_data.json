@@ -1,0 +1,131 @@
+{
+	"personalInfo": {
+		"name": "Damien Aries",
+		"email": "damien.aries@gmail.com",
+		"website": "www.damienaries.com",
+		"linkedin": "linkedin.com/in/damienaries",
+		"github": "github.com/damienaries",
+		"title": "JavaScript & PHP Developer",
+		"summary": "Experienced Full Stack developer with a strong background in Vue, React and Laravel. Proven ability to translate and develop designs into beautiful, high-performance, scalable web applications."
+	},
+	"experience": [
+		{
+			"company": "iVisa.com",
+			"position": "Web Developer",
+			"period": "November 2021 - Present",
+			"description": "iVisa is an established Saas startup in the travel e-commerce space. Our stack includes PHP, Laravel, Docker, mySQL, Vue3, TailwindCSS, JavaScript and Typescript.",
+			"highlights": [
+				"Engineered new features based on the Product team's vision through AB testing, iterating tasks in an Agile workflow with a focus on UX, conversion and sales growth.",
+				"Rewrote the full Tailwind CSS layer for a major rebranding initiative, by translating Figma designs into pixel perfect code on every page and component of the application.",
+				"Maintained high coding standards by participating in peer reviews.",
+				"Tackled technical debt by auditing and refactoring or optimizing legacy code",
+				"Completed multiple cross team SEO optimizations efforts resulting in 25% growth in Google search rankings."
+			]
+		},
+		{
+			"company": "Freelance Developer",
+			"position": "Freelance Developer",
+			"period": "March 2022 - October 2023",
+			"description": "To enhance and diversify my skill set, I have pursued freelance opportunities. This not only sharpened my customer management abilities but also exposed me to diverse working environments as well as gave me the chance to lead and own challenges from 0 to 1.",
+			"projects": [
+				{
+					"name": "Judi Boisson",
+					"description": "I was hired by this Quilts and Linen brand to revive their old website and upgrade the front end. After diagnosing the defunct - never updated Magento 1 site, I realized a full migration to Shopify, handling or overseeing successfully transferring 10 years of data, domain registration, and creating a new storefront. The resulting elevated user experience took the stalled sales to over $30k in the first month."
+				},
+				{
+					"name": "CareyCorea.art",
+					"description": "After a great project with Kyle Corea in 2022, he and his father contracted me for a mobile-first portfolio site where they could easily showcase and update Carey's artwork. For this project I used Vue3, Typescript, TailwindCSS and Sanity CMS."
+				},
+				{
+					"name": "Corea Creative",
+					"description": "A multi page video portfolio for NYC based video producer Kyle Corea. We designed the site together which I developed using Next.js, React, CSS modules and Sanity CMS, integrating different API such as Vimeo or Youtube"
+				}
+			]
+		},
+		{
+			"company": "CONCEPT.APP",
+			"position": "Full Stack Developer",
+			"period": "January 2021 - July 2021",
+			"description": "Concept was at the time an early stage startup, building a social platform in JavaScript, React and Firebase. My role as early hire on the dev team was distributed across the stack, with a Front-End focus.",
+			"highlights": [
+				"Designed and coded foundational UI features like a forum page and our onboarding slides.",
+				"Implemented a basic notification system using Websockets.",
+				"Collaborated with leads on some system design and database graphs and organized ClickUp stories."
+			]
+		},
+		{
+			"company": "Various Locations",
+			"position": "Bartender - Bar Manager",
+			"period": "2008 - 2020",
+			"description": "I drastically changed my career path and taught myself to code in 2020. Before that I could be found tending, then managing craft cocktail bars in Paris, NYC, Montreal, St Barts, Monaco - and many other places; acquiring some invaluable skills that translate into my dedication to the quality of my work every day.",
+			"highlights": [
+				"Ability to conceptualize and design projects and products, all the way to implementation and launch.",
+				"Team building and leading, including hiring and training.",
+				"Understanding of business needs, operational and financial management.",
+				"Extensive direct customer management experience."
+			]
+		}
+	],
+	"education": [
+		{
+			"institution": "FrontEnd Masters",
+			"program": "Path to senior developer",
+			"completionDate": "Feb 2025"
+		},
+		{
+			"institution": "Udemy",
+			"program": "Web Development Bootcamp",
+			"completionDate": "2020"
+		},
+		{
+			"institution": "Udemy",
+			"program": "React Developer Bootcamp",
+			"completionDate": "2020"
+		},
+		{
+			"institution": "University of Nantes, France",
+			"program": "Bachelor of Translation and interpreting - English and Italian"
+		}
+	],
+	"expertise": {
+		"technical": [
+			"Javascript",
+			"Typescript",
+			"PHP",
+			"React",
+			"Vue",
+			"Laravel",
+			"Next.js",
+			"CSS: TailwindCSS, SASS, MUI",
+			"CMS: Sanity, Contentful",
+			"Vite",
+			"State Management - Vuex, Redux",
+			"Relational and non relational databases",
+			"A/B Testing",
+			"Figma",
+			"Git and other workflow tools (eg ClickUp)",
+			"Search Engine Optimization",
+			"API integration and design",
+			"Pixel-perfect wireframe implementation",
+			"Web Accessibility and Performance"
+		],
+		"languages": [
+			{
+				"language": "French",
+				"level": "Mother tongue"
+			},
+			{
+				"language": "English",
+				"level": "Bilingual"
+			},
+			{
+				"language": "Italian",
+				"level": "Conversational"
+			},
+			{
+				"language": "Spanish",
+				"level": "Conversational"
+			}
+		]
+	}
+}

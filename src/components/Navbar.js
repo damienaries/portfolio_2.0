@@ -63,11 +63,29 @@ export default function Navbar({ theme, toggleTheme }) {
 				{width > 600 ? (
 					<>
 						{/* full size nav */}
-						<Link href="/" className="topbar-right-link">
+						<Link
+							href="/"
+							className={`topbar-right-link ${
+								router.pathname === '/' ? 'active' : ''
+							}`}
+						>
 							Home
 						</Link>
-						<Link href="/projects" className="topbar-right-link">
+						<Link
+							href="/projects"
+							className={`topbar-right-link ${
+								router.pathname === '/projects' ? 'active' : ''
+							}`}
+						>
 							Work
+						</Link>
+						<Link
+							href="/resume"
+							className={`topbar-right-link ${
+								router.pathname === '/resume' ? 'active' : ''
+							}`}
+						>
+							Resume
 						</Link>
 						<div className="contact-dropdown">
 							<div className="topbar-right-link" onClick={toggleContact}>
@@ -131,15 +149,32 @@ export default function Navbar({ theme, toggleTheme }) {
 				<div className="mobile-nav" style={{ right: !navOpen ? '-100%' : 0 }}>
 					<MdClose className="action-button close-btn" onClick={toggleNav} />
 
-					<Link href="/" className="mobile-nav-link" onClick={toggleNav}>
+					<Link
+						href="/"
+						className={`mobile-nav-link ${
+							router.pathname === '/' ? 'active' : ''
+						}`}
+						onClick={toggleNav}
+					>
 						Home
 					</Link>
 					<Link
 						href="/projects"
-						className="mobile-nav-link"
+						className={`mobile-nav-link ${
+							router.pathname === '/projects' ? 'active' : ''
+						}`}
 						onClick={toggleNav}
 					>
 						Work
+					</Link>
+					<Link
+						href="/resume"
+						className={`mobile-nav-link ${
+							router.pathname === '/resume' ? 'active' : ''
+						}`}
+						onClick={toggleNav}
+					>
+						Resume
 					</Link>
 					<div className="mobile-contact">
 						<div className="mobile-nav-link" onClick={toggleContact}>
@@ -235,8 +270,13 @@ const StyledNav = styled.header`
 		letter-spacing: 3px;
 		transition: filter 0.5s ease;
 		padding-bottom: 0.25rem;
+		border-bottom: 2px solid transparent;
 
 		&:hover:not(.theme-toggler) {
+			border-bottom: 2px solid ${(props) => props.theme.borderColor};
+		}
+
+		&.active {
 			border-bottom: 2px solid ${(props) => props.theme.borderColor};
 		}
 	}
@@ -320,10 +360,12 @@ const StyledNav = styled.header`
 			margin: 1rem auto;
 			font-size: 2.5rem;
 			letter-spacing: 3px;
+			border-bottom: 2px solid transparent;
 
 			&:focus,
-			&:active {
-				border-bottom: 1px solid var(--color-white);
+			&:active,
+			&.active {
+				border-bottom: 2px solid ${(props) => props.theme.borderColor};
 			}
 		}
 

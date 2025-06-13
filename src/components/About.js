@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import Link from 'next/dist/client/link';
+import ButtonComponent from './ButtonComponent';
 
 function AboutSection() {
 	return (
@@ -32,9 +32,9 @@ function AboutSection() {
 						beaches—always seeking that perfect balance between innovation and
 						inspiration.
 					</p>
-					<Link href="/projects" className="work-cta">
+					<ButtonComponent href="/projects" icon="arrow-right">
 						See some recent work
-					</Link>
+					</ButtonComponent>
 				</div>
 			</div>
 		</StyledAboutSection>
@@ -77,22 +77,6 @@ const StyledAboutSection = styled.section`
 
 			.body-paragraph {
 				margin: 2rem 0;
-			}
-
-			.work-cta {
-				border: 1px solid ${(props) => props.theme.borderColor};
-				color: ${(props) => props.theme.text};
-				padding: 1rem 1.5rem;
-				font-size: 1.4rem;
-				border-radius: 20px;
-				margin: 4rem 0 0;
-				box-shadow: ${(props) => props.theme.boxShadow};
-
-				&:hover,
-				&:active {
-					cursor: pointer;
-					transform: scale(0.99);
-				}
 			}
 		}
 
