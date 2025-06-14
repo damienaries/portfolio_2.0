@@ -16,10 +16,9 @@ const printStyles = css`
 		}
 
 		.resume-content {
-			position: absolute;
-			left: 0;
-			top: 0;
 			width: 100%;
+			margin: 0 auto;
+			padding: 0;
 		}
 
 		.print-button {
@@ -38,13 +37,13 @@ const ResumeContainer = styled.div`
 	max-width: 800px;
 	margin: 0 auto;
 	padding: 2rem;
-	position: relative;
 `;
 
 const ResumeContent = styled.div`
 	background: white;
 	padding: 2rem;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	max-width: 800px;
 `;
 
 const Header = styled.header`
@@ -53,7 +52,7 @@ const Header = styled.header`
 `;
 
 const Name = styled.h1`
-	font-size: 2.5rem;
+	font-size: 4rem;
 	margin-bottom: 0.5rem;
 	color: #2c3e50;
 `;
@@ -68,17 +67,18 @@ const ContactInfo = styled.div`
 	p {
 		margin: 0;
 		color: #666;
+		font-size: 1.2rem;
 	}
 `;
 
 const Title = styled.h2`
-	font-size: 1.5rem;
+	font-size: 2rem;
 	color: #34495e;
 	margin-bottom: 1rem;
 `;
 
 const Summary = styled.p`
-	font-size: 1.1rem;
+	font-size: 1.2rem;
 	line-height: 1.6;
 	color: #555;
 	max-width: 700px;
@@ -89,7 +89,7 @@ const Section = styled.section`
 	margin-bottom: 2rem;
 
 	h2 {
-		font-size: 1.8rem;
+		font-size: 1.5rem;
 		color: #2c3e50;
 		border-bottom: 2px solid #eee;
 		padding-bottom: 0.5rem;
@@ -108,7 +108,7 @@ const JobHeader = styled.div`
 	margin-bottom: 0.5rem;
 
 	h3 {
-		font-size: 1.3rem;
+		font-size: 1.5rem;
 		color: #34495e;
 		margin: 0;
 	}
@@ -116,13 +116,14 @@ const JobHeader = styled.div`
 
 const Period = styled.span`
 	color: #666;
-	font-size: 0.9rem;
+	font-size: 1.44rem;
 `;
 
 const JobDescription = styled.p`
-	color: #555;
+	color: #333;
 	margin-bottom: 1rem;
 	line-height: 1.5;
+	font-size: 1.2rem;
 `;
 
 const Highlights = styled.ul`
@@ -132,8 +133,9 @@ const Highlights = styled.ul`
 
 	li {
 		margin-bottom: 0.5rem;
-		color: #555;
+		color: #333;
 		line-height: 1.4;
+		font-size: 1.2rem;
 	}
 `;
 
@@ -147,6 +149,12 @@ const Project = styled.div`
 	h4 {
 		color: #34495e;
 		margin-bottom: 0.5rem;
+		font-size: 1.2rem;
+	}
+
+	p {
+		color: #333;
+		font-size: 1.2rem;
 	}
 `;
 
@@ -162,12 +170,13 @@ const EducationItem = styled.div`
 	p {
 		color: #555;
 		margin: 0.25rem 0;
+		font-size: 1.2rem;
 	}
 `;
 
 const CompletionDate = styled.span`
 	color: #666;
-	font-size: 0.9rem;
+	font-size: 1.5rem;
 `;
 
 const SkillsGrid = styled.ul`
@@ -180,6 +189,7 @@ const SkillsGrid = styled.ul`
 	li {
 		color: #555;
 		line-height: 1.4;
+		font-size: 1.2rem;
 	}
 `;
 
