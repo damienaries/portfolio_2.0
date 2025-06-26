@@ -28,11 +28,11 @@ export default function Projects({ sortedProjects }) {
 	return (
 		<StyledProjects>
 			<section className="projects-container">
-				<h1 className="page-title">Recent Work</h1>
+				<h2 className="page-title">Recent Work</h2>
 				<div className="tabs-container">
 					<nav className="tabs-head">
 						{categories.map((c, idx) => (
-							<motion.h2
+							<motion.h4
 								key={idx}
 								onClick={() => handleClick(c)}
 								className={'tab' + (currentTab === c ? ' current' : '')}
@@ -40,7 +40,7 @@ export default function Projects({ sortedProjects }) {
 								whileTap={{ scale: 0.95 }}
 							>
 								{c}
-							</motion.h2>
+							</motion.h4>
 						))}
 					</nav>
 					<section className="tabs-body">
@@ -84,7 +84,6 @@ const StyledProjects = styled.main`
 	text-align: center;
 
 	.page-title {
-		font-size: var(--size-title-main);
 		font-weight: var(--weight-thin);
 		text-transform: capitalize;
 		margin: 3rem auto;
@@ -108,7 +107,6 @@ const StyledProjects = styled.main`
 	}
 
 	.tab {
-		font-size: var(--size-title-section);
 		font-weight: var(--weight-thin);
 		text-transform: uppercase;
 		padding: 1rem 2rem;
@@ -133,7 +131,7 @@ const StyledProjects = styled.main`
 	}
 
 	.description {
-		font-size: var(--size-body);
+		font-size: var(--text-body);
 		font-weight: var(--weight-thin);
 	}
 `;

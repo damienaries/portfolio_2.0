@@ -3,7 +3,7 @@ import { css } from '@emotion/react';
 // Simplified typography scale - 4 most used sizes
 export const typographyScale = {
 	xs: '1.28rem', // 12.8px
-	sm: '1.6rem', // 16px (base)
+	sm: '1.4rem', // 16px (base)
 	md: '2rem', // 20px
 	lg: '2.5rem', // 25px
 	xl: '3.125rem', // 31.25px
@@ -94,7 +94,7 @@ export const TypographyStyles = css`
 	}
 
 	p {
-		font-size: var(--text-xs);
+		font-size: var(--text-body);
 		font-weight: var(--font-weight-normal);
 		line-height: var(--line-height-relaxed);
 		letter-spacing: var(--letter-spacing-normal);

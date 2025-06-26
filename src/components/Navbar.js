@@ -55,9 +55,9 @@ export default function Navbar({ theme, toggleTheme }) {
 
 	return (
 		<StyledNav>
-			<div className="topbar-left" onClick={() => router.push('/')}>
+			<h4 className="topbar-left" onClick={() => router.push('/')}>
 				D<strong>A</strong>
-			</div>
+			</h4>
 
 			<div className="topbar-right">
 				{width > 600 ? (
@@ -241,10 +241,7 @@ const StyledNav = styled.header`
 	padding: 3rem;
 
 	.topbar-left {
-		font-size: var(--size-title-section);
-		font-weight: var(--weight-thin);
-		letter-spacing: 1px;
-
+		font-weight: var(--font-weight-thin);
 		&:hover {
 			cursor: pointer;
 			filter: brightness(90%);
@@ -266,7 +263,7 @@ const StyledNav = styled.header`
 
 	.topbar-right-link {
 		margin: 1rem;
-		font-size: var(--size-body);
+		font-size: var(--text-xs);
 		letter-spacing: 3px;
 		transition: filter 0.5s ease;
 		padding-bottom: 0.25rem;
@@ -291,6 +288,7 @@ const StyledNav = styled.header`
 			right: 0;
 			transform: translateX(0);
 			background-color: ${(props) => props.theme.cardBackground};
+			backdrop-filter: blur(5px);
 			border-radius: var(--radius);
 			box-shadow: ${(props) => props.theme.boxShadow};
 			padding: 0.5rem 0;
@@ -317,7 +315,7 @@ const StyledNav = styled.header`
 			color: ${(props) => props.theme.text};
 			text-decoration: none;
 			transition: background-color 0.2s ease;
-			font-size: var(--size-body);
+			font-size: var(--text-body);
 			letter-spacing: 1px;
 
 			.icon {

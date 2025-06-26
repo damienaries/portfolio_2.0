@@ -6,7 +6,7 @@ import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 export default function Footer() {
 	return (
 		<StyledFooter id="contact">
-			<h3 className="section-title">Get in touch</h3>
+			<h5 className="section-title">Get in touch</h5>
 
 			<div className="social-links">
 				<Link
@@ -52,7 +52,6 @@ const StyledFooter = styled.footer`
 	}
 
 	.section-title {
-		font-size: var(--size-title-section);
 		margin: 1rem auto;
 		text-align: center;
 		font-weight: var(--weight-thin);
@@ -63,7 +62,7 @@ const StyledFooter = styled.footer`
 		justify-content: space-evenly;
 		align-items: center;
 		margin: 2rem auto 3rem;
-		font-size: var(--size-body);
+		font-size: var(--text-body);
 	}
 
 	.icon-link {

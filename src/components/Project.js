@@ -39,7 +39,7 @@ export default function Project({ project }) {
 						<CodeLinks githubLink={githubLink} liveLink={liveLink} />
 					</div>
 
-					<div className="description">{body}</div>
+					<p className="description">{body}</p>
 				</div>
 			</div>
 		</StyledProject>
@@ -81,7 +81,6 @@ const StyledProject = styled.section`
 			border-bottom: 1px solid ${(props) => props.theme.borderColor};
 
 			.title {
-				font-size: calc(var(--size-title-section) * 1.15);
 				font-weight: var(--weight-thin);
 				margin: 0;
 				text-align: left;
@@ -126,9 +125,7 @@ const StyledProject = styled.section`
 			}
 
 			.description {
-				font-size: var(--size-body);
 				text-align: left;
-				line-height: 1.6;
 				padding: 1rem;
 				background-color: ${(props) => props.theme.background};
 				border-radius: var(--radius);
