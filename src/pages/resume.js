@@ -34,24 +34,21 @@ const printStyles = css`
 		}
 
 		/* Page break controls & Prevent orphaned headings */
-		section,
 		.job,
 		.education-item,
-		h2 {
+		h3,
+		small {
 			page-break-inside: avoid;
 			break-inside: avoid;
+		}
+
+		.job:last-child {
+			padding-top: 3rem;
 		}
 
 		/* Add spacing before major sections */
 		section:not(:first-child) {
 			margin-top: 2rem;
-		}
-
-		/* Add some space after page breaks */
-		section::before {
-			content: '';
-			display: block;
-			height: 1rem;
 		}
 
 		.print-button {
@@ -142,7 +139,7 @@ const Section = styled.section`
 `;
 
 const Job = styled.div`
-	margin-bottom: 1.5rem;
+	margin: 1.5rem 0;
 `;
 
 const JobHeader = styled.div`
