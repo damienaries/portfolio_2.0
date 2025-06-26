@@ -79,7 +79,7 @@ const StyledSkills = styled.aside`
 	width: 100px;
 	position: fixed;
 	height: 100%;
-	padding: 0 2rem;
+	padding: 0 1.5rem;
 	margin: 0 4rem 0 0;
 	background-color: ${(props) => props.theme.cardBackground};
 	overflow: hidden;
@@ -94,8 +94,8 @@ const StyledSkills = styled.aside`
 	}
 
 	.skill {
-		font-size: 5rem;
-		margin: 2rem;
+		font-size: 4rem;
+		margin: 1.5rem;
 	}
 
 	@keyframes scroll {

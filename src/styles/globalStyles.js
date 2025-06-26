@@ -1,4 +1,5 @@
 import { css } from '@emotion/react';
+import { TypographyStyles } from './typography';
 
 export const lightTheme = {
 	background: 'var(--color-white)',
@@ -33,7 +34,9 @@ export const darkTheme = {
 };
 
 export const GlobalStyles = (theme) => css`
-	@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200;400;700&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800&display=swap');
+
+	${TypographyStyles}
 
 	* {
 		box-sizing: border-box;
@@ -42,18 +45,7 @@ export const GlobalStyles = (theme) => css`
 	}
 
 	:root {
-		/* Fonts */
-		--ff-main: 'Mulish', sans-serif;
-
-		/* Typography */
-		--weight-thin: 200;
-		--weight-bold: 500;
-		--size-body: 1.6rem;
-		--size-title-main: 4rem;
-		--size-title-section: 2rem;
-
 		/* Colors */
-
 		--color-gray-dark: rgba(30, 35, 41, 1);
 		--color-gray-light: rgba(115, 121, 128, 0.3);
 
@@ -73,10 +65,10 @@ export const GlobalStyles = (theme) => css`
 	body {
 		font-size: 62.5%; /* make 1rem = 10px */
 		scroll-behavior: smooth;
-		font-family: var(--ff-main);
+		font-family: var(--font-family);
 		color: ${theme.text};
 		background-color: ${theme.background};
-		line-height: 1.5;
+		line-height: var(--line-height-normal);
 	}
 
 	body::-webkit-scrollbar {

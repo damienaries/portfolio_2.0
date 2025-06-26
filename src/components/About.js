@@ -7,19 +7,19 @@ function AboutSection() {
 			<div className="about-content">
 				<h1 className="home-title">Welcome</h1>
 				<div className="about-body">
-					<p className="body-paragraph">
+					<p>
 						Hi! I'm Damien, a Full Stack Developer based in Los Angeles, CA. I
 						specialize in JavaScript, PHP, and CSS with deep expertise in
 						Laravel, Vue, React, and Next.js frameworks.
 					</p>
-					<p className="body-paragraph">
+					<p>
 						As a lifelong learner, I'm passionate about leveraging modern web
 						technologies to create meaningful solutions in climate, education,
 						and AI innovation. I'm driven to build beautiful, performant
 						applications that make a real impact—combining technical excellence
 						with user-focused design.
 					</p>
-					<p className="body-paragraph">
+					<p>
 						My background includes international experience across Europe and
 						North America, where I developed strong problem-solving skills and
 						cultural adaptability in the hospitality industry before
@@ -27,7 +27,7 @@ function AboutSection() {
 						bring that same attention to detail and client-focused approach to
 						every development project.
 					</p>
-					<p className="body-paragraph">
+					<p>
 						When I'm not coding, you'll find me exploring LA's trails and
 						beaches—always seeking that perfect balance between innovation and
 						inspiration.
@@ -65,17 +65,14 @@ const StyledAboutSection = styled.section`
 		padding: 4rem;
 
 		.home-title {
-			font-size: var(--size-title-main);
-			font-weight: var(--weight-thin);
-			letter-spacing: 0.1rem;
+			font-size: var(--text-xxl);
 			text-align: left;
 		}
 
 		.about-body {
 			width: 55%;
-			font-size: var(--size-body);
 
-			.body-paragraph {
+			p {
 				margin: 2rem 0;
 			}
 		}
