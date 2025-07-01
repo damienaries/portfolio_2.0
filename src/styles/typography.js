@@ -62,6 +62,18 @@ export const TypographyStyles = css`
 		--font-family: 'Mulish', sans-serif;
 	}
 
+	/* Mobile responsive typography */
+	@media (max-width: 768px) {
+		:root {
+			--text-h1: var(--font-size-lg);
+			--text-h2: var(--font-size-md);
+			--text-h3: var(--font-size-sm);
+			--text-body: var(--font-size-xs);
+			--text-xs: var(--font-size-xs);
+			--text-xxl: var(--font-size-xl);
+		}
+	}
+
 	/* Default typography for HTML elements */
 	h1 {
 		font-size: var(--text-h1);
