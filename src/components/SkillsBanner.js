@@ -83,7 +83,7 @@ const StyledSkills = styled.aside`
 	margin: 0 4rem 0 0;
 	background-color: ${(props) => props.theme.cardBackground};
 	overflow: hidden;
-	box-shadow: 0 0 5px 10px ${(props) => props.theme.cardBackground};
+	box-shadow: ${(props) => props.theme.boxShadow};
 
 	.skill-scrolling {
 		animation: scroll 120s linear infinite alternate;
@@ -94,8 +94,8 @@ const StyledSkills = styled.aside`
 	}
 
 	.skill {
-		font-size: 4rem;
-		margin: 1.5rem;
+		font-size: 2.5rem;
+		margin: 1rem;
 	}
 
 	@keyframes scroll {

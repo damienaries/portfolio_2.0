@@ -1,12 +1,13 @@
 import styled from '@emotion/styled';
 import Link from 'next/link';
 import { FaGithub } from 'react-icons/fa';
-import { MdOpenInNew, MdArrowForward } from 'react-icons/md';
+import { MdOpenInNew, MdArrowForward, MdDownload } from 'react-icons/md';
 
 const iconMap = {
 	github: FaGithub,
 	external: MdOpenInNew,
 	'arrow-right': MdArrowForward,
+	download: MdDownload,
 };
 
 export default function ButtonComponent({
@@ -16,14 +17,21 @@ export default function ButtonComponent({
 	variant = 'secondary',
 	icon,
 	className,
+	size = 'default',
 }) {
 	const IconComponent = icon ? iconMap[icon] : null;
+	const hasText =
+		typeof children === 'string' ||
+		(Array.isArray(children) &&
+			children.some((child) => typeof child === 'string'));
 
 	const buttonContent = (
 		<StyledButton
 			as={href ? undefined : 'button'}
 			onClick={onClick}
 			variant={variant}
+			size={size}
+			hasText={hasText}
 			className={className}
 		>
 			{children}
@@ -56,6 +64,22 @@ const StyledButton = styled.button`
 	cursor: pointer;
 	transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
 	box-shadow: ${(props) => props.theme.boxShadow};
+
+	${(props) =>
+		props.size === 'small' &&
+		`
+		font-size: 0.75em;
+		padding: 0.5625rem 1.125rem;
+	`}
+
+	${(props) =>
+		props.size === 'small' &&
+		!props.hasText &&
+		`
+		padding: 0.5rem;
+		min-width: 2.5rem;
+		min-height: 2.5rem;
+	`}
 
 	${(props) =>
 		props.variant === 'primary'
@@ -115,7 +139,7 @@ const StyledButton = styled.button`
 	`}
 
 	.icon {
-		margin-left: 0.5rem;
-		font-size: 1.2em;
+		margin-left: ${(props) => (props.hasText ? '0.2rem' : '0')};
+		font-size: 1.4rem;
 	}
 `;

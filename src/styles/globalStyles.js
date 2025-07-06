@@ -54,6 +54,7 @@ export const GlobalStyles = (theme) => css`
 
 		--color-accent: rgba(59, 130, 246, 1);
 		--color-accent-2: rgba(203, 213, 225, 1);
+		--color-blue-gray: rgba(52, 73, 94, 1);
 
 		/* Shadows and border radius */
 		--radius: 8px;
@@ -63,7 +64,6 @@ export const GlobalStyles = (theme) => css`
 
 	html,
 	body {
-		font-size: 62.5%; /* make 1rem = 10px */
 		scroll-behavior: smooth;
 		font-family: var(--font-family);
 		color: ${theme.text};

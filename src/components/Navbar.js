@@ -55,9 +55,9 @@ export default function Navbar({ theme, toggleTheme }) {
 
 	return (
 		<StyledNav>
-			<h4 className="topbar-left" onClick={() => router.push('/')}>
+			<div className="topbar-left" onClick={() => router.push('/')}>
 				D<strong>A</strong>
-			</h4>
+			</div>
 
 			<div className="topbar-right">
 				{width > 600 ? (
@@ -242,6 +242,8 @@ const StyledNav = styled.header`
 
 	.topbar-left {
 		font-weight: var(--font-weight-thin);
+		font-size: var(--text-lg);
+
 		&:hover {
 			cursor: pointer;
 			filter: brightness(90%);

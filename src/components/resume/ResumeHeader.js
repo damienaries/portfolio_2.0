@@ -9,7 +9,7 @@ const Header = styled.header`
 
 const Name = styled.h1`
 	margin-bottom: 0.5rem;
-	color: var(--color-gray-light);
+	color: var(--color-blue-gray);
 `;
 
 const ContactInfo = styled.div`
@@ -22,30 +22,44 @@ const ContactInfo = styled.div`
 	a {
 		display: flex;
 		align-items: center;
-		gap: 0.5rem;
+		gap: 0.2rem;
 		color: var(--color-gray-dark);
 		text-decoration: none;
 		transition: color 0.2s ease;
 
 		&:hover {
-			color: var(--color-gray-light);
+			color: var(--color-blue-gray);
 		}
 
 		svg {
-			font-size: 1.6rem;
+			font-size: 2rem;
+		}
+
+		small {
+			display: none;
+		}
+
+		@media print {
+			gap: 0.1rem;
+
+			svg {
+				font-size: 1rem;
+			}
+
+			small {
+				display: inline;
+				font-size: 0.7rem;
+			}
 		}
 	}
 `;
 
 const Title = styled.h3`
-	color: var(--color-gray-light);
-	margin-bottom: 1rem;
+	color: var(--color-blue-gray);
 `;
 
-const Summary = styled.small`
-	line-height: var(--line-height-relaxed);
+const Summary = styled.p`
 	color: var(--color-gray-dark);
-	max-width: 700px;
 	margin: 0 auto;
 `;
 

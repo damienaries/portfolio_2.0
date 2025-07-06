@@ -67,6 +67,7 @@ const StyledAboutSection = styled.section`
 		.home-title {
 			font-size: var(--text-xxl);
 			text-align: left;
+			font-weight: var(--font-weight-thin);
 		}
 
 		.about-body {

@@ -30,7 +30,7 @@ const printStyles = css`
 			top: 0;
 			width: 100%;
 			margin: 0;
-			padding: 3rem;
+			padding: 2rem;
 			background: white;
 			box-shadow: none;
 		}
@@ -59,7 +59,7 @@ const printStyles = css`
 
 		@page {
 			size: A4;
-			margin: 20mm;
+			margin: 15mm;
 		}
 	}
 `;
@@ -69,6 +69,7 @@ const ResumeContainer = styled.div`
 	max-width: 800px;
 	margin: 0 auto;
 	padding: 2rem;
+	position: relative;
 `;
 
 const ResumeContent = styled.div`
@@ -76,6 +77,13 @@ const ResumeContent = styled.div`
 	padding: 2rem;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 	max-width: 800px;
+`;
+
+const DownloadButton = styled.div`
+	position: absolute;
+	top: 2.5rem;
+	right: 2.5rem;
+	z-index: 10;
 `;
 
 const ResumePage = () => {
@@ -89,9 +97,14 @@ const ResumePage = () => {
 		<>
 			<Global styles={printStyles} />
 			<ResumeContainer>
-				<ButtonComponent onClick={handlePrint} className="print-button">
-					Download PDF
-				</ButtonComponent>
+				<DownloadButton>
+					<ButtonComponent
+						onClick={handlePrint}
+						className="print-button"
+						icon="download"
+						size="small"
+					/>
+				</DownloadButton>
 
 				<ResumeContent ref={componentRef} className="resume-content">
 					<ResumeHeader personalInfo={resumeData.personalInfo} />

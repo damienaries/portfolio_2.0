@@ -1,28 +1,28 @@
 import { css } from '@emotion/react';
 
-// Simplified typography scale - 4 most used sizes
+// typography scale
 export const typographyScale = {
-	xs: '1.28rem', // 12.8px
-	sm: '1.4rem', // 16px (base)
-	md: '2rem', // 20px
-	lg: '2.5rem', // 25px
-	xl: '3.125rem', // 31.25px
-	xxl: '4rem', // 40px
+	xs: '0.875rem', // 14px
+	sm: '1rem', // 16px (base)
+	md: '1.25rem', // 20px
+	lg: '1.5625rem', // 25px
+	xl: '1.953rem', // 31.25px
+	xxl: '2.5rem', // 40px
 };
 
-// Simplified font weights - 2 most used
+// font weights
 export const fontWeights = {
 	normal: 400,
 	bold: 700,
 };
 
-// Simplified line heights - 2 most used
+// line heights
 export const lineHeights = {
 	normal: 1.5,
 	relaxed: 1.625,
 };
 
-// Simplified letter spacing - 2 most used
+// letter spacing
 export const letterSpacing = {
 	normal: '0em',
 	tight: '-0.025em',

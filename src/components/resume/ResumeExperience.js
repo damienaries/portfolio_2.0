@@ -4,8 +4,8 @@ const Section = styled.section`
 	margin-bottom: 2rem;
 
 	h3 {
-		color: var(--color-gray-light);
-		border-bottom: 2px solid #eee;
+		color: var(--color-blue-gray);
+		border-bottom: 2px solid var(--color-blue-gray);
 		padding-bottom: 0.5rem;
 		margin-bottom: 1.5rem;
 	}
