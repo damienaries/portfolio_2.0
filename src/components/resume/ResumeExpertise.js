@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { FaCogs } from 'react-icons/fa';
 
 const Section = styled.section`
 	margin-bottom: 2rem;
@@ -7,46 +8,47 @@ const Section = styled.section`
 		color: var(--color-blue-gray);
 		border-bottom: 2px solid var(--color-blue-gray);
 		padding-bottom: 0.5rem;
-		margin-bottom: 1.5rem;
+		margin-bottom: 1.1rem;
+		display: flex;
+		align-items: center;
+		gap: 0.25em;
+		justify-content: flex-start;
 	}
 `;
 
-const SkillsGrid = styled.ul`
-	list-style-type: none;
-	padding: 0;
-	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-	gap: 0.5rem;
+const SkillsLine = styled.div`
+	font-size: 1rem;
+	color: var(--color-gray-dark);
+	margin-bottom: 0.1em;
+	line-height: 1.5;
+	display: flex;
+	align-items: baseline;
+`;
 
-	li {
-		color: var(--color-gray-dark);
-		line-height: var(--line-height-relaxed);
-		font-size: var(--text-xs);
-	}
+const GroupTitle = styled.span`
+	font-weight: 700;
+	color: var(--color-blue-gray);
+	margin-right: 0.3em;
+`;
+
+const TitleIcon = styled(FaCogs)`
+	font-size: 1.1em;
+	margin-right: 0.3em;
 `;
 
 const ResumeExpertise = ({ expertise }) => {
 	return (
 		<Section>
-			<h3>Areas of Expertise</h3>
-			<div>
-				<h5>Technical Skills</h5>
-				<SkillsGrid>
-					{expertise.technical.map((skill, index) => (
-						<li key={index}>{skill}</li>
-					))}
-				</SkillsGrid>
-			</div>
-			<div>
-				<h5>Languages</h5>
-				<SkillsGrid>
-					{expertise.languages.map((lang, index) => (
-						<li key={index}>
-							{lang.language} ({lang.level})
-						</li>
-					))}
-				</SkillsGrid>
-			</div>
+			<h3>
+				<TitleIcon />
+				Core Skills
+			</h3>
+			{expertise.coreSkills.map((group, idx) => (
+				<SkillsLine key={idx}>
+					<GroupTitle>{group.group}:</GroupTitle>
+					{group.skills.join(', ')}
+				</SkillsLine>
+			))}
 		</Section>
 	);
 };

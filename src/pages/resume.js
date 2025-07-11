@@ -108,9 +108,9 @@ const ResumePage = () => {
 
 				<ResumeContent ref={componentRef} className="resume-content">
 					<ResumeHeader personalInfo={resumeData.personalInfo} />
+					<ResumeExpertise expertise={resumeData.expertise} />
 					<ResumeExperience experience={resumeData.experience} />
 					<ResumeEducation education={resumeData.education} />
-					<ResumeExpertise expertise={resumeData.expertise} />
 				</ResumeContent>
 			</ResumeContainer>
 		</>

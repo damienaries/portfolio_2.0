@@ -5,7 +5,7 @@
 		"website": "www.damienaries.com",
 		"linkedin": "linkedin.com/in/damien-aries",
 		"github": "github.com/damienaries",
-		"title": "JavaScript & PHP Developer",
+		"title": "Full Stack Developer | Next.js, Vue, React, Laravel",
 		"summary": "Experienced Full Stack developer with a strong background in Vue, React and Laravel. Proven ability to translate and develop designs into beautiful, high-performance, scalable web applications."
 	},
 	"experience": [
@@ -88,43 +88,74 @@
 		}
 	],
 	"expertise": {
-		"technical": [
-			"Javascript",
-			"Typescript",
-			"PHP",
-			"React",
-			"Vue",
-			"Laravel",
-			"Next.js",
-			"CSS: TailwindCSS, SASS, MUI",
-			"CMS: Sanity, Contentful",
-			"Vite",
-			"State Management - Vuex, Redux",
-			"Relational and non relational databases",
-			"A/B Testing",
-			"Figma",
-			"Git and other workflow tools (eg ClickUp)",
-			"Search Engine Optimization",
-			"API integration and design",
-			"Pixel-perfect wireframe implementation",
-			"Web Accessibility and Performance"
-		],
-		"languages": [
+		"coreSkills": [
 			{
-				"language": "French",
-				"level": "Mother tongue"
+				"group": "Languages & Frameworks",
+				"skills": [
+					"JavaScript",
+					"TypeScript",
+					"PHP",
+					"React",
+					"Next.js",
+					"Vue",
+					"Laravel"
+				]
 			},
 			{
-				"language": "English",
-				"level": "Bilingual"
+				"group": "State Management",
+				"skills": ["VueX", "Redux"]
 			},
 			{
-				"language": "Italian",
-				"level": "Conversational"
+				"group": "Styling",
+				"skills": [
+					"CSS",
+					"Tailwind CSS",
+					"SCSS",
+					"Material UI",
+					"Styled Components"
+				]
 			},
 			{
-				"language": "Spanish",
-				"level": "Conversational"
+				"group": "Tooling",
+				"skills": [
+					"Vite",
+					"Webpack",
+					"Jest",
+					"Pest",
+					"Laravel Dusk",
+					"Git",
+					"Docker"
+				]
+			},
+			{
+				"group": "Backend & APIs",
+				"skills": ["RESTful API development", "MySQL", "Firebase"]
+			},
+			{
+				"group": "Quality & Practices",
+				"skills": [
+					"Unit & Integration Testing",
+					"A/B Testing",
+					"SEO",
+					"Accessibility",
+					"Web Vitals"
+				]
+			},
+			{
+				"group": "AI Native Development",
+				"skills": ["GitHub Copilot", "Cursor IDE", "CodeRabbit"]
+			},
+			{
+				"group": "Collaboration",
+				"skills": ["Agile Development", "Async remote cross-functional teams"]
+			},
+			{
+				"group": "Human Languages",
+				"skills": [
+					"French (native)",
+					"English (fluent)",
+					"Italian & Spanish (conversational)"
+				]
 			}
 		]
 	}
