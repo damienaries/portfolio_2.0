@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { FaBars, FaMoon, FaSun, FaGithub, FaLinkedinIn } from 'react-icons/fa';
 import { BiLogoGmail } from 'react-icons/bi';
@@ -13,14 +13,24 @@ export default function Navbar({ theme, toggleTheme }) {
 	const router = useRouter();
 	const { width } = useWindowDimensions();
 	const [navOpen, setIsNavOpen] = useState(false);
-	const [contactOpen, setContactOpen] = useState(false);
+	const [contactOpen, setContactOpen] = useState(true);
+	const navTimeoutRef = useRef();
 
 	// Lock scroll
 	useEffect(() => {
 		if (navOpen) {
 			document.body.style.overflow = 'hidden';
+			// Start autoclose timer
+			// navTimeoutRef.current = setTimeout(() => {
+			// 	setIsNavOpen(false);
+			// }, 15000);
 		} else {
 			document.body.style.overflow = 'unset';
+			// Clear autoclose timer
+			if (navTimeoutRef.current) {
+				clearTimeout(navTimeoutRef.current);
+				navTimeoutRef.current = null;
+			}
 		}
 	}, [navOpen]);
 
@@ -39,9 +49,6 @@ export default function Navbar({ theme, toggleTheme }) {
 	// toggle mobile nav, auto close 15sec
 	const toggleNav = () => {
 		setIsNavOpen((prevState) => !prevState);
-		setTimeout(() => {
-			setIsNavOpen(false);
-		}, 15000);
 	};
 
 	const handleThemeChange = () => {
@@ -139,8 +146,13 @@ export default function Navbar({ theme, toggleTheme }) {
 						</div>
 					</>
 				) : (
-					<div className="mobile-nav-action">
-						<FaBars className="action-button" onClick={toggleNav} />
+					<div className="mobile-nav-action-group">
+						<div className="theme-toggler-mobile" onClick={handleThemeChange}>
+							{theme === 'dark' ? <FaSun /> : <FaMoon />}
+						</div>
+						{!navOpen && (
+							<FaBars className="action-button" onClick={toggleNav} />
+						)}
 					</div>
 				)}
 			</div>
@@ -220,12 +232,6 @@ export default function Navbar({ theme, toggleTheme }) {
 							)}
 						</AnimatePresence>
 					</div>
-					<div
-						className="mobile-nav-link theme-toggler"
-						onClick={handleThemeChange}
-					>
-						{theme === 'dark' ? <FaSun /> : <FaMoon />}
-					</div>
 				</div>
 			)}
 		</StyledNav>
@@ -242,7 +248,7 @@ const StyledNav = styled.header`
 
 	.topbar-left {
 		font-weight: var(--font-weight-thin);
-		font-size: var(--text-lg);
+		font-size: var(--text-md);
 
 		&:hover {
 			cursor: pointer;
@@ -283,6 +289,7 @@ const StyledNav = styled.header`
 	.contact-dropdown {
 		position: relative;
 		display: inline-block;
+		border: 3px solid red;
 
 		.dropdown-menu {
 			position: absolute;
@@ -322,7 +329,7 @@ const StyledNav = styled.header`
 
 			.icon {
 				margin-right: 0.75rem;
-				font-size: 1.4rem;
+				font-size: var(--text-md);
 			}
 
 			&:hover {
@@ -332,7 +339,7 @@ const StyledNav = styled.header`
 	}
 
 	.action-button {
-		font-size: 2rem;
+		font-size: var(--text-md);
 		z-index: 100;
 
 		&:hover {
@@ -358,7 +365,7 @@ const StyledNav = styled.header`
 			text-align: center;
 			width: fit-content;
 			margin: 1rem auto;
-			font-size: 2.5rem;
+			font-size: var(--text-xxl);
 			letter-spacing: 3px;
 			border-bottom: 2px solid transparent;
 
@@ -371,8 +378,8 @@ const StyledNav = styled.header`
 
 		.close-btn {
 			position: absolute;
-			top: 2rem;
-			right: 3rem;
+			top: 1rem;
+			right: 1.5rem;
 			z-index: 100;
 		}
 	}
@@ -385,7 +392,7 @@ const StyledNav = styled.header`
 		padding: 0 2rem;
 
 		.sub-link {
-			font-size: 2rem;
+			font-size: var(--text-md);
 			margin: 1rem auto;
 			display: flex;
 			align-items: center;
@@ -393,8 +400,42 @@ const StyledNav = styled.header`
 
 			.icon {
 				margin-right: 1rem;
-				font-size: 1.8rem;
+				font-size: var(--text-lg);
 			}
+		}
+	}
+
+	.mobile-nav-action-group {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+	}
+	.theme-toggler-mobile {
+		display: flex;
+		align-items: center;
+		font-size: var(--text-md);
+		margin-right: 0.2rem;
+		cursor: pointer;
+	}
+	.mobile-nav-action .action-button {
+		font-size: var(--text-md);
+	}
+
+	@media screen and (max-width: 768px) {
+		padding: 1.5rem;
+		.mobile-nav-link {
+			font-size: var(--text-md);
+		}
+	}
+
+	@media screen and (max-width: 600px) {
+		.dropdown-item,
+		.mobile-contact .sub-link {
+			font-size: var(--text-xs) !important;
+		}
+		.dropdown-menu .icon,
+		.mobile-contact .icon {
+			font-size: var(--text-md) !important;
 		}
 	}
 `;

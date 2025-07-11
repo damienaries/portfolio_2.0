@@ -12,6 +12,7 @@ export const typographyScale = {
 
 // font weights
 export const fontWeights = {
+	thin: 300,
 	normal: 400,
 	bold: 700,
 };
@@ -39,6 +40,7 @@ export const TypographyStyles = css`
 		--font-size-xxl: ${typographyScale.xxl};
 
 		/* Font Weights */
+		--font-weight-thin: ${fontWeights.thin};
 		--font-weight-normal: ${fontWeights.normal};
 		--font-weight-bold: ${fontWeights.bold};
 
@@ -55,6 +57,7 @@ export const TypographyStyles = css`
 		--text-h2: var(--font-size-lg);
 		--text-h3: var(--font-size-md);
 		--text-body: var(--font-size-sm);
+		--text-md: var(--font-size-md);
 		--text-xs: var(--font-size-xs);
 		--text-xxl: var(--font-size-xxl);
 
@@ -68,7 +71,6 @@ export const TypographyStyles = css`
 			--text-h1: var(--font-size-lg);
 			--text-h2: var(--font-size-md);
 			--text-h3: var(--font-size-sm);
-			--text-body: var(--font-size-xs);
 			--text-xs: var(--font-size-xs);
 			--text-xxl: var(--font-size-xl);
 		}

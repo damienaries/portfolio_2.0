@@ -82,11 +82,11 @@ const StyledAboutSection = styled.section`
 			width: 90vw;
 			min-height: 100vh;
 			background-position: 85%;
-			padding: 2rem 1rem;
+			padding: 1rem;
+			margin: 2rem auto;
 
 			.about-body {
 				width: 100%;
-				padding: 3rem 1rem;
 			}
 		}
 	}
