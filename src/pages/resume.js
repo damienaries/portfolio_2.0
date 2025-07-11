@@ -7,6 +7,7 @@ import ResumeHeader from '../components/resume/ResumeHeader';
 import ResumeExperience from '../components/resume/ResumeExperience';
 import ResumeEducation from '../components/resume/ResumeEducation';
 import ResumeExpertise from '../components/resume/ResumeExpertise';
+import { useReactToPrint } from 'react-to-print';
 
 const printStyles = css`
 	@media print {
@@ -87,26 +88,23 @@ const DownloadButton = styled.div`
 `;
 
 const ResumePage = () => {
-	const componentRef = useRef(null);
-
-	const handlePrint = () => {
-		window.print();
-	};
+	const contentRef = useRef(null);
+	const reactToPrintFn = useReactToPrint({ contentRef });
 
 	return (
 		<>
 			<Global styles={printStyles} />
-			<ResumeContainer>
+			<ResumeContainer ref={contentRef}>
 				<DownloadButton>
 					<ButtonComponent
-						onClick={handlePrint}
+						onClick={reactToPrintFn}
 						className="print-button"
 						icon="download"
 						size="small"
 					/>
 				</DownloadButton>
 
-				<ResumeContent ref={componentRef} className="resume-content">
+				<ResumeContent className="resume-content">
 					<ResumeHeader personalInfo={resumeData.personalInfo} />
 					<ResumeExpertise expertise={resumeData.expertise} />
 					<ResumeExperience experience={resumeData.experience} />
