@@ -8,6 +8,7 @@ import { BiLogoGmail } from 'react-icons/bi';
 import { MdClose } from 'react-icons/md';
 import useWindowDimensions from '../hooks/useWindowDimensions';
 import { fadeIn } from '../styles/animations';
+import AnimatedUnderline from './AnimatedUnderline';
 
 export default function Navbar({ theme, toggleTheme }) {
 	const router = useRouter();
@@ -77,6 +78,12 @@ export default function Navbar({ theme, toggleTheme }) {
 							}`}
 						>
 							Home
+							{router.pathname === '/' && (
+								<AnimatedUnderline
+									layoutId="navbar-underline"
+									className="navbar-underline"
+								/>
+							)}
 						</Link>
 						<Link
 							href="/projects"
@@ -85,6 +92,12 @@ export default function Navbar({ theme, toggleTheme }) {
 							}`}
 						>
 							Work
+							{router.pathname === '/projects' && (
+								<AnimatedUnderline
+									layoutId="navbar-underline"
+									className="navbar-underline"
+								/>
+							)}
 						</Link>
 						<Link
 							href="/resume"
@@ -93,6 +106,12 @@ export default function Navbar({ theme, toggleTheme }) {
 							}`}
 						>
 							Resume
+							{router.pathname === '/resume' && (
+								<AnimatedUnderline
+									layoutId="navbar-underline"
+									className="navbar-underline"
+								/>
+							)}
 						</Link>
 						<div className="contact-dropdown">
 							<div className="topbar-right-link" onClick={toggleContact}>
@@ -276,20 +295,25 @@ const StyledNav = styled.header`
 		transition: filter 0.5s ease;
 		padding-bottom: 0.25rem;
 		border-bottom: 2px solid transparent;
+		position: relative;
 
 		&:hover:not(.theme-toggler) {
 			border-bottom: 2px solid ${(props) => props.theme.borderColor};
 		}
 
-		&.active {
-			border-bottom: 2px solid ${(props) => props.theme.borderColor};
+		.navbar-underline {
+			position: absolute;
+			left: 0;
+			bottom: -var();
+			height: 2px;
+			background: ${(props) => props.theme.borderColor};
+			border-radius: 2px;
 		}
 	}
 
 	.contact-dropdown {
 		position: relative;
 		display: inline-block;
-		border: 3px solid red;
 
 		.dropdown-menu {
 			position: absolute;

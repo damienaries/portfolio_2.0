@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import Project from '../../components/Project';
 import projectsData from '../../../data/portfolio_data_copy.json';
 import { tabTransition } from '../../styles/animations';
+import AnimatedUnderline from '../../components/AnimatedUnderline';
 
 export default function Projects({ sortedProjects }) {
 	const categories = ['work', 'freelance', 'personal'];
@@ -40,6 +41,12 @@ export default function Projects({ sortedProjects }) {
 								whileTap={{ scale: 0.95 }}
 							>
 								{c}
+								{currentTab === c && (
+									<AnimatedUnderline
+										layoutId="tab-underline"
+										className="tab-underline"
+									/>
+								)}
 							</motion.h4>
 						))}
 					</nav>
@@ -100,16 +107,13 @@ const StyledProjects = styled.main`
 		align-items: center;
 		justify-content: center;
 		margin: 2rem auto;
-
-		@media only screen and (max-width: 600px) {
-			flex-direction: column;
-		}
 	}
 
 	.tab {
 		font-weight: var(--weight-thin);
 		text-transform: uppercase;
-		padding: 1rem 2rem;
+		padding: 0.5rem 2rem;
+		position: relative;
 
 		&:hover {
 			cursor: pointer;
@@ -118,6 +122,15 @@ const StyledProjects = styled.main`
 
 		&.current {
 			font-weight: var(--weight-bold);
+		}
+
+		.tab-underline {
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			height: 1px;
+			background: var(--color-blue-gray, #345);
+			border-radius: 2px;
 		}
 	}
 
@@ -133,5 +146,25 @@ const StyledProjects = styled.main`
 	.description {
 		font-size: var(--text-body);
 		font-weight: var(--weight-thin);
+	}
+
+	@media screen and (max-width: 768px) {
+		padding: 0 1rem;
+
+		.page-title {
+			margin: 0 auto 1rem;
+		}
+
+		.tabs-head {
+			margin: 0 auto;
+		}
+
+		.tabs-body {
+			margin: 0 auto;
+		}
+
+		.tab {
+			padding: 0.5rem 1rem;
+		}
 	}
 `;

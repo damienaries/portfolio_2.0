@@ -69,7 +69,7 @@ export default function TechPill({ technology }) {
 }
 
 const StyledTechPill = styled.div`
-	padding: 0.75rem;
+	padding: 0.2rem;
 	margin: 0.5rem;
 	border-radius: 50%;
 	background-image: ${(props) => props.theme.techPillGradient};
@@ -77,16 +77,23 @@ const StyledTechPill = styled.div`
 	position: relative;
 	transition: transform 0.2s ease;
 	color: ${(props) => props.theme.text};
+	width: 36px;
+	height: 36px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 
 	.icon {
-		width: 24px;
-		height: 24px;
+		font-size: 1.5rem;
 	}
 
-	@media screen and (min-width: 769px) {
+	@media screen and (min-width: 768px) {
+		margin: 0.25rem;
+		width: 28px;
+		height: 28px;
+
 		.icon {
-			width: 28px;
-			height: 28px;
+			font-size: 1rem;
 		}
 	}
 

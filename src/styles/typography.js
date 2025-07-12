@@ -69,8 +69,6 @@ export const TypographyStyles = css`
 	@media (max-width: 768px) {
 		:root {
 			--text-h1: var(--font-size-lg);
-			--text-h2: var(--font-size-md);
-			--text-h3: var(--font-size-sm);
 			--text-xs: var(--font-size-xs);
 			--text-xxl: var(--font-size-xl);
 		}

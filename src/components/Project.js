@@ -148,19 +148,13 @@ const StyledProject = styled.section`
 	@media screen and (max-width: 768px) {
 		padding: 2rem 0 3rem;
 
-		&::before {
-			width: 80%;
-		}
-
 		.project-container {
 			width: 100%;
-			padding: 1.5rem 1.5rem 2.5rem;
+			padding: 1.5rem;
 
 			.header {
 				flex-direction: column;
 				align-items: flex-start;
-				gap: 1rem;
-				margin-bottom: 2.5rem;
 
 				.title {
 					width: 100%;
@@ -170,6 +164,14 @@ const StyledProject = styled.section`
 				.tech-pills {
 					width: 100%;
 					justify-content: center;
+				}
+			}
+
+			.content {
+				padding: 0;
+
+				.description {
+					padding: 0.5rem;
 				}
 			}
 		}
