@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { FaBriefcase } from 'react-icons/fa';
 
 const Section = styled.section`
 	margin-bottom: 2rem;
@@ -7,7 +8,10 @@ const Section = styled.section`
 		color: var(--color-blue-gray);
 		border-bottom: 2px solid var(--color-blue-gray);
 		padding-bottom: 0.5rem;
-		margin-bottom: 1.5rem;
+		margin-bottom: 1rem;
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
 	}
 
 	h5 {
@@ -16,14 +20,13 @@ const Section = styled.section`
 `;
 
 const Job = styled.div`
-	margin: 1.5rem 0;
+	margin-bottom: 1.5rem;
 `;
 
 const JobHeader = styled.div`
 	display: flex;
 	justify-content: space-between;
 	align-items: baseline;
-	margin-bottom: 0.5rem;
 
 	h4 {
 		color: var(--color-gray-dark);
@@ -39,43 +42,38 @@ const Period = styled.span`
 const JobDescription = styled.p`
 	color: var(--color-gray-dark);
 	margin-bottom: 1rem;
-	line-height: var(--line-height-relaxed);
 `;
 
 const Highlights = styled.ul`
-	list-style-type: disc;
+	list-style-type: square;
 	padding-left: 1.5rem;
 	margin: 0.5rem 0;
 
 	li {
-		margin-bottom: 0.5rem;
 		color: var(--color-gray-dark);
-		line-height: var(--line-height-relaxed);
-		font-size: var(--text-xs);
+		font-size: var(--text-body);
 	}
 `;
 
-const Projects = styled.div`
-	margin-top: 1rem;
-`;
-
-const Project = styled.div`
+const Project = styled.li`
 	margin-bottom: 1rem;
+	list-style-type: square;
+	margin-left: 1rem;
 
-	h5 {
+	a {
 		color: var(--color-gray-dark);
 		margin-bottom: 0.5rem;
-	}
-
-	p {
-		color: var(--color-gray-dark);
+		font-weight: var(--font-weight-bold);
 	}
 `;
 
 const ResumeExperience = ({ experience }) => {
 	return (
 		<Section>
-			<h3>Professional Experience</h3>
+			<h3>
+				<FaBriefcase />
+				Professional Experience
+			</h3>
 			{experience.map((job, index) => (
 				<Job key={index} className="job">
 					<JobHeader>
@@ -93,14 +91,19 @@ const ResumeExperience = ({ experience }) => {
 						</Highlights>
 					)}
 					{job.projects && (
-						<Projects>
+						<ul>
 							{job.projects.map((project, i) => (
 								<Project key={i}>
-									<h5>{project.name}</h5>
+									<a
+										href={`https://www.${project.name.toLowerCase()}`}
+										target="_blank"
+									>
+										{project.name}
+									</a>
 									<p>{project.description}</p>
 								</Project>
 							))}
-						</Projects>
+						</ul>
 					)}
 				</Job>
 			))}

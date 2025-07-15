@@ -8,7 +8,7 @@ const Section = styled.section`
 		color: var(--color-blue-gray);
 		border-bottom: 2px solid var(--color-blue-gray);
 		padding-bottom: 0.5rem;
-		margin-bottom: 1.1rem;
+		margin-bottom: 1rem;
 		display: flex;
 		align-items: center;
 		gap: 0.25em;

@@ -14,7 +14,7 @@ export default function Navbar({ theme, toggleTheme }) {
 	const router = useRouter();
 	const { width } = useWindowDimensions();
 	const [navOpen, setIsNavOpen] = useState(false);
-	const [contactOpen, setContactOpen] = useState(true);
+	const [contactOpen, setContactOpen] = useState(false);
 	const navTimeoutRef = useRef();
 
 	// Lock scroll
@@ -306,7 +306,7 @@ const StyledNav = styled.header`
 			left: 0;
 			bottom: -var();
 			height: 2px;
-			background: ${(props) => props.theme.borderColor};
+			background: ${(props) => props.theme.text};
 			border-radius: 2px;
 		}
 	}
@@ -357,7 +357,8 @@ const StyledNav = styled.header`
 			}
 
 			&:hover {
-				background-color: ${(props) => props.theme.background};
+				background-color: ${(props) => props.theme.buttonBgHover};
+				color: ${(props) => props.theme.buttonText};
 			}
 		}
 	}

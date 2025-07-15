@@ -13,32 +13,35 @@
 			"company": "iVisa.com",
 			"position": "Web Developer",
 			"period": "November 2021 - Present",
-			"description": "iVisa is an established Saas startup in the travel e-commerce space. Our stack includes PHP, Laravel, Docker, mySQL, Vue3, TailwindCSS, JavaScript and Typescript.",
+			"description": "Remote role at a SaaS travel e-commerce startup, working with a Laravel stack (JavaScript, TypeScript, Vue3, Vuex, TailwindCSS, PHP, Docker, MySQL).",
 			"highlights": [
-				"Engineered new features based on the Product team's vision through AB testing, iterating tasks in an Agile workflow with a focus on UX, conversion and sales growth.",
-				"Rewrote the full Tailwind CSS layer for a major rebranding initiative, by translating Figma designs into pixel perfect code on every page and component of the application.",
-				"Maintained high coding standards by participating in peer reviews.",
-				"Tackled technical debt by auditing and refactoring or optimizing legacy code",
-				"Completed multiple cross team SEO optimizations efforts resulting in 25% growth in Google search rankings."
+				"Designed and delivered new features in close collaboration with Product and Design teams, using an in-house A/B testing framework to run experiments and optimize conversion rates.",
+				"Refactored and rebuilt the TailwindCSS layer for a major rebrand, translating Figma wireframes into pixel-perfect, responsive components.",
+				"Improved Core Web Vitals and SEO performance through technical optimizations, contributing to a 25% YoY increase in organic search traffic.",
+				"Conducted accessibility (WCAG) and performance audits to enhance user journeys and ensure compliance.",
+				"Maintained high-quality code with peer reviews, unit and end-to-end testing (Pest, Jest, Laravel Dusk).",
+				"Reduced technical debt by auditing legacy code, writing tooling to identify unused assets, and optimizing application performance.",
+				"Worked in an Agile environment with cross-functional teams to prioritize and deliver features efficiently.",
+				"Incorporated AI-powered developer tools including GitHub Copilot, Cursor IDE, and CodeRabbit to accelerate development and improve code quality."
 			]
 		},
 		{
 			"company": "Freelance Developer",
 			"position": "Freelance Developer",
 			"period": "March 2022 - October 2023",
-			"description": "To enhance and diversify my skill set, I have pursued freelance opportunities. This not only sharpened my customer management abilities but also exposed me to diverse working environments as well as gave me the chance to lead and own challenges from 0 to 1.",
+			"description": "Focused on delivering high-quality web solutions with modern JavaScript frameworks, conversion optimization, and responsive design. Applied A/B testing principles, rapid prototyping, and close client collaboration to deliver features aligned with business goals.",
 			"projects": [
 				{
-					"name": "Judi Boisson",
-					"description": "I was hired by this Quilts and Linen brand to revive their old website and upgrade the front end. After diagnosing the defunct - never updated Magento 1 site, I realized a full migration to Shopify, handling or overseeing successfully transferring 10 years of data, domain registration, and creating a new storefront. The resulting elevated user experience took the stalled sales to over $30k in the first month."
+					"name": "JudiBoisson.com",
+					"description": "Led the complete migration of an outdated Magento 1 site to Shopify, managing data transfer, domain setup, and new storefront design. Improved conversion rates and elevated the user experience, resulting in over $30k in sales in the first month."
 				},
 				{
 					"name": "CareyCorea.art",
-					"description": "After a great project with Kyle Corea in 2022, he and his father contracted me for a mobile-first portfolio site where they could easily showcase and update Carey's artwork. For this project I used Vue3, Typescript, TailwindCSS and Sanity CMS."
+					"description": "Built a mobile-first, accessible portfolio site using Vue3, TypeScript, TailwindCSS, and Sanity CMS, emphasizing responsive design and SEO optimization."
 				},
 				{
-					"name": "Corea Creative",
-					"description": "A multi page video portfolio for NYC based video producer Kyle Corea. We designed the site together which I developed using Next.js, React, CSS modules and Sanity CMS, integrating different API such as Vimeo or Youtube"
+					"name": "CoreaCreative.com",
+					"description": "Developed a multi-page, performant video portfolio using Next.js, React, and CSS Modules, with seamless API integration (Vimeo, YouTube), optimizing Core Web Vitals and ensuring an engaging user journey."
 				}
 			]
 		},
@@ -46,23 +49,13 @@
 			"company": "CONCEPT.APP",
 			"position": "Full Stack Developer",
 			"period": "January 2021 - July 2021",
-			"description": "Concept was at the time an early stage startup, building a social platform in JavaScript, React and Firebase. My role as early hire on the dev team was distributed across the stack, with a Front-End focus.",
+			"description": "Early hire at an early-stage startup building a social platform with JavaScript, React, and Firebase. Front-end focused role with full-stack collaboration.",
 			"highlights": [
-				"Designed and coded foundational UI features like a forum page and our onboarding slides.",
-				"Implemented a basic notification system using Websockets.",
-				"Collaborated with leads on some system design and database graphs and organized ClickUp stories."
-			]
-		},
-		{
-			"company": "Various Locations",
-			"position": "Bartender - Bar Manager",
-			"period": "2008 - 2020",
-			"description": "I drastically changed my career path and taught myself to code in 2020. Before that I could be found tending, then managing craft cocktail bars in Paris, NYC, Montreal, St Barts, Monaco - and many other places; acquiring some invaluable skills that translate into my dedication to the quality of my work every day.",
-			"highlights": [
-				"Ability to conceptualize and design projects and products, all the way to implementation and launch.",
-				"Team building and leading, including hiring and training.",
-				"Understanding of business needs, operational and financial management.",
-				"Extensive direct customer management experience."
+				"Designed and built foundational UI features with React Hooks, prioritizing accessibility and responsive layouts for an improved user journey.",
+				"Implemented a notification system using Websockets and Redux to support real-time user engagement.",
+				"Collaborated on system design, database modeling, and Agile story organization in ClickUp to support rapid prototyping and iterative development.",
+				"Worked closely with cross-functional teams to refine requirements and deliver production-ready features.",
+				"Emphasized maintainable code practices with code reviews and modern JavaScript tooling (NPM, Webpack, Eslint)."
 			]
 		}
 	],

@@ -45,10 +45,6 @@ const printStyles = css`
 			break-inside: avoid;
 		}
 
-		.job:last-child {
-			padding-top: 3rem;
-		}
-
 		/* Add spacing before major sections */
 		section:not(:first-child) {
 			margin-top: 2rem;
@@ -75,7 +71,7 @@ const ResumeContainer = styled.div`
 
 const ResumeContent = styled.div`
 	background: white;
-	padding: 2rem;
+	padding: 1rem;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 	max-width: 800px;
 `;

@@ -4,7 +4,7 @@ import { FaGlobe, FaLinkedin, FaGithub, FaLaptopCode } from 'react-icons/fa';
 
 const Header = styled.header`
 	text-align: center;
-	margin-bottom: 2rem;
+	margin-bottom: 1.5rem;
 `;
 
 const Name = styled.h1`
@@ -21,7 +21,7 @@ const ContactInfo = styled.div`
 	align-items: center;
 	gap: 0.6rem;
 	flex-wrap: wrap;
-	margin-bottom: 1.2rem;
+	margin-bottom: 1rem;
 
 	@media (min-width: 600px), print {
 		flex-wrap: nowrap;
