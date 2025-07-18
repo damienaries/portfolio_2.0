@@ -37,7 +37,7 @@ export default function Footer() {
 
 const StyledFooter = styled.footer`
 	width: 100%;
-	padding: 2rem 4rem;
+	padding: 2rem 3rem;
 	position: relative;
 
 	::before {
@@ -52,7 +52,7 @@ const StyledFooter = styled.footer`
 	}
 
 	.section-title {
-		margin: 1rem auto;
+		margin: 0 auto 1rem;
 		text-align: center;
 		font-weight: var(--weight-thin);
 	}
@@ -61,7 +61,7 @@ const StyledFooter = styled.footer`
 		display: flex;
 		justify-content: space-evenly;
 		align-items: center;
-		margin: 2rem auto 3rem;
+		margin: 1rem auto;
 		font-size: var(--text-body);
 	}
 

@@ -44,17 +44,16 @@ function AboutSection() {
 export default AboutSection;
 
 const StyledAboutSection = styled.section`
-	min-height: calc(100vh - 60px);
+	height: calc(100vh - 60px);
 	display: flex;
 	align-items: start;
 	justify-content: center;
 	background: ${(props) => props.theme.background};
 
 	.about-content {
-		margin: 6rem auto;
+		margin: 3rem auto;
 		width: 80vw;
 		max-width: 1400px;
-		min-height: 80vh;
 		background: ${(props) => props.theme.cardBackground};
 		color: ${(props) => props.theme.text};
 		border-radius: var(--radius);
@@ -62,7 +61,7 @@ const StyledAboutSection = styled.section`
 		overflow: hidden;
 		background-color: ${(props) => props.theme.cardBackground};
 		background-image: ${(props) => props.theme.backgroundGradient};
-		padding: 4rem;
+		padding: 2rem 4rem;
 
 		.home-title {
 			font-size: var(--text-xxl);

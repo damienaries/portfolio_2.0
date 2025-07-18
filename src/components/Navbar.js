@@ -263,7 +263,7 @@ const StyledNav = styled.header`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 3rem;
+	padding: 0 3rem;
 
 	.topbar-left {
 		font-weight: var(--font-weight-thin);
@@ -292,19 +292,23 @@ const StyledNav = styled.header`
 		margin: 1rem;
 		font-size: var(--text-xs);
 		letter-spacing: 3px;
-		transition: filter 0.5s ease;
+		transition: all 0.3s ease;
 		padding-bottom: 0.25rem;
 		border-bottom: 2px solid transparent;
 		position: relative;
 
 		&:hover:not(.theme-toggler) {
-			border-bottom: 2px solid ${(props) => props.theme.borderColor};
+			border-bottom: 2px solid
+				${(props) =>
+					props.theme.text === 'var(--color-gray-dark)'
+						? 'rgba(115, 121, 128, 0.4)'
+						: 'rgba(226, 232, 240, 0.3)'};
 		}
 
 		.navbar-underline {
 			position: absolute;
 			left: 0;
-			bottom: -var();
+			bottom: -2px;
 			height: 2px;
 			background: ${(props) => props.theme.text};
 			border-radius: 2px;
@@ -393,11 +397,20 @@ const StyledNav = styled.header`
 			font-size: var(--text-xxl);
 			letter-spacing: 3px;
 			border-bottom: 2px solid transparent;
+			transition: all 0.3s ease;
+
+			&:hover {
+				border-bottom: 2px solid
+					${(props) =>
+						props.theme.text === 'var(--color-gray-dark)'
+							? 'rgba(115, 121, 128, 0.4)'
+							: 'rgba(226, 232, 240, 0.3)'};
+			}
 
 			&:focus,
 			&:active,
 			&.active {
-				border-bottom: 2px solid ${(props) => props.theme.borderColor};
+				border-bottom: 2px solid ${(props) => props.theme.text};
 			}
 		}
 

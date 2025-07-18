@@ -130,6 +130,7 @@ const StyledProject = styled.section`
 				background-color: ${(props) => props.theme.background};
 				border-radius: var(--radius);
 				box-shadow: ${(props) => props.theme.boxShadow};
+				white-space: pre-line;
 			}
 		}
 	}

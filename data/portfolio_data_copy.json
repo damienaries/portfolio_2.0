@@ -19,6 +19,17 @@
 		"publishedAt": "2023-10-26T04:41:00.000Z"
 	},
 	{
+		"title": "CONCEPT.APP",
+		"category": "work",
+		"body": "Early hire at an early-stage startup building a social platform with JavaScript, React, and Firebase. Front-end focused role with full-stack collaboration. \nDesigned and built foundational UI features with React Hooks, prioritizing accessibility and responsive layouts for an improved user journey. Implemented a notification system using Websockets and Redux to support real-time user engagement. \nCollaborated on system design, database modeling, and Agile story organization in ClickUp to support rapid prototyping and iterative development.",
+		"technologies": ["React", "JavaScript", "Firebase", "Redux", "Websockets"],
+		"mainImage": {
+			"src": "/images/concept.webp",
+			"alt": "CONCEPT.APP project screenshot"
+		},
+		"publishedAt": "2021-07-31T06:06:00.000Z"
+	},
+	{
 		"title": "Classic Cocktails",
 		"category": "personal",
 		"body": "I am currently building this app for the bartender and manager I used to be.  It helps me to hone my Vue and TS knowledge, as well as learn how to work with Google Firebase. It also gives me the opportunity to use the wealth of beverage knowledge accumulated over a decade of working in the cocktail industry.\nBack when I was in the drinks trade we typically used a spreadsheet listing the house classic drinks recipes, and another for each season of new cocktails. What if we could customize the whole process and also have access to a network of friends' menus, archive and access all former menus and also integrate past seasons? This might be a great tool to identify a picky customer's order, or to save progress on cocktail creations for the spring menu drop, or simply to find your next hit for your home cocktail party",
@@ -58,7 +69,7 @@
 	{
 		"title": "Judi Boisson Home Collection",
 		"category": "freelance",
-		"body": "This project required very little coding per se, but needed all my problem solving skills. Ms Boisson hired me to fix up the website for her mother Judi's quilt and linen brand, which looked like it needed a bit of love and some fresh CSS. \nThe site was just down. Right away I discovered that it was built on Magento 1, and not running at all. The account information was lost, so without access to the codebase I couldn't simply restyle anything. Instead my work here was to help them find the right way to get the store back online. \nSo instead of migrating to Magento 2, I decided to have them make this a Shopify store, much more user friendly, especially if you're a small shop without a tech team handy. Here are the main steps we took for this:",
+		"body": "Led the complete migration of an outdated Magento 1 site to Shopify for a quilt and linen brand. The original site was completely down with lost account access, requiring a strategic platform change rather than a simple redesign.\n\n• Migrated from non-functional Magento 1 to Shopify for improved usability and maintenance\n• Managed complete data transfer, domain setup, and new storefront design\n• Improved conversion rates and elevated user experience\n• Resulted in over $30k in sales in the first month post-launch",
 		"technologies": ["Shopify", "JavaScript", "CSS"],
 		"liveLink": "https://www.judiboisson.com/",
 		"mainImage": {

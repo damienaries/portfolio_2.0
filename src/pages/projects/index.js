@@ -112,12 +112,19 @@ const StyledProjects = styled.main`
 	.tab {
 		font-weight: var(--weight-thin);
 		text-transform: uppercase;
-		padding: 0.5rem 2rem;
+		padding: 0.5rem;
+		margin: 0 1rem;
 		position: relative;
+		border-bottom: 2px solid transparent;
+		transition: all 0.3s ease;
 
 		&:hover {
 			cursor: pointer;
-			font-weight: var(--weight-bold);
+			border-bottom: 2px solid
+				${(props) =>
+					props.theme.text === 'var(--color-gray-dark)'
+						? 'rgba(115, 121, 128, 0.4)'
+						: 'rgba(226, 232, 240, 0.3)'};
 		}
 
 		&.current {
@@ -127,9 +134,9 @@ const StyledProjects = styled.main`
 		.tab-underline {
 			position: absolute;
 			left: 0;
-			bottom: 0;
-			height: 1px;
-			background: var(--color-blue-gray, #345);
+			bottom: -2px;
+			height: 2px;
+			background: ${(props) => props.theme.text};
 			border-radius: 2px;
 		}
 	}
