@@ -56,6 +56,7 @@ const Highlights = styled.ul`
 `;
 
 const Project = styled.li`
+	color: var(--color-gray-dark);
 	margin-bottom: 1rem;
 	list-style-type: square;
 	margin-left: 1rem;

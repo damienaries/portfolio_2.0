@@ -149,6 +149,10 @@ const StyledProject = styled.section`
 	@media screen and (max-width: 768px) {
 		padding: 2rem 0 3rem;
 
+		&::before {
+			display: none;
+		}
+
 		.project-container {
 			width: 100%;
 			padding: 1.5rem;

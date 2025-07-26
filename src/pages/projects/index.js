@@ -172,6 +172,7 @@ const StyledProjects = styled.main`
 
 		.tab {
 			padding: 0.5rem 1rem;
+			margin: 0;
 		}
 	}
 `;
