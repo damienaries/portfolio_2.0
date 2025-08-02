@@ -48,7 +48,7 @@ export default function Project({ project }) {
 
 const StyledProject = styled.section`
 	width: 100%;
-	padding: 4rem 0;
+	padding: 2rem 0;
 	display: flex;
 	justify-content: center;
 	align-items: center;

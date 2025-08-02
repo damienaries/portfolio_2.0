@@ -44,14 +44,13 @@ function AboutSection() {
 export default AboutSection;
 
 const StyledAboutSection = styled.section`
-	height: calc(100vh - 60px);
 	display: flex;
 	align-items: start;
 	justify-content: center;
 	background: ${(props) => props.theme.background};
 
 	.about-content {
-		margin: 3rem auto;
+		margin: 1rem auto 2rem;
 		width: 80vw;
 		max-width: 1400px;
 		background: ${(props) => props.theme.cardBackground};
@@ -73,13 +72,12 @@ const StyledAboutSection = styled.section`
 			width: 55%;
 
 			p {
-				margin: 2rem 0;
+				margin: 1rem 0;
 			}
 		}
 
 		@media screen and (max-width: 768px) {
 			width: 90vw;
-			min-height: 100vh;
 			background-position: 85%;
 			padding: 1rem;
 			margin: 2rem auto;

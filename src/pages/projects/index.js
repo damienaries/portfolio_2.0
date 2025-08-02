@@ -37,8 +37,6 @@ export default function Projects({ sortedProjects }) {
 								key={idx}
 								onClick={() => handleClick(c)}
 								className={'tab' + (currentTab === c ? ' current' : '')}
-								whileHover={{ scale: 1.05 }}
-								whileTap={{ scale: 0.95 }}
 							>
 								{c}
 								{currentTab === c && (
@@ -93,7 +91,7 @@ const StyledProjects = styled.main`
 	.page-title {
 		font-weight: var(--weight-thin);
 		text-transform: capitalize;
-		margin: 3rem auto;
+		margin: 1rem auto;
 	}
 
 	.projects-container {
