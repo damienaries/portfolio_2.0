@@ -79,7 +79,7 @@ const ResumeExperience = ({ experience }) => {
 				<Job key={index} className="job">
 					<JobHeader>
 						<h4>
-							{job.position} at {job.company}
+							{job.position} {job.company !== '' && `at ${job.company}`}
 						</h4>
 						<Period>{job.period}</Period>
 					</JobHeader>
