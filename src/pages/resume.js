@@ -8,6 +8,7 @@ import ResumeExperience from '../components/resume/ResumeExperience';
 import ResumeEducation from '../components/resume/ResumeEducation';
 import ResumeExpertise from '../components/resume/ResumeExpertise';
 import { useReactToPrint } from 'react-to-print';
+import { breathingCardEffect } from '../styles/animations';
 
 const printStyles = css`
 	@media print {
@@ -46,7 +47,7 @@ const printStyles = css`
 		}
 
 		/* Add spacing before major sections */
-		section:not(:first-child) {
+		section:not(:first-of-type) {
 			margin-top: 2rem;
 		}
 
@@ -74,6 +75,7 @@ const ResumeContent = styled.div`
 	padding: 1rem;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 	max-width: 800px;
+	${breathingCardEffect}
 `;
 
 const DownloadButton = styled.div`

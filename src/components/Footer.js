@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
-import Link from 'next/link';
 import { BiLogoGmail } from 'react-icons/bi';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
+import MagneticLink from './MagneticLink';
 
 export default function Footer() {
 	return (
@@ -9,27 +9,31 @@ export default function Footer() {
 			<h5 className="section-title">Get in touch</h5>
 
 			<div className="social-links">
-				<Link
+				<MagneticLink
 					href="https://www.linkedin.com/in/damien-aries"
 					target="_blank"
 					rel="noopener"
+					label="Linkedin profile"
 					className="icon-link"
-					aria-label="Linkedin profile"
 				>
 					<FaLinkedinIn />
-				</Link>
-				<Link href="mailto:damien.aries@gmail.com" className="icon-link">
+				</MagneticLink>
+				<MagneticLink
+					href="mailto:damien.aries@gmail.com"
+					label="Email"
+					className="icon-link"
+				>
 					<BiLogoGmail />
-				</Link>
-				<Link
+				</MagneticLink>
+				<MagneticLink
 					href="https://github.com/damienaries"
 					target="_blank"
 					rel="noopener"
+					label="Github profile"
 					className="icon-link"
-					aria-label="Github profile"
 				>
 					<FaGithub />
-				</Link>
+				</MagneticLink>
 			</div>
 		</StyledFooter>
 	);
@@ -66,14 +70,11 @@ const StyledFooter = styled.footer`
 	}
 
 	.icon-link {
-		transition: all 0.1s ease-out;
+		display: inline-block;
+		cursor: pointer;
 
 		& > svg {
 			font-size: 3rem;
-		}
-
-		&:hover {
-			transform: scale(0.95);
 		}
 	}
 `;

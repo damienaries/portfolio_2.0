@@ -3,6 +3,7 @@ import Image from 'next/legacy/image';
 import React from 'react';
 import CodeLinks from './CodeLinks';
 import TechPill from './TechPill';
+import { breathingCardEffect } from '../styles/animations';
 
 export default function Project({ project }) {
 	const { title, mainImage, technologies, body, liveLink, githubLink } =
@@ -71,6 +72,7 @@ const StyledProject = styled.section`
 		border-radius: var(--radius);
 		background-color: ${(props) => props.theme.cardBackground};
 		box-shadow: ${(props) => props.theme.boxShadow};
+		${breathingCardEffect}
 
 		.header {
 			display: flex;
@@ -112,7 +114,6 @@ const StyledProject = styled.section`
 				position: relative;
 				border-radius: var(--radius);
 				overflow: hidden;
-				box-shadow: ${(props) => props.theme.boxShadow};
 
 				.image {
 					border-radius: var(--radius);
@@ -129,7 +130,6 @@ const StyledProject = styled.section`
 				padding: 1rem;
 				background-color: ${(props) => props.theme.background};
 				border-radius: var(--radius);
-				box-shadow: ${(props) => props.theme.boxShadow};
 				white-space: pre-line;
 			}
 		}

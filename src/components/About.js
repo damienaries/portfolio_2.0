@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import ButtonComponent from './ButtonComponent';
+import { breathingCardEffect } from '../styles/animations';
 
 function AboutSection() {
 	return (
@@ -61,6 +62,7 @@ const StyledAboutSection = styled.section`
 		background-color: ${(props) => props.theme.cardBackground};
 		background-image: ${(props) => props.theme.backgroundGradient};
 		padding: 2rem 4rem;
+		${breathingCardEffect}
 
 		.home-title {
 			font-size: var(--text-xxl);
