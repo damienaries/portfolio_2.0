@@ -42,7 +42,6 @@ const printStyles = css`
 		.education-item,
 		h3,
 		small {
-			page-break-inside: avoid;
 			break-inside: avoid;
 		}
 

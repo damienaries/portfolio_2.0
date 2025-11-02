@@ -6,12 +6,12 @@ const Section = styled.section`
 
 	h3 {
 		color: var(--color-blue-gray);
-		border-bottom: 2px solid var(--color-blue-gray);
-		padding-bottom: 0.5rem;
-		margin-bottom: 1rem;
+		border-bottom: 1px solid var(--color-blue-gray);
+		padding-bottom: 0.25rem;
+		margin-bottom: 0.5rem;
 		display: flex;
 		align-items: center;
-		gap: 0.5rem;
+		gap: 0.25rem;
 	}
 `;
 

@@ -15,6 +15,7 @@
 			"period": "November 2021 - Present",
 			"description": "Remote role at a SaaS travel e-commerce startup, working with a Laravel stack (JavaScript, TypeScript, Vue3, Vuex, TailwindCSS, PHP, Docker, MySQL).",
 			"highlights": [
+				"Led the development of a new streamlined 1-step checkout flow, improving conversion rates by 15% and reducing cart abandonment by 30%",
 				"Designed and delivered new features in close collaboration with Product and Design teams, using an in-house A/B testing framework to run experiments and optimize conversion rates.",
 				"Refactored and rebuilt the TailwindCSS layer for a major rebrand, translating Figma wireframes into pixel-perfect, responsive components.",
 				"Improved Core Web Vitals and SEO performance through technical optimizations, contributing to a 25% YoY increase in organic search traffic.",
