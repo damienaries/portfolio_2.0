@@ -27,7 +27,7 @@ export default function ButtonComponent({
 
 	const buttonContent = (
 		<StyledButton
-			as={href ? undefined : 'button'}
+			as={href ? 'a' : 'button'}
 			onClick={onClick}
 			variant={variant}
 			size={size}
@@ -41,7 +41,11 @@ export default function ButtonComponent({
 
 	if (href) {
 		if (href.startsWith('/')) {
-			return <Link href={href}>{buttonContent}</Link>;
+			return (
+				<Link href={href} legacyBehavior>
+					{buttonContent}
+				</Link>
+			);
 		}
 		return (
 			<a href={href} target="_blank" rel="noopener noreferrer">

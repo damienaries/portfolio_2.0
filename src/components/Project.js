@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 import React from 'react';
 import CodeLinks from './CodeLinks';
 import TechPill from './TechPill';
@@ -29,11 +29,14 @@ export default function Project({ project }) {
 									className="image"
 									src={mainImage.src}
 									alt={mainImage.alt}
-									layout="responsive"
-									sizes="(max-width: 600px) 80vw, 500px"
 									width={600}
 									height={400}
-									priority="true"
+									sizes="(max-width: 600px) 80vw, 500px"
+									priority
+									style={{
+										width: '100%',
+										height: 'auto',
+									}}
 								/>
 							)}
 						</div>
