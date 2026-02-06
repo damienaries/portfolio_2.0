@@ -8,13 +8,15 @@ function MyApp({ Component, pageProps }) {
 	const [theme, setTheme] = useState('dark');
 
 	useEffect(() => {
-		const savedTheme = localStorage.getItem('theme') || 'dark';
-		setTheme(savedTheme);
-		setMounted(true);
+		if (typeof window !== 'undefined') {
+			const savedTheme = localStorage.getItem('theme') || 'dark';
+			setTheme(savedTheme);
+			setMounted(true);
+		}
 	}, []);
 
 	useEffect(() => {
-		if (mounted) {
+		if (mounted && typeof window !== 'undefined') {
 			localStorage.setItem('theme', theme);
 		}
 	}, [theme, mounted]);
@@ -23,16 +25,14 @@ function MyApp({ Component, pageProps }) {
 		setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
 	};
 
-	// Prevent flash of wrong theme
-	if (!mounted) {
-		return null;
-	}
+	// Use default theme during SSR to prevent hydration mismatch
+	const currentTheme = mounted ? theme : 'dark';
 
 	return (
-		<ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
-			<Layout toggleTheme={toggleTheme} theme={theme}>
+		<ThemeProvider theme={currentTheme === 'light' ? lightTheme : darkTheme}>
+			<Layout toggleTheme={toggleTheme} theme={currentTheme}>
 				<Global styles={GlobalStyles} />
-				<Component {...pageProps} theme={theme} />
+				<Component {...pageProps} theme={currentTheme} />
 			</Layout>
 		</ThemeProvider>
 	);

@@ -2,6 +2,8 @@ import { useRef } from 'react';
 import Link from 'next/link';
 import { motion, useMotionValue, useSpring } from 'motion/react';
 
+const MotionLink = motion(Link);
+
 /**
  * MagneticLink - Link that reacts to pointer movement with magnetic effect
  *
@@ -54,28 +56,23 @@ const MagneticLink = ({
 	};
 
 	return (
-		<Link
+		<MotionLink
 			href={href}
 			target={target}
 			rel={rel}
 			aria-label={label}
-			passHref
-			legacyBehavior
+			ref={ref}
+			onMouseMove={handleMouseMove}
+			onMouseLeave={handleMouseLeave}
+			style={{
+				x: xSpring,
+				y: ySpring,
+				display: 'inline-block',
+			}}
+			{...props}
 		>
-			<motion.a
-				ref={ref}
-				onMouseMove={handleMouseMove}
-				onMouseLeave={handleMouseLeave}
-				style={{
-					x: xSpring,
-					y: ySpring,
-					display: 'inline-block',
-				}}
-				{...props}
-			>
-				{children}
-			</motion.a>
-		</Link>
+			{children}
+		</MotionLink>
 	);
 };
 

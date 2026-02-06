@@ -25,9 +25,51 @@ export default function ButtonComponent({
 		(Array.isArray(children) &&
 			children.some((child) => typeof child === 'string'));
 
-	const buttonContent = (
+	if (href) {
+		if (href.startsWith('/')) {
+			// Internal link - use Next.js Link (new API)
+			return (
+				<Link
+					href={href}
+					onClick={onClick}
+					className={className}
+					style={{ textDecoration: 'none', display: 'inline-block' }}
+				>
+					<StyledButton
+						as="span"
+						variant={variant}
+						size={size}
+						hasText={hasText}
+					>
+						{children}
+						{IconComponent && <IconComponent className="icon" />}
+					</StyledButton>
+				</Link>
+			);
+		}
+		// External link - styled component IS the anchor
+		return (
+			<StyledButton
+				as="a"
+				href={href}
+				target="_blank"
+				rel="noopener noreferrer"
+				onClick={onClick}
+				variant={variant}
+				size={size}
+				hasText={hasText}
+				className={className}
+			>
+				{children}
+				{IconComponent && <IconComponent className="icon" />}
+			</StyledButton>
+		);
+	}
+
+	// No href - regular button
+	return (
 		<StyledButton
-			as={href ? 'a' : 'button'}
+			as="button"
 			onClick={onClick}
 			variant={variant}
 			size={size}
@@ -38,23 +80,6 @@ export default function ButtonComponent({
 			{IconComponent && <IconComponent className="icon" />}
 		</StyledButton>
 	);
-
-	if (href) {
-		if (href.startsWith('/')) {
-			return (
-				<Link href={href} legacyBehavior>
-					{buttonContent}
-				</Link>
-			);
-		}
-		return (
-			<a href={href} target="_blank" rel="noopener noreferrer">
-				{buttonContent}
-			</a>
-		);
-	}
-
-	return buttonContent;
 }
 
 const StyledButton = styled.button`
