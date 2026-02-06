@@ -4,13 +4,14 @@
 	"private": true,
 	"scripts": {
 		"dev": "next dev",
-		"build": "next build",
-		"start": "next start"
+		"build": "next build --webpack",
+		"start": "next start",
+		"postbuild": "next telemetry disable"
 	},
 	"dependencies": {
 		"@emotion/react": "^11.14.0",
 		"@emotion/styled": "^11.14.0",
-		"@netlify/plugin-nextjs": "^5.10.0",
+		"@netlify/plugin-nextjs": "^5.15.7",
 		"@types/react-dom": "^19.2.3",
 		"cors": "^2.8.5",
 		"eslint-config-next": "^16.1.3",
