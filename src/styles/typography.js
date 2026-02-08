@@ -126,4 +126,18 @@ export const TypographyStyles = css`
 		line-height: var(--line-height-normal);
 		letter-spacing: var(--letter-spacing-normal);
 	}
+
+	/* Resume-specific section heading styles */
+	.resume-content h3 {
+		color: var(--color-gray-dark);
+		border-bottom: 1px solid var(--color-gray-dark);
+		margin-bottom: 0.5rem;
+		font-size: 1rem;
+		font-weight: 800;
+		text-transform: uppercase;
+		letter-spacing: 0.5px;
+		display: flex;
+		align-items: center;
+		gap: 0.25rem;
+	}
 `;

@@ -14,3 +14,4 @@ const HomePage = styled.main`
 	width: 100%;
 	position: relative;
 `;
+ 

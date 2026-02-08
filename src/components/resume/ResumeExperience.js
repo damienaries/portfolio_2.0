@@ -1,18 +1,7 @@
 import styled from '@emotion/styled';
-import { FaBriefcase } from 'react-icons/fa';
 
 const Section = styled.section`
 	margin-bottom: 1.5rem;
-
-	h3 {
-		color: var(--color-blue-gray);
-		border-bottom: 1px solid var(--color-blue-gray);
-		padding-bottom: 0.25rem;
-		margin-bottom: 0.5rem;
-		display: flex;
-		align-items: center;
-		gap: 0.25rem;
-	}
 
 	h5 {
 		color: var(--color-gray-dark);
@@ -31,27 +20,32 @@ const JobHeader = styled.div`
 	h4 {
 		color: var(--color-gray-dark);
 		margin: 0;
+		font-size: 1.1rem;
+		font-weight: 700;
 	}
 `;
 
 const Period = styled.span`
 	color: var(--color-gray-dark);
 	font-size: var(--text-xs);
+	font-style: italic;
 `;
 
 const JobDescription = styled.p`
 	color: var(--color-gray-dark);
-	margin-bottom: 1rem;
+	margin-bottom: .5rem;
+	font-size: var(--text-xs);
 `;
 
 const Highlights = styled.ul`
 	list-style-type: square;
-	padding-left: 1.5rem;
-	margin: 0.5rem 0;
+	padding-left: 1rem;
+	margin: 0.25rem 0;
 
 	li {
 		color: var(--color-gray-dark);
-		font-size: var(--text-body);
+		font-size: var(--text-xs);
+		margin-bottom: 0.5rem;
 	}
 `;
 
@@ -60,11 +54,16 @@ const Project = styled.li`
 	margin-bottom: 1rem;
 	list-style-type: square;
 	margin-left: 1rem;
+	font-size: var(--text-xs);
 
 	a {
 		color: var(--color-gray-dark);
 		margin-bottom: 0.5rem;
 		font-weight: var(--font-weight-bold);
+	}
+
+	p {
+		font-size: var(--text-xs);
 	}
 `;
 
@@ -72,20 +71,19 @@ const ResumeExperience = ({ experience }) => {
 	return (
 		<Section>
 			<h3>
-				<FaBriefcase />
 				Professional Experience
 			</h3>
 			{experience.map((job, index) => (
 				<Job key={index} className="job">
-					<JobHeader>
+					<JobHeader className="job-header">
 						<h4>
 							{job.position} {job.company !== '' && `at ${job.company}`}
 						</h4>
 						<Period>{job.period}</Period>
 					</JobHeader>
-					<JobDescription>{job.description}</JobDescription>
+					<JobDescription className="job-description">{job.description}</JobDescription>
 					{job.highlights && (
-						<Highlights>
+						<Highlights className="highlights">
 							{job.highlights.map((highlight, i) => (
 								<li key={i}>{highlight}</li>
 							))}

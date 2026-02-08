@@ -1,13 +1,14 @@
 import styled from '@emotion/styled';
 import Link from 'next/link';
 import { FaGithub } from 'react-icons/fa';
-import { MdOpenInNew, MdArrowForward, MdDownload } from 'react-icons/md';
+import { MdOpenInNew, MdArrowForward, MdDownload, MdPrint } from 'react-icons/md';
 
 const iconMap = {
 	github: FaGithub,
 	external: MdOpenInNew,
 	'arrow-right': MdArrowForward,
 	download: MdDownload,
+	print: MdPrint,
 };
 
 export default function ButtonComponent({

@@ -1,18 +1,7 @@
 import styled from '@emotion/styled';
-import { FaBook } from 'react-icons/fa';
 
 const Section = styled.section`
 	margin-bottom: 1.5rem;
-
-	h3 {
-		color: var(--color-blue-gray);
-		border-bottom: 1px solid var(--color-blue-gray);
-		padding-bottom: 0.25rem;
-		margin-bottom: 0.5rem;
-		display: flex;
-		align-items: center;
-		gap: 0.25rem;
-	}
 `;
 
 const EducationList = styled.ul`
@@ -23,10 +12,11 @@ const EducationList = styled.ul`
 
 const EducationItem = styled.li`
 	display: flex;
-	align-items: center;
-	gap: 0.5rem;
+	flex-direction: column;
+	align-items: flex-start;
 	font-size: var(--text-xs);
 	color: var(--color-gray-dark);
+	margin-bottom: 0.25rem;
 
 	&:last-child {
 		margin-bottom: 0;
@@ -43,20 +33,19 @@ const Program = styled.span`
 
 const CompletionDate = styled.span`
 	color: var(--color-gray-dark);
+	font-style: italic;
+	font-size: var(--text-xs);
 `;
 
 const ResumeEducation = ({ education }) => {
 	return (
-		<Section>
-			<h3>
-				<FaBook />
-				Education & Self Learning
-			</h3>
+		<Section className="education-section">
+			<h3>Education & <br />Self Learning</h3>
 			<EducationList>
 				{education.map((edu, index) => (
 					<EducationItem key={index} className="education-item">
 						<Institution>{edu.institution}</Institution>
-						{edu.program && <Program>- {edu.program}</Program>}
+						{edu.program && <Program> {edu.program}</Program>}
 						{edu.completionDate && (
 							<CompletionDate>({edu.completionDate})</CompletionDate>
 						)}

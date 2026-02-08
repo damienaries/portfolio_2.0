@@ -37,12 +37,41 @@ const printStyles = css`
 			box-shadow: none;
 		}
 
-		/* Page break controls & Prevent orphaned headings */
-		.job,
+		/* Page break controls - allow jobs to break cleanly */
+		.job {
+			break-inside: auto;
+			page-break-inside: auto;
+		}
+
+		/* Prevent breaking within job header, description, or highlights */
+		.job-header,
+		.job-description,
+		.highlights {
+			break-inside: avoid;
+			page-break-inside: avoid;
+		}
+
+		/* Prevent orphaned headings and education items */
 		.education-item,
 		h3,
 		small {
 			break-inside: avoid;
+		}
+
+		/* Force Education section to start on page 2 */
+		.education-section {
+			page-break-before: always;
+			break-before: page;
+		}
+
+		/* Prevent blank pages */
+		.resume-content {
+			page-break-after: avoid;
+		}
+
+		.resume-content > *:last-child {
+			page-break-after: avoid;
+			margin-bottom: 0;
 		}
 
 		/* Add spacing before major sections */
@@ -54,9 +83,22 @@ const printStyles = css`
 			display: none;
 		}
 
+		/* Control orphans and widows to prevent blank pages */
+		.resume-content {
+			orphans: 3;
+			widows: 3;
+		}
+
 		@page {
 			size: A4;
 			margin: 15mm;
+		}
+
+		/* Prevent blank pages at the end */
+		@page :blank {
+			@top-center {
+				content: none;
+			}
 		}
 	}
 `;
@@ -77,10 +119,44 @@ const ResumeContent = styled.div`
 	${breathingCardEffect}
 `;
 
+const TwoColumnLayout = styled.div`
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	gap: 2rem;
+	margin-bottom: 1.5rem;
+`;
+
+const LeftColumn = styled.div`
+	flex: 1;
+`;
+
+const RightColumn = styled.div`
+	width: 200px;
+	align-self: flex-start;
+`;
+
+const ExperienceContinued = styled.h3`
+	display: none;
+
+	@media print {
+		display: block;
+		color: var(--color-gray-dark);
+		border-bottom: 1px solid var(--color-gray-dark);
+		margin-bottom: 0.5rem;
+		font-size: 1rem;
+		font-weight: 800;
+		text-transform: uppercase;
+		letter-spacing: 0.5px;
+		page-break-before: always;
+		break-before: page;
+	}
+`;
+
 const DownloadButton = styled.div`
 	position: absolute;
 	top: 2.5rem;
-	right: 2.5rem;
+	right: -1.5rem;
 	z-index: 10;
 `;
 
@@ -96,16 +172,23 @@ const ResumePage = () => {
 					<ButtonComponent
 						onClick={reactToPrintFn}
 						className="print-button"
-						icon="download"
+						icon="print"
 						size="small"
 					/>
 				</DownloadButton>
 
 				<ResumeContent className="resume-content">
 					<ResumeHeader personalInfo={resumeData.personalInfo} />
-					<ResumeExpertise expertise={resumeData.expertise} />
-					<ResumeExperience experience={resumeData.experience} />
-					<ResumeEducation education={resumeData.education} />
+					<TwoColumnLayout>
+						<LeftColumn>
+							<ResumeExperience experience={resumeData.experience} />
+						</LeftColumn>
+						<RightColumn>
+							<ResumeExpertise expertise={resumeData.expertise} />
+							<ExperienceContinued>Professional Experience Continued</ExperienceContinued>
+							<ResumeEducation education={resumeData.education} />
+						</RightColumn>
+					</TwoColumnLayout>
 				</ResumeContent>
 			</ResumeContainer>
 		</>
