@@ -23,16 +23,19 @@ const printStyles = css`
 
 		.resume-container {
 			visibility: hidden;
+			padding: 0;
+			margin: 0;
+		}
+
+		.top-bar,
+		.left-bar {
+			visibility: visible;
 		}
 
 		.resume-content {
 			visibility: visible;
 			position: absolute;
-			left: 0;
-			top: 0;
-			width: 100%;
-			margin: 0;
-			padding: 2rem;
+			inset: 0;
 			background: white;
 			box-shadow: none;
 		}
@@ -51,17 +54,23 @@ const printStyles = css`
 			page-break-inside: avoid;
 		}
 
-		/* Prevent orphaned headings and education items */
+		/* Prevent orphaned headings  */
 		.education-item,
-		h3,
+		h3:not(.experience-continued),
 		small {
 			break-inside: avoid;
 		}
 
-		/* Force Education section to start on page 2 */
 		.education-section {
 			page-break-before: always;
 			break-before: page;
+		}
+
+		.experience-continued {
+			page-break-before: always;
+			break-before: page;
+			margin-top: 0;
+			padding-top: 0;
 		}
 
 		/* Prevent blank pages */
@@ -91,7 +100,6 @@ const printStyles = css`
 
 		@page {
 			size: A4;
-			margin: 15mm;
 		}
 
 		/* Prevent blank pages at the end */
@@ -114,9 +122,38 @@ const ResumeContainer = styled.div`
 const ResumeContent = styled.div`
 	background: white;
 	padding: 1rem;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 	max-width: 800px;
 	${breathingCardEffect}
+`;
+
+const TopBar = styled.div`
+	position: absolute;
+	top: 2rem;
+	right: 3rem;
+	height: 1.1rem;
+	width: 237.5px;
+	background-color: var(--color-gray-dark);
+	z-index: 10;
+
+	@media print {
+		top: 0rem;
+		right: 1rem;
+	}
+`;
+
+const LeftBar = styled.div`
+	position: absolute;
+	left: 2rem;
+	top: 5rem;
+	height: 80px;
+	width: 0.75rem;
+	background-color: var(--color-gray-dark);
+	z-index: 10;
+
+	@media print {
+		left: -0.75rem;
+		top: 3rem;
+	}
 `;
 
 const TwoColumnLayout = styled.div`
@@ -136,23 +173,6 @@ const RightColumn = styled.div`
 	align-self: flex-start;
 `;
 
-const ExperienceContinued = styled.h3`
-	display: none;
-
-	@media print {
-		display: block;
-		color: var(--color-gray-dark);
-		border-bottom: 1px solid var(--color-gray-dark);
-		margin-bottom: 0.5rem;
-		font-size: 1rem;
-		font-weight: 800;
-		text-transform: uppercase;
-		letter-spacing: 0.5px;
-		page-break-before: always;
-		break-before: page;
-	}
-`;
-
 const DownloadButton = styled.div`
 	position: absolute;
 	top: 2.5rem;
@@ -167,7 +187,7 @@ const ResumePage = () => {
 	return (
 		<>
 			<Global styles={printStyles} />
-			<ResumeContainer ref={contentRef}>
+			<ResumeContainer ref={contentRef} className="resume-container">
 				<DownloadButton>
 					<ButtonComponent
 						onClick={reactToPrintFn}
@@ -176,7 +196,8 @@ const ResumePage = () => {
 						size="small"
 					/>
 				</DownloadButton>
-
+				<TopBar className="top-bar">&nbsp;</TopBar>
+				<LeftBar className="left-bar">&nbsp;</LeftBar>
 				<ResumeContent className="resume-content">
 					<ResumeHeader personalInfo={resumeData.personalInfo} />
 					<TwoColumnLayout>
@@ -185,7 +206,6 @@ const ResumePage = () => {
 						</LeftColumn>
 						<RightColumn>
 							<ResumeExpertise expertise={resumeData.expertise} />
-							<ExperienceContinued>Professional Experience Continued</ExperienceContinued>
 							<ResumeEducation education={resumeData.education} />
 						</RightColumn>
 					</TwoColumnLayout>

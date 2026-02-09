@@ -44,6 +44,11 @@ export const breathingCardEffect = (props) => {
 		@media (prefers-reduced-motion: reduce) {
 			animation: none;
 		}
+
+		@media print {
+			animation: none;
+			visibility: hidden;
+		}
 	`;
 };
 

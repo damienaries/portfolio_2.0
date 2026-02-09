@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 
 const Header = styled.header`
 	position: relative;
-	transform: translateY(-16px);
+	margin-bottom: 1.5rem;
 `;
 
 const HeaderTop = styled.div`
@@ -20,15 +20,10 @@ const HeaderLeft = styled.div`
 	flex-direction: column;
 	position: relative;
 	padding-left: 0.5rem;
-`;
 
-const LeftBar = styled.div`
-	position: absolute;
-	left: -16px;
-	top: 0;
-	bottom: 0;
-	width: 10px;
-	background-color: var(--color-gray-dark);
+	@media print {
+		padding-left: 0;
+	}
 `;
 
 const Name = styled.h1`
@@ -58,14 +53,18 @@ const ContactBox = styled.div`
 	display: flex;
 	flex-direction: column;
 	margin-top: 0;
+	margin-bottom: 0;
 	align-self: flex-start;
+	position: relative;
+	z-index: 1;
 
 	@media print {
 		background-color: var(--color-gray-dark) !important;
 		-webkit-print-color-adjust: exact;
 		print-color-adjust: exact;
-		padding-top: 0;
+		padding-top: 1rem;
 		margin-top: 0;
+		margin-bottom: 0;
 	}
 
 	a {
@@ -111,7 +110,6 @@ const ResumeHeader = ({ personalInfo }) => {
 		<Header>
 			<HeaderTop>
 				<HeaderLeft>
-					<LeftBar />
 					<Name>{personalInfo.name.toUpperCase()}</Name>
 					<Title>{personalInfo.title.toUpperCase()}</Title>
 				</HeaderLeft>
