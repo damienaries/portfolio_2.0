@@ -92,19 +92,6 @@
 		"publishedAt": "2021-06-02T06:06:00.000Z"
 	},
 	{
-		"title": "Jammming",
-		"category": "personal",
-		"body": "Jammming is a playlist builder, connected to your Spotify via the public api .\nBuilt in React, JavaScript and CSS, as capstone project for the CodeCademy Web Development curriculum",
-		"technologies": ["JavaScript", "React"],
-		"githubLink": "https://github.com/damienaries/jamming",
-		"liveLink": "https://jammingwithdamien.netlify.app/",
-		"mainImage": {
-			"src": "/images/jammming.webp",
-			"alt": "Jammming app screenshot"
-		},
-		"publishedAt": "2020-07-22T14:37:00.000Z"
-	},
-	{
 		"title": "Find Unused Images",
 		"category": "personal",
 		"body": "I wrote and maintain this simple JavaScript CLI tool to find unused images in a project, originally because of technical debt in a project I was working on. It scans your codebase using pattern matching and returns a list of unused images. It's a great way to clean up your codebase, reduce the size of your project and keep tech debt in check.",
