@@ -35,7 +35,8 @@
 				{
 					"name": "leader-institute.org",
 					"description": "Developed a responsive educational leadership institute website using Nuxt.js, Vue3 and TailwindCSS, featuring program information, application management, contact and interest forms. Emphasized accessibility, mobile-first design, analytics and clear information architecture to support the institute's data-driven whole-learner development mission."
-				},{
+				},
+				{
 					"name": "JudiBoisson.com",
 					"description": "Led the complete migration of an outdated Magento 1 site to Shopify, managing data transfer, domain setup, and new storefront design. Improved conversion rates and elevated the user experience, resulting in over $30k in sales in the first month."
 				},

@@ -25,6 +25,7 @@ const printStyles = css`
 			visibility: hidden;
 			padding: 0;
 			margin: 0;
+			zoom: 1;
 		}
 
 		.top-bar,
@@ -117,6 +118,10 @@ const ResumeContainer = styled.div`
 	margin: 0 auto;
 	padding: 2rem;
 	position: relative;
+
+	@media (max-width: 767px) {
+		zoom: 0.48;
+	}
 `;
 
 const ResumeContent = styled.div`

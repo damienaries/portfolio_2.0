@@ -1,7 +1,17 @@
 import styled from '@emotion/styled';
 import Link from 'next/link';
+import {
+	SPOTLIGHT_DURATION,
+	SPOTLIGHT_EASING,
+	spotlightSweep,
+} from '../styles/spotlightHover';
 import { FaGithub } from 'react-icons/fa';
-import { MdOpenInNew, MdArrowForward, MdDownload, MdPrint } from 'react-icons/md';
+import {
+	MdOpenInNew,
+	MdArrowForward,
+	MdDownload,
+	MdPrint,
+} from 'react-icons/md';
 
 const iconMap = {
 	github: FaGithub,
@@ -92,7 +102,10 @@ const StyledButton = styled.button`
 	border-radius: var(--radius);
 	border: none;
 	cursor: pointer;
-	transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+	transition:
+		background-image 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
+		opacity 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
+		box-shadow 0.35s ease;
 	box-shadow: ${(props) => props.theme.boxShadow};
 
 	${(props) =>
@@ -167,6 +180,20 @@ const StyledButton = styled.button`
 			);
 		}
 	`}
+
+	&:hover {
+		animation: ${(props) => spotlightSweep(props.theme.boxShadow)}
+			${SPOTLIGHT_DURATION} ${SPOTLIGHT_EASING} forwards;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		&:hover {
+			animation: none;
+			box-shadow:
+				${(props) => props.theme.boxShadow},
+				0 4px 8px rgba(255, 255, 255, 0.45);
+		}
+	}
 
 	.icon {
 		margin-left: ${(props) => (props.hasText ? '0.2rem' : '0')};

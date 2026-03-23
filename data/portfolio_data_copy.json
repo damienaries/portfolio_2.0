@@ -116,5 +116,17 @@
 			"alt": "Habit Tracker app screenshot"
 		},
 		"publishedAt": "2025-05-22T14:37:00.000Z"
+	},
+	{
+		"title": "CWC Leader Institute",
+		"category": "freelance",
+		"body": "Developed a responsive educational leadership institute website using Nuxt.js, Vue3 and TailwindCSS, featuring program information, application management, contact and interest forms. Emphasized accessibility, mobile-first design, analytics and clear information architecture to support the institute's data-driven whole-learner development mission.",
+		"technologies": ["Vue", "Nuxt", "Typescript", "Tailwind CSS"],
+		"liveLink": "https://leader-institute.org/",
+		"mainImage": {
+			"src": "/images/leader-institute.webp",
+			"alt": "Leader Institute screenshot"
+		},
+		"publishedAt": "2025-05-22T14:37:00.000Z"
 	}
 ]

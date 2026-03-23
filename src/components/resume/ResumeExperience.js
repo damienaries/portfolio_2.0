@@ -34,7 +34,7 @@ const Period = styled.span`
 
 const JobDescription = styled.p`
 	color: var(--color-gray-dark);
-	margin-bottom: .5rem;
+	margin-bottom: 0.5rem;
 	font-size: var(--text-xs);
 `;
 
@@ -61,6 +61,11 @@ const Project = styled.li`
 		color: var(--color-gray-dark);
 		margin-bottom: 0.5rem;
 		font-weight: var(--font-weight-bold);
+		padding-bottom: 0.5rem;
+	}
+
+	a:hover {
+		text-decoration: underline;
 	}
 
 	p {
@@ -97,9 +102,7 @@ const ExperienceContinued = styled.h3`
 const ResumeExperience = ({ experience }) => {
 	return (
 		<Section>
-			<h3>
-				Professional Experience
-			</h3>
+			<h3>Professional Experience</h3>
 			{experience.map((job, index) => (
 				<Job key={index} className="job">
 					<JobHeader className="job-header">
@@ -108,7 +111,9 @@ const ResumeExperience = ({ experience }) => {
 						</h4>
 						<Period>{job.period}</Period>
 					</JobHeader>
-					<JobDescription className="job-description">{job.description}</JobDescription>
+					<JobDescription className="job-description">
+						{job.description}
+					</JobDescription>
 					{job.highlights && (
 						<Highlights className="highlights">
 							{job.highlights.map((highlight, i) => (
@@ -119,7 +124,8 @@ const ResumeExperience = ({ experience }) => {
 					{job.projects && (
 						<ul>
 							{job.projects.map((project, i) => {
-								const isJudiBoisson = project.name.toLowerCase() === 'judiboisson.com';
+								const isJudiBoisson =
+									project.name.toLowerCase() === 'judiboisson.com';
 								return (
 									<React.Fragment key={i}>
 										{isJudiBoisson && (

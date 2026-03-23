@@ -24,8 +24,14 @@ import {
 	SiPhp,
 	SiNpm,
 	SiShopify,
+	SiNuxtdotjs,
 } from 'react-icons/si';
 import { FaDatabase } from 'react-icons/fa';
+import {
+	SPOTLIGHT_DURATION,
+	SPOTLIGHT_EASING,
+	spotlightSweep,
+} from '../styles/spotlightHover';
 
 export default function TechPill({ technology }) {
 	// Map of technology names to their corresponding icons
@@ -56,6 +62,7 @@ export default function TechPill({ technology }) {
 		Dexie: FaDatabase,
 		Npm: SiNpm,
 		Shopify: SiShopify,
+		Nuxt: SiNuxtdotjs,
 	};
 
 	const Icon = techIcons[technology] || SiCodeigniter;
@@ -75,7 +82,7 @@ const StyledTechPill = styled.div`
 	background-image: ${(props) => props.theme.techPillGradient};
 	box-shadow: ${(props) => props.theme.boxShadow};
 	position: relative;
-	transition: transform 0.2s ease;
+	transition: box-shadow 0.35s ease;
 	color: ${(props) => props.theme.text};
 	width: 36px;
 	height: 36px;
@@ -98,19 +105,31 @@ const StyledTechPill = styled.div`
 	}
 
 	&:hover {
-		transform: translateY(-2px);
+		animation: ${(props) => spotlightSweep(props.theme.boxShadow)}
+			${SPOTLIGHT_DURATION} ${SPOTLIGHT_EASING} forwards;
 
 		.tooltip {
 			opacity: 1;
 			visibility: visible;
+			transition-delay: ${SPOTLIGHT_DURATION};
+		}
+
+		@media (prefers-reduced-motion: reduce) {
+			animation: none;
+			box-shadow:
+				${(props) => props.theme.boxShadow},
+				0 4px 8px rgba(255, 255, 255, 0.45);
+
+			.tooltip {
+				transition-delay: 0s;
+			}
 		}
 	}
 
 	.tooltip {
 		position: absolute;
-		top: -25px;
-		left: 50%;
-		transform: translateX(-50%);
+		bottom: -140%;
+		left: 75%;
 		background-color: ${(props) => props.theme.cardBackground};
 		padding: 0.25rem 0.75rem;
 		border-radius: 4px;
@@ -118,7 +137,10 @@ const StyledTechPill = styled.div`
 		white-space: nowrap;
 		opacity: 0;
 		visibility: hidden;
-		transition: all 0.2s ease;
+		transition:
+			opacity 0.2s ease,
+			visibility 0.2s ease;
+		transition-delay: 0.2s;
 		box-shadow: ${(props) => props.theme.boxShadow};
 		z-index: 1;
 
