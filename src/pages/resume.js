@@ -12,6 +12,15 @@ import { breathingCardEffect } from '../styles/animations';
 
 const printStyles = css`
 	@media print {
+		html,
+		body {
+			/* If the site is in dark mode, the page background can print as a dark band
+			   in the browser’s print margins. Force paper background to white. */
+			background: #fff !important;
+			-webkit-print-color-adjust: exact;
+			print-color-adjust: exact;
+		}
+
 		body * {
 			visibility: hidden;
 		}
