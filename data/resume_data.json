@@ -71,6 +71,11 @@
 			"completionDate": "Feb 2025"
 		},
 		{
+			"institution": "Unity Learn",
+			"program": "Unity Certified Developer",
+			"completionDate": "In Progress"
+		},
+		{
 			"institution": "Udemy",
 			"program": "Web Development Bootcamp",
 			"completionDate": "2020"
@@ -93,6 +98,7 @@
 					"JavaScript",
 					"TypeScript",
 					"PHP",
+					"C#",
 					"React",
 					"Next.js",
 					"Vue",
