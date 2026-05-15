@@ -38,7 +38,7 @@
 		"category": "personal",
 		"body": "I'm building this app for the bartender and manager I used to be — a compendium of bespoke drinks drawn from more than a decade behind the bar. Built in React and TypeScript on Firebase, it ships with a custom CMS I designed and built end-to-end, so users can create their own recipes and curate full menus inside a platform tailored to how bar teams actually work.\nA glossary of terms, ingredients, and techniques is up next — the kind of reference I hope will provide guidance and help training a future generation of barkeeps.",
 		"technologies": ["React", "TypeScript", "Firebase", "Tailwind CSS"],
-		"githubLink": "https://github.com/damienaries/drink_checker",
+		"githubLink": "https://github.com/damienaries/essential_cocktails",
 		"liveLink": "https://swizzledrink.netlify.app/",
 		"mainImage": {
 			"src": "/images/swizzle.webp",
@@ -63,6 +63,7 @@
 		"category": "freelance",
 		"body": "Built as a freelance for New York City based video producer Kyle Corea, this multi-page portfolio website showcases some video reels from Mr Corea's Vimeo page as well as the services offered by his production studio. \nTechnologies used are Next.js, React in JavaScript and CSS modules for styling, based on an Adobe XD wireframe.",
 		"technologies": ["Next.js", "React", "CSS"],
+		"githubLink": "https://github.com/damienaries/corea-creative",
 		"liveLink": "https://coreacreative.com/",
 		"mainImage": {
 			"src": "/images/corea-creative.webp",

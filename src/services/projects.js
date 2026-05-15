@@ -23,10 +23,19 @@ async function fetchLastPushed(githubLink, token) {
 				},
 			}
 		);
-		if (!res.ok) return null;
+		if (!res.ok) {
+			console.warn(
+				`[projects] GitHub fetch failed for ${parsed.owner}/${parsed.repo}: ${res.status} ${res.statusText}`
+			);
+			return null;
+		}
 		const data = await res.json();
 		return data.pushed_at || null;
-	} catch {
+	} catch (err) {
+		console.warn(
+			`[projects] GitHub fetch error for ${parsed.owner}/${parsed.repo}:`,
+			err.message
+		);
 		return null;
 	}
 }
@@ -63,7 +72,12 @@ export async function getSortedProjects() {
 	const enriched = await Promise.all(
 		projectsData.map(async (project) => {
 			const lastPushed = await fetchLastPushed(project.githubLink, token);
-			return { ...project, dateMeta: buildDateMeta(project, lastPushed) };
+			const next = { ...project, dateMeta: buildDateMeta(project, lastPushed) };
+			// Only personal repos are mine to share publicly
+			if (next.category !== 'personal') {
+				delete next.githubLink;
+			}
+			return next;
 		})
 	);
 
