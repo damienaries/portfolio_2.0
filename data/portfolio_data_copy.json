@@ -16,7 +16,9 @@
 			"src": "/images/ivisa.webp",
 			"alt": "iVisa.com project screenshot"
 		},
-		"publishedAt": "2023-10-26T04:41:00.000Z"
+		"publishedAt": "2023-10-26T04:41:00.000Z",
+		"startedAt": "2021-11",
+		"endedAt": null
 	},
 	{
 		"title": "CONCEPT.APP",
@@ -27,18 +29,20 @@
 			"src": "/images/concept.webp",
 			"alt": "CONCEPT.APP project screenshot"
 		},
-		"publishedAt": "2021-07-31T06:06:00.000Z"
+		"publishedAt": "2021-07-31T06:06:00.000Z",
+		"startedAt": "2021-01",
+		"endedAt": "2021-07"
 	},
 	{
-		"title": "Classic Cocktails",
+		"title": "Swizzle",
 		"category": "personal",
-		"body": "I am currently building this app for the bartender and manager I used to be.  It helps me to hone my Vue and TS knowledge, as well as learn how to work with Google Firebase. It also gives me the opportunity to use the wealth of beverage knowledge accumulated over a decade of working in the cocktail industry.\nBack when I was in the drinks trade we typically used a spreadsheet listing the house classic drinks recipes, and another for each season of new cocktails. What if we could customize the whole process and also have access to a network of friends' menus, archive and access all former menus and also integrate past seasons? This might be a great tool to identify a picky customer's order, or to save progress on cocktail creations for the spring menu drop, or simply to find your next hit for your home cocktail party",
-		"technologies": ["Vue.js", "Tailwind CSS", "Firebase"],
+		"body": "I'm building this app for the bartender and manager I used to be — a compendium of bespoke drinks drawn from more than a decade behind the bar. Built in React and TypeScript on Firebase, it ships with a custom CMS I designed and built end-to-end, so users can create their own recipes and curate full menus inside a platform tailored to how bar teams actually work.\nA glossary of terms, ingredients, and techniques is up next — the kind of reference I hope will provide guidance and help training a future generation of barkeeps.",
+		"technologies": ["React", "TypeScript", "Firebase", "Tailwind CSS"],
 		"githubLink": "https://github.com/damienaries/drink_checker",
-		"liveLink": "https://classics-checker.netlify.app/",
+		"liveLink": "https://swizzledrink.netlify.app/",
 		"mainImage": {
-			"src": "/images/classic-cocktails.webp",
-			"alt": "Classic Cocktails app screenshot"
+			"src": "/images/swizzle.webp",
+			"alt": "Swizzle screenshot"
 		},
 		"publishedAt": "2023-10-27T05:17:40.990Z"
 	},

@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import Project from '../../components/Project';
-import projectsData from '../../../data/portfolio_data_copy.json';
+import { getSortedProjects } from '../../services/projects';
 import { tabTransition } from '../../styles/animations';
 import AnimatedUnderline from '../../components/AnimatedUnderline';
 
@@ -71,14 +71,9 @@ export default function Projects({ sortedProjects }) {
 }
 
 export async function getStaticProps() {
-	// Sort projects by publishedAt date in descending order (newest first)
-	const sortedProjects = [...projectsData].sort((a, b) => {
-		return new Date(b.publishedAt) - new Date(a.publishedAt);
-	});
-
 	return {
 		props: {
-			sortedProjects,
+			sortedProjects: await getSortedProjects(),
 		},
 	};
 }

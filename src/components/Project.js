@@ -4,21 +4,26 @@ import React from 'react';
 import CodeLinks from './CodeLinks';
 import TechPill from './TechPill';
 import { breathingCardEffect } from '../styles/animations';
+import { formatProjectDate } from '../services/formatProjectDate';
 
 export default function Project({ project }) {
-	const { title, mainImage, technologies, body, liveLink, githubLink } =
+	const { title, mainImage, technologies, body, liveLink, githubLink, dateMeta } =
 		project;
+	const dateLabel = formatProjectDate(dateMeta);
 
 	return (
 		<StyledProject>
 			<div className="project-container">
 				<div className="header">
 					<h3 className="title">{title}</h3>
-					<div className="tech-pills">
-						{technologies &&
-							technologies.map((tech) => (
-								<TechPill key={tech} technology={tech} />
-							))}
+					<div className="header-meta">
+						<div className="tech-pills">
+							{technologies &&
+								technologies.map((tech) => (
+									<TechPill key={tech} technology={tech} />
+								))}
+						</div>
+						{dateLabel && <span className="project-date">{dateLabel}</span>}
 					</div>
 				</div>
 				<div className="content">
@@ -91,12 +96,27 @@ const StyledProject = styled.section`
 				text-align: left;
 			}
 
+			.header-meta {
+				display: flex;
+				flex-direction: column;
+				align-items: flex-end;
+				gap: 0.5rem;
+			}
+
 			.tech-pills {
 				display: flex;
 				align-items: center;
 				flex-wrap: wrap;
 				gap: 0.5rem;
 				justify-content: flex-end;
+			}
+
+			.project-date {
+				font-size: 0.85rem;
+				font-weight: var(--weight-thin);
+				opacity: 0.7;
+				font-style: italic;
+				letter-spacing: 0.02em;
 			}
 		}
 
@@ -167,6 +187,11 @@ const StyledProject = styled.section`
 				.title {
 					width: 100%;
 					text-align: center;
+				}
+
+				.header-meta {
+					width: 100%;
+					align-items: center;
 				}
 
 				.tech-pills {
