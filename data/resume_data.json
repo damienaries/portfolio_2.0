@@ -16,14 +16,14 @@
 			"description": "Remote role at a SaaS travel e-commerce startup, working with a Laravel stack (JavaScript, TypeScript, Vue3, Vuex, TailwindCSS, PHP, Docker, MySQL).",
 			"highlights": [
 				"Led the development of a new streamlined 1-step checkout flow, improving conversion rates by 15% and reducing cart abandonment by 30%",
-				"Designed and delivered new features in close collaboration with Product and Design teams, using an in-house A/B testing framework to run experiments and optimize conversion rates.",
+				"Collaborated closely with Product, Design, and engineering teams to design and ship features, using an in-house A/B testing framework to validate impact.",
 				"Refactored and rebuilt the TailwindCSS layer for a major rebrand, translating Figma wireframes into pixel-perfect, responsive components.",
-				"Improved Core Web Vitals and SEO performance through technical optimizations, contributing to a 25% YoY increase in organic search traffic.",
-				"Conducted accessibility (WCAG) and performance audits to enhance user journeys and ensure compliance.",
-				"Maintained high-quality code with peer reviews, unit and end-to-end testing (Pest, Jest, Laravel Dusk).",
-				"Reduced technical debt by auditing legacy code, writing tooling to identify unused assets, and optimizing application performance.",
+				"Conducted accessibility (WCAG), performance, and SEO audits, improving Core Web Vitals and contributing to a 25% YoY increase in organic search traffic.",
+				"Shipped modular landing-page partials on an urgent timeline to support multiple new products, reducing customer friction and increasing conversions by 20%.",
+				"Maintained code quality through code reviews, architecture discussions, and unit/E2E testing (Pest, Jest, Laravel Dusk).",
+				"Reduced technical debt by auditing legacy code and building internal tooling to detect unused assets and improve frontend build performance.",
 				"Worked in an Agile environment with cross-functional teams to prioritize and deliver features efficiently.",
-				"Incorporated AI-powered developer tools including GitHub Copilot, Cursor IDE, and CodeRabbit to accelerate development and improve code quality."
+				"Adopted AI-assisted developer tools (Claude Code, Cursor, GitHub Copilot, CodeRabbit) to modernize and expedite day-to-day development and code review workflows."
 			]
 		},
 		{

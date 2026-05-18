@@ -42,7 +42,14 @@ const Layout = ({ children, theme, toggleTheme }) => {
 			</Head>
 
 			{isResumePage && <SkillsBanner />}
-			<div style={{ marginLeft: isResumePage && width > 768 ? '100px' : 0 }}>
+			<div
+				style={{
+					marginLeft: isResumePage && width > 768 ? '100px' : 0,
+					display: 'flex',
+					flexDirection: 'column',
+					minHeight: '100vh',
+				}}
+			>
 				<Navbar
 					theme={theme}
 					toggleTheme={toggleTheme}
@@ -55,6 +62,7 @@ const Layout = ({ children, theme, toggleTheme }) => {
 						animate={pageTransition.animate}
 						exit={pageTransition.exit}
 						transition={pageTransition.transition}
+						style={{ flex: 1, display: 'flex', flexDirection: 'column' }}
 					>
 						{children}
 					</motion.div>

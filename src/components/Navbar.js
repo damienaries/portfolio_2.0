@@ -75,8 +75,7 @@ export default function Navbar({ theme, toggleTheme }) {
 							href="/"
 							className={`topbar-right-link ${
 								router.pathname === '/' ? 'active' : ''
-							}`}
-						>
+							}`}>
 							Home
 							{router.pathname === '/' && (
 								<AnimatedUnderline
@@ -89,8 +88,7 @@ export default function Navbar({ theme, toggleTheme }) {
 							href="/projects"
 							className={`topbar-right-link ${
 								router.pathname === '/projects' ? 'active' : ''
-							}`}
-						>
+							}`}>
 							Work
 							{router.pathname === '/projects' && (
 								<AnimatedUnderline
@@ -103,8 +101,7 @@ export default function Navbar({ theme, toggleTheme }) {
 							href="/resume"
 							className={`topbar-right-link ${
 								router.pathname === '/resume' ? 'active' : ''
-							}`}
-						>
+							}`}>
 							Resume
 							{router.pathname === '/resume' && (
 								<AnimatedUnderline
@@ -124,14 +121,12 @@ export default function Navbar({ theme, toggleTheme }) {
 										initial={{ opacity: 0, y: -10 }}
 										animate={{ opacity: 1, y: 0 }}
 										exit={{ opacity: 0, y: -10 }}
-										transition={{ duration: 0.2 }}
-									>
+										transition={{ duration: 0.2 }}>
 										<Link
 											href="mailto:damien@damienaries.com"
 											className="dropdown-item"
 											target="_blank"
-											rel="noopener noreferrer"
-										>
+											rel="noopener noreferrer">
 											<BiLogoGmail className="icon" />
 											Email
 										</Link>
@@ -139,8 +134,7 @@ export default function Navbar({ theme, toggleTheme }) {
 											href="https://github.com/damienaries"
 											className="dropdown-item"
 											target="_blank"
-											rel="noopener noreferrer"
-										>
+											rel="noopener noreferrer">
 											<FaGithub className="icon" />
 											GitHub
 										</Link>
@@ -148,8 +142,7 @@ export default function Navbar({ theme, toggleTheme }) {
 											href="https://linkedin.com/in/damienaries"
 											className="dropdown-item"
 											target="_blank"
-											rel="noopener noreferrer"
-										>
+											rel="noopener noreferrer">
 											<FaLinkedinIn className="icon" />
 											LinkedIn
 										</Link>
@@ -159,8 +152,7 @@ export default function Navbar({ theme, toggleTheme }) {
 						</div>
 						<div
 							className="topbar-right-link theme-toggler"
-							onClick={handleThemeChange}
-						>
+							onClick={handleThemeChange}>
 							{theme === 'dark' ? <FaSun /> : <FaMoon />}
 						</div>
 					</>
@@ -185,8 +177,7 @@ export default function Navbar({ theme, toggleTheme }) {
 						className={`mobile-nav-link ${
 							router.pathname === '/' ? 'active' : ''
 						}`}
-						onClick={toggleNav}
-					>
+						onClick={toggleNav}>
 						Home
 					</Link>
 					<Link
@@ -194,8 +185,7 @@ export default function Navbar({ theme, toggleTheme }) {
 						className={`mobile-nav-link ${
 							router.pathname === '/projects' ? 'active' : ''
 						}`}
-						onClick={toggleNav}
-					>
+						onClick={toggleNav}>
 						Work
 					</Link>
 					<Link
@@ -203,8 +193,7 @@ export default function Navbar({ theme, toggleTheme }) {
 						className={`mobile-nav-link ${
 							router.pathname === '/resume' ? 'active' : ''
 						}`}
-						onClick={toggleNav}
-					>
+						onClick={toggleNav}>
 						Resume
 					</Link>
 					<div className="mobile-contact">
@@ -218,14 +207,12 @@ export default function Navbar({ theme, toggleTheme }) {
 									initial={{ opacity: 0, height: 0 }}
 									animate={{ opacity: 1, height: 'auto' }}
 									exit={{ opacity: 0, height: 0 }}
-									transition={{ duration: 0.2 }}
-								>
+									transition={{ duration: 0.2 }}>
 									<Link
 										href="mailto:damien@damienaries.com"
 										className="mobile-nav-link sub-link"
 										target="_blank"
-										rel="noopener noreferrer"
-									>
+										rel="noopener noreferrer">
 										<BiLogoGmail className="icon" />
 										Email
 									</Link>
@@ -233,8 +220,7 @@ export default function Navbar({ theme, toggleTheme }) {
 										href="https://github.com/damienaries"
 										className="mobile-nav-link sub-link"
 										target="_blank"
-										rel="noopener noreferrer"
-									>
+										rel="noopener noreferrer">
 										<FaGithub className="icon" />
 										GitHub
 									</Link>
@@ -242,8 +228,7 @@ export default function Navbar({ theme, toggleTheme }) {
 										href="https://linkedin.com/in/damienaries"
 										className="mobile-nav-link sub-link"
 										target="_blank"
-										rel="noopener noreferrer"
-									>
+										rel="noopener noreferrer">
 										<FaLinkedinIn className="icon" />
 										LinkedIn
 									</Link>
@@ -296,6 +281,7 @@ const StyledNav = styled.header`
 		padding-bottom: 0.25rem;
 		border-bottom: 2px solid transparent;
 		position: relative;
+		cursor: pointer;
 
 		&:hover:not(.theme-toggler) {
 			border-bottom: 2px solid
