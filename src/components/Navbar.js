@@ -72,7 +72,7 @@ export default function Navbar({ theme, toggleTheme }) {
 					<>
 						{/* full size nav */}
 						<Link
-							href="/"
+							href="/legacy"
 							className={`topbar-right-link ${
 								router.pathname === '/' ? 'active' : ''
 							}`}>
@@ -173,7 +173,7 @@ export default function Navbar({ theme, toggleTheme }) {
 					<MdClose className="action-button close-btn" onClick={toggleNav} />
 
 					<Link
-						href="/"
+						href="/legacy"
 						className={`mobile-nav-link ${
 							router.pathname === '/' ? 'active' : ''
 						}`}
