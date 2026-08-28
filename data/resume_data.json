@@ -6,7 +6,7 @@
 		"linkedin": "linkedin.com/in/damien-aries",
 		"github": "github.com/damienaries",
 		"title": "Frontend Developer | React, Next.js, TypeScript, Tailwind CSS",
-		"summary": "Six years building responsive web apps in React, Next.js, Vue and TypeScript, with real depth in CSS. Happiest turning a Figma file into a fast, accessible interface alongside Product and Design."
+		"summary": "Six years building responsive web apps in React, Next.js, Vue and TypeScript, with deep CSS skills."
 	},
 	"experience": [
 		{
@@ -107,10 +107,7 @@
 			},
 			{
 				"group": "State Management",
-				"skills": [
-					"VueX",
-					"Redux"
-				]
+				"skills": ["VueX", "Redux"]
 			},
 			{
 				"group": "Styling",
@@ -137,11 +134,7 @@
 			},
 			{
 				"group": "Backend & APIs",
-				"skills": [
-					"RESTful API development",
-					"MySQL",
-					"Firebase"
-				]
+				"skills": ["RESTful API development", "MySQL", "Firebase"]
 			},
 			{
 				"group": "Quality & Practices",
@@ -155,18 +148,11 @@
 			},
 			{
 				"group": "AI Tooling",
-				"skills": [
-					"GitHub Copilot",
-					"Cursor IDE",
-					"CodeRabbit"
-				]
+				"skills": ["GitHub Copilot", "Cursor IDE", "CodeRabbit"]
 			},
 			{
 				"group": "Collaboration",
-				"skills": [
-					"Agile Development",
-					"Async remote cross-functional teams"
-				]
+				"skills": ["Agile Development", "Async remote cross-functional teams"]
 			},
 			{
 				"group": "Human Languages",
