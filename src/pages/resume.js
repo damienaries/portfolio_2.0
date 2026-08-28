@@ -192,6 +192,13 @@ const DownloadButton = styled.div`
 	top: 2.5rem;
 	right: -1.5rem;
 	z-index: 10;
+
+	/* Hidden on mobile: it hung outside the container's right edge, and the
+	   container's zoom: 0.48 left it ~19px tall — well under a tappable target.
+	   Printing from a phone isn't a real use case. */
+	@media (max-width: 767px) {
+		display: none;
+	}
 `;
 
 const ResumePage = () => {

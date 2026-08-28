@@ -5,8 +5,8 @@
 		"website": "www.damienaries.com",
 		"linkedin": "linkedin.com/in/damien-aries",
 		"github": "github.com/damienaries",
-		"title": "Frontend Developer | React, Next.js, TypeScript, Tailwind CSS",
-		"summary": "Six years building responsive web apps in React, Next.js, Vue and TypeScript, with deep CSS skills."
+		"title": "Frontend Developer | React, Next.js, Vue.js, TypeScript",
+		"summary": "Former hospitality leader turned AI-fluent front-end engineer with six years building customer-facing interfaces, bridging engineering, design, and product."
 	},
 	"experience": [
 		{
@@ -29,23 +29,26 @@
 		{
 			"company": "",
 			"position": "Freelance Developer",
-			"period": "March 2022 - October 2023",
 			"description": "Focused on delivering high-quality web solutions with modern JavaScript frameworks, conversion optimization, and responsive design. Applied A/B testing principles, rapid prototyping, and close client collaboration to deliver features aligned with business goals.",
 			"projects": [
 				{
 					"name": "leader-institute.org",
+					"date": "2025",
 					"description": "Developed a responsive educational leadership institute website using Nuxt.js, Vue3 and TailwindCSS, featuring program information, application management, contact and interest forms. Emphasized accessibility, mobile-first design, analytics and clear information architecture to support the institute's data-driven whole-learner development mission."
 				},
 				{
 					"name": "JudiBoisson.com",
+					"date": "2023",
 					"description": "Led the complete migration of an outdated Magento 1 site to Shopify, managing data transfer, domain setup, and new storefront design. Improved conversion rates and elevated the user experience, resulting in over $30k in sales in the first month."
 				},
 				{
 					"name": "CareyCorea.art",
+					"date": "2023",
 					"description": "Built a mobile-first, accessible portfolio site using Vue3, TypeScript, TailwindCSS, and Sanity CMS, emphasizing responsive design and SEO optimization."
 				},
 				{
 					"name": "CoreaCreative.com",
+					"date": "2022",
 					"description": "Developed a multi-page, performant video portfolio using Next.js, React, and CSS Modules, with seamless API integration (Vimeo, YouTube), optimizing Core Web Vitals and ensuring an engaging user journey."
 				}
 			]
@@ -101,8 +104,7 @@
 					"TypeScript",
 					"Vue",
 					"Laravel",
-					"PHP",
-					"C#"
+					"PHP"
 				]
 			},
 			{
@@ -111,13 +113,7 @@
 			},
 			{
 				"group": "Styling",
-				"skills": [
-					"Tailwind CSS",
-					"CSS",
-					"SCSS",
-					"Styled Components",
-					"Material UI"
-				]
+				"skills": ["Tailwind CSS", "CSS", "SCSS", "Styled Components"]
 			},
 			{
 				"group": "Tooling & Deployment",
@@ -143,16 +139,19 @@
 					"A/B Testing",
 					"SEO",
 					"Accessibility",
-					"Web Vitals"
+					"Core Web Vitals"
 				]
 			},
 			{
 				"group": "AI Tooling",
-				"skills": ["GitHub Copilot", "Cursor IDE", "CodeRabbit"]
+				"skills": ["Claude Code", "Cursor IDE", "CodeRabbit"]
 			},
 			{
 				"group": "Collaboration",
-				"skills": ["Agile Development", "Async remote cross-functional teams"]
+				"skills": [
+					"Agile Development",
+					"Async remote cross-functional and cultural teams"
+				]
 			},
 			{
 				"group": "Human Languages",
