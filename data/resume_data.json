@@ -5,15 +5,15 @@
 		"website": "www.damienaries.com",
 		"linkedin": "linkedin.com/in/damien-aries",
 		"github": "github.com/damienaries",
-		"title": "Full Stack Developer | Next.js, Vue, React, Laravel",
-		"summary": "Experienced Full Stack developer with a strong background in Vue, React and Laravel. Proven ability to translate and develop designs into beautiful, high-performance, scalable web applications."
+		"title": "Frontend Developer | React, Next.js, TypeScript, Tailwind CSS",
+		"summary": "Frontend developer with six years building responsive web applications in React, Next.js, Vue and TypeScript, and genuine depth in CSS. Happiest taking a design from Figma to a fast, accessible interface, and used to working closely with Product, Design and Engineering to get the details right."
 	},
 	"experience": [
 		{
 			"company": "iVisa.com",
 			"position": "Web Developer",
 			"period": "November 2021 - Present",
-			"description": "Remote role at a SaaS travel e-commerce startup, working with a Laravel stack (JavaScript, TypeScript, Vue3, Vuex, TailwindCSS, PHP, Docker, MySQL).",
+			"description": "Frontend-focused role at a SaaS travel e-commerce company, building customer-facing applications with JavaScript, TypeScript, Vue 3 and Tailwind CSS within a Laravel stack.",
 			"highlights": [
 				"Led the development of a new streamlined 1-step checkout flow, improving conversion rates by 15% and reducing cart abandonment by 30%",
 				"Collaborated closely with Product, Design, and engineering teams to design and ship features, using an in-house A/B testing framework to validate impact.",
@@ -95,33 +95,37 @@
 			{
 				"group": "Languages & Frameworks",
 				"skills": [
-					"JavaScript",
-					"TypeScript",
-					"PHP",
-					"C#",
 					"React",
 					"Next.js",
+					"JavaScript",
+					"TypeScript",
 					"Vue",
-					"Laravel"
+					"Laravel",
+					"PHP",
+					"C#"
 				]
 			},
 			{
 				"group": "State Management",
-				"skills": ["VueX", "Redux"]
+				"skills": [
+					"VueX",
+					"Redux"
+				]
 			},
 			{
 				"group": "Styling",
 				"skills": [
-					"CSS",
 					"Tailwind CSS",
+					"CSS",
 					"SCSS",
-					"Material UI",
-					"Styled Components"
+					"Styled Components",
+					"Material UI"
 				]
 			},
 			{
-				"group": "Tooling",
+				"group": "Tooling & Deployment",
 				"skills": [
+					"Netlify",
 					"Vite",
 					"Webpack",
 					"Jest",
@@ -133,7 +137,11 @@
 			},
 			{
 				"group": "Backend & APIs",
-				"skills": ["RESTful API development", "MySQL", "Firebase"]
+				"skills": [
+					"RESTful API development",
+					"MySQL",
+					"Firebase"
+				]
 			},
 			{
 				"group": "Quality & Practices",
@@ -147,11 +155,18 @@
 			},
 			{
 				"group": "AI Tooling",
-				"skills": ["GitHub Copilot", "Cursor IDE", "CodeRabbit"]
+				"skills": [
+					"GitHub Copilot",
+					"Cursor IDE",
+					"CodeRabbit"
+				]
 			},
 			{
 				"group": "Collaboration",
-				"skills": ["Agile Development", "Async remote cross-functional teams"]
+				"skills": [
+					"Agile Development",
+					"Async remote cross-functional teams"
+				]
 			},
 			{
 				"group": "Human Languages",
