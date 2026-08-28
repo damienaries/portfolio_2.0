@@ -35,6 +35,10 @@
 	--citrus-chip-bg: rgba(159, 196, 14, 0.22);
 	--citrus-chip-fg: #4a5a0a;
 
+	/* --- scrim: keeps HTML type legible over the full-bleed scene --- */
+	--scrim-strong: rgba(252, 253, 251, 0.82);
+	--scrim-soft: rgba(252, 253, 251, 0.42);
+
 	/* --- geometry --- */
 	--radius: 14px;
 	--radius-sm: 8px;
@@ -64,6 +68,9 @@
 	--lift: 0 1px 2px rgba(0, 0, 0, 0.01), 0 7px 18px -10px rgba(0, 0, 0, 0.1);
 	--glow-citrus: rgba(205, 232, 56, 0.09);
 	--glow-jade: rgba(79, 211, 157, 0.08);
+
+	--scrim-strong: rgba(8, 13, 10, 0.88);
+	--scrim-soft: rgba(8, 13, 10, 0.55);
 
 	--citrus-wash: rgba(205, 232, 56, 0.26);
 	--citrus-chip-bg: rgba(205, 232, 56, 0.15);
@@ -157,6 +164,32 @@ body {
 	.glass {
 		background: color-mix(in srgb, var(--surface) 88%, transparent);
 	}
+}
+
+/* Scrims for the full-bleed landing scene. Written as classes rather than
+   Tailwind arbitrary values — a gradient with nested parens and commas inside a
+   candidate is hostile to the scanner. */
+.scrim-side {
+	background: linear-gradient(
+		to left,
+		var(--scrim-strong) 0%,
+		var(--scrim-soft) 45%,
+		transparent 75%
+	);
+}
+@media (min-width: 1024px) {
+	.scrim-side {
+		background: linear-gradient(
+			to left,
+			var(--scrim-strong) 0%,
+			var(--scrim-soft) 38%,
+			transparent 62%
+		);
+	}
+}
+
+.scrim-bottom {
+	background: linear-gradient(to top, var(--scrim-soft), transparent);
 }
 
 /* Citrus and jade light, sitting *under* the glass so panels sample it. */

@@ -1,29 +1,25 @@
+import ScenePoster from './ScenePoster';
+
 /**
  * The 3D boundary.
  *
- * Everything the landing page needs — layout, type, the Enter control, responsive
- * behaviour — is built against this component rendering a static poster. When the
- * GLB is ready, the only change is importing the R3F canvas here behind
- * `next/dynamic({ ssr: false })` and rendering it in place of <ScenePoster />,
- * with the poster staying as the loading and fallback state.
+ * Fills its positioned parent edge-to-edge. Everything the landing needs —
+ * layout, type, the Enter control, responsive behaviour — is built against this
+ * rendering a static poster.
  *
- * Nothing outside this file knows whether the scene is 3D or an image.
+ * Phase 4 swaps the poster for the R3F canvas here and nowhere else:
+ *
+ *   const Character = dynamic(() => import('../three/Character'), {
+ *     ssr: false,
+ *     loading: () => <ScenePoster />,
+ *   });
+ *
+ * The poster stays as the loading, reduced-motion and no-WebGL fallback.
  */
-
-import ScenePoster from './ScenePoster';
-
-// Phase 4:
-// const Character = dynamic(() => import('../three/Character'), {
-//   ssr: false,
-//   loading: () => <ScenePoster />,
-// });
 
 export default function Scene() {
 	return (
-		<div
-			className="relative w-full aspect-square max-h-[68vh] mx-auto lg:mx-0 lg:max-w-none"
-			aria-hidden="true"
-		>
+		<div className="absolute inset-0 -z-10 overflow-hidden" aria-hidden="true">
 			<ScenePoster />
 		</div>
 	);

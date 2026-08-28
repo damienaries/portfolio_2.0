@@ -1,38 +1,41 @@
+import Image from 'next/image';
+
 /**
- * Static stand-in for the 3D scene.
+ * Static stand-in for the 3D scene, rendered full-bleed behind the landing UI.
  *
- * Swap the placeholder block for:
- *   <Image src="/landing-poster.webp" alt="" fill priority className="object-contain" />
- * once the Blender render exists. This also becomes the loading state for the GLB
- * and the fallback for reduced-motion and no-WebGL, so it is never throwaway.
+ * The baked-in name and Enter control were painted out of the concept render so
+ * the page's own HTML owns that type — it needs to stay selectable, translatable
+ * and focusable.
+ *
+ * This is also the loading state for the GLB and the fallback for reduced-motion
+ * and no-WebGL, so it is never throwaway. When the Blender render lands, replace
+ * the file at this path and nothing else changes.
  */
 
 export default function ScenePoster() {
 	return (
-		<div className="glass absolute inset-0 grid place-items-center overflow-hidden">
-			{/* Placeholder ground — a hint of horizon so the composition reads while empty. */}
+		<>
+			<Image
+				src="/images/landing-poster.webp"
+				alt=""
+				fill
+				priority
+				sizes="100vw"
+				/* Character sits left of frame; bias the crop left so narrow
+				   viewports keep him rather than centring on empty ocean. */
+				className="object-cover object-[30%_center] dark:brightness-[0.62] dark:saturate-[0.85]"
+			/>
+
+			{/* Legibility scrim. Light: a wash from the right so ink reads over sky.
+			    Dark: a heavier veil, since the art stays a bright sunset either way. */}
 			<div
-				className="absolute inset-x-0 bottom-0 h-1/3 opacity-70"
-				style={{
-					background:
-						'linear-gradient(to top, var(--glow-jade) 0%, transparent 100%)',
-				}}
+				aria-hidden="true"
+				className="scrim-side absolute inset-0 pointer-events-none"
 			/>
 			<div
-				className="absolute rounded-full opacity-80"
-				style={{
-					width: '38%',
-					aspectRatio: '1',
-					top: '18%',
-					background:
-						'radial-gradient(circle at 35% 30%, var(--glow-citrus), transparent 70%)',
-				}}
+				aria-hidden="true"
+				className="scrim-bottom absolute inset-x-0 bottom-0 h-40 pointer-events-none"
 			/>
-			<p className="relative font-mono text-label tracking-[0.14em] uppercase text-muted text-center leading-relaxed">
-				3D scene
-				<br />
-				<span className="opacity-60">poster goes here</span>
-			</p>
-		</div>
+		</>
 	);
 }
