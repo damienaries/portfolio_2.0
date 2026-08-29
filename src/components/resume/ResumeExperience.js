@@ -32,6 +32,20 @@ const Period = styled.span`
 	font-style: italic;
 `;
 
+const ProjectHeader = styled.div`
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	gap: 1rem;
+`;
+
+const ProjectDate = styled.span`
+	color: var(--color-gray-dark);
+	font-size: var(--text-xs);
+	font-style: italic;
+	white-space: nowrap;
+`;
+
 const JobDescription = styled.p`
 	color: var(--color-gray-dark);
 	margin-bottom: 0.5rem;
@@ -59,9 +73,7 @@ const Project = styled.li`
 
 	a {
 		color: var(--color-gray-dark);
-		margin-bottom: 0.5rem;
 		font-weight: var(--font-weight-bold);
-		padding-bottom: 0.5rem;
 	}
 
 	a:hover {
@@ -109,7 +121,7 @@ const ResumeExperience = ({ experience }) => {
 						<h4>
 							{job.position} {job.company !== '' && `at ${job.company}`}
 						</h4>
-						<Period>{job.period}</Period>
+						{job.period && <Period>{job.period}</Period>}
 					</JobHeader>
 					<JobDescription className="job-description">
 						{job.description}
@@ -136,12 +148,17 @@ const ResumeExperience = ({ experience }) => {
 											</li>
 										)}
 										<Project>
-											<a
-												href={`https://www.${project.name.toLowerCase()}`}
-												target="_blank"
-											>
-												{project.name}
-											</a>
+											<ProjectHeader>
+												<a
+													href={`https://www.${project.name.toLowerCase()}`}
+													target="_blank"
+												>
+													{project.name}
+												</a>
+												{project.date && (
+													<ProjectDate>{project.date}</ProjectDate>
+												)}
+											</ProjectHeader>
 											<p>{project.description}</p>
 										</Project>
 									</React.Fragment>
