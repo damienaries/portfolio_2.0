@@ -4,10 +4,7 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 /* ==========================================================================
-   Citrus & Ink — brightened
-   Palette and material tuned 2026-08-27. Light and dark are authored
-   independently: dark runs a quieter bloom and a fainter specular edge,
-   because white-on-near-black reads hotter than the same value on paper.
+   Citrus & Ink
    ========================================================================== */
 
 :root {
@@ -26,7 +23,8 @@
 	--glass-border: rgba(255, 255, 255, 0.22);
 	--glass-blur: blur(10px) saturate(210%);
 	--edge: inset 0 1px 0 rgba(255, 255, 255, 0.26);
-	--lift: 0 1px 2px rgba(13, 23, 16, 0.01), 0 7px 18px -10px rgba(13, 23, 16, 0.1);
+	--lift:
+		0 1px 2px rgba(13, 23, 16, 0.01), 0 7px 18px -10px rgba(13, 23, 16, 0.1);
 	--glow-citrus: rgba(159, 196, 14, 0.24);
 	--glow-jade: rgba(23, 128, 90, 0.16);
 
@@ -160,7 +158,9 @@ body {
 
 /* backdrop-filter is a compositor cost. On the landing page it is capped at
    the nav and the Enter control so it never competes with the WebGL canvas. */
-@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+@supports not (
+	(backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))
+) {
 	.glass {
 		background: color-mix(in srgb, var(--surface) 88%, transparent);
 	}
@@ -200,7 +200,11 @@ body {
 	z-index: -1;
 	pointer-events: none;
 	background:
-		radial-gradient(80% 62% at 84% -12%, var(--glow-citrus) 0%, transparent 56%),
+		radial-gradient(
+			80% 62% at 84% -12%,
+			var(--glow-citrus) 0%,
+			transparent 56%
+		),
 		radial-gradient(75% 58% at -8% 110%, var(--glow-jade) 0%, transparent 58%);
 }
 

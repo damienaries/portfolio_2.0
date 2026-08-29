@@ -21,8 +21,6 @@ export default function ScenePoster() {
 				fill
 				priority
 				sizes="100vw"
-				/* Character sits left of frame; bias the crop left so narrow
-				   viewports keep him rather than centring on empty ocean. */
 				className="object-cover object-[30%_center] dark:brightness-[0.62] dark:saturate-[0.85]"
 			/>
 

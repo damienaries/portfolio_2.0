@@ -18,120 +18,159 @@
 		},
 		"publishedAt": "2023-10-26T04:41:00.000Z",
 		"startedAt": "2021-11",
-		"endedAt": null
+		"endedAt": null,
+		"featured": true,
+		"role": "Front-end engineer",
+		"slug": "ivisa"
 	},
 	{
 		"title": "CONCEPT.APP",
 		"category": "work",
 		"body": "Early hire at an early-stage startup building a social platform with JavaScript, React, and Firebase. Front-end focused role with full-stack collaboration. \nDesigned and built foundational UI features with React Hooks, prioritizing accessibility and responsive layouts for an improved user journey. Implemented a notification system using Websockets and Redux to support real-time user engagement. \nCollaborated on system design, database modeling, and Agile story organization in ClickUp to support rapid prototyping and iterative development.",
-		"technologies": ["React", "JavaScript", "Firebase", "Redux", "Websockets"],
+		"technologies": [
+			"React",
+			"JavaScript",
+			"Firebase",
+			"Redux",
+			"Websockets"
+		],
 		"mainImage": {
 			"src": "/images/concept.webp",
 			"alt": "CONCEPT.APP project screenshot"
 		},
 		"publishedAt": "2021-07-31T06:06:00.000Z",
 		"startedAt": "2021-01",
-		"endedAt": "2021-07"
+		"endedAt": "2021-07",
+		"featured": true,
+		"role": "Founding team · Full-stack",
+		"slug": "concept"
 	},
 	{
 		"title": "Swizzle",
 		"category": "personal",
-		"body": "I'm building this app for the bartender and manager I used to be — a compendium of bespoke drinks drawn from more than a decade behind the bar. Built in React and TypeScript on Firebase, it ships with a custom CMS I designed and built end-to-end, so users can create their own recipes and curate full menus inside a platform tailored to how bar teams actually work.\nA glossary of terms, ingredients, and techniques is up next — the kind of reference I hope will provide guidance and help training a future generation of barkeeps.",
-		"technologies": ["React", "TypeScript", "Firebase", "Tailwind CSS"],
+		"body": "I created this app for the bartender and manager I used to be — a compendium of bespoke drinks drawn from more than a decade behind the bar. Built in React and TypeScript on Firebase, it ships with a custom CMS I designed and built end-to-end, so users can curate full menus inside a platform tailored to how bar teams actually work.\nA glossary of terms, ingredients, and techniques is up next — the kind of reference I hope will provide guidance and help training a future generation of barkeeps.",
+		"technologies": [
+			"React",
+			"TypeScript",
+			"Firebase",
+			"Tailwind CSS"
+		],
 		"githubLink": "https://github.com/damienaries/essential_cocktails",
 		"liveLink": "https://swizzledrink.netlify.app/",
 		"mainImage": {
 			"src": "/images/swizzle.webp",
 			"alt": "Swizzle screenshot"
 		},
-		"publishedAt": "2023-10-27T05:17:40.990Z"
+		"publishedAt": "2023-10-27T05:17:40.990Z",
+		"featured": true,
+		"role": "Product concept and design, full CMS build",
+		"slug": "swizzle"
 	},
 	{
 		"title": "Carey Corea Art",
 		"category": "freelance",
-		"body": "After a successful project with Kyle Corea in 2022, he and his father contacted me to build a simple portfolio site where they could easily showcase and update Carey's artwork. The result is this one page site where each piece can be looked closer and more information requested. The mobile first design helps Carey's son Kyle spread the word in NYC and the simplicity allows for the artist's work to shine, albeit through a blue light screen.",
-		"technologies": ["Vue.js", "TypeScript", "Tailwind CSS"],
+		"body": "After a successful project with Kyle Corea, he and his father contacted me to build a simple portfolio site where they could easily showcase and update Carey's artwork. The result is this one page site where each piece can be looked closer and more information requested. The mobile first design helps Carey's son Kyle spread the word in NYC and the simplicity allows for the artist's work to shine, albeit through a blue light screen.",
+		"technologies": [
+			"Vue.js",
+			"TypeScript",
+			"Tailwind CSS"
+		],
 		"liveLink": "https://www.careycorea.art",
 		"mainImage": {
 			"src": "/images/carey-corea.webp",
 			"alt": "Carey Corea Art website screenshot"
 		},
-		"publishedAt": "2023-07-26T05:08:00.000Z"
+		"publishedAt": "2023-07-26T05:08:00.000Z",
+		"slug": "carey-corea"
 	},
 	{
 		"title": "Corea Creative",
 		"category": "freelance",
 		"body": "Built as a freelance for New York City based video producer Kyle Corea, this multi-page portfolio website showcases some video reels from Mr Corea's Vimeo page as well as the services offered by his production studio. \nTechnologies used are Next.js, React in JavaScript and CSS modules for styling, based on an Adobe XD wireframe.",
-		"technologies": ["Next.js", "React", "CSS"],
+		"technologies": [
+			"Next.js",
+			"React",
+			"CSS"
+		],
 		"githubLink": "https://github.com/damienaries/corea-creative",
 		"liveLink": "https://coreacreative.com/",
 		"mainImage": {
 			"src": "/images/corea-creative.webp",
 			"alt": "Corea Creative website screenshot"
 		},
-		"publishedAt": "2022-04-15T06:06:00.000Z"
+		"publishedAt": "2022-04-15T06:06:00.000Z",
+		"slug": "corea-creative"
 	},
 	{
 		"title": "Judi Boisson Home Collection",
 		"category": "freelance",
 		"body": "Led the complete migration of an outdated Magento 1 site to Shopify for a quilt and linen brand. The original site was completely down with lost account access, requiring a strategic platform change rather than a simple redesign.\n\n• Migrated from non-functional Magento 1 to Shopify for improved usability and maintenance\n• Managed complete data transfer, domain setup, and new storefront design\n• Improved conversion rates and elevated user experience\n• Resulted in over $30k in sales in the first month post-launch",
-		"technologies": ["Shopify", "JavaScript", "CSS"],
+		"technologies": [
+			"Shopify",
+			"JavaScript",
+			"CSS"
+		],
 		"liveLink": "https://www.judiboisson.com/",
 		"mainImage": {
 			"src": "/images/judi-boisson.webp",
 			"alt": "Judi Boisson Home Collection website screenshot"
 		},
-		"publishedAt": "2023-08-26T05:27:00.000Z"
-	},
-	{
-		"title": "Space Tourism",
-		"category": "personal",
-		"body": "Front End Mentor Project. Fictional space tourism agency responsive website, with in-page navigation. Built with Create React App, in JavaScript and Emotion Styled Components.",
-		"technologies": ["React", "JavaScript", "Styled Components", "CSS"],
-		"githubLink": "https://github.com/damienaries/space-tourism",
-		"liveLink": "https://soyouwanttogotospace.netlify.app",
-		"mainImage": {
-			"src": "/images/space-tourism.webp",
-			"alt": "Space Tourism website screenshot"
-		},
-		"publishedAt": "2021-06-02T06:06:00.000Z"
+		"publishedAt": "2023-08-26T05:27:00.000Z",
+		"slug": "judi-boisson"
 	},
 	{
 		"title": "Find Unused Images",
-		"category": "personal",
+		"category": "tool",
 		"body": "I wrote and maintain this simple JavaScript CLI tool to find unused images in a project, originally because of technical debt in a project I was working on. It scans your codebase using pattern matching and returns a list of unused images. It's a great way to clean up your codebase, reduce the size of your project and keep tech debt in check.",
-		"technologies": ["Node.js", "JavaScript", "npm"],
+		"technologies": [
+			"Node.js",
+			"JavaScript",
+			"npm"
+		],
 		"githubLink": "https://github.com/damienaries/find-unused-images",
 		"liveLink": "https://www.npmjs.com/package/find-unused-images",
 		"mainImage": {
 			"src": "/images/find-unused-images.webp",
 			"alt": "Find Unused Images app screenshot"
 		},
-		"publishedAt": "2025-03-22T14:37:00.000Z"
+		"publishedAt": "2025-03-22T14:37:00.000Z",
+		"slug": "find-unused-images"
 	},
 	{
 		"title": "Habit Tracker",
-		"category": "personal",
+		"category": "tool",
 		"body": "To help with occasional procrastination, I created Habit Tracker to help me track my habits and goals. I made it a progressive web app so it could be installed on my phone and used offline. It allows you to set daily goals for habits, and see your progress over time by tracking streaks. It's built with React and JavaScript and uses Dexie for an easy local database.",
-		"technologies": ["React", "JavaScript", "Tailwind CSS", "Dexie"],
+		"technologies": [
+			"React",
+			"JavaScript",
+			"Tailwind CSS",
+			"Dexie"
+		],
 		"githubLink": "https://github.com/damienaries/habit-tracker",
 		"liveLink": "https://habit-harbor.netlify.app",
 		"mainImage": {
 			"src": "/images/habit-tracker.webp",
 			"alt": "Habit Tracker app screenshot"
 		},
-		"publishedAt": "2025-05-22T14:37:00.000Z"
+		"publishedAt": "2025-05-22T14:37:00.000Z",
+		"slug": "habit-tracker"
 	},
 	{
 		"title": "CWC Leader Institute",
 		"category": "freelance",
 		"body": "Developed a responsive educational leadership institute website using Nuxt.js, Vue3 and TailwindCSS, featuring program information, application management, contact and interest forms. Emphasized accessibility, mobile-first design, analytics and clear information architecture to support the institute's data-driven whole-learner development mission.",
-		"technologies": ["Vue", "Nuxt", "Typescript", "Tailwind CSS"],
+		"technologies": [
+			"Vue",
+			"Nuxt",
+			"Typescript",
+			"Tailwind CSS"
+		],
 		"liveLink": "https://leader-institute.org/",
 		"mainImage": {
 			"src": "/images/leader-institute.webp",
 			"alt": "Leader Institute screenshot"
 		},
-		"publishedAt": "2025-05-22T14:37:00.000Z"
+		"publishedAt": "2025-05-22T14:37:00.000Z",
+		"slug": "leader-institute"
 	}
 ]
