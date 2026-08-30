@@ -98,7 +98,7 @@ export default function Navbar({ theme, toggleTheme }) {
 							)}
 						</Link>
 						<Link
-							href="/resume"
+							href="/legacy-resume"
 							className={`topbar-right-link ${
 								router.pathname === '/resume' ? 'active' : ''
 							}`}>
@@ -189,7 +189,7 @@ export default function Navbar({ theme, toggleTheme }) {
 						Work
 					</Link>
 					<Link
-						href="/resume"
+						href="/legacy-resume"
 						className={`mobile-nav-link ${
 							router.pathname === '/resume' ? 'active' : ''
 						}`}

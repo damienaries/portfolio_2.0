@@ -1,0 +1,143 @@
+.resume-sheet {
+	--sheet-ink: #0d1710;
+	--sheet-muted: rgba(13, 23, 16, 0.75);
+}
+
+/* The white sheet. Colour is set here, not per-element, so no child can end up
+   inheriting the site's theme text colour. */
+.resume-content {
+	background: #ffffff;
+	color: var(--sheet-ink);
+}
+
+/* Light theme, screen only: white paper on an off-white ground has almost no
+   edge, so a hairline plus a whisper of lift lets the sheet read as an object.
+   Dark mode needs none — the sheet already separates from a near-black canvas.
+   Wrapped in @media screen so it can never reach paper, where a printed border
+   round the whole document would look like a mistake. */
+@media screen {
+	html:not(.dark) .resume-content {
+		box-shadow:
+			0 0 0 1px rgba(13, 23, 16, 0.09),
+			0 1px 3px rgba(13, 23, 16, 0.05);
+	}
+}
+
+.sheet-ink-bg {
+	background-color: var(--sheet-ink, #0d1710);
+}
+
+.sheet-ink-border {
+	border-color: var(--sheet-ink, #0d1710);
+}
+
+.sheet-muted-text {
+	color: var(--sheet-muted, rgba(13, 23, 16, 0.75));
+}
+
+/* Tailwind's preflight sets `list-style: none` on every ul, so the square
+   bullets have to be asked for explicitly. */
+.list-square {
+	list-style-type: square;
+}
+
+/* Bullet rhythm. Legacy used 0.5rem, which ran the first freelance entry onto
+   page 2; 0.25rem plus a slightly tighter leading pulls it back onto page 1
+   without the list reading as cramped. */
+.highlights .highlight {
+	margin-bottom: 0.25rem;
+	line-height: 1.45;
+}
+
+/* --------------------------------------------------------------------------
+   Accent bars
+
+   Legacy geometry, verbatim. .top-bar and .left-bar are direct children of
+   .resume-container so they position against the container — that is what puts
+   them on the sheet edge in print, and it only works because they sit OUTSIDE
+   .resume-content, which becomes position:absolute when printing.
+
+   The top bar is drawn as .top-bar-cap — a sibling of the contact box inside
+   its column, so it always matches the box's width. Legacy's fixed 237.5px
+   .top-bar is kept for reference but never shown: it was sized to a box set in
+   Mulish, and the current face makes that box wider.
+   -------------------------------------------------------------------------- */
+
+.top-bar {
+	position: absolute;
+	top: 2rem;
+	right: 4rem;
+	z-index: 10;
+	width: 237.5px;
+	height: 1.1rem;
+	background-color: var(--sheet-ink, #0d1710);
+	display: none;
+}
+
+.left-bar {
+	position: absolute;
+	left: 2rem;
+	top: 5.3rem;
+	z-index: 10;
+	width: 0.75rem;
+	height: 80px;
+	background-color: var(--sheet-ink, #0d1710);
+}
+
+@media print {
+	/* The page wrapper is new markup — the legacy sheet had no such parent, so no
+	   legacy rule zeroes it. Its px-14/pt-10 was insetting the whole document
+	   from the paper edge, which is what made the bars look inset no matter what
+	   @page said. */
+	/* Page 1 bleeds to the trim so the accent bars can reach it. Pages after the
+	   first get a top margin so continued text doesn't start hard against the
+	   paper edge. Sides and bottom stay 0 on every page. */
+	@page {
+		margin: 0;
+		margin-top: 12mm;
+	}
+
+	@page :first {
+		margin-top: 0;
+	}
+
+	.resume-page {
+		padding: 0 !important;
+		margin: 0 !important;
+	}
+
+	/* `body * { visibility: hidden }` hides the shell but KEEPS its layout box,
+	   so the nav's height still pushed the sheet down — that was the white band
+	   above the contact block. display:none removes it from flow entirely. */
+	.site-nav,
+	.site-footer {
+		display: none !important;
+	}
+
+	/* With the wrapper padding gone the container now starts at the paper edge,
+	   so legacy's -0.75rem put the left bar off-page. 0 is the edge now. */
+	.left-bar {
+		left: 0 !important;
+	}
+
+	/* The fixed 237.5px bar can't match a contact box set in a wider face, which
+	   is the step at the block's top-left. In print, drop it and bleed the cap +
+	   box together to the corner: -1rem escapes .resume-content's padding. */
+	.top-bar {
+		display: none !important;
+	}
+
+	.top-bar-cap {
+		display: block !important;
+	}
+
+	.resume-contact {
+		margin-top: -1rem !important;
+		margin-right: -1rem !important;
+	}
+
+	/* legacy vertical position retained */
+	.left-bar {
+		top: 3rem;
+	}
+}

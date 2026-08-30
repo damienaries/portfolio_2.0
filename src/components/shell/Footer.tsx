@@ -12,7 +12,7 @@ const ELSEWHERE = [
 
 export default function Footer() {
 	return (
-		<footer className="mt-24 border-t border-line px-6 sm:px-10 lg:px-14 py-8">
+		<footer className="site-footer mt-24 border-t border-line px-6 sm:px-10 lg:px-14 py-8">
 			<div
 				className="mx-auto flex max-w-4xl flex-wrap items-center gap-x-6 gap-y-3
 			                font-mono text-label tracking-[0.12em] uppercase text-muted">

@@ -24,7 +24,7 @@ export default function Nav() {
 	const pathname = usePathname() ?? '';
 
 	return (
-		<header className="sticky top-0 z-50 px-6 sm:px-10 lg:px-14 py-4">
+		<header className="site-nav sticky top-0 z-50 px-6 sm:px-10 lg:px-14 py-4">
 			<nav className="glass glass-pill mx-auto flex max-w-4xl items-center gap-1 px-4 py-2">
 				<Link
 					href="/"
