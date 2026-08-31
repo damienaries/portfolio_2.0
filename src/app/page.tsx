@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import ParallaxRoot from '@/components/landing/ParallaxRoot';
 import Scene from '@/components/landing/Scene';
 
 /**
@@ -12,7 +13,7 @@ import Scene from '@/components/landing/Scene';
  */
 export default function Landing() {
 	return (
-		<main className="relative isolate h-svh w-full overflow-hidden">
+		<ParallaxRoot className="relative isolate h-svh w-full overflow-hidden">
 			<Scene />
 
 			{/* Character occupies the left of the frame, so the type block sits right. */}
@@ -22,7 +23,7 @@ export default function Landing() {
 			<div className="relative h-full flex justify-center px-6 sm:px-10
 			                items-end pb-[20svh]
 			                lg:items-center lg:justify-end lg:pb-0 lg:px-16">
-				<div className="flex flex-col gap-6 w-full max-w-md lg:max-w-lg lg:items-end lg:text-right">
+				<div className="parallax-fg flex flex-col gap-6 w-full max-w-md lg:max-w-lg lg:items-end lg:text-right">
 					<div className="flex flex-col gap-3 lg:items-end">
 						{/* One heading, two tiers. The greeting is set quieter so the
 						    name still carries the page — and so the surname stays in
@@ -41,7 +42,7 @@ export default function Landing() {
 
 					<Link
 						href="/work"
-						className="mt-2 font-mono text-label tracking-[0.14em] uppercase
+						className="shimmer mt-2 font-mono text-label tracking-[0.14em] uppercase
 						           bg-jade text-on-jade px-8 py-3.5 rounded-full
 						           transition-transform duration-(--dur-fast) ease-(--ease)
 						           hover:-translate-y-px active:translate-y-0"
@@ -51,6 +52,6 @@ export default function Landing() {
 					</Link>
 				</div>
 			</div>
-		</main>
+		</ParallaxRoot>
 	);
 }

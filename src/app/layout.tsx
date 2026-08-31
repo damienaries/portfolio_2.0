@@ -2,6 +2,8 @@ import type { Metadata, Viewport } from 'next';
 import { Bricolage_Grotesque, IBM_Plex_Mono, IBM_Plex_Sans } from 'next/font/google';
 import './globals.css';
 import './print-styles.css';
+import './landing-styles.css';
+import './shimmer-styles.css';
 import './resume-styles.css';
 
 const bricolage = Bricolage_Grotesque({

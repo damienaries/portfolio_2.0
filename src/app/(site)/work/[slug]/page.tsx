@@ -58,7 +58,7 @@ export default async function DeepDivePage({ params }: Params) {
 			<nav className="pb-8">
 				<Link
 					href="/work"
-					className="font-mono text-label tracking-[0.1em] uppercase text-muted
+					className="shimmer-text font-mono text-label tracking-[0.1em] uppercase text-muted
 					           hover:text-ink transition-colors duration-(--dur-fast)"
 				>
 					&larr; Work
@@ -91,7 +91,7 @@ export default async function DeepDivePage({ params }: Params) {
 								href={project.githubLink}
 								target="_blank"
 								rel="noreferrer"
-								className="font-mono text-label tracking-[0.1em] uppercase text-muted
+								className="shimmer-text font-mono text-label tracking-[0.1em] uppercase text-muted
 								           hover:text-ink transition-colors duration-(--dur-fast)"
 							>
 								Source
@@ -102,7 +102,7 @@ export default async function DeepDivePage({ params }: Params) {
 								href={project.liveLink}
 								target="_blank"
 								rel="noreferrer"
-								className="font-mono text-label tracking-[0.1em] uppercase text-jade
+								className="shimmer-text font-mono text-label tracking-[0.1em] uppercase text-jade
 								           hover:underline"
 							>
 								Visit &rarr;
@@ -179,7 +179,7 @@ export default async function DeepDivePage({ params }: Params) {
 			<div className="mt-16 border-t border-line pt-8">
 				<Link
 					href="/work"
-					className="font-mono text-label tracking-[0.1em] uppercase text-jade
+					className="shimmer-text font-mono text-label tracking-[0.1em] uppercase text-jade
 					           hover:underline"
 				>
 					&larr; All work

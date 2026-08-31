@@ -28,7 +28,7 @@ export default function Nav() {
 			<nav className="glass glass-pill mx-auto flex max-w-4xl items-center gap-1 px-4 py-2">
 				<Link
 					href="/"
-					className="font-mono text-label tracking-[0.14em] uppercase text-ink
+					className="shimmer-text font-mono text-label tracking-[0.14em] uppercase text-ink
 					           hover:text-jade transition-colors duration-(--dur-fast)"
 				>
 					DA
@@ -42,7 +42,7 @@ export default function Nav() {
 								<Link
 									href={href}
 									aria-current={active ? 'page' : undefined}
-									className={`block px-2 sm:px-3 py-1 font-mono text-label tracking-[0.1em] uppercase
+									className={`shimmer-text block px-2 sm:px-3 py-1 font-mono text-label tracking-[0.1em] uppercase
 									            transition-colors duration-(--dur-fast)
 									            ${active ? 'text-jade' : 'text-muted hover:text-ink'}`}
 								>

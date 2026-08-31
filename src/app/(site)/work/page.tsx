@@ -66,7 +66,7 @@ function ProjectRow({
 					{hasDeepDive && (
 						<Link
 							href={`/work/${project.slug}`}
-							className="self-start font-mono text-label tracking-[0.1em] uppercase text-jade
+							className="shimmer-text self-start font-mono text-label tracking-[0.1em] uppercase text-jade
 							           hover:underline"
 						>
 							Read the deep dive &rarr;
@@ -85,7 +85,7 @@ function ProjectRow({
 									href={project.githubLink}
 									target="_blank"
 									rel="noreferrer"
-									className="font-mono text-label tracking-[0.1em] uppercase text-muted
+									className="shimmer-text font-mono text-label tracking-[0.1em] uppercase text-muted
 									           hover:text-ink transition-colors duration-(--dur-fast)"
 								>
 									Source
@@ -96,7 +96,7 @@ function ProjectRow({
 									href={project.liveLink}
 									target="_blank"
 									rel="noreferrer"
-									className="font-mono text-label tracking-[0.1em] uppercase text-jade
+									className="shimmer-text font-mono text-label tracking-[0.1em] uppercase text-jade
 									           transition-transform duration-(--dur-fast) ease-(--ease)
 									           group-hover:translate-x-0.5"
 								>

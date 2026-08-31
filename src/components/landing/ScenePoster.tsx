@@ -7,6 +7,14 @@ import Image from 'next/image';
  * the page's own HTML owns that type — it needs to stay selectable, translatable
  * and focusable.
  *
+ * Two nested wrappers give the image its motion: .parallax-bg follows the
+ * pointer (driven by ParallaxRoot), .ambient-drift adds a slow independent float
+ * so the scene is alive on touch devices and when the cursor is still. Splitting
+ * them means the two transforms compose instead of overwriting each other.
+ *
+ * The scrims sit outside both wrappers on purpose — a moving scrim would drag
+ * the legibility gradient away from the type it exists to protect.
+ *
  * This is also the loading state for the GLB and the fallback for reduced-motion
  * and no-WebGL, so it is never throwaway. When the Blender render lands, replace
  * the file at this path and nothing else changes.
@@ -15,14 +23,18 @@ import Image from 'next/image';
 export default function ScenePoster() {
 	return (
 		<>
-			<Image
-				src="/images/landing-poster.webp"
-				alt=""
-				fill
-				priority
-				sizes="100vw"
-				className="object-cover object-[30%_center] dark:brightness-[0.62] dark:saturate-[0.85]"
-			/>
+			<div className="parallax-bg">
+				<div className="ambient-drift">
+					<Image
+						src="/images/landing-poster.webp"
+						alt=""
+						fill
+						priority
+						sizes="100vw"
+						className="object-cover object-[30%_center] dark:brightness-[0.62] dark:saturate-[0.85]"
+					/>
+				</div>
+			</div>
 
 			{/* Legibility scrim. Light: a wash from the right so ink reads over sky.
 			    Dark: a heavier veil, since the art stays a bright sunset either way. */}

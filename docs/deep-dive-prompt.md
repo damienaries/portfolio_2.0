@@ -33,16 +33,21 @@ Ask follow-ups when an answer is vague. If I give you a generic answer like
 "to learn React," push me for the concrete version. Do not move on until you
 have enough to write without inventing anything.
 
-**Phase 2 — draft it.** Write roughly 350–500 words total, structured as:
+**Phase 2 — draft it.** Write roughly 300–350 words as a narrative arc, not an
+interview checklist. Default headings:
 
-- **Context** — 2 short paragraphs. What existed before, and the specific failure
-  it addresses.
-- **What I owned** — 1 paragraph, plain and direct.
-- **Decisions that mattered** — 2 or 3 paragraphs, each opening with a bolded
-  decision, then the alternative I rejected and why. Include the cost.
-- **Where it stands** — 1 short paragraph.
-- **Outcome** — 1–3 bullet points, concrete.
-- **What I'd change** — 1–2 bullet points, genuinely self-critical.
+- **Where it started** — 2 short paragraphs. The situation I was in, and what
+  was actually wrong with the options that existed.
+- **What I wanted to build** — 1–2 paragraphs. The intent, and where the
+  material or constraints came from.
+- **How I built it** — 2 paragraphs. What I actually did and decided, including
+  what I chose *not* to do and why.
+- **Where it led** — 1–2 paragraphs. What came of it, and what the open
+  questions are now.
+
+Adapt the headings if the project's story genuinely doesn't fit that shape —
+they're a default, not a template to force. Do **not** add a lessons-learned
+section or a metrics box unless I've given you something real to put in them.
 
 **Rules:**
 
@@ -67,13 +72,13 @@ export const <slug>: DeepDive = {
   slug: '<kebab-case-slug>',
   intro: '<one or two sentences, the standfirst under the title>',
   sections: [
-    { heading: 'Context', body: ['<paragraph>', '<paragraph>'] },
-    { heading: 'What I owned', body: ['<paragraph>'] },
-    { heading: 'Decisions that mattered', body: ['**<decision>.** <why>', '**<decision>.** <why>'] },
-    { heading: 'Where it stands', body: ['<paragraph>'] },
+    { heading: 'Where it started', body: ['<paragraph>', '<paragraph>'] },
+    { heading: 'What I wanted to build', body: ['<paragraph>'] },
+    { heading: 'How I built it', body: ['<paragraph>', '<paragraph>'] },
+    { heading: 'Where it led', body: ['<paragraph>'] },
   ],
-  outcomes: ['<concrete outcome>'],
-  wouldChange: ['<honest thing I would rebuild>'],
+  // omit `outcomes` and `wouldChange` entirely unless there is something
+  // concrete to put in them
 };
 ```
 

@@ -1,72 +1,39 @@
 import type { DeepDive } from './types';
 
-/**
- * DRAFT SCAFFOLD.
- *
- * Every sentence below is drawn from what's already written in
- * portfolio_data_copy.json, the resume, or the Swizzle repo itself. Anything
- * only Damien knows is marked TODO rather than guessed at — the point of this
- * page is that it survives an interviewer following up on it.
- */
 export const swizzle: DeepDive = {
 	slug: 'swizzle',
 
 	intro:
-		'A cocktail compendium and custom CMS built for the bartender and manager I used to be — drawn from more than a decade behind the bar.',
+		'The tool I would have wanted as a bartender and manager: a curated place to concentrate cocktail knowledge and make it easy to use.',
 
 	sections: [
 		{
-			heading: 'Context',
+			heading: 'Where it started',
 			body: [
-				'Before I wrote software I spent more than a decade behind bars, most of it running programs rather than just working them. Swizzle started as the reference I kept wishing existed: a compendium of bespoke drinks that a working bar team could actually use during service.',
-				'TODO — what specifically pushed you to start building it, and when. A bad shift, a lost notebook, a menu rewrite? The concrete origin is what makes this section land.',
+				'I spent years managing bars and training bartenders before moving into software. One thing I carried with me was the classics list we used for training: the drinks I expected someone behind the bar to know and be able to make well. Building something around that knowledge had been in the back of my mind since I became a developer.',
+				'There are already enormous cocktail databases online, but volume isn\'t necessarily useful. Good recipes can get buried among thousands of variations, and even the definition of a "classic" can be loose.',
 			],
 		},
 		{
-			heading: 'The problem',
+			heading: 'What I wanted to build',
 			body: [
-				'TODO — how bar teams manage recipes and menus today, in your experience: shared docs, printed sheets, someone\'s notebook. Name the specific failure that costs a shift time or consistency.',
-				'TODO — why existing recipe apps do not solve it. They are built for home drinkers, not for a team running a menu under pressure. Be specific about what they get wrong.',
+				'I imagined Swizzle as the tool I would have wanted as a bartender and manager: a curated place to concentrate that knowledge and make it easy to use.',
+				'The library grew from two main sources: the classics list we used at ECC and training material attributed to Sam Ross and Milk & Honey. Where provenance is known, I cite it; where cocktail history is disputed, I don\'t pretend otherwise.',
 			],
 		},
 		{
-			heading: 'What I owned',
+			heading: 'How I built it',
 			body: [
-				'Everything. Product decisions, interface design, data model, the CMS, the deploy pipeline. No designer, no second engineer, no brief but my own.',
-				'That is the honest appeal of the project: it is the clearest evidence I have that I can take something from a vague instinct to a deployed product without anyone handing me a spec.',
+				'Rather than treating each drink as an article, I structured methods, families, ingredients, glassware, garnish and other characteristics as data. It took more work upfront, but gave search, collections and menus a common foundation.',
+				'The scope also grew quickly: personal collections, custom menus, technical guides, community recipes, team tools and back-bar planning. Instead of waiting to build all of it, I focused the first release on the reference library and initial personalization features.',
 			],
 		},
 		{
-			heading: 'Decisions that mattered',
+			heading: 'Where it led',
 			body: [
-				'**Building a CMS rather than adopting one.** Off-the-shelf headless CMSs model blog posts. A cocktail is a structured object — ingredients with quantities and units, a technique, glassware, garnish, provenance — and menus are ordered collections of those objects with their own rules. Bending a generic content model into that shape would have cost more than building the editor I actually wanted, and it would have left the writing experience wrong for the people using it.',
-				'**Firebase over a backend I maintain.** Firestore plus its security rules covers auth, persistence and per-user data isolation without a server to keep alive. For a solo side project the operational cost of anything else is the thing that kills it in month four.',
-				'**TypeScript from the start.** Recipes are deeply nested and shared across the editor, the menu builder and the reader view. TODO — a specific bug or refactor the types caught or made safe.',
-				'**A token-driven design system.** The whole palette and type scale live in one Tailwind v4 `@theme` block, so the light and dark themes stay in sync and the visual language can be retuned in one file.',
+				'Swizzle launched publicly in 2026 and is now gathering usage, feedback and suggestions. What began as a way to share knowledge from my previous career has become a product I can keep building around how people actually use it.',
+				'The next decisions are less about what I can add and more about what users find useful enough to build next.',
 			],
 		},
-		{
-			heading: 'Tradeoffs',
-			body: [
-				'TODO — the honest cost of the Firebase decision: vendor lock-in, query limits, what happens if this ever needs full-text search across a large corpus.',
-				'TODO — what you deliberately left out of v1 and why.',
-			],
-		},
-		{
-			heading: 'Where it stands',
-			body: [
-				'The app is live, and users can create their own recipes and curate full menus inside a platform tailored to how bar teams actually work.',
-				'A glossary of terms, ingredients and techniques is next — the kind of reference I hope will help train a future generation of barkeeps.',
-			],
-		},
-	],
-
-	outcomes: [
-		'TODO — real numbers if you have them: users, recipes created, menus built, anyone using it in a working bar.',
-		'TODO — if there are no numbers yet, say so plainly and describe what you learned instead. That reads better than silence.',
-	],
-
-	wouldChange: [
-		'TODO — the thing you would rebuild. Interviewers ask this and most portfolios dodge it, so a real answer here is worth more than the rest of the page.',
 	],
 };

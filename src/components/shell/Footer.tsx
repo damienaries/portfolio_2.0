@@ -21,14 +21,14 @@ export default function Footer() {
 						key={label}
 						href={href}
 						{...(external ? { target: '_blank', rel: 'noreferrer' } : {})}
-						className="hover:text-ink transition-colors duration-(--dur-fast)">
+						className="shimmer-text hover:text-ink transition-colors duration-(--dur-fast)">
 						{label}
 					</a>
 				))}
 
 				<Link
 					href="/"
-					className="ml-auto hover:text-ink transition-colors duration-(--dur-fast)">
+					className="shimmer-text ml-auto hover:text-ink transition-colors duration-(--dur-fast)">
 					Back to the front
 				</Link>
 			</div>
