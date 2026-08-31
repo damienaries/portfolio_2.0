@@ -1,22 +1,15 @@
 import Link from 'next/link';
 
 /**
- * The one button in the new UI.
+ * Every button on the site. Two variants, three sizes.
  *
- * Replaces nothing — the old Emotion ButtonComponent (202 lines) is still used
- * by the legacy pages and dies with them. This exists because the landing Enter
- * and the contact Send had drifted into sharing 13 classes plus an inline
- * boxShadow by copy-paste, and the glass pair shared another set. Two variants
- * cover every button on the site.
- *
- * Renders the right element for the job rather than taking an `as` prop: an
- * internal href gets next/link, an external one gets a plain anchor with the
- * rel guard, and no href gets a <button>. That means callers can't accidentally
- * ship a <button> that should have been a link.
+ * Picks its own element instead of taking an `as` prop: internal href →
+ * next/link, external → anchor, no href → button. Callers can't ship a
+ * <button> that should have been a link.
  */
 
 type Variant = 'solid' | 'glass';
-type Size = 'md' | 'lg';
+type Size = 'md' | 'lg' | 'icon';
 
 type Common = {
 	variant?: Variant;
@@ -31,31 +24,27 @@ type Props = Common &
 		| ({ href?: undefined } & Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'className'>)
 	);
 
-/* Shared by both variants. Motion tokens and the label treatment live here so a
-   new button can't quietly pick different ones. */
+/* Shared, so a new button can't pick different motion or label treatment. */
 const BASE =
-	'shimmer inline-flex items-center justify-center font-mono text-label uppercase ' +
+	'shimmer inline-flex items-center justify-center font-mono text-label uppercase leading-none ' +
 	'transition-transform duration-(--dur-fast) ease-(--ease) ' +
 	'hover:-translate-y-px active:translate-y-0';
 
-/* Padding is a prop, not something callers pass through className. Passing
-   `px-8` alongside the variant's `px-7` leaves both in the class list, and
-   Tailwind can't resolve that — same specificity, so stylesheet order decides
-   and the result is a coin flip. */
+/* Padding is a prop, not a className override: `px-8` passed alongside the
+   variant's `px-7` leaves both in the list, and Tailwind can't resolve a tie. */
 const SIZES: Record<Variant, Record<Size, string>> = {
-	solid: { md: 'px-7 py-3', lg: 'px-8 py-3.5' },
-	glass: { md: 'px-4 py-1.5', lg: 'px-5 py-2' },
+	solid: { md: 'px-7 py-3', lg: 'px-8 py-3.5', icon: 'p-2' },
+	// `icon` is equal padding, so a pill radius resolves to a circle.
+	glass: { md: 'px-4 py-1.5', lg: 'px-5 py-2', icon: 'p-2' },
 };
 
 const VARIANTS: Record<Variant, string> = {
-	// Primary CTA. --edge and --lift come from the material tokens, so the
-	// button carries the same specular edge as every glass surface.
+	// --edge/--lift are the shared material tokens.
 	solid:
 		'rounded-full bg-jade text-on-jade tracking-caps ' +
 		'shadow-[var(--edge),var(--lift)] ' +
 		'disabled:cursor-not-allowed disabled:opacity-60',
-	// Secondary. Inherits blur and edge from .glass; strength is pre-tuned by
-	// `.glass.shimmer` so the sheen doesn't blow out a light surface.
+	// .glass.shimmer pre-tunes the sheen so it doesn't blow out a light surface.
 	glass:
 		'glass glass-pill tracking-widest text-muted hover:text-ink ' +
 		'transition-colors disabled:cursor-not-allowed disabled:opacity-60',

@@ -1,12 +1,8 @@
 /**
- * Inline blur placeholders, one per image in public/images.
+ * Blur placeholders, one per image in public/images. next/image only derives
+ * these automatically from static imports, and ours come from JSON paths.
  *
- * next/image derives a blur automatically only from a statically imported file;
- * these are referenced by path string, so the preview has to be supplied. Each
- * is a 20px WebP of the image itself — a flat colour would be smaller but reads
- * as a grey box rather than the image arriving.
- *
- * Generated, not hand-written. Regenerate when the source images change.
+ * Generated — regenerate when the source images change.
  */
 export const BLUR: Record<string, string> = {
 	'/images/carey-corea.webp': 'data:image/webp;base64,UklGRoQAAABXRUJQVlA4IHgAAAAQBACdASoUAAsAPt1cpkyopSOiMAgBEBuJZQCsMoADTrkt+7y4QJQfwAD+4ewcBSRA1ktcg4DTUqlvwDZO75E0gRnCCNRyhdaph1YtB4CEHPW4sA9k3oyIp1UoY+8kSO7mza8gSxnv2xv7GxU7OKOQQeNJoKGwQAA=',

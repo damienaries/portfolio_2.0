@@ -19,11 +19,11 @@ import {
 import { FaDatabase, FaNetworkWired } from 'react-icons/fa';
 
 /**
- * Tech shown as icons rather than names — the stack is texture, not the point
- * of a row. Names still reach assistive tech and hover via aria-label/title.
+ * Icons rather than names — the stack is texture, not the point. Names still
+ * reach assistive tech via aria-label/title.
  *
- * Keys are normalised (lowercased, punctuation stripped) because the data has
- * drifted: "Typescript" and "TypeScript", "npm" and "Npm" both appear.
+ * Keys are normalised because the data has drifted: "Typescript" and
+ * "TypeScript", "npm" and "Npm" all appear.
  */
 
 const ICONS: Record<string, IconType> = {
@@ -69,7 +69,7 @@ export default function TechIcons({ technologies }: { technologies?: string[] })
 								           group-hover:text-ink"
 							/>
 						) : (
-							// No icon mapped — fall back to the name rather than hiding it.
+							// Unmapped: show the name rather than hiding it.
 							<span className="font-mono text-xs text-muted">{tech}</span>
 						)}
 					</li>

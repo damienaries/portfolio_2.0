@@ -119,23 +119,34 @@ export default async function Work() {
 		<div className="mx-auto max-w-4xl px-6 sm:px-10 lg:px-14 pt-10 pb-4">
 			<header className="flex max-w-2xl flex-col gap-4 pb-12">
 				<h1 className="font-display text-2xl font-extrabold tracking-tight text-balance">
-					Work
+					Selected Work
 				</h1>
-				<p className="text-lg text-muted">
-					Ten years of hospitality, then six building software. These are the
-					projects where I owned something worth describing.
-				</p>
+				{/* TODO: write a short intro — a couple of sentences on how to read this
+				    page, or what connects the work. Previous copy was placeholder:
+				    "Ten years of hospitality, then six building software. These are the
+				     projects where I owned something worth describing."
+
+				<p className="text-lg text-muted">…</p> */}
 			</header>
 
 			<div className="flex flex-col gap-16">
 				{sections.map((section) => (
 					<section key={section.id} aria-labelledby={section.id}>
-						<h2
-							id={section.id}
-							className="pb-4 font-display text-xl font-bold tracking-tight text-ink"
-						>
-							{section.title}
-						</h2>
+						{/* 'Selected Work' is the page h1 now, so the first section
+						    doesn't repeat it visually — but it still needs a label for
+						    the section's accessible name. */}
+						{section.id === 'selected' ? (
+							<h2 id={section.id} className="sr-only">
+								{section.title}
+							</h2>
+						) : (
+							<h2
+								id={section.id}
+								className="pb-4 font-display text-xl font-bold tracking-tight text-ink"
+							>
+								{section.title}
+							</h2>
+						)}
 
 						<ul className="flex flex-col">
 							{section.projects.map((project, i) => (

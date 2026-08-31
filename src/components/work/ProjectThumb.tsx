@@ -1,12 +1,8 @@
 import Image from 'next/image';
 
 /**
- * Row thumbnail.
- *
- * Built as its own component so a screen-recording can replace the still later
- * without touching the list: add an optional `video` prop, render a muted,
- * looping <video> with this image as its poster, and play on hover/in-view.
- * The layout box stays identical either way.
+ * Row thumbnail. Its own component so a screen recording can replace the still
+ * later — add a `video` prop and render a muted loop with this as its poster.
  */
 
 export default function ProjectThumb({

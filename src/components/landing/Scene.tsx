@@ -1,20 +1,12 @@
 import ScenePoster from './ScenePoster';
 
 /**
- * The 3D boundary.
- *
- * Fills its positioned parent edge-to-edge. Everything the landing needs —
- * layout, type, the Enter control, responsive behaviour — is built against this
- * rendering a static poster.
- *
- * Phase 4 swaps the poster for the R3F canvas here and nowhere else:
+ * The 3D boundary. Everything else on the landing is built against this
+ * rendering a static poster, so the R3F canvas swaps in here and nowhere else:
  *
  *   const Character = dynamic(() => import('../three/Character'), {
- *     ssr: false,
- *     loading: () => <ScenePoster />,
+ *     ssr: false, loading: () => <ScenePoster />,
  *   });
- *
- * The poster stays as the loading, reduced-motion and no-WebGL fallback.
  */
 
 export default function Scene() {

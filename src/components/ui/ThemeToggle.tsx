@@ -1,14 +1,20 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { FiMoon, FiSun } from 'react-icons/fi';
 import Button from '@/components/ui/Button';
+import './ThemeToggle.css';
 
+/**
+ * Which icon shows is decided by CSS from `html.dark`, not React state — the
+ * pre-paint script sets that class before first frame, so there's no flicker or
+ * mismatch. State here is only for the accessible name.
+ */
 export default function ThemeToggle() {
 	const [dark, setDark] = useState(false);
 	const [mounted, setMounted] = useState(false);
 
-	// The inline script in layout.tsx already applied the class before paint;
-	// this only syncs React's copy of that state.
+	// Sync React's copy of the class the pre-paint script already set.
 	useEffect(() => {
 		setDark(document.documentElement.classList.contains('dark'));
 		setMounted(true);
@@ -28,12 +34,16 @@ export default function ThemeToggle() {
 	return (
 		<Button
 			variant="glass"
+			size="icon"
 			onClick={toggle}
-			aria-pressed={dark}
-			aria-label={`Switch to ${dark ? 'light' : 'dark'} theme`}
+			aria-pressed={mounted ? dark : undefined}
+			aria-label={mounted ? `Switch to ${dark ? 'light' : 'dark'} theme` : 'Switch theme'}
+			title={mounted ? `Switch to ${dark ? 'light' : 'dark'} theme` : 'Switch theme'}
 		>
-			{/* Stable label until mounted so SSR and client agree. */}
-			<span suppressHydrationWarning>{mounted ? (dark ? 'Light' : 'Dark') : 'Theme'}</span>
+			<span className="theme-icons" aria-hidden="true">
+				<FiSun className="theme-icon theme-icon-sun" />
+				<FiMoon className="theme-icon theme-icon-moon" />
+			</span>
 		</Button>
 	);
 }

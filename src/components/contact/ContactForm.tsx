@@ -4,16 +4,11 @@ import { useState } from 'react';
 import Button from '@/components/ui/Button';
 
 /**
- * Posts to a Google Apps Script web app, which writes to a Sheet and emails.
- * Setup and the script itself: docs/contact-apps-script.md
+ * Posts to a Google Apps Script web app. Setup: docs/contact-apps-script.md
  *
- * The request shape is dictated by Apps Script, which cannot answer a CORS
- * preflight. So this sends a "simple" request — text/plain content type, no
- * custom headers, JSON in the body — which the spec exempts from preflight.
- * Using application/json here would fail with an opaque CORS error.
- *
- * Apps Script also can't set HTTP status codes on a ContentService response, so
- * every reply is 200 and correctness lives in an `ok` flag in the body.
+ * Apps Script can't answer a CORS preflight, so this must be a "simple" request
+ * — text/plain, no custom headers. application/json fails with an opaque CORS
+ * error. It also can't set status codes, so success is an `ok` flag in the body.
  */
 
 const INQUIRIES = [
@@ -23,7 +18,7 @@ const INQUIRIES = [
 	{ value: 'other', label: 'Something else' },
 ] as const;
 
-/** The one thing worth knowing changes with the enquiry. */
+/** Placeholder changes with the enquiry type. */
 const HINTS: Record<string, string> = {
 	product: "Role, team, and what you're building.",
 	freelance: 'What you need built, roughly when, and any budget range.',
@@ -34,9 +29,7 @@ const HINTS: Record<string, string> = {
 
 type Status = 'idle' | 'sending' | 'sent' | 'error';
 
-/* Public by design — anyone can POST to it, which is what the honeypot and the
-   script's required-field check are for. Inlined at build time, so changing it
-   needs a redeploy. */
+/* Public by design. Inlined at build time, so changing it needs a redeploy. */
 const ENDPOINT = process.env.NEXT_PUBLIC_CONTACT_ENDPOINT;
 
 const field =
@@ -96,9 +89,7 @@ export default function ContactForm() {
 			onSubmit={onSubmit}
 			className="flex max-w-xl flex-col gap-5"
 			noValidate={false}>
-			{/* sr-only clips the honeypot rather than display:none, which some bots
-			    detect and skip. The script reports success but writes nothing when
-			    it's filled. */}
+			{/* sr-only, not display:none — some bots skip the latter. */}
 			<p className="sr-only" aria-hidden="true">
 				<label>
 					Don&rsquo;t fill this in
@@ -189,7 +180,10 @@ export default function ContactForm() {
 			</div>
 
 			<div className="flex flex-wrap items-center gap-4">
-				<Button type="submit" disabled={status === 'sending'} className="self-start">
+				<Button
+					type="submit"
+					disabled={status === 'sending'}
+					className="w-full sm:w-auto sm:self-start">
 					{status === 'sending' ? 'Sending…' : 'Send'}
 				</Button>
 

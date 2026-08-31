@@ -3,18 +3,14 @@
 	--sheet-muted: rgba(13, 23, 16, 0.75);
 }
 
-/* The white sheet. Colour is set here, not per-element, so no child can end up
-   inheriting the site's theme text colour. */
+/* Colour set here, not per-element, so no child inherits the site theme. */
 .resume-content {
 	background: #ffffff;
 	color: var(--sheet-ink);
 }
 
-/* Light theme, screen only: white paper on an off-white ground has almost no
-   edge, so a hairline plus a whisper of lift lets the sheet read as an object.
-   Dark mode needs none — the sheet already separates from a near-black canvas.
-   Wrapped in @media screen so it can never reach paper, where a printed border
-   round the whole document would look like a mistake. */
+/* White paper on an off-white ground has no edge; a hairline gives it one.
+   Dark mode doesn't need it. @media screen so it never reaches paper. */
 @media screen {
 	html:not(.dark) .resume-content {
 		box-shadow:
@@ -35,32 +31,85 @@
 	color: var(--sheet-muted, rgba(13, 23, 16, 0.75));
 }
 
-/* Tailwind's preflight sets `list-style: none` on every ul, so the square
-   bullets have to be asked for explicitly. */
+/* Tailwind preflight zeroes list-style, so square bullets must be re-asked. */
 .list-square {
 	list-style-type: square;
 }
 
-/* Bullet rhythm. Legacy used 0.5rem, which ran the first freelance entry onto
-   page 2; 0.25rem plus a slightly tighter leading pulls it back onto page 1
-   without the list reading as cramped. */
+/* Tighter than legacy's 0.5rem — pulls the first freelance entry onto page 1. */
 .highlights .highlight {
 	margin-bottom: 0.25rem;
 	line-height: 1.45;
 }
 
 /* --------------------------------------------------------------------------
-   Accent bars
+   Mobile fit
+   The sheet is a fixed 800px document and its two-column layout IS the design,
+   so it scales rather than reflowing — the same thing a PDF viewer does.
 
-   Legacy geometry, verbatim. .top-bar and .left-bar are direct children of
-   .resume-container so they position against the container — that is what puts
-   them on the sheet edge in print, and it only works because they sit OUTSIDE
-   .resume-content, which becomes position:absolute when printing.
+   zoom, not transform: zoom reflows, so the page height collapses with the
+   sheet and there's no leftover whitespace to compensate for. Stepped rather
+   than fluid because CSS zoom takes a number, and there's no way to derive one
+   from the viewport without JS.
 
-   The top bar is drawn as .top-bar-cap — a sibling of the contact box inside
-   its column, so it always matches the box's width. Legacy's fixed 237.5px
-   .top-bar is kept for reference but never shown: it was sized to a box set in
-   Mulish, and the current face makes that box wider.
+   print-styles.css already resets .resume-container to zoom: 1, so paper is
+   unaffected.
+   -------------------------------------------------------------------------- */
+
+/* Mobile fit. The sheet is a fixed 800px document and its layout IS the design,
+   so it scales rather than reflowing. zoom, not transform: zoom reflows, so the
+   page height collapses with it. Padding goes to 0 below 780px so the sum is
+   just 800px vs the viewport; each step fits the narrowest width in its range.
+   print-styles.css resets .resume-container to zoom: 1. */
+
+@media (max-width: 860px) {
+	.resume-container {
+		zoom: 0.92;
+	}
+}
+
+@media (max-width: 780px) {
+	.resume-container {
+		padding: 0;
+		zoom: 0.9;
+	}
+}
+
+@media (max-width: 680px) {
+	.resume-container {
+		zoom: 0.78;
+	}
+}
+
+@media (max-width: 560px) {
+	.resume-container {
+		zoom: 0.64;
+	}
+}
+
+@media (max-width: 430px) {
+	.resume-container {
+		zoom: 0.43;
+	}
+}
+
+@media (max-width: 360px) {
+	.resume-container {
+		zoom: 0.35;
+	}
+}
+
+/* --------------------------------------------------------------------------
+   Accent bars, legacy geometry.
+
+   .top-bar and .left-bar must be direct children of .resume-container: they
+   position against it, which is what puts them on the sheet edge in print.
+   Nested inside .resume-content they can't, because that becomes
+   position:absolute when printing.
+
+   On screen the top bar is .top-bar-cap, a sibling of the contact box so it
+   matches its width. Legacy's fixed 237.5px .top-bar is kept for reference but
+   never shown — it was sized to a narrower typeface.
    -------------------------------------------------------------------------- */
 
 .top-bar {
@@ -85,10 +134,8 @@
 }
 
 @media print {
-	/* The page wrapper is new markup — the legacy sheet had no such parent, so no
-	   legacy rule zeroes it. Its px-14/pt-10 was insetting the whole document
-	   from the paper edge, which is what made the bars look inset no matter what
-	   @page said. */
+	/* New markup, so no legacy rule zeroes it — and its padding was insetting
+	   the whole document from the paper edge. */
 	/* Page 1 bleeds to the trim so the accent bars can reach it. Pages after the
 	   first get a top margin so continued text doesn't start hard against the
 	   paper edge. Sides and bottom stay 0 on every page. */
@@ -106,23 +153,19 @@
 		margin: 0 !important;
 	}
 
-	/* `body * { visibility: hidden }` hides the shell but KEEPS its layout box,
-	   so the nav's height still pushed the sheet down — that was the white band
-	   above the contact block. display:none removes it from flow entirely. */
+	/* visibility:hidden keeps the layout box, so the nav still pushed the sheet
+	   down. display:none removes it from flow. */
 	.site-nav,
 	.site-footer {
 		display: none !important;
 	}
 
-	/* With the wrapper padding gone the container now starts at the paper edge,
-	   so legacy's -0.75rem put the left bar off-page. 0 is the edge now. */
+	/* Container starts at the paper edge now, so 0 is the edge. */
 	.left-bar {
 		left: 0 !important;
 	}
 
-	/* The fixed 237.5px bar can't match a contact box set in a wider face, which
-	   is the step at the block's top-left. In print, drop it and bleed the cap +
-	   box together to the corner: -1rem escapes .resume-content's padding. */
+	/* Bleed the cap and box together to the corner; -1rem escapes the padding. */
 	.top-bar {
 		display: none !important;
 	}

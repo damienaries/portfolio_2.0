@@ -7,16 +7,7 @@ export const metadata: Metadata = {
 		'From France to Los Angeles the long way, via fifteen years in hospitality. Front-end engineer working where engineering, product and design overlap.',
 };
 
-/**
- * Deliberately personal and short — the work pages do the selling.
- *
- * This replaces the legacy homepage About copy rather than extending it. Two
- * paragraphs of that text actively contradicted the rest of the site: it opened
- * with "Full Stack Developer" against a front-end positioning everywhere else,
- * and leaned on "lifelong learner / passionate about leveraging" filler. The
- * facts worth keeping — international background, hospitality before tech — are
- * all here in a better form.
- */
+/** Deliberately short and personal — the work pages do the selling. */
 
 const PARAGRAPHS = [
 	'I&rsquo;m originally from France, but I&rsquo;ve taken the long way to Los Angeles, with stops in Paris, Montreal, New York and the Caribbean along the way.',

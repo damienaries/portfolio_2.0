@@ -1,23 +1,12 @@
 import Image from 'next/image';
 
 /**
- * Static stand-in for the 3D scene, rendered full-bleed behind the landing UI.
+ * Full-bleed stand-in for the 3D scene. Also the GLB's loading state and the
+ * reduced-motion / no-WebGL fallback, so replacing this file is the whole swap.
  *
- * The baked-in name and Enter control were painted out of the concept render so
- * the page's own HTML owns that type — it needs to stay selectable, translatable
- * and focusable.
- *
- * Two nested wrappers give the image its motion: .parallax-bg follows the
- * pointer (driven by ParallaxRoot), .ambient-drift adds a slow independent float
- * so the scene is alive on touch devices and when the cursor is still. Splitting
- * them means the two transforms compose instead of overwriting each other.
- *
- * The scrims sit outside both wrappers on purpose — a moving scrim would drag
- * the legibility gradient away from the type it exists to protect.
- *
- * This is also the loading state for the GLB and the fallback for reduced-motion
- * and no-WebGL, so it is never throwaway. When the Blender render lands, replace
- * the file at this path and nothing else changes.
+ * Two nested wrappers so the transforms compose: .parallax-bg follows the
+ * pointer, .ambient-drift floats independently. Scrims stay outside both — a
+ * moving scrim would drag the gradient off the type it protects.
  */
 
 export default function ScenePoster() {
@@ -32,16 +21,14 @@ export default function ScenePoster() {
 						priority
 						sizes="100vw"
 						placeholder="blur"
-						/* 20px inline preview so the LCP element fades in rather than
-						   popping. Generated from the poster itself, not a flat colour. */
+						/* 20px preview so the LCP element fades in rather than popping. */
 						blurDataURL="data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAADQAwCdASoUAA0APt1cp0yopSOiMAgBEBuJQBOmUABWtZY203XZQIAA/rWrUVYhR2MOir7B0KmNzWDd5zkfFR7OMtYt4ikKPeTYVfFHcuMIQdvoSPRgVAAA"
 						className="object-cover object-[30%_center] dark:brightness-[0.62] dark:saturate-[0.85]"
 					/>
 				</div>
 			</div>
 
-			{/* Legibility scrim. Light: a wash from the right so ink reads over sky.
-			    Dark: a heavier veil, since the art stays a bright sunset either way. */}
+			{/* Legibility scrims; the art is a bright sunset in both themes. */}
 			<div
 				aria-hidden="true"
 				className="scrim-side absolute inset-0 pointer-events-none"

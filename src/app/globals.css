@@ -93,10 +93,8 @@
 	--font-sans: var(--font-plex-sans), ui-sans-serif, system-ui, sans-serif;
 	--font-mono: var(--font-plex-mono), ui-monospace, monospace;
 
-	/* Letter-spacing. Uppercase mono labels had drifted across five values
-	   (0.1 / 0.12 / 0.14 / 0.16 / 0.18em) for one visual role; they now resolve
-	   to native tracking-widest (0.1em) or tracking-caps. Display headings
-	   collapse onto native tracking-tight or tracking-display. */
+	/* Uppercase labels use native tracking-widest or tracking-caps; display
+	   headings use tracking-tight or tracking-display. */
 	--tracking-caps: 0.16em;
 	--tracking-display: -0.035em;
 
@@ -141,11 +139,8 @@ body {
 	border-radius: 4px;
 }
 
-/* ==========================================================================
-   Material
-   The panel is defined by light on its top edge, not darkness beneath it —
-   --lift is deliberately near-invisible. Don't add shadow here; raise --edge.
-   ========================================================================== */
+/* Material. A panel is defined by light on its top edge, not darkness beneath —
+   --lift is deliberately near-invisible. Don't add shadow; raise --edge. */
 
 .glass {
 	background: var(--glass);
@@ -156,15 +151,13 @@ body {
 	backdrop-filter: var(--glass-blur);
 }
 
-/* Pill variant. Defined here rather than fighting `.glass` with an important
-   utility — unlayered CSS outranks Tailwind's @layer utilities, so `rounded-full`
-   alone would silently lose to `.glass`. */
+/* A class, not `rounded-full`: unlayered CSS outranks Tailwind's utilities
+   layer, so the utility would silently lose to `.glass`. */
 .glass-pill {
 	border-radius: var(--radius-pill);
 }
 
-/* backdrop-filter is a compositor cost. On the landing page it is capped at
-   the nav and the Enter control so it never competes with the WebGL canvas. */
+/* backdrop-filter is a compositor cost — keep it off the WebGL page. */
 @supports not (
 	(backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))
 ) {
@@ -199,7 +192,7 @@ body {
 	background: linear-gradient(to top, var(--scrim-soft), transparent);
 }
 
-/* Citrus and jade light, sitting *under* the glass so panels sample it. */
+/* Sits under the glass so panels sample it. */
 .bloom::before {
 	content: '';
 	position: absolute;

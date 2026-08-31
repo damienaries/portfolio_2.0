@@ -9,24 +9,16 @@ export const metadata: Metadata = {
 };
 
 /**
- * The résumé document, unchanged.
+ * The résumé document, ported 1:1 from the Emotion version — 800px sheet, both
+ * accent bars, flex-1 / 200px columns. Only the palette moved to v3 tokens.
  *
- * Layout, proportions and type scale are ported 1:1 from the Emotion version —
- * 800px sheet, the two accent bars, the dark contact box, 3rem uppercase name,
- * two columns split flex-1 / 200px. Only the palette moved to the v3 tokens.
- *
- * What you see here is what prints and what "Save as PDF" produces: one render,
- * no second artifact to fall out of date.
- *
- * The one deliberate departure is mobile. The old page set `zoom: 0.48` on the
- * whole container, which shrank the document to unreadable rather than changing
- * its layout. Here the sheet keeps its 800px and the wrapper scrolls, so the
- * document is never redrawn — just panned.
+ * Screen and print are the same render, so there's no second artifact to drift.
+ * Mobile scales the sheet rather than reflowing it; see resume-styles.css.
  */
 
 const { personalInfo, experience, education, expertise } = resumeData;
 
-/** Matches the old `.resume-content h3` rule. */
+/** Matches the legacy `.resume-content h3` rule. */
 function Heading({ children }: { children: React.ReactNode }) {
 	return (
 		<h3
@@ -39,7 +31,7 @@ function Heading({ children }: { children: React.ReactNode }) {
 
 export default function Resume() {
 	return (
-		<div className="resume-page px-4 sm:px-10 lg:px-14 pt-10">
+		<div className="resume-page px-2 sm:px-10 lg:px-14 pt-10">
 			<div className="mx-auto mb-6 flex max-w-200 items-center gap-4 print:hidden">
 				<h1 className="font-display text-2xl font-extrabold tracking-tight">
 					Résumé

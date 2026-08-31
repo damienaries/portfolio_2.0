@@ -3,15 +3,11 @@
 import { useEffect, useRef } from 'react';
 
 /**
- * Publishes pointer position as --px / --py on its own element, smoothed.
+ * Publishes smoothed pointer position as --px / --py on its own element.
  *
- * Deliberately cheap: one rAF loop while the pointer is moving, two custom
- * property writes per frame, and no React state — so nothing re-renders and the
- * transforms stay on the compositor.
- *
- * Bails entirely on reduced-motion and on devices without a real pointer. In
- * both cases the CSS falls back to the ambient drift, and the poster underneath
- * is unaffected — which is what keeps this non-blocking for the 3D scene later.
+ * No React state: one rAF loop writing two custom properties, so nothing
+ * re-renders. Bails on reduced-motion and touch, where the CSS falls back to
+ * the ambient drift.
  */
 export default function ParallaxRoot({
 	children,
@@ -35,7 +31,7 @@ export default function ParallaxRoot({
 		let frame = 0;
 
 		const tick = () => {
-			// Ease toward the pointer so fast movement doesn't snap.
+			// Ease so fast movement doesn't snap.
 			current.x += (target.x - current.x) * 0.08;
 			current.y += (target.y - current.y) * 0.08;
 
@@ -53,7 +49,7 @@ export default function ParallaxRoot({
 			if (!frame) frame = requestAnimationFrame(tick);
 		};
 
-		// Drift back to centre when the cursor leaves the window.
+		// Back to centre when the cursor leaves.
 		const onLeave = () => {
 			target.x = 0;
 			target.y = 0;

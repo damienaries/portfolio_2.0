@@ -1,14 +1,7 @@
 import projectsData from '../../data/portfolio_data_copy.json';
 import { blurFor } from './blur-data';
 
-/**
- * Project data for /work.
- *
- * Ported from src/services/projects.js — the GitHub last-pushed enrichment is
- * unchanged, since it's the thing that keeps dates honest without manual edits.
- * What's new is grouping: sections are derived from `featured` / `category`
- * rather than the old three-tab split.
- */
+/** Project data for /work: GitHub enrichment, then grouping into sections. */
 
 const GITHUB_API = 'https://api.github.com';
 const SEVEN_DAYS_MS = 7 * 24 * 60 * 60 * 1000;
@@ -55,20 +48,12 @@ function parseGitHubRepo(url?: string) {
 
 interface RepoMeta {
 	pushedAt: string | null;
-	/** Confirmed visible to a logged-out visitor. */
 	isPublic: boolean;
 }
 
-/**
- * One call gives us both the last-pushed date and whether the repo is public.
- *
- * Visibility has to be checked, not assumed from category: essential_cocktails
- * (Swizzle) and corea-creative are both private, so linking "Source" off the
- * old personal/freelance heuristic would have sent visitors to a 404.
- *
- * Without a token the API 404s on private repos — which is exactly the right
- * answer here, since that's what a visitor would see too.
- */
+/** Visibility must be checked, not inferred: some personal repos are private,
+ *  and a "Source" link to one 404s. No token means private repos 404 here too,
+ *  which is the correct answer. */
 async function fetchRepoMeta(githubLink?: string, token?: string): Promise<RepoMeta> {
 	const none: RepoMeta = { pushedAt: null, isPublic: false };
 	const parsed = parseGitHubRepo(githubLink);
@@ -108,9 +93,8 @@ function buildDateMeta(project: any, lastPushed: string | null): DateMeta {
 	}
 	const published = project.publishedAt;
 
-	// "Last pushed" only stands in for the date on things I still build. Client
-	// work was delivered once — a maintenance push in 2026 must not make a 2022
-	// site look like this year's work, or reorder the section.
+	// Only ongoing projects take their date from the last push; a maintenance
+	// commit shouldn't make 2022 client work look current.
 	const ongoing = project.category === 'personal' || project.category === 'tool';
 	if (ongoing && lastPushed && +new Date(lastPushed) - +new Date(published) > SEVEN_DAYS_MS) {
 		return { kind: 'updated', date: lastPushed };
@@ -128,7 +112,7 @@ function displayDate(meta: DateMeta): string {
 	return meta.date ? meta.date.slice(0, 4) : '';
 }
 
-/** First sentence, for the one-line row description. */
+/** First sentence — the one-liner shown in a row. */
 function firstSentence(body: string): string {
 	const clean = body.replace(/\s+/g, ' ').trim();
 	const end = clean.search(/[.!?](\s|$)/);
@@ -151,8 +135,7 @@ async function enrich(): Promise<Project[]> {
 			const dateMeta = buildDateMeta(project, repo.pushedAt);
 			const next: Project = {
 				...project,
-				// Attached here rather than in each component: the blur belongs to
-				// the image, and both /work and /work/[slug] render the same one.
+				// Attached here so both /work and /work/[slug] get it for free.
 				mainImage: project.mainImage
 					? { ...project.mainImage, blurDataURL: blurFor(project.mainImage.src) }
 					: undefined,
@@ -160,7 +143,7 @@ async function enrich(): Promise<Project[]> {
 				displayDate: displayDate(dateMeta),
 				summary: firstSentence(project.body ?? ''),
 			};
-			// Link source only where a logged-out visitor can actually read it.
+			// Only link source a logged-out visitor can read.
 			if (!repo.isPublic) {
 				delete next.githubLink;
 			}
@@ -171,11 +154,7 @@ async function enrich(): Promise<Project[]> {
 	return all;
 }
 
-/**
- * Sections in render order. Distinction is carried by grouping, not by a badge
- * on every row — a reader sees what kind of work it is from where it sits, so
- * the headings stand alone without explanatory subtitles.
- */
+/** Sections in render order. Grouping replaces per-row category badges. */
 export async function getWorkSections(): Promise<Section[]> {
 	const projects = await enrich();
 	const by = (fn: (p: Project) => boolean) =>
