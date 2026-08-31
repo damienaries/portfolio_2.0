@@ -44,7 +44,7 @@ function ProjectRow({
 				<div className="flex min-w-0 flex-1 flex-col gap-2">
 					<div className="flex items-baseline gap-4">
 						<h3
-							className={`font-display tracking-[-0.02em] text-ink ${
+							className={`font-display tracking-tight text-ink ${
 								featured ? 'text-xl font-bold' : 'text-lg font-semibold'
 							}`}
 						>
@@ -56,7 +56,7 @@ function ProjectRow({
 					</div>
 
 					{project.role && (
-						<p className="font-mono text-label tracking-[0.1em] uppercase text-jade">
+						<p className="font-mono text-label tracking-widest uppercase text-jade">
 							{project.role}
 						</p>
 					)}
@@ -66,7 +66,7 @@ function ProjectRow({
 					{hasDeepDive && (
 						<Link
 							href={`/work/${project.slug}`}
-							className="shimmer-text self-start font-mono text-label tracking-[0.1em] uppercase text-jade
+							className="shimmer-text self-start font-mono text-label tracking-widest uppercase text-jade
 							           hover:underline"
 						>
 							Read the deep dive &rarr;
@@ -85,7 +85,7 @@ function ProjectRow({
 									href={project.githubLink}
 									target="_blank"
 									rel="noreferrer"
-									className="shimmer-text font-mono text-label tracking-[0.1em] uppercase text-muted
+									className="shimmer-text font-mono text-label tracking-widest uppercase text-muted
 									           hover:text-ink transition-colors duration-(--dur-fast)"
 								>
 									Source
@@ -96,7 +96,7 @@ function ProjectRow({
 									href={project.liveLink}
 									target="_blank"
 									rel="noreferrer"
-									className="shimmer-text font-mono text-label tracking-[0.1em] uppercase text-jade
+									className="shimmer-text font-mono text-label tracking-widest uppercase text-jade
 									           transition-transform duration-(--dur-fast) ease-(--ease)
 									           group-hover:translate-x-0.5"
 								>
@@ -117,7 +117,7 @@ export default async function Work() {
 	return (
 		<div className="mx-auto max-w-4xl px-6 sm:px-10 lg:px-14 pt-10 pb-4">
 			<header className="flex max-w-2xl flex-col gap-4 pb-12">
-				<h1 className="font-display text-2xl font-extrabold tracking-[-0.025em] text-balance">
+				<h1 className="font-display text-2xl font-extrabold tracking-tight text-balance">
 					Work
 				</h1>
 				<p className="text-lg text-muted">
@@ -131,7 +131,7 @@ export default async function Work() {
 					<section key={section.id} aria-labelledby={section.id}>
 						<h2
 							id={section.id}
-							className="pb-4 font-display text-xl font-bold tracking-[-0.02em] text-ink"
+							className="pb-4 font-display text-xl font-bold tracking-tight text-ink"
 						>
 							{section.title}
 						</h2>

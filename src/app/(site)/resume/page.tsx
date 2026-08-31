@@ -64,7 +64,7 @@ export default function Resume() {
 						<header className="relative mb-6">
 							<div className="mb-4 flex items-end justify-between">
 								<div className="relative flex flex-1 flex-col pl-2 print:pl-0">
-									<h2 className="text-[3rem] font-extrabold uppercase leading-[1.2] tracking-[0.5px]">
+									<h2 className="text-5xl font-extrabold uppercase leading-[1.2] tracking-[0.5px]">
 										{personalInfo.name}
 									</h2>
 									<p className="text-xs font-bold uppercase leading-[1.4] tracking-[0.5px] sheet-muted-text">
@@ -72,7 +72,7 @@ export default function Resume() {
 									</p>
 								</div>
 
-								<div className="resume-contact z-10 -mt-[1.1rem] flex min-w-[200px] flex-col self-start">
+								<div className="resume-contact z-10 -mt-[1.1rem] flex min-w-50 flex-col self-start">
 									<div
 										aria-hidden="true"
 										className="top-bar-cap sheet-ink-bg h-[1.1rem]"
@@ -185,13 +185,13 @@ export default function Resume() {
 								</section>
 							</div>
 
-							<div className="w-[200px] self-start">
+							<div className="w-50 self-start">
 								<section className="mb-6 break-inside-avoid">
 									<Heading>Core Skills</Heading>
 									{expertise.coreSkills.map((group) => (
 										<div
 											key={group.group}
-											className="mb-1 flex flex-col text-[0.85rem] leading-[1.5]">
+											className="mb-1 flex flex-col text-[0.85rem] leading-normal">
 											<span className="font-bold">{group.group}:</span>
 											{group.skills.join(', ')}
 										</div>

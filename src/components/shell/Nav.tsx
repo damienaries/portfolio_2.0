@@ -1,7 +1,9 @@
 'use client';
 
 import Link from 'next/link';
+import { useEffect } from 'react';
 import { usePathname } from 'next/navigation';
+import DaIceGlyph from '@/components/shell/DaIceGlyph';
 import ThemeToggle from '@/components/ui/ThemeToggle';
 
 /**
@@ -23,15 +25,52 @@ export default function Nav() {
 	// usePathname is typed nullable for the pages-router compat shim.
 	const pathname = usePathname() ?? '';
 
+	/* Flag real input on <html> so the logo's ice only moves while the visitor
+	   does. Deliberately classList rather than state: pointermove fires dozens
+	   of times a second and re-rendering the nav on each one would be absurd for
+	   a decorative animation. */
+	useEffect(() => {
+		const root = document.documentElement;
+		let idle: number | undefined;
+
+		const wake = () => {
+			root.classList.add('input-active');
+			if (idle) window.clearTimeout(idle);
+			idle = window.setTimeout(
+				() => root.classList.remove('input-active'),
+				700,
+			);
+		};
+
+		/* Run once on load so the ice is visibly moving when the page arrives —
+		   a static glass gives no hint that it ever animates. Any real input
+		   after this hands over to the 700ms idle behaviour above. */
+		root.classList.add('input-active');
+		idle = window.setTimeout(() => root.classList.remove('input-active'), 2600);
+
+		const opts = { passive: true } as const;
+		window.addEventListener('pointermove', wake, opts);
+		window.addEventListener('scroll', wake, opts);
+		window.addEventListener('touchmove', wake, opts);
+
+		return () => {
+			window.removeEventListener('pointermove', wake);
+			window.removeEventListener('scroll', wake);
+			window.removeEventListener('touchmove', wake);
+			if (idle) window.clearTimeout(idle);
+			root.classList.remove('input-active');
+		};
+	}, []);
+
 	return (
 		<header className="site-nav sticky top-0 z-50 px-6 sm:px-10 lg:px-14 py-4">
 			<nav className="glass glass-pill mx-auto flex max-w-4xl items-center gap-1 px-4 py-2">
 				<Link
 					href="/"
-					className="shimmer-text font-mono text-label tracking-[0.14em] uppercase text-ink
-					           hover:text-jade transition-colors duration-(--dur-fast)"
-				>
-					DA
+					className="shimmer-text font-mono text-label tracking-caps uppercase text-ink
+					           hover:text-jade transition-colors duration-(--dur-fast)">
+					<DaIceGlyph size={50} />
+					<span className="sr-only">Damien Aries — home</span>
 				</Link>
 
 				<ul className="ml-auto flex items-center gap-1 sm:gap-2">
@@ -42,10 +81,9 @@ export default function Nav() {
 								<Link
 									href={href}
 									aria-current={active ? 'page' : undefined}
-									className={`shimmer-text block px-2 sm:px-3 py-1 font-mono text-label tracking-[0.1em] uppercase
+									className={`shimmer-text block px-2 sm:px-3 py-1 font-mono text-label tracking-widest uppercase
 									            transition-colors duration-(--dur-fast)
-									            ${active ? 'text-jade' : 'text-muted hover:text-ink'}`}
-								>
+									            ${active ? 'text-jade' : 'text-muted hover:text-ink'}`}>
 									{label}
 								</Link>
 							</li>

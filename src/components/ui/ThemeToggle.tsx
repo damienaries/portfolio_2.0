@@ -30,7 +30,7 @@ export default function ThemeToggle() {
 			onClick={toggle}
 			aria-pressed={dark}
 			aria-label={`Switch to ${dark ? 'light' : 'dark'} theme`}
-			className="glass font-mono text-label tracking-[0.12em] uppercase text-muted
+			className="cursor-pointer shimmer glass font-mono text-label tracking-widest uppercase text-muted
 			           hover:text-ink transition-colors px-3 py-1.5 glass-pill"
 		>
 			{/* Render a stable label until mounted so SSR and client agree. */}

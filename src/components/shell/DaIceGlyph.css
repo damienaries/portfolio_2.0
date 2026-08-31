@@ -1,0 +1,66 @@
+/* ==========================================================================
+   Logo — ice cube rattle
+   Keyframe stops mirror the motion/react arrays from the Swizzle original:
+   [0, -2, 1, -1, 0] at 0/25/50/75/100%. fill-box origin so each cube pivots
+   about its own centre rather than the SVG's.
+
+   ORDER IS LOAD-BEARING. `animation` is a shorthand and resets
+   animation-play-state to `running`, so the paused default has to come AFTER
+   every per-cube shorthand or each one silently switches it back on.
+
+   Co-located with the component and imported by it, not by the app layout —
+   this is destined to become a web component, so it should travel as one unit.
+   The single external hook is `:root.input-active`, set by the shell to signal
+   pointer/scroll activity; inside a custom element that becomes a host
+   attribute instead.
+   ========================================================================== */
+
+.ice-cube {
+	transform-box: fill-box;
+	transform-origin: center;
+}
+
+.ice-cube-d {
+	animation: ice-rattle-d 1400ms ease-in-out infinite;
+}
+
+.ice-cube-a {
+	animation: ice-rattle-a 1600ms ease-in-out infinite 200ms;
+}
+
+/* The unlettered cube reuses a curve at a third speed, so no two cubes move in
+   lockstep. */
+.ice-cube-top {
+	animation: ice-rattle-a 1900ms ease-in-out infinite 100ms;
+}
+
+/* Paused unless the visitor is doing something. Must follow the rules above. */
+.ice-cube {
+	animation-play-state: paused;
+}
+
+:root.input-active .ice-cube {
+	animation-play-state: running;
+}
+
+@keyframes ice-rattle-d {
+	0% { transform: translateY(0) rotate(0deg); }
+	25% { transform: translateY(-2px) rotate(-4deg); }
+	50% { transform: translateY(1px) rotate(2deg); }
+	75% { transform: translateY(-1px) rotate(-3deg); }
+	100% { transform: translateY(0) rotate(0deg); }
+}
+
+@keyframes ice-rattle-a {
+	0% { transform: translateY(0) rotate(0deg); }
+	25% { transform: translateY(1.5px) rotate(3deg); }
+	50% { transform: translateY(-1.5px) rotate(-2deg); }
+	75% { transform: translateY(0.5px) rotate(4deg); }
+	100% { transform: translateY(0) rotate(0deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.ice-cube {
+		animation: none;
+	}
+}

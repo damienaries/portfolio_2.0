@@ -21,7 +21,7 @@ export default function ProjectThumb({
 	return (
 		<div
 			className="glass relative shrink-0 overflow-hidden
-			           w-24 sm:w-36 lg:w-44 aspect-[16/10]"
+			           w-24 sm:w-36 lg:w-44 aspect-16/10"
 		>
 			<Image
 				src={src}
@@ -30,7 +30,7 @@ export default function ProjectThumb({
 				sizes="(max-width: 640px) 96px, (max-width: 1024px) 144px, 176px"
 				priority={priority}
 				className="object-cover transition-transform duration-(--dur) ease-(--ease)
-				           group-hover:scale-[1.04]"
+				           group-hover:scale-105"
 			/>
 		</div>
 	);

@@ -28,21 +28,21 @@ export default function Landing() {
 						{/* One heading, two tiers. The greeting is set quieter so the
 						    name still carries the page — and so the surname stays in
 						    the h1, which is the only place it appears on screen. */}
-						<h1 className="font-display text-3xl leading-[0.92] tracking-[-0.035em] text-balance">
-							<span className="block font-normal text-xl tracking-[-0.01em] text-muted">
+						<h1 className="font-display text-3xl leading-[0.92] tracking-display text-balance">
+							<span className="block font-normal text-xl tracking-tight text-muted">
 								Hi, I&rsquo;m
 							</span>
 							<span className="font-extrabold">Damien Aries</span>
 						</h1>
 
-						<p className="font-mono text-label tracking-[0.16em] uppercase text-jade">
+						<p className="font-mono text-label tracking-caps uppercase text-jade">
 							Front-end engineer in LA
 						</p>
 					</div>
 
 					<Link
 						href="/work"
-						className="shimmer mt-2 font-mono text-label tracking-[0.14em] uppercase
+						className="shimmer mt-2 font-mono text-label tracking-caps uppercase
 						           bg-jade text-on-jade px-8 py-3.5 rounded-full
 						           transition-transform duration-(--dur-fast) ease-(--ease)
 						           hover:-translate-y-px active:translate-y-0"

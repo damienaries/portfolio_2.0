@@ -1,10 +1,15 @@
 import type { Metadata, Viewport } from 'next';
-import { Bricolage_Grotesque, IBM_Plex_Mono, IBM_Plex_Sans } from 'next/font/google';
+import {
+	Bricolage_Grotesque,
+	IBM_Plex_Mono,
+	IBM_Plex_Sans,
+} from 'next/font/google';
 import './globals.css';
 import './print-styles.css';
 import './landing-styles.css';
 import './shimmer-styles.css';
 import './resume-styles.css';
+// TODO organize CSS in 1 main file to import here
 
 const bricolage = Bricolage_Grotesque({
 	subsets: ['latin'],
@@ -36,16 +41,15 @@ export const metadata: Metadata = {
 		template: '%s — Damien Aries',
 	},
 	description:
-		'Engineer in Los Angeles building products that feel considered. Selected work, writing, and a decade of hospitality behind it.',
+		'Engineer in Los Angeles building products that bridge bar industry knowledge with technical expertise and love of media and entertainment. Selected work, writing, and a decade of hospitality behind it.',
 	openGraph: {
 		type: 'website',
 		siteName: 'Damien Aries',
 		url: SITE,
 		title: 'Damien Aries — Builder, Engineer, Bartender',
-		description: 'Engineer in Los Angeles building products that feel considered.',
 	},
 	twitter: { card: 'summary_large_image' },
-	icons: { icon: '/icons/flux-capacitor.svg' },
+	icons: { icon: '/icons/logo.svg' },
 };
 
 export const viewport: Viewport = {
@@ -69,13 +73,16 @@ const themeScript = `
 })();
 `;
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+	children,
+}: {
+	children: React.ReactNode;
+}) {
 	return (
 		<html
 			lang="en"
 			className={`${bricolage.variable} ${plexSans.variable} ${plexMono.variable}`}
-			suppressHydrationWarning
-		>
+			suppressHydrationWarning>
 			<head>
 				<script dangerouslySetInnerHTML={{ __html: themeScript }} />
 			</head>

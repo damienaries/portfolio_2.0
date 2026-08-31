@@ -16,7 +16,7 @@ export default function PrintButton() {
 			type="button"
 			onClick={() => window.print()}
 			title="Opens your print dialog — choose Save as PDF to download"
-			className="print-button glass glass-pill px-4 py-1.5 font-mono text-label tracking-widest
+			className="shimmer print-button glass glass-pill cursor-pointer px-4 py-1.5 font-mono text-label tracking-widest
 			           uppercase text-muted transition-colors duration-(--dur-fast)
 			           hover:text-ink print:hidden">
 			Print

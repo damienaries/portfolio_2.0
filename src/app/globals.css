@@ -93,6 +93,13 @@
 	--font-sans: var(--font-plex-sans), ui-sans-serif, system-ui, sans-serif;
 	--font-mono: var(--font-plex-mono), ui-monospace, monospace;
 
+	/* Letter-spacing. Uppercase mono labels had drifted across five values
+	   (0.1 / 0.12 / 0.14 / 0.16 / 0.18em) for one visual role; they now resolve
+	   to native tracking-widest (0.1em) or tracking-caps. Display headings
+	   collapse onto native tracking-tight or tracking-display. */
+	--tracking-caps: 0.16em;
+	--tracking-display: -0.035em;
+
 	/* Editorial scale — 1.25 ratio, clamped for fluid display sizes. */
 	--text-label: 0.72rem;
 	--text-xs: 0.8rem;

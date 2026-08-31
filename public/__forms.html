@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Netlify form detection</title>
+		<meta name="robots" content="noindex" />
+	</head>
+	<body>
+		<!--
+			Netlify detects forms by parsing static HTML at deploy time. It cannot
+			see a form that only exists inside a React component, so this file is
+			the declaration and the real form POSTs here.
+
+			Every field the ContactForm submits must appear here or Netlify drops
+			it silently — including form-name and the bot-field honeypot.
+			Not user-facing; noindex, and nothing links to it.
+		-->
+		<form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
+			<input type="hidden" name="form-name" value="contact" />
+			<input type="text" name="bot-field" />
+			<input type="text" name="name" />
+			<input type="email" name="email" />
+			<input type="text" name="inquiry" />
+			<input type="text" name="company" />
+			<textarea name="message"></textarea>
+		</form>
+	</body>
+</html>
