@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Button from '@/components/ui/Button';
 
 export default function ThemeToggle() {
 	const [dark, setDark] = useState(false);
@@ -25,16 +26,14 @@ export default function ThemeToggle() {
 	};
 
 	return (
-		<button
-			type="button"
+		<Button
+			variant="glass"
 			onClick={toggle}
 			aria-pressed={dark}
 			aria-label={`Switch to ${dark ? 'light' : 'dark'} theme`}
-			className="cursor-pointer shimmer glass font-mono text-label tracking-widest uppercase text-muted
-			           hover:text-ink transition-colors px-3 py-1.5 glass-pill"
 		>
-			{/* Render a stable label until mounted so SSR and client agree. */}
+			{/* Stable label until mounted so SSR and client agree. */}
 			<span suppressHydrationWarning>{mounted ? (dark ? 'Light' : 'Dark') : 'Theme'}</span>
-		</button>
+		</Button>
 	);
 }

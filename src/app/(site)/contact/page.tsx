@@ -16,7 +16,7 @@ export default function Contact() {
 				</h1>
 				<p className="max-w-[62ch] text-lg text-muted">
 					Engineering roles, freelance builds, or a bar program, from concept to
-					menu creation. Tell me which and I&rsquo;ll get back to you.
+					delivery. Tell me which and I&rsquo;ll get back to you.
 				</p>
 			</header>
 

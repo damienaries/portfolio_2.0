@@ -4,13 +4,16 @@
    edge, moving. Deliberately not the grey skeleton-loader shimmer.
 
    Written as CSS because it is a multi-stop gradient: those stall the Tailwind
-   v4 scanner inside a class name. Tune per element with --shimmer-strength.
+   v4 scanner inside a class name. Tune per element with --shimmer-strength, and
+   per surface with --shimmer-rgb: the sheen has to contrast with what it crosses,
+   so a light surface needs a dark sweep, not a fainter white one.
    ========================================================================== */
 
 .shimmer {
 	position: relative;
 	overflow: hidden;
 	isolation: isolate;
+	--shimmer-rgb: 255, 255, 255;
 	--shimmer-strength: 0.45;
 }
 
@@ -22,7 +25,7 @@
 	background: linear-gradient(
 		105deg,
 		transparent 32%,
-		rgba(255, 255, 255, var(--shimmer-strength)) 50%,
+		rgba(var(--shimmer-rgb), var(--shimmer-strength)) 50%,
 		transparent 68%
 	);
 	/* Parked off-frame; only an animation moves it, so there is no idle cost. */
@@ -54,6 +57,22 @@
 /* Glass surfaces are already light; a full-strength sheen blows them out. */
 .glass.shimmer {
 	--shimmer-strength: 0.22;
+}
+
+/* In the light theme a glass pill is near-white, so a white sweep across it is
+   invisible however strong. Sweep with ink instead and the highlight reads as a
+   shadow passing over the surface. The solid jade button keeps the white sheen —
+   jade is dark enough for it to show.
+
+   These must follow the :active rule above: that declares --shimmer-strength on
+   the pseudo-element itself, which beats a value inherited from the element. */
+html:not(.dark) .glass.shimmer::after {
+	--shimmer-rgb: 13, 23, 16;
+	--shimmer-strength: 0.16;
+}
+
+html:not(.dark) .glass.shimmer:active::after {
+	--shimmer-strength: 0.26;
 }
 
 /* Text links can't take the band — a white sweep over a transparent surface

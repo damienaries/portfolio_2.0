@@ -1,5 +1,7 @@
 'use client';
 
+import Button from '@/components/ui/Button';
+
 /**
  * The only way to get a copy of the résumé, deliberately.
  *
@@ -12,14 +14,12 @@
  */
 export default function PrintButton() {
 	return (
-		<button
-			type="button"
+		<Button
+			variant="glass"
 			onClick={() => window.print()}
 			title="Opens your print dialog — choose Save as PDF to download"
-			className="shimmer print-button glass glass-pill cursor-pointer px-4 py-1.5 font-mono text-label tracking-widest
-			           uppercase text-muted transition-colors duration-(--dur-fast)
-			           hover:text-ink print:hidden">
+			className="print-button print:hidden">
 			Print
-		</button>
+		</Button>
 	);
 }

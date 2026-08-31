@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Button from '@/components/ui/Button';
 import ParallaxRoot from '@/components/landing/ParallaxRoot';
 import Scene from '@/components/landing/Scene';
 
@@ -40,16 +40,9 @@ export default function Landing() {
 						</p>
 					</div>
 
-					<Link
-						href="/work"
-						className="shimmer mt-2 font-mono text-label tracking-caps uppercase
-						           bg-jade text-on-jade px-8 py-3.5 rounded-full
-						           transition-transform duration-(--dur-fast) ease-(--ease)
-						           hover:-translate-y-px active:translate-y-0"
-						style={{ boxShadow: 'var(--edge), var(--lift)' }}
-					>
+					<Button href="/work" size="lg" className="mt-2">
 						Enter
-					</Link>
+					</Button>
 				</div>
 			</div>
 		</ParallaxRoot>

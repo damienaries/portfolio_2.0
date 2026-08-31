@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Button from '@/components/ui/Button';
 
 /**
  * Posts to Netlify Forms — no backend, no third-party service, no API route.
@@ -182,17 +183,9 @@ export default function ContactForm() {
 			</div>
 
 			<div className="flex flex-wrap items-center gap-4">
-				<button
-					type="submit"
-					disabled={status === 'sending'}
-					className="shimmer cursor-pointer self-start rounded-full bg-jade px-7 py-3
-					           font-mono text-label tracking-caps uppercase text-on-jade
-					           transition-transform duration-(--dur-fast) ease-(--ease)
-					           hover:-translate-y-px active:translate-y-0
-					           disabled:cursor-not-allowed disabled:opacity-60"
-					style={{ boxShadow: 'var(--edge), var(--lift)' }}>
+				<Button type="submit" disabled={status === 'sending'} className="self-start">
 					{status === 'sending' ? 'Sending…' : 'Send'}
-				</button>
+				</Button>
 
 				<p aria-live="polite" className="text-sm text-muted">
 					{error}
