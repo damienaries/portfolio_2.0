@@ -31,6 +31,10 @@ export default function ScenePoster() {
 						fill
 						priority
 						sizes="100vw"
+						placeholder="blur"
+						/* 20px inline preview so the LCP element fades in rather than
+						   popping. Generated from the poster itself, not a flat colour. */
+						blurDataURL="data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAADQAwCdASoUAA0APt1cp0yopSOiMAgBEBuJQBOmUABWtZY203XZQIAA/rWrUVYhR2MOir7B0KmNzWDd5zkfFR7OMtYt4ikKPeTYVfFHcuMIQdvoSPRgVAAA"
 						className="object-cover object-[30%_center] dark:brightness-[0.62] dark:saturate-[0.85]"
 					/>
 				</div>

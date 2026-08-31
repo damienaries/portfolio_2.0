@@ -3,8 +3,35 @@
   publish = ".next"
   functions = "netlify/functions"
 
+[build.environment]
+  NEXT_PRIVATE_STANDALONE = "true"
+  # Pinned so a change to Netlify's default image can't break the build.
+  # Next 16 requires >= 20.9; .nvmrc and package.json engines agree.
+  NODE_VERSION = "22"
+
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
-[build.environment]
-  NEXT_PRIVATE_STANDALONE = "true"
+# ---------------------------------------------------------------------------
+# Static asset caching.
+# Next serves everything in public/ as `public, max-age=0`, so the landing
+# poster — the LCP element — was revalidating on every visit. These are content
+# assets whose filenames change when the content does, so they can be immutable.
+# ---------------------------------------------------------------------------
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/icons/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Form-detection stub: never cache, never index.
+[[headers]]
+  for = "/__forms.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+    X-Robots-Tag = "noindex"

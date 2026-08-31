@@ -37,7 +37,7 @@ const SITE = 'https://damienaries.com';
 export const metadata: Metadata = {
 	metadataBase: new URL(SITE),
 	title: {
-		default: 'Damien Aries — Builder, Engineer, Bartender',
+		default: 'Damien Aries — Software Engineer | Frontend & Product',
 		template: '%s — Damien Aries',
 	},
 	description:
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
 		type: 'website',
 		siteName: 'Damien Aries',
 		url: SITE,
-		title: 'Damien Aries — Builder, Engineer, Bartender',
+		title: 'Damien Aries — Software Engineer | Frontend & Product',
 	},
 	twitter: { card: 'summary_large_image' },
 	icons: { icon: '/icons/logo.svg' },
