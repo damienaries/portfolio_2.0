@@ -5,8 +5,8 @@
 
 [build.environment]
   NEXT_PRIVATE_STANDALONE = "true"
-  # Pinned so a change to Netlify's default image can't break the build.
-  # Next 16 requires >= 20.9; .nvmrc and package.json engines agree.
+  # This site was created in 2020, so Netlify's per-site default Node is a
+  # legacy version that can't install modern deps. Matches .nvmrc and engines.
   NODE_VERSION = "22"
 
 [[plugins]]
