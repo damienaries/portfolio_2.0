@@ -4,15 +4,16 @@ import { useState } from 'react';
 import Button from '@/components/ui/Button';
 
 /**
- * Posts to Netlify Forms — no backend, no third-party service, no API route.
+ * Posts to a Google Apps Script web app, which writes to a Sheet and emails.
+ * Setup and the script itself: docs/contact-apps-script.md
  *
- * The submit target is /__forms.html rather than this page: Netlify detects
- * forms by parsing static HTML at deploy time and can't see a React component,
- * so that file declares the form and this posts into it. Every field name here
- * must exist there too, or Netlify silently discards it.
+ * The request shape is dictated by Apps Script, which cannot answer a CORS
+ * preflight. So this sends a "simple" request — text/plain content type, no
+ * custom headers, JSON in the body — which the spec exempts from preflight.
+ * Using application/json here would fail with an opaque CORS error.
  *
- * Submission won't work on localhost — there's no Netlify to receive it. The
- * error state says so rather than looking broken.
+ * Apps Script also can't set HTTP status codes on a ContentService response, so
+ * every reply is 200 and correctness lives in an `ok` flag in the body.
  */
 
 const INQUIRIES = [
@@ -32,6 +33,11 @@ const HINTS: Record<string, string> = {
 };
 
 type Status = 'idle' | 'sending' | 'sent' | 'error';
+
+/* Public by design — anyone can POST to it, which is what the honeypot and the
+   script's required-field check are for. Inlined at build time, so changing it
+   needs a redeploy. */
+const ENDPOINT = process.env.NEXT_PUBLIC_CONTACT_ENDPOINT;
 
 const field =
 	'w-full rounded-(--radius-sm) border border-line bg-surface px-3 py-2.5 ' +
@@ -90,9 +96,9 @@ export default function ContactForm() {
 			onSubmit={onSubmit}
 			className="flex max-w-xl flex-col gap-5"
 			noValidate={false}>
-			{/* Netlify needs these in the payload. sr-only clips the honeypot
-			    rather than display:none, which some bots detect and skip. */}
-			<input type="hidden" name="form-name" value="contact" />
+			{/* sr-only clips the honeypot rather than display:none, which some bots
+			    detect and skip. The script reports success but writes nothing when
+			    it's filled. */}
 			<p className="sr-only" aria-hidden="true">
 				<label>
 					Don&rsquo;t fill this in

@@ -1,4 +1,5 @@
 import projectsData from '../../data/portfolio_data_copy.json';
+import { blurFor } from './blur-data';
 
 /**
  * Project data for /work.
@@ -26,7 +27,7 @@ export interface Project {
 	technologies?: string[];
 	liveLink?: string;
 	githubLink?: string;
-	mainImage?: { src: string; alt: string };
+	mainImage?: { src: string; alt: string; blurDataURL?: string };
 	publishedAt?: string;
 	startedAt?: string;
 	endedAt?: string | null;
@@ -150,6 +151,11 @@ async function enrich(): Promise<Project[]> {
 			const dateMeta = buildDateMeta(project, repo.pushedAt);
 			const next: Project = {
 				...project,
+				// Attached here rather than in each component: the blur belongs to
+				// the image, and both /work and /work/[slug] render the same one.
+				mainImage: project.mainImage
+					? { ...project.mainImage, blurDataURL: blurFor(project.mainImage.src) }
+					: undefined,
 				dateMeta,
 				displayDate: displayDate(dateMeta),
 				summary: firstSentence(project.body ?? ''),

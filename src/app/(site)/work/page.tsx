@@ -38,6 +38,7 @@ function ProjectRow({
 						src={project.mainImage.src}
 						alt={project.mainImage.alt}
 						priority={priority}
+						blurDataURL={project.mainImage.blurDataURL}
 					/>
 				)}
 

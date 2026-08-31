@@ -120,6 +120,9 @@ export default async function DeepDivePage({ params }: Params) {
 						fill
 						priority
 						sizes="(max-width: 768px) 100vw, 768px"
+						{...(project.mainImage.blurDataURL
+							? { placeholder: 'blur' as const, blurDataURL: project.mainImage.blurDataURL }
+							: {})}
 						className="object-cover"
 					/>
 				</div>

@@ -13,10 +13,12 @@ export default function ProjectThumb({
 	src,
 	alt,
 	priority,
+	blurDataURL,
 }: {
 	src: string;
 	alt: string;
 	priority?: boolean;
+	blurDataURL?: string;
 }) {
 	return (
 		<div
@@ -29,6 +31,7 @@ export default function ProjectThumb({
 				fill
 				sizes="(max-width: 640px) 96px, (max-width: 1024px) 144px, 176px"
 				priority={priority}
+				{...(blurDataURL ? { placeholder: 'blur' as const, blurDataURL } : {})}
 				className="object-cover transition-transform duration-(--dur) ease-(--ease)
 				           group-hover:scale-105"
 			/>

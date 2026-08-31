@@ -1,16 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-	// Turbopack is the default bundler in Next 16. The project previously pinned
-	// webpack because of the Emotion SWC transform; the redesign is on Tailwind,
-	// and the remaining Emotion pages build correctly under Turbopack.
-	compiler: {
-		emotion: {
-			sourceMap: true,
-			autoLabel: 'dev-only',
-			labelFormat: '[local]',
-		},
-	},
-
 	images: {
 		// The optimizer's default TTL is short, so /_next/image responses were
 		// being revalidated far more often than the source images change. These
