@@ -1,0 +1,106 @@
+/* ==========================================================================
+   Nav — mobile disclosure
+
+   The whole bar is out of flow, so it grows downward over the content instead
+   of pushing it. Opening the menu can't reflow the page or move scroll.
+
+   The panel is INSIDE the bar, with no glass of its own: backdrop-filter does
+   not nest, so a separately-blurred child renders flat.
+
+   grid-template-rows 0fr -> 1fr animates to natural height, which max-height
+   can't do without a hard-coded value.
+   ========================================================================== */
+
+/* Closed height: 50px glyph + py-2. Explicit because the bar is out of flow.
+   Update if the glyph size changes. */
+.nav-reserve {
+	position: relative;
+	min-height: 66px;
+}
+
+.nav-shell {
+	position: absolute;
+	inset-inline: 0;
+	top: 0;
+}
+
+/* Two classes so these beat .glass regardless of stylesheet order. */
+.nav-shell.glass {
+	/* Fixed radius — a pill radius turns a tall open panel into a capsule. */
+	border-radius: var(--radius);
+
+	/* --glass alone (6% white in dark) leaves the mark fighting whatever scrolls
+	   behind. A canvas layer adds coverage without touching the blur. */
+	background:
+		linear-gradient(var(--glass), var(--glass)),
+		color-mix(in srgb, var(--canvas) 74%, transparent);
+}
+
+.nav-panel {
+	display: grid;
+	grid-template-rows: 0fr;
+	transition: grid-template-rows var(--dur) var(--ease);
+}
+
+.nav-panel > * {
+	/* The collapsing row clips here; without it the links stay visible at 0fr. */
+	overflow: hidden;
+	min-height: 0;
+}
+
+.nav-shell[data-open='true'] .nav-panel {
+	grid-template-rows: 1fr;
+}
+
+/* Three bars that become an X — one icon, two states, always in sync.
+   Absolute inside a fixed square: a rotated 18px bar needs ~13px each way and
+   was clipped when stacked in 1.5px grid tracks. */
+
+.nav-burger {
+	position: relative;
+	display: block;
+	width: 20px;
+	height: 20px;
+	overflow: visible;
+}
+
+.nav-burger-bar {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 18px;
+	height: 1.5px;
+	margin: -0.75px 0 0 -9px;
+	background: currentColor;
+	border-radius: 2px;
+	transition:
+		transform var(--dur) var(--ease),
+		opacity var(--dur-fast) var(--ease);
+}
+
+.nav-burger-bar:nth-child(1) {
+	transform: translateY(-5px);
+}
+
+.nav-burger-bar:nth-child(3) {
+	transform: translateY(5px);
+}
+
+[aria-expanded='true'] .nav-burger-bar:nth-child(1) {
+	transform: translateY(0) rotate(45deg);
+}
+
+[aria-expanded='true'] .nav-burger-bar:nth-child(2) {
+	opacity: 0;
+}
+
+[aria-expanded='true'] .nav-burger-bar:nth-child(3) {
+	transform: translateY(0) rotate(-45deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.nav-panel,
+	.nav-burger-bar {
+		transition: none;
+	}
+}

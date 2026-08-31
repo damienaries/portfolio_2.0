@@ -1,0 +1,108 @@
+@media print {
+	html,
+	body {
+		/* If the site is in dark mode, the page background can print as a dark band
+		   in the browser's print margins. Force paper background to white. */
+		background: #fff !important;
+		-webkit-print-color-adjust: exact;
+		print-color-adjust: exact;
+	}
+
+	body * {
+		visibility: hidden;
+	}
+
+	.resume-content,
+	.resume-content * {
+		visibility: visible;
+	}
+
+	.resume-container {
+		visibility: hidden;
+		padding: 0;
+		margin: 0;
+		zoom: 1;
+	}
+
+	.top-bar,
+	.left-bar {
+		visibility: visible;
+	}
+
+	.resume-content {
+		visibility: visible;
+		position: absolute;
+		inset: 0;
+		background: white;
+		box-shadow: none;
+	}
+
+	/* Page break controls - allow jobs to break cleanly */
+	.job {
+		break-inside: auto;
+		page-break-inside: auto;
+	}
+
+	/* Prevent breaking within job header, description, or highlights */
+	.job-header,
+	.job-description,
+	.highlights {
+		break-inside: avoid;
+		page-break-inside: avoid;
+	}
+
+	/* Prevent orphaned headings  */
+	.education-item,
+	h3:not(.experience-continued),
+	small {
+		break-inside: avoid;
+	}
+
+	.education-section {
+		page-break-before: always;
+		break-before: page;
+	}
+
+	.experience-continued {
+		page-break-before: always;
+		break-before: page;
+		margin-top: 0;
+		padding-top: 0;
+	}
+
+	/* Prevent blank pages */
+	.resume-content {
+		page-break-after: avoid;
+	}
+
+	.resume-content > *:last-child {
+		page-break-after: avoid;
+		margin-bottom: 0;
+	}
+
+	/* Add spacing before major sections */
+	section:not(:first-of-type) {
+		margin-top: 2rem;
+	}
+
+	.print-button {
+		display: none;
+	}
+
+	/* Control orphans and widows to prevent blank pages */
+	.resume-content {
+		orphans: 3;
+		widows: 3;
+	}
+
+	@page {
+		size: A4;
+	}
+
+	/* Prevent blank pages at the end */
+	@page :blank {
+		@top-center {
+			content: none;
+		}
+	}
+}

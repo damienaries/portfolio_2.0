@@ -1,0 +1,186 @@
+.resume-sheet {
+	--sheet-ink: #0d1710;
+	--sheet-muted: rgba(13, 23, 16, 0.75);
+}
+
+/* Colour set here, not per-element, so no child inherits the site theme. */
+.resume-content {
+	background: #ffffff;
+	color: var(--sheet-ink);
+}
+
+/* White paper on an off-white ground has no edge; a hairline gives it one.
+   Dark mode doesn't need it. @media screen so it never reaches paper. */
+@media screen {
+	html:not(.dark) .resume-content {
+		box-shadow:
+			0 0 0 1px rgba(13, 23, 16, 0.09),
+			0 1px 3px rgba(13, 23, 16, 0.05);
+	}
+}
+
+.sheet-ink-bg {
+	background-color: var(--sheet-ink, #0d1710);
+}
+
+.sheet-ink-border {
+	border-color: var(--sheet-ink, #0d1710);
+}
+
+.sheet-muted-text {
+	color: var(--sheet-muted, rgba(13, 23, 16, 0.75));
+}
+
+/* Tailwind preflight zeroes list-style, so square bullets must be re-asked. */
+.list-square {
+	list-style-type: square;
+}
+
+/* Tighter than legacy's 0.5rem — pulls the first freelance entry onto page 1. */
+.highlights .highlight {
+	margin-bottom: 0.25rem;
+	line-height: 1.45;
+}
+
+/* --------------------------------------------------------------------------
+   Mobile fit
+   The sheet is a fixed 800px document and its two-column layout IS the design,
+   so it scales rather than reflowing — the same thing a PDF viewer does.
+
+   zoom, not transform: zoom reflows, so the page height collapses with the
+   sheet and there's no leftover whitespace to compensate for. Stepped rather
+   than fluid because CSS zoom takes a number, and there's no way to derive one
+   from the viewport without JS.
+
+   print-styles.css already resets .resume-container to zoom: 1, so paper is
+   unaffected.
+   -------------------------------------------------------------------------- */
+
+/* Mobile fit. The sheet is a fixed 800px document and its layout IS the design,
+   so it scales rather than reflowing. zoom, not transform: zoom reflows, so the
+   page height collapses with it. Padding goes to 0 below 780px so the sum is
+   just 800px vs the viewport; each step fits the narrowest width in its range.
+   print-styles.css resets .resume-container to zoom: 1. */
+
+@media (max-width: 860px) {
+	.resume-container {
+		zoom: 0.92;
+	}
+}
+
+@media (max-width: 780px) {
+	.resume-container {
+		padding: 0;
+		zoom: 0.9;
+	}
+}
+
+@media (max-width: 680px) {
+	.resume-container {
+		zoom: 0.78;
+	}
+}
+
+@media (max-width: 560px) {
+	.resume-container {
+		zoom: 0.64;
+	}
+}
+
+@media (max-width: 430px) {
+	.resume-container {
+		zoom: 0.43;
+	}
+}
+
+@media (max-width: 360px) {
+	.resume-container {
+		zoom: 0.35;
+	}
+}
+
+/* --------------------------------------------------------------------------
+   Accent bars, legacy geometry.
+
+   .top-bar and .left-bar must be direct children of .resume-container: they
+   position against it, which is what puts them on the sheet edge in print.
+   Nested inside .resume-content they can't, because that becomes
+   position:absolute when printing.
+
+   On screen the top bar is .top-bar-cap, a sibling of the contact box so it
+   matches its width. Legacy's fixed 237.5px .top-bar is kept for reference but
+   never shown — it was sized to a narrower typeface.
+   -------------------------------------------------------------------------- */
+
+.top-bar {
+	position: absolute;
+	top: 2rem;
+	right: 4rem;
+	z-index: 10;
+	width: 237.5px;
+	height: 1.1rem;
+	background-color: var(--sheet-ink, #0d1710);
+	display: none;
+}
+
+.left-bar {
+	position: absolute;
+	left: 2rem;
+	top: 5.3rem;
+	z-index: 10;
+	width: 0.75rem;
+	height: 80px;
+	background-color: var(--sheet-ink, #0d1710);
+}
+
+@media print {
+	/* New markup, so no legacy rule zeroes it — and its padding was insetting
+	   the whole document from the paper edge. */
+	/* Page 1 bleeds to the trim so the accent bars can reach it. Pages after the
+	   first get a top margin so continued text doesn't start hard against the
+	   paper edge. Sides and bottom stay 0 on every page. */
+	@page {
+		margin: 0;
+		margin-top: 12mm;
+	}
+
+	@page :first {
+		margin-top: 0;
+	}
+
+	.resume-page {
+		padding: 0 !important;
+		margin: 0 !important;
+	}
+
+	/* visibility:hidden keeps the layout box, so the nav still pushed the sheet
+	   down. display:none removes it from flow. */
+	.site-nav,
+	.site-footer {
+		display: none !important;
+	}
+
+	/* Container starts at the paper edge now, so 0 is the edge. */
+	.left-bar {
+		left: 0 !important;
+	}
+
+	/* Bleed the cap and box together to the corner; -1rem escapes the padding. */
+	.top-bar {
+		display: none !important;
+	}
+
+	.top-bar-cap {
+		display: block !important;
+	}
+
+	.resume-contact {
+		margin-top: -1rem !important;
+		margin-right: -1rem !important;
+	}
+
+	/* legacy vertical position retained */
+	.left-bar {
+		top: 3rem;
+	}
+}

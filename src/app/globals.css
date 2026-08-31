@@ -1,0 +1,224 @@
+@import 'tailwindcss';
+
+/* Drive `dark:` from a class on <html>, set before paint by the script in layout.tsx. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ==========================================================================
+   Citrus & Ink
+   ========================================================================== */
+
+:root {
+	/* --- palette --- */
+	--canvas: #fcfdfb;
+	--surface: #eff5ea;
+	--ink: #0d1710;
+	--muted: #59685e;
+	--line: #e1edda;
+	--jade: #17805a; /* links, controls, anything clickable */
+	--citrus: #9fc40e; /* graphic accent only — fails contrast as text */
+	--on-jade: #ffffff;
+
+	/* --- material --- */
+	--glass: rgba(255, 255, 255, 0.41);
+	--glass-border: rgba(255, 255, 255, 0.22);
+	--glass-blur: blur(10px) saturate(210%);
+	--edge: inset 0 1px 0 rgba(255, 255, 255, 0.26);
+	--lift:
+		0 1px 2px rgba(13, 23, 16, 0.01), 0 7px 18px -10px rgba(13, 23, 16, 0.1);
+	--glow-citrus: rgba(159, 196, 14, 0.24);
+	--glow-jade: rgba(23, 128, 90, 0.16);
+
+	/* --- tints --- */
+	--citrus-wash: rgba(159, 196, 14, 0.34);
+	--citrus-chip-bg: rgba(159, 196, 14, 0.22);
+	--citrus-chip-fg: #4a5a0a;
+
+	/* --- scrim: keeps HTML type legible over the full-bleed scene --- */
+	--scrim-strong: rgba(252, 253, 251, 0.82);
+	--scrim-soft: rgba(252, 253, 251, 0.42);
+
+	/* --- geometry --- */
+	--radius: 14px;
+	--radius-sm: 8px;
+	--radius-pill: 999px;
+
+	/* --- motion --- */
+	--dur-fast: 140ms;
+	--dur: 240ms;
+	--dur-slow: 480ms;
+	--ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.dark {
+	--canvas: #080d0a;
+	--surface: #131b16;
+	--ink: #ecf3eb;
+	--muted: #8aa091;
+	--line: #1f2b23;
+	--jade: #4fd39d;
+	--citrus: #cde838;
+	--on-jade: #04120b;
+
+	--glass: rgba(255, 255, 255, 0.06);
+	--glass-border: rgba(255, 255, 255, 0.03);
+	--glass-blur: blur(10px) saturate(210%);
+	--edge: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+	--lift: 0 1px 2px rgba(0, 0, 0, 0.01), 0 7px 18px -10px rgba(0, 0, 0, 0.1);
+	--glow-citrus: rgba(205, 232, 56, 0.09);
+	--glow-jade: rgba(79, 211, 157, 0.08);
+
+	--scrim-strong: rgba(8, 13, 10, 0.88);
+	--scrim-soft: rgba(8, 13, 10, 0.55);
+
+	--citrus-wash: rgba(205, 232, 56, 0.26);
+	--citrus-chip-bg: rgba(205, 232, 56, 0.15);
+	--citrus-chip-fg: #cde838;
+}
+
+/* Expose the runtime vars to Tailwind so utilities follow the theme.
+   `inline` keeps the var reference instead of baking the value. */
+@theme inline {
+	--color-canvas: var(--canvas);
+	--color-surface: var(--surface);
+	--color-ink: var(--ink);
+	--color-muted: var(--muted);
+	--color-line: var(--line);
+	--color-jade: var(--jade);
+	--color-citrus: var(--citrus);
+	--color-on-jade: var(--on-jade);
+
+	--radius-panel: var(--radius);
+
+	--font-display: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
+	--font-sans: var(--font-plex-sans), ui-sans-serif, system-ui, sans-serif;
+	--font-mono: var(--font-plex-mono), ui-monospace, monospace;
+
+	/* Uppercase labels use native tracking-widest or tracking-caps; display
+	   headings use tracking-tight or tracking-display. */
+	--tracking-caps: 0.16em;
+	--tracking-display: -0.035em;
+
+	/* Editorial scale — 1.25 ratio, clamped for fluid display sizes. */
+	--text-label: 0.72rem;
+	--text-xs: 0.8rem;
+	--text-sm: 0.9rem;
+	--text-base: 1rem;
+	--text-lg: 1.15rem;
+	--text-xl: clamp(1.3rem, 1.1rem + 0.9vw, 1.75rem);
+	--text-2xl: clamp(1.7rem, 1.3rem + 1.9vw, 2.6rem);
+	--text-3xl: clamp(2.4rem, 1.6rem + 3.6vw, 4.5rem);
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+html {
+	color-scheme: light;
+}
+html.dark {
+	color-scheme: dark;
+}
+
+body {
+	background-color: var(--canvas);
+	color: var(--ink);
+	font-family: var(--font-plex-sans), ui-sans-serif, system-ui, sans-serif;
+	line-height: 1.6;
+	-webkit-font-smoothing: antialiased;
+}
+
+::selection {
+	background: var(--citrus-wash);
+	color: var(--ink);
+}
+
+:focus-visible {
+	outline: 2px solid var(--jade);
+	outline-offset: 3px;
+	border-radius: 4px;
+}
+
+/* Material. A panel is defined by light on its top edge, not darkness beneath —
+   --lift is deliberately near-invisible. Don't add shadow; raise --edge. */
+
+.glass {
+	background: var(--glass);
+	border: 1px solid var(--glass-border);
+	border-radius: var(--radius);
+	box-shadow: var(--edge), var(--lift);
+	-webkit-backdrop-filter: var(--glass-blur);
+	backdrop-filter: var(--glass-blur);
+}
+
+/* A class, not `rounded-full`: unlayered CSS outranks Tailwind's utilities
+   layer, so the utility would silently lose to `.glass`. */
+.glass-pill {
+	border-radius: var(--radius-pill);
+}
+
+/* backdrop-filter is a compositor cost — keep it off the WebGL page. */
+@supports not (
+	(backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))
+) {
+	.glass {
+		background: color-mix(in srgb, var(--surface) 88%, transparent);
+	}
+}
+
+/* Scrims for the full-bleed landing scene. Written as classes rather than
+   Tailwind arbitrary values — a gradient with nested parens and commas inside a
+   candidate is hostile to the scanner. */
+.scrim-side {
+	background: linear-gradient(
+		to left,
+		var(--scrim-strong) 0%,
+		var(--scrim-soft) 45%,
+		transparent 75%
+	);
+}
+@media (min-width: 1024px) {
+	.scrim-side {
+		background: linear-gradient(
+			to left,
+			var(--scrim-strong) 0%,
+			var(--scrim-soft) 38%,
+			transparent 62%
+		);
+	}
+}
+
+.scrim-bottom {
+	background: linear-gradient(to top, var(--scrim-soft), transparent);
+}
+
+/* Sits under the glass so panels sample it. */
+.bloom::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	z-index: -1;
+	pointer-events: none;
+	background:
+		radial-gradient(
+			80% 62% at 84% -12%,
+			var(--glow-citrus) 0%,
+			transparent 56%
+		),
+		radial-gradient(75% 58% at -8% 110%, var(--glow-jade) 0%, transparent 58%);
+}
+
+.underline-citrus {
+	box-shadow: inset 0 -0.42em 0 var(--citrus-wash);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}

@@ -1,0 +1,78 @@
+/* ==========================================================================
+   Landing parallax
+
+   --px / --py are set by ParallaxRoot, roughly -1..1. Nothing animates unless
+   it's mounted and motion is allowed, so the static poster is the free fallback.
+
+   Real CSS rather than Tailwind arbitrary values: calc() with commas and nested
+   parens stalls the v4 scanner.
+   ========================================================================== */
+
+.parallax-root {
+	--px: 0;
+	--py: 0;
+}
+
+/* Overscaled so its edges never enter frame at full deflection. */
+.parallax-bg {
+	position: absolute;
+	inset: 0;
+	transform: scale(1.08)
+		translate3d(calc(var(--px) * -20px), calc(var(--py) * -13px), 0);
+	transition: transform 180ms cubic-bezier(0.22, 0.61, 0.36, 1);
+	will-change: transform;
+}
+
+/* Moves with the pointer, less far. Opposed directions are what read as depth. */
+.parallax-fg {
+	transform: translate3d(calc(var(--px) * 7px), calc(var(--py) * 4px), 0);
+	transition: transform 260ms cubic-bezier(0.22, 0.61, 0.36, 1);
+	will-change: transform;
+}
+
+/* Own element so it composes with the pointer transform. Carries the landing on
+   touch and when the pointer is still. */
+.ambient-drift {
+	position: absolute;
+	inset: 0;
+	animation: ambient-drift 28s ease-in-out infinite alternate;
+	will-change: transform;
+}
+
+@keyframes ambient-drift {
+	from {
+		transform: scale(1) translate3d(0, 0, 0);
+	}
+	to {
+		transform: scale(1.03) translate3d(-1.2%, -0.8%, 0);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.parallax-bg,
+	.parallax-fg {
+		transform: none;
+		transition: none;
+	}
+
+	.ambient-drift {
+		animation: none;
+	}
+}
+
+/* The side wash runs horizontally for the desktop layout, so on mobile — where
+   the type parks low — the bottom scrim has to carry legibility instead. */
+
+@media (max-width: 1023px) {
+	.scrim-bottom {
+
+		height: 72svh;
+		background: linear-gradient(
+			to top,
+			var(--scrim-strong) 0%,
+			var(--scrim-strong) 38%,
+			var(--scrim-soft) 68%,
+			transparent 100%
+		);
+	}
+}

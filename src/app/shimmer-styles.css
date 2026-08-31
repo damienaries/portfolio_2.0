@@ -1,0 +1,137 @@
+/* ==========================================================================
+   Shimmer — a specular highlight crossing a surface.
+
+   Tune with --shimmer-strength and --shimmer-rgb. The sheen has to contrast
+   with what it crosses: a light surface needs a dark sweep, not a fainter white.
+
+   Real CSS because multi-stop gradients stall the Tailwind v4 scanner.
+   ========================================================================== */
+
+.shimmer {
+	position: relative;
+	overflow: hidden;
+	isolation: isolate;
+	--shimmer-rgb: 255, 255, 255;
+	--shimmer-strength: 0.45;
+}
+
+.shimmer::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	pointer-events: none;
+	background: linear-gradient(
+		105deg,
+		transparent 32%,
+		rgba(var(--shimmer-rgb), var(--shimmer-strength)) 50%,
+		transparent 68%
+	);
+	/* Parked off-frame; only an animation moves it, so there is no idle cost. */
+	transform: translateX(-150%);
+}
+
+/* Fires per hover rather than looping — a repeating shimmer reads as loading. */
+.shimmer:hover::after,
+.shimmer:focus-visible::after {
+	animation: shimmer-sweep 1560ms cubic-bezier(0.33, 0, 0.25, 1);
+}
+
+/* Shorter and brighter on press. */
+.shimmer:active::after {
+	animation: shimmer-sweep 750ms cubic-bezier(0.3, 0, 0.2, 1);
+	--shimmer-strength: 0.62;
+}
+
+@keyframes shimmer-sweep {
+	from {
+		transform: translateX(-150%);
+	}
+	to {
+		transform: translateX(150%);
+	}
+}
+
+/* Glass is already light; full strength blows it out. */
+.glass.shimmer {
+	--shimmer-strength: 0.22;
+}
+
+/* A white sweep over a near-white glass pill is invisible at any strength, so
+   light mode sweeps with ink instead. Must follow the :active rule: that sets
+   --shimmer-strength on the pseudo-element, beating an inherited value. */
+html:not(.dark) .glass.shimmer::after {
+	--shimmer-rgb: 13, 23, 16;
+	--shimmer-strength: 0.16;
+}
+
+html:not(.dark) .glass.shimmer:active::after {
+	--shimmer-strength: 0.26;
+}
+
+/* Text links clip the gradient to the glyphs instead. Two layers: a travelling
+   highlight over a solid currentColor layer that never moves, so the text is
+   always painted. -webkit-text-fill-color hides the fill but leaves `color`, so
+   currentColor still resolves — one class works on any link colour.
+   No color-mix(): the minifier strips it when currentColor is unresolvable. */
+@supports ((background-clip: text) or (-webkit-background-clip: text)) {
+	.shimmer-text {
+		background-image:
+			linear-gradient(
+				105deg,
+				transparent 40%,
+				rgba(255, 255, 255, 0.85) 50%,
+				transparent 60%
+			),
+			linear-gradient(currentColor, currentColor);
+		background-size:
+			300% 100%,
+			100% 100%;
+		background-position:
+			100% 0,
+			0 0;
+		background-repeat: no-repeat;
+		-webkit-background-clip: text;
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+
+	.shimmer-text:hover,
+	.shimmer-text:focus-visible {
+		animation: shimmer-text 1560ms cubic-bezier(0.33, 0, 0.25, 1);
+	}
+
+	/* Only the highlight moves; the colour layer stays pinned. */
+	@keyframes shimmer-text {
+		from {
+			background-position:
+				100% 0,
+				0 0;
+		}
+		to {
+			background-position:
+				-60% 0,
+				0 0;
+		}
+	}
+
+	/* If the gradient fails to paint, transparent fill takes the text with it. */
+	@media (prefers-reduced-motion: reduce) {
+		.shimmer-text {
+			background-image: none;
+			-webkit-text-fill-color: currentColor;
+		}
+	}
+
+	@media print {
+		.shimmer-text {
+			background-image: none;
+			-webkit-text-fill-color: currentColor;
+		}
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.shimmer::after {
+		display: none;
+	}
+}

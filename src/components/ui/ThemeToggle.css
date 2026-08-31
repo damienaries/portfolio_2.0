@@ -1,0 +1,54 @@
+/* Sun/moon crossfade. Both icons always render, stacked; `html.dark` decides
+   which shows, so the right one is correct on first frame. They rotate through
+   each other rather than fading in place. */
+
+.theme-icons {
+	position: relative;
+	display: block;
+	width: 1.4rem;
+	height: 1.4rem;
+	/* No line box, or the icon inherits the button's line-height and sits low. */
+	line-height: 0;
+}
+
+.theme-icon {
+	position: absolute;
+	top: 0;
+	left: 0;
+	/* Explicit 100%, not auto: an absolutely positioned replaced element with
+	   width:auto uses its intrinsic size and ignores the opposing offset, so the
+	   svg rendered at 1em of the button's font-size, pinned top-left. */
+	width: 100%;
+	height: 100%;
+	transition:
+		transform var(--dur-slow) var(--ease),
+		opacity var(--dur) var(--ease);
+}
+
+.theme-icon-sun {
+	opacity: 1;
+	transform: rotate(0deg) scale(1);
+}
+
+.theme-icon-moon {
+	opacity: 0;
+	transform: rotate(-90deg) scale(0.4);
+}
+
+
+:root.dark .theme-icon-sun {
+	opacity: 0;
+	transform: rotate(90deg) scale(0.4);
+}
+
+:root.dark .theme-icon-moon {
+	opacity: 1;
+	transform: rotate(0deg) scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.theme-icon {
+		transition: opacity var(--dur-fast) linear;
+		transform: none !important;
+	}
+}

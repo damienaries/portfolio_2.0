@@ -3,11 +3,55 @@
   publish = ".next"
   functions = "netlify/functions"
 
+[build.environment]
+  NEXT_PRIVATE_STANDALONE = "true"
+  # This site was created in 2020, so Netlify's per-site default Node is a
+  # legacy version that can't install modern deps. Matches .nvmrc and engines.
+  NODE_VERSION = "22"
+
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
-[build.environment]
-  # Netlify's per-site default is the 2020 legacy version; this overrides it.
-  # Matches .nvmrc and package.json engines.
-  NODE_VERSION = "22"
-  NEXT_PRIVATE_STANDALONE = "true"
+# ---------------------------------------------------------------------------
+# Static asset caching.
+# Next serves everything in public/ as `public, max-age=0`, so the landing
+# poster — the LCP element — was revalidating on every visit. These are content
+# assets whose filenames change when the content does, so they can be immutable.
+# ---------------------------------------------------------------------------
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/icons/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# ---------------------------------------------------------------------------
+# Legacy routes.
+# /projects was indexed on the live site, so it keeps its equity with a 301
+# rather than 404ing. /legacy and /legacy-resume existed only during the v3
+# build, but they were routable, so they get redirects too.
+# ---------------------------------------------------------------------------
+
+[[redirects]]
+  from = "/projects"
+  to = "/work"
+  status = 301
+
+[[redirects]]
+  from = "/projects/*"
+  to = "/work"
+  status = 301
+
+[[redirects]]
+  from = "/legacy"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/legacy-resume"
+  to = "/resume"
+  status = 301
