@@ -7,4 +7,7 @@
   package = "@netlify/plugin-nextjs"
 
 [build.environment]
+  # Netlify's per-site default is the 2020 legacy version; this overrides it.
+  # Matches .nvmrc and package.json engines.
+  NODE_VERSION = "22"
   NEXT_PRIVATE_STANDALONE = "true"
