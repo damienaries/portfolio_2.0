@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Button from '@/components/ui/Button';
 
 /**
- * Posts to a Google Apps Script web app. Setup: docs/contact-apps-script.md
+ * Posts to a Google Apps Script web app.
  *
  * Apps Script can't answer a CORS preflight, so this must be a "simple" request
  * — text/plain, no custom headers. application/json fails with an opaque CORS
@@ -49,18 +49,25 @@ export default function ContactForm() {
 		setStatus('sending');
 		setError(null);
 
-		const data = new FormData(e.currentTarget);
-		data.set('form-name', 'contact');
+		if (!ENDPOINT) {
+			setStatus('error');
+			setError(
+				"The form isn't connected yet. Email damien@damienaries.com and I'll pick it up there.",
+			);
+			return;
+		}
+
+		const payload = Object.fromEntries(new FormData(e.currentTarget).entries());
 
 		try {
-			const res = await fetch('/__forms.html', {
+			const res = await fetch(ENDPOINT, {
 				method: 'POST',
-				headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-				body: new URLSearchParams(
-					data as unknown as Record<string, string>,
-				).toString(),
+				// CORS-safelisted, so no preflight — Apps Script can't answer one.
+				headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+				body: JSON.stringify(payload),
 			});
-			if (!res.ok) throw new Error(`${res.status}`);
+			const out = (await res.json()) as { ok?: boolean; error?: string };
+			if (!out.ok) throw new Error(out.error ?? 'rejected');
 			setStatus('sent');
 		} catch {
 			setStatus('error');

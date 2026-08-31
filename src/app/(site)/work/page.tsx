@@ -112,8 +112,8 @@ function ProjectRow({
 	);
 }
 
-export default async function Work() {
-	const sections = await getWorkSections();
+export default function Work() {
+	const sections = getWorkSections();
 
 	return (
 		<div className="mx-auto max-w-4xl px-6 sm:px-10 lg:px-14 pt-10 pb-4">

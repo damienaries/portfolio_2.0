@@ -28,5 +28,3 @@ jobs:
       # nothing else surfaces.
       - name: Build
         run: npm run build
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

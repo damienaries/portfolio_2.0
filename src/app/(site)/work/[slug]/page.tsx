@@ -15,7 +15,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
 	const { slug } = await params;
 	const dive = getDeepDive(slug);
-	const project = await getProjectBySlug(slug);
+	const project = getProjectBySlug(slug);
 	if (!dive || !project) return {};
 
 	return {
@@ -50,7 +50,7 @@ function Prose({ text }: { text: string }) {
 export default async function DeepDivePage({ params }: Params) {
 	const { slug } = await params;
 	const dive = getDeepDive(slug);
-	const project = await getProjectBySlug(slug);
+	const project = getProjectBySlug(slug);
 	if (!dive || !project) notFound();
 
 	return (

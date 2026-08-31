@@ -55,13 +55,12 @@
 			"Firebase",
 			"Tailwind CSS"
 		],
-		"githubLink": "https://github.com/damienaries/essential_cocktails",
 		"liveLink": "https://swizzledrink.netlify.app/",
 		"mainImage": {
 			"src": "/images/swizzle.webp",
 			"alt": "Swizzle screenshot"
 		},
-		"publishedAt": "2023-10-27T05:17:40.990Z",
+		"publishedAt": "2026-01-15T00:00:00.000Z",
 		"featured": true,
 		"role": "Product concept and design, full CMS build",
 		"slug": "swizzle"
@@ -92,7 +91,6 @@
 			"React",
 			"CSS"
 		],
-		"githubLink": "https://github.com/damienaries/corea-creative",
 		"liveLink": "https://coreacreative.com/",
 		"mainImage": {
 			"src": "/images/corea-creative.webp",
