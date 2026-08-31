@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 const ELSEWHERE = [
-	{ href: 'mailto:damien@damienaries.com', label: 'Email' },
+	{ href: 'mailto:damien.aries@gmail.com', label: 'Email' },
 	{ href: 'https://github.com/damienaries', label: 'GitHub', external: true },
 	{
 		href: 'https://linkedin.com/in/damienaries',

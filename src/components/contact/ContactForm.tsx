@@ -52,7 +52,7 @@ export default function ContactForm() {
 		if (!ENDPOINT) {
 			setStatus('error');
 			setError(
-				"The form isn't connected yet. Email damien@damienaries.com and I'll pick it up there.",
+				"The form isn't connected yet. Email damien.aries@gmail.com and I'll pick it up there.",
 			);
 			return;
 		}
@@ -72,7 +72,7 @@ export default function ContactForm() {
 		} catch {
 			setStatus('error');
 			setError(
-				"That didn't send. Email damien@damienaries.com directly and I'll pick it up there.",
+				"That didn't send. Email damien.aries@gmail.com directly and I'll pick it up there.",
 			);
 		}
 	}
