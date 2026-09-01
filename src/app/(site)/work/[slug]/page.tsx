@@ -185,7 +185,7 @@ export default async function DeepDivePage({ params }: Params) {
 					className="shimmer-text font-mono text-label tracking-widest uppercase text-jade
 					           hover:underline"
 				>
-					&larr; All work
+					&larr; Work
 				</Link>
 			</div>
 		</article>

@@ -24,16 +24,14 @@ export default function Footer() {
 			<div
 				className="mx-auto flex max-w-4xl flex-col items-center gap-4
 				           font-mono text-label tracking-widest uppercase text-muted
-				           sm:flex-row sm:justify-between sm:gap-6"
-			>
+				           sm:flex-row sm:justify-between sm:gap-6">
 				<ul className="flex items-center justify-center gap-x-6 gap-y-2">
 					{ELSEWHERE.map(({ href, label, external }) => (
 						<li key={label}>
 							<a
 								href={href}
 								{...(external ? { target: '_blank', rel: 'noreferrer' } : {})}
-								className="shimmer-text hover:text-ink transition-colors duration-(--dur-fast)"
-							>
+								className="shimmer-text hover:text-ink transition-colors duration-(--dur-fast)">
 								{label}
 							</a>
 						</li>
@@ -42,9 +40,8 @@ export default function Footer() {
 
 				<Link
 					href="/"
-					className="shimmer-text hover:text-ink transition-colors duration-(--dur-fast)"
-				>
-					Back to the front
+					className="shimmer-text hover:text-ink transition-colors duration-(--dur-fast)">
+					Back to one
 				</Link>
 			</div>
 		</footer>

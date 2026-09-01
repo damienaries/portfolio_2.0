@@ -34,27 +34,6 @@ export default function About() {
 					/>
 				))}
 			</div>
-
-			<nav
-				className="mt-14 flex flex-wrap gap-x-6 gap-y-3 border-t border-line pt-8
-				           font-mono text-label tracking-widest uppercase"
-			>
-				<Link href="/work" className="shimmer-text text-jade hover:underline">
-					Selected work &rarr;
-				</Link>
-				<Link
-					href="/resume"
-					className="shimmer-text text-muted hover:text-ink transition-colors duration-(--dur-fast)"
-				>
-					Résumé
-				</Link>
-				<Link
-					href="/contact"
-					className="shimmer-text text-muted hover:text-ink transition-colors duration-(--dur-fast)"
-				>
-					Work with me
-				</Link>
-			</nav>
 		</div>
 	);
 }

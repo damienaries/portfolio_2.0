@@ -47,8 +47,7 @@ function ProjectRow({
 						<h3
 							className={`font-display tracking-tight text-ink ${
 								featured ? 'text-xl font-bold' : 'text-lg font-semibold'
-							}`}
-						>
+							}`}>
 							{project.title}
 						</h3>
 						<span className="ml-auto shrink-0 font-mono text-label text-muted tabular-nums">
@@ -62,15 +61,14 @@ function ProjectRow({
 						</p>
 					)}
 
-					<p className="max-w-[62ch] text-sm text-muted">{project.summary}</p>
+					<p className="max-w-[62ch] text-sm text-muted">{project.summary}..</p>
 
 					{hasDeepDive && (
 						<Link
 							href={`/work/${project.slug}`}
 							className="shimmer-text self-start font-mono text-label tracking-widest uppercase text-jade
-							           hover:underline"
-						>
-							Read the deep dive &rarr;
+							           hover:underline">
+							Read More
 						</Link>
 					)}
 
@@ -87,8 +85,7 @@ function ProjectRow({
 									target="_blank"
 									rel="noreferrer"
 									className="shimmer-text font-mono text-label tracking-widest uppercase text-muted
-									           hover:text-ink transition-colors duration-(--dur-fast)"
-								>
+									           hover:text-ink transition-colors duration-(--dur-fast)">
 									Source
 								</a>
 							)}
@@ -99,8 +96,7 @@ function ProjectRow({
 									rel="noreferrer"
 									className="shimmer-text font-mono text-label tracking-widest uppercase text-jade
 									           transition-transform duration-(--dur-fast) ease-(--ease)
-									           group-hover:translate-x-0.5"
-								>
+									           group-hover:translate-x-0.5">
 									Visit &rarr;
 								</a>
 							)}
@@ -142,8 +138,7 @@ export default function Work() {
 						) : (
 							<h2
 								id={section.id}
-								className="pb-4 font-display text-xl font-bold tracking-tight text-ink"
-							>
+								className="pb-4 font-display text-xl font-bold tracking-tight text-ink">
 								{section.title}
 							</h2>
 						)}
