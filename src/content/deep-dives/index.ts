@@ -6,6 +6,7 @@ import { leaderInstitute } from './leader-institute';
 import { judiBoisson } from './judi-boisson';
 import { careyCorea } from './carey-corea';
 import { coreaCreative } from './corea-creative';
+import { ivisa } from './ivisa';
 
 /**
  * Registry of deep dives. A project gets a "Read the deep dive" link on /work
@@ -16,6 +17,7 @@ import { coreaCreative } from './corea-creative';
  * the hierarchy, so don't level them up.
  */
 const DEEP_DIVES: DeepDive[] = [
+	ivisa,
 	swizzle,
 	habitTracker,
 	concept,
