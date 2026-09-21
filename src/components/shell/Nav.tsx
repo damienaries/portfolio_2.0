@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 import { usePathname } from 'next/navigation';
-import DaIceGlyph from '@/components/shell/DaIceGlyph';
+import { signatureMarkup } from 'da-signature';
 import ThemeToggle from '@/components/ui/ThemeToggle';
 import './Nav.css';
 
@@ -14,6 +14,9 @@ import './Nav.css';
  * Below `sm` the links collapse behind a hamburger and expand inside the glass
  * bar. See Nav.css for why the bar is out of flow.
  */
+
+/** The mark is aria-hidden; the link's sr-only text names it. */
+const LOGO_SIZE = 50;
 
 const LINKS = [
 	{ href: '/work', label: 'Work' },
@@ -57,37 +60,15 @@ export default function Nav() {
 		};
 	}, [open]);
 
-	/* Flags input on <html> so the logo's ice only moves while the visitor does.
-	   classList rather than state — pointermove fires far too often to re-render. */
+	/* Registers <da-signature>. The import has to run in the browser: this is a
+	   client component, but Next still renders it on the server first, and
+	   `customElements` doesn't exist there. Until it upgrades, the mark below is
+	   the server-rendered one — same artwork, just still.
+
+	   The activity tracking the logo used to need lives inside the element now,
+	   which is why the old `input-active` effect is gone. */
 	useEffect(() => {
-		const root = document.documentElement;
-		let idle: number | undefined;
-
-		const wake = () => {
-			root.classList.add('input-active');
-			if (idle) window.clearTimeout(idle);
-			idle = window.setTimeout(
-				() => root.classList.remove('input-active'),
-				700,
-			);
-		};
-
-		/* One burst on load, otherwise a still cursor means it never animates. */
-		root.classList.add('input-active');
-		idle = window.setTimeout(() => root.classList.remove('input-active'), 2600);
-
-		const opts = { passive: true } as const;
-		window.addEventListener('pointermove', wake, opts);
-		window.addEventListener('scroll', wake, opts);
-		window.addEventListener('touchmove', wake, opts);
-
-		return () => {
-			window.removeEventListener('pointermove', wake);
-			window.removeEventListener('scroll', wake);
-			window.removeEventListener('touchmove', wake);
-			if (idle) window.clearTimeout(idle);
-			root.classList.remove('input-active');
-		};
+		import('da-signature');
 	}, []);
 
 	const linkClass = (href: string) => {
@@ -110,7 +91,18 @@ export default function Nav() {
 					aria-label="Main">
 					<div className="flex items-center gap-1">
 						<Link href="/" className="shrink-0">
-							<DaIceGlyph size={50} />
+							{/* `link="none"`: <Link> is already an anchor, and an anchor
+							    inside an anchor gets unnested by the parser — the mark
+							    would end up beside the link rather than inside it. The
+							    markup is emitted as light-DOM children so the logo paints
+							    before hydration; the element takes over on upgrade. */}
+							<da-signature
+								size={LOGO_SIZE}
+								link="none"
+								dangerouslySetInnerHTML={{
+									__html: signatureMarkup({ size: LOGO_SIZE, link: 'none' }),
+								}}
+							/>
 							<span className="sr-only">Damien Aries — home</span>
 						</Link>
 

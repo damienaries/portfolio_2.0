@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <desc>Tumbler glass with three ice cubes, two bearing the initials D and A.</desc>
+  <!-- Why this doesn't look like the nav mark.
+
+       The component is currentColor on a transparent ground, which is right on
+       a page and wrong in a tab: browser chrome is light or dark depending on
+       the OS, and a single fixed ink can only ever be legible against one of
+       them. So the favicon brings its own ground. The canvas token becomes a
+       real rounded tile and the ink sits on it, which fixes the contrast in
+       both chromes and stops the mark dissolving into a dark title bar.
+
+       The three condensation lines and the tumbler's lighter strokes are gone
+       and what remains is thicker, because at 16px they were mush rather than
+       detail. Letters stay knocked out rather than painted, as in the
+       component, so the tile shows through them.
+
+       Hex rather than tokens: a favicon is fetched outside the document and
+       inherits no CSS. These are the resolved light theme ink and canvas
+       values from globals.css.
+       NB: XML comments may not contain a double hyphen, so CSS custom property
+       names are spelled out here rather than written with their prefix. -->
+  <defs>
+    <mask id="cut-d" maskUnits="userSpaceOnUse">
+      <rect x="15" y="37" width="16" height="16" rx="2.5" fill="#fff"/>
+      <text x="23" y="49" font-size="11" font-weight="700" text-anchor="middle" fill="#000"
+            font-family="system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif">D</text>
+    </mask>
+    <mask id="cut-a" maskUnits="userSpaceOnUse">
+      <rect x="32" y="40" width="16" height="16" rx="2.5" fill="#fff"/>
+      <text x="40" y="52" font-size="11" font-weight="700" text-anchor="middle" fill="#000"
+            font-family="system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif">A</text>
+    </mask>
+  </defs>
+
+  <rect width="64" height="64" rx="12" fill="#fcfdfb"/>
+
+  <!-- Scaled about the centre so the mark fills more of the tile. The
+       component can afford slack around it on a page; a 16px tab cannot. -->
+  <g transform="translate(32 32) scale(1.14) translate(-32 -33)">
+  <g fill="none" stroke="#0d1710" stroke-width="2.4">
+    <path d="M 10 16 L 14 56 L 50 56 L 54 16" stroke-linejoin="round" stroke-linecap="round"/>
+    <ellipse cx="32" cy="16" rx="22" ry="3"/>
+  </g>
+
+  <g fill="#0d1710">
+    <rect x="23" y="23" width="16" height="16" rx="2.5"/>
+    <rect x="15" y="37" width="16" height="16" rx="2.5" mask="url(#cut-d)"/>
+    <rect x="32" y="40" width="16" height="16" rx="2.5" mask="url(#cut-a)"/>
+  </g>
+  </g>
+</svg>
