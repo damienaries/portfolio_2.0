@@ -49,7 +49,6 @@ export const metadata: Metadata = {
 		title: 'Damien Aries — Software Engineer | Frontend & Product',
 	},
 	twitter: { card: 'summary_large_image' },
-	icons: { icon: '/icons/logo.svg' },
 };
 
 export const viewport: Viewport = {
