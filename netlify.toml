@@ -24,6 +24,13 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
+# Lab renders, posters and (later) 3D files. Same contract: re-exporting an
+# asset means a new filename (river-v2.mp4), or visitors keep the old one.
+[[headers]]
+  for = "/media/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
 [[headers]]
   for = "/icons/*"
   [headers.values]

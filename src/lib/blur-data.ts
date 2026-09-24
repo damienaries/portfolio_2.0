@@ -14,6 +14,8 @@ export const BLUR: Record<string, string> = {
 	'/images/judi-boisson.webp': 'data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAAAQBACdASoUAAwAPt1cpkyopSOiMAgBEBuJbACdIExDAcmw3SuSGpA8qAD+3yntsk4tj4oxqmMS9ivNAMFz3875hVlCl8wT2UeMn+pk030AimLnPQpoEN+Hc5jMrqcSGG6OfOQVoFAAAA==',
 	'/images/landing-poster.webp': 'data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAADQAwCdASoUAA0APt1cp0yopSOiMAgBEBuJQBOmUABWtZY203XZQIAA/rWrUVYhR2MOir7B0KmNzWDd5zkfFR7OMtYt4ikKPeTYVfFHcuMIQdvoSPRgVAAA',
 	'/images/leader-institute.webp': 'data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAACwAwCdASoUAAwAPt1cpkyopSOiMAgBEBuJZwCw7B6JIMMq4tqQgAD7zEZpO1fFRIsWdEbxXCC68T+7xXnIQZuqtLgmc1lFGoAAAA==',
+	'/media/lab/first-steps-into-3d/river-poster.webp': 'data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAACwAwCdASoUAAsAPzmGuVQvKSWjMAgB4CcJYwCo9CBXIvHv2FluQAD50vAl7oJt0ASxwv6nhaIOMhNlFLGf4dC95PEgOJWg9TZOKCREKt1bHhQAAAA=',
+	'/media/lab/first-steps-into-3d/sheep-pen.webp': 'data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAACwAwCdASoUAAsAPzmGuVOvKSWisAgB4CcJbAAATroq8M/O5jkfAAD+3fQppy5dLf9RG33f6KIBr7g03mJLaQ1/P8m2kdTRfPRtpZ8N7Yfkkyxcs7PgPcR7ZajU3vLwDh96bYXGRlJjh2/z86AAAA==',
 	'/images/swizzle.webp': 'data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAABQAwCdASoUAAwAPt1apkyopSOiMAgBEBuJZwC2yDJ8NKGt9AD+8FxisO+At1IsMfpAJF8rxvpqzex26VaC29RUGzAAAA==',
 };
 

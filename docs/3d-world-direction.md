@@ -7,7 +7,7 @@ of, not a plan to work through top to bottom.
 
 ### Decided so far
 
-*2026-09-21, on first read-through of this direction:*
+_2026-09-21, on first read-through of this direction:_
 
 - The world lives at **its own route**; `/` stays light.
 - Mobile navigates by **waypoint, not free movement** — see
@@ -74,7 +74,7 @@ A small commercial street where projects exist physically.
   of professional work.
 - **Habit Tracker** — a smaller storefront.
 - **CWC** — its own client/business space. (Lives in the repo as
-  `leader-institute`.)
+  `leader-institute` and 'made in the middle collective' projects.)
 - Everything else can be storefronts, posters, windows, signage, or environment
   objects.
 
@@ -97,6 +97,8 @@ surface you read. Worth keeping the distinction legible in the art, so a visitor
 learns which things are which without being told.
 
 ### Storyboard — the construction site
+
+This project will only be shown on portfolio once it is under construction. architect in a way that allows that.
 
 The long-term collaborative storyboard platform ("Figma for storyboards")
 appears as a building **under construction**. It is ambitious and actively in
@@ -134,6 +136,7 @@ and Contact. The physical metaphors don't need deciding yet.
 ## Ownership
 
 Keeping this boundary clean is what stops the world from becoming the app.
+When reaching this stage of development, help me curate the list of assets to be created.
 
 **Blender owns** environment modeling, buildings, props, materials,
 character/environment assets, rigging, animation, and baked lighting where
@@ -172,8 +175,7 @@ not require the world to exist.
 
 There are two, and the system should treat neither as the fallback.
 
-**Free movement** — desktop. First-person controller, WASD, mouse look,
-collision. The mode that demonstrates real-time engineering.
+**Free movement** — desktop. First-person controller, keyboard arrows and/or WASD, mouse look, collision. The mode that demonstrates real-time engineering.
 
 **Waypoint** — mobile and low-powered devices. Closer to walking a street in
 Google Maps than to a game: tap a point further down the street and the camera
@@ -277,15 +279,15 @@ be forced into one shape.
 Each phase should break into independent issues. Do not attempt the world at
 once.
 
-| # | Phase | Outcome |
-|---|-------|---------|
-| 1 | **Current 3D landing page** | Finish the Blender environment and visual direction. |
-| 2 | **Browser prototype** | Export to GLB, build an experimental R3F route. |
-| 3 | **Environment system** | Navigation-agnostic interaction and routing, both controllers behind it, asset loading, scene management, performance scaling, HTML overlays, deep links. |
-| 4 | **Work Street MVP** | Landing → street → one project. Swizzle first. Validate UX and performance before expanding. |
-| 5 | **Complete Work Street** | Remaining projects plus the Storyboard construction site. |
-| 6 | **Personal Street** | About, Blog, Contact destinations. Journal drafts written since Phase 1 become the published blog. |
-| 7 | **Polish** | Environment art, animation, transitions, sound, loading, accessibility, performance, environmental storytelling. |
+| #   | Phase                       | Outcome                                                                                                                                                   |
+| --- | --------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1   | **Current 3D landing page** | Finish the Blender environment and visual direction.                                                                                                      |
+| 2   | **Browser prototype**       | Export to GLB, build an experimental R3F route.                                                                                                           |
+| 3   | **Environment system**      | Navigation-agnostic interaction and routing, both controllers behind it, asset loading, scene management, performance scaling, HTML overlays, deep links. |
+| 4   | **Work Street MVP**         | Landing → street → one project. Swizzle first. Validate UX and performance before expanding.                                                              |
+| 5   | **Complete Work Street**    | Remaining projects plus the Storyboard construction site.                                                                                                 |
+| 6   | **Personal Street**         | About, Blog, Contact destinations. Journal drafts written since Phase 1 become the published blog.                                                        |
+| 7   | **Polish**                  | Environment art, animation, transitions, sound, loading, accessibility, performance, environmental storytelling.                                          |
 
 ### Phase 2 is a decision gate
 

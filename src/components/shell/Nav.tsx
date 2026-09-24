@@ -20,6 +20,7 @@ const LOGO_SIZE = 50;
 
 const LINKS = [
 	{ href: '/work', label: 'Work' },
+	{ href: '/lab', label: 'Lab' },
 	{ href: '/about', label: 'About' },
 	{ href: '/contact', label: 'Contact' },
 	{ href: '/resume', label: 'Résumé' },

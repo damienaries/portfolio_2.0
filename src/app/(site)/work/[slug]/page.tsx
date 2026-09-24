@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation';
 import { deepDiveSlugs, getDeepDive } from '@/content/deep-dives';
 import { getProjectBySlug } from '@/lib/projects';
 import TechIcons from '@/components/work/TechIcons';
+import Prose from '@/components/content/Prose';
 
 type Params = { params: Promise<{ slug: string }> };
 
@@ -27,24 +28,6 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
 			images: project.mainImage ? [project.mainImage.src] : undefined,
 		},
 	};
-}
-
-/** Renders **bold** spans without pulling in a markdown dependency. */
-function Prose({ text }: { text: string }) {
-	const parts = text.split(/(\*\*[^*]+\*\*)/g);
-	return (
-		<>
-			{parts.map((part, i) =>
-				part.startsWith('**') && part.endsWith('**') ? (
-					<strong key={i} className="font-semibold text-ink">
-						{part.slice(2, -2)}
-					</strong>
-				) : (
-					part
-				)
-			)}
-		</>
-	);
 }
 
 export default async function DeepDivePage({ params }: Params) {

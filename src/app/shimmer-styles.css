@@ -30,24 +30,27 @@
 	transform: translateX(-150%);
 }
 
-/* Fires per hover rather than looping — a repeating shimmer reads as loading. */
+/* Fires per hover rather than looping — a repeating shimmer reads as loading.
+   The curve leaves fast (y1 > 0): a zero-velocity start read as ~400ms of lag. */
 .shimmer:hover::after,
 .shimmer:focus-visible::after {
-	animation: shimmer-sweep 1560ms cubic-bezier(0.33, 0, 0.25, 1);
+	animation: shimmer-sweep 600ms cubic-bezier(0.2, 0.55, 0.3, 1);
 }
 
 /* Shorter and brighter on press. */
 .shimmer:active::after {
-	animation: shimmer-sweep 750ms cubic-bezier(0.3, 0, 0.2, 1);
+	animation: shimmer-sweep 350ms cubic-bezier(0.2, 0.55, 0.3, 1);
 	--shimmer-strength: 0.62;
 }
 
+/* Starts and ends with the band just at the edges (it spans 32–68% of the
+   layer), so no frame is spent travelling where nothing is visible. */
 @keyframes shimmer-sweep {
 	from {
-		transform: translateX(-150%);
+		transform: translateX(-64%);
 	}
 	to {
-		transform: translateX(150%);
+		transform: translateX(68%);
 	}
 }
 
@@ -97,19 +100,20 @@ html:not(.dark) .glass.shimmer:active::after {
 
 	.shimmer-text:hover,
 	.shimmer-text:focus-visible {
-		animation: shimmer-text 1560ms cubic-bezier(0.33, 0, 0.25, 1);
+		animation: shimmer-text 600ms cubic-bezier(0.2, 0.55, 0.3, 1);
 	}
 
-	/* Only the highlight moves; the colour layer stays pinned. */
+	/* Only the highlight moves; the colour layer stays pinned. At 300% size the
+	   band is on the glyphs between 90% and 10%, so that is the whole range. */
 	@keyframes shimmer-text {
 		from {
 			background-position:
-				100% 0,
+				88% 0,
 				0 0;
 		}
 		to {
 			background-position:
-				-60% 0,
+				10% 0,
 				0 0;
 		}
 	}
