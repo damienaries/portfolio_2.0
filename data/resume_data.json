@@ -32,6 +32,11 @@
 			"description": "Focused on delivering high-quality web solutions with modern JavaScript frameworks, conversion optimization, and responsive design. Applied A/B testing principles, rapid prototyping, and close client collaboration to deliver features aligned with business goals.",
 			"projects": [
 				{
+					"name": "madeinthemiddlecollective.org",
+					"date": "August - September 2026",
+					"description": "Built the marketing site for Made in the Middle Collective, a Leader Institute initiative supporting middle schools, using React 19, TypeScript, Vite and Tailwind v4. Added a lightweight Firebase-backed CMS so the client can publish their own 'Bright Spots' posts, with a test suite, Firestore security rules and build-time link checks guarding every Netlify deploy."
+				},
+				{
 					"name": "leader-institute.org",
 					"date": "2025",
 					"description": "Developed a responsive educational leadership institute website using Nuxt.js, Vue3 and TailwindCSS, featuring program information, application management, contact and interest forms. Emphasized accessibility, mobile-first design, analytics and clear information architecture to support the institute's data-driven whole-learner development mission."
