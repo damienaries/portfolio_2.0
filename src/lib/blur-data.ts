@@ -16,6 +16,8 @@ export const BLUR: Record<string, string> = {
 	'/images/leader-institute.webp': 'data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAACwAwCdASoUAAwAPt1cpkyopSOiMAgBEBuJZwCw7B6JIMMq4tqQgAD7zEZpO1fFRIsWdEbxXCC68T+7xXnIQZuqtLgmc1lFGoAAAA==',
 	'/media/lab/first-steps-into-3d/river-poster.webp': 'data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAACwAwCdASoUAAsAPzmGuVQvKSWjMAgB4CcJYwCo9CBXIvHv2FluQAD50vAl7oJt0ASxwv6nhaIOMhNlFLGf4dC95PEgOJWg9TZOKCREKt1bHhQAAAA=',
 	'/media/lab/first-steps-into-3d/sheep-pen.webp': 'data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAACwAwCdASoUAAsAPzmGuVOvKSWisAgB4CcJbAAATroq8M/O5jkfAAD+3fQppy5dLf9RG33f6KIBr7g03mJLaQ1/P8m2kdTRfPRtpZ8N7Yfkkyxcs7PgPcR7ZajU3vLwDh96bYXGRlJjh2/z86AAAA==',
+	'/media/lab/the-fishbowl/fishbowl-poster.webp': 'data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAADQAwCdASoUAAwAPtFUo0uoJKMhsAgBABoJYwC06CHhwAfxTQRm0gAA/t7CUIzbiBOHP0BQ3tktpG99NigthZz6PiOURVAZxyaqFrH+ycwoiIuf1GQAAA==',
+	'/media/lab/the-fishbowl/fish-sculpt.webp': 'data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAACwAwCdASoUAAwAPtFUo0uoJKMhsAgBABoJYgC/OCHgTmkFQw3cAAD+8MkjgjxeJFRq2whMc10zDxJtNiD8PgSXQIlIiuCCPQzgGkob/vbDzy6fmJYDF0AA',
 	'/images/swizzle.webp': 'data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAABQAwCdASoUAAwAPt1apkyopSOiMAgBEBuJZwC2yDJ8NKGt9AD+8FxisO+At1IsMfpAJF8rxvpqzex26VaC29RUGzAAAA==',
 };
 

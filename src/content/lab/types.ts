@@ -43,7 +43,11 @@ export type Block =
 			/** Required: it is the accessible name as well as the visible caption. */
 			caption: string;
 			aspect?: Aspect;
-			/** Short render loops autoplay muted. Longer clips wait to be played. */
+			/**
+			 * Short render loops play muted once scrolled into view — never under
+			 * reduced motion — with a pause toggle instead of player chrome.
+			 * Longer clips get native controls and wait to be played.
+			 */
 			loop?: boolean;
 	  }
 	/**

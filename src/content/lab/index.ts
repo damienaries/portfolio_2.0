@@ -1,5 +1,6 @@
 import type { Post } from './types';
 import { firstStepsInto3d } from './first-steps-into-3d';
+import { theFishbowl } from './the-fishbowl';
 
 /**
  * Registry of lab posts, newest first.
@@ -9,7 +10,7 @@ import { firstStepsInto3d } from './first-steps-into-3d';
  * static params. Order is derived from publishedAt rather than this array, so
  * adding an entry in the wrong place is harmless.
  */
-const POSTS: Post[] = [firstStepsInto3d];
+const POSTS: Post[] = [firstStepsInto3d, theFishbowl];
 
 const byNewest = (a: Post, b: Post) =>
 	+new Date(b.publishedAt) - +new Date(a.publishedAt);

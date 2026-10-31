@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import LoopVideo from '@/components/content/LoopVideo';
 import Prose from '@/components/content/Prose';
 import { blurFor } from '@/lib/blur-data';
 import type { Aspect, Block } from '@/content/lab/types';
@@ -6,9 +7,10 @@ import type { Aspect, Block } from '@/content/lab/types';
 /**
  * Renders a lab post body.
  *
- * Server-only by design — no block needs client JS, so a post page ships none.
- * That is also why there is no YouTube embed here yet: it would be the first
- * thing to break the rule, and every asset so far is small enough to self-host.
+ * Server-rendered by design, with one exception: a looping video hands off to
+ * LoopVideo, because honouring prefers-reduced-motion needs the browser. A post
+ * without a loop still ships no client JS. That is also why there is no YouTube
+ * embed here yet — every asset so far is small enough to self-host.
  */
 
 /* Written out rather than interpolated — Tailwind scans for literal strings. */
@@ -96,21 +98,23 @@ export default function Blocks({ blocks }: { blocks: Block[] }) {
 					case 'video':
 						return (
 							<Frame key={i} aspect={block.aspect} caption={block.caption}>
-								{/* `controls` even on a loop: anything that plays by itself
-								    for more than five seconds has to be pausable, and the
-								    server can't read prefers-reduced-motion to decide. */}
-								<video
-									src={block.src}
-									poster={block.poster}
-									aria-label={block.caption}
-									controls
-									preload="none"
-									playsInline
-									{...(block.loop
-										? { autoPlay: true, muted: true, loop: true }
-										: {})}
-									className="h-full w-full object-cover"
-								/>
+								{block.loop ? (
+									<LoopVideo
+										src={block.src}
+										poster={block.poster}
+										label={block.caption}
+									/>
+								) : (
+									<video
+										src={block.src}
+										poster={block.poster}
+										aria-label={block.caption}
+										controls
+										preload="none"
+										playsInline
+										className="h-full w-full object-cover"
+									/>
+								)}
 							</Frame>
 						);
 
