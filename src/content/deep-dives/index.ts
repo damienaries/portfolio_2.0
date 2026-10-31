@@ -3,6 +3,7 @@ import { swizzle } from './swizzle';
 import { habitTracker } from './habit-tracker';
 import { concept } from './concept';
 import { leaderInstitute } from './leader-institute';
+import { mimCollective } from './mim-collective';
 import { judiBoisson } from './judi-boisson';
 import { careyCorea } from './carey-corea';
 import { coreaCreative } from './corea-creative';
@@ -21,6 +22,7 @@ const DEEP_DIVES: DeepDive[] = [
 	swizzle,
 	habitTracker,
 	concept,
+	mimCollective,
 	leaderInstitute,
 	judiBoisson,
 	careyCorea,

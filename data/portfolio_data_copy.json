@@ -170,5 +170,23 @@
 		},
 		"publishedAt": "2025-05-22T14:37:00.000Z",
 		"slug": "leader-institute"
+	},
+	{
+		"title": "Made in the Middle Collective",
+		"category": "freelance",
+		"body": "Built and launched the website for Made in the Middle Collective, a Leader Institute initiative rethinking middle school, with a Firebase-backed CMS so the team can publish their own Bright Spots stories. React 19, TypeScript, Vite and Tailwind v4, with a test suite, Firestore security rules and build-time link checks guarding every Netlify deploy.",
+		"technologies": [
+			"React",
+			"TypeScript",
+			"Firebase",
+			"Tailwind CSS"
+		],
+		"liveLink": "https://madeinthemiddlecollective.org/",
+		"mainImage": {
+			"src": "/images/mim-collective.webp",
+			"alt": "Made in the Middle Collective homepage: middle schoolers talking in a sunlit school hallway, under the headline “Middle School Voice, Reimagined.”"
+		},
+		"publishedAt": "2026-08-01T00:00:00.000Z",
+		"slug": "mim-collective"
 	}
 ]
