@@ -188,5 +188,23 @@
 		},
 		"publishedAt": "2026-08-01T00:00:00.000Z",
 		"slug": "mim-collective"
+	},
+	{
+		"title": "interviewMatrix",
+		"category": "tool",
+		"body": "I built interviewMatrix to prepare for interviews and take notes while they happen. Each interview gets its own prep, split into Introduction, Topics, Questions and Outro sections, plus any custom sections I add. Entries can be searched, reordered and reused across interviews. During the conversation, Interview Mode tracks which questions were asked and which topics were covered, keeps priority questions on top and lets me write notes inline. It's plain HTML, CSS and JavaScript with no backend: everything saves automatically in the browser, so there's no account to create and nothing to install.",
+		"technologies": [
+			"JavaScript",
+			"HTML",
+			"CSS",
+			"Netlify"
+		],
+		"liveLink": "https://interview-matrix.netlify.app",
+		"mainImage": {
+			"src": "/images/interview-matrix.webp",
+			"alt": "Illustration of the interviewMatrix question list, with sections, checked-off questions and priority tags"
+		},
+		"publishedAt": "2026-11-04T21:29:04.000Z",
+		"slug": "interview-matrix"
 	}
 ]

@@ -10,6 +10,7 @@ export const BLUR: Record<string, string> = {
 	'/images/corea-creative.webp': 'data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAABQAwCdASoUAAoAPt1cpkyopSOiMAgBEBuJaQAASoiRnUywAAD+9J4PewUruu7MJq3pMmdQk0+mY2aBKntsiMdjLeuhSKZnAhAAAA==',
 	'/images/find-unused-images.webp': 'data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAABQAwCdASoUAAsAPt1apkyopSOiMAgBEBuJYwC7AB7HmR6PAAD+7qHlAps4FV+5VgXVQAAA',
 	'/images/habit-tracker.webp': 'data:image/webp;base64,UklGRjQAAABXRUJQVlA4ICgAAACwAgCdASoUABAAPt1cpkyopSOiMAgBEBuJaQAAeyAA/vDykgx0w4AA',
+	'/images/interview-matrix.webp': 'data:image/webp;base64,UklGRj4AAABXRUJQVlA4IDIAAADwAgCdASoUAA0APzmGuVOvKSWisAgB4CcJaQAAetCIAAD+7pUgByElAFYvOnZWVtgAAA==',
 	'/images/ivisa.webp': 'data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAADwAwCdASoUAAwAPt1apkyopSOiMAgBEBuJYwAAW+mg93sw9EwWv/IAAP7tg0m1MlMe81u5sCeq0qfKaEbsXPLy1u6UkweuakuaKqIE/o0zPV43FqdIvnleRscUGhdDC7p3ZRzfwjLZHmTw52eFIAAA',
 	'/images/judi-boisson.webp': 'data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAAAQBACdASoUAAwAPt1cpkyopSOiMAgBEBuJbACdIExDAcmw3SuSGpA8qAD+3yntsk4tj4oxqmMS9ivNAMFz3875hVlCl8wT2UeMn+pk030AimLnPQpoEN+Hc5jMrqcSGG6OfOQVoFAAAA==',
 	'/images/landing-poster.webp': 'data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAADQAwCdASoUAA0APt1cp0yopSOiMAgBEBuJQBOmUABWtZY203XZQIAA/rWrUVYhR2MOir7B0KmNzWDd5zkfFR7OMtYt4ikKPeTYVfFHcuMIQdvoSPRgVAAA',
