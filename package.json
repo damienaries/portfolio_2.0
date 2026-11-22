@@ -7,7 +7,10 @@
 		"build": "next build",
 		"start": "next start",
 		"postbuild": "next telemetry disable",
-		"typecheck": "tsc --noEmit"
+		"typecheck": "tsc --noEmit",
+		"lint": "eslint .",
+		"format:scene": "prettier --write src/app/scene-test scripts/optimize-scene.mjs eslint.config.mjs",
+		"format:check": "prettier --check src/app/scene-test scripts/optimize-scene.mjs eslint.config.mjs"
 	},
 	"dependencies": {
 		"@netlify/plugin-nextjs": "^5.15.7",
@@ -17,12 +20,16 @@
 		"next": "^16.1.3",
 		"react": "^19.2.3",
 		"react-dom": "^19.2.3",
-		"react-icons": "^5.5.0"
+		"react-icons": "^5.5.0",
+		"three": "^0.187.0"
 	},
 	"devDependencies": {
 		"@tailwindcss/postcss": "^4.3.3",
 		"@types/node": "24.0.1",
 		"@types/react": "^19.2.8",
+		"@types/three": "^0.187.0",
+		"eslint": "^9.39.5",
+		"prettier": "^3.10.1",
 		"tailwindcss": "^4.3.3",
 		"typescript": "^6.0.3"
 	},
