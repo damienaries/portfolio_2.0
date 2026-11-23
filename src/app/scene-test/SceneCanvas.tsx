@@ -49,6 +49,7 @@ export default function SceneCanvas() {
 	const [stage, setStage] = useState('Preparing the neighborhood…');
 	const [stages, setStages] = useState<Record<string, number>>({});
 	const [status, setStatus] = useState('Starting 3D renderer…');
+	const [graphicsInfo, setGraphicsInfo] = useState('Detecting graphics support…');
 
 	useEffect(() => {
 		const container = containerRef.current;
@@ -72,6 +73,17 @@ export default function SceneCanvas() {
 		renderer.shadowMap.enabled = true;
 		renderer.shadowMap.type = THREE.PCFShadowMap;
 		renderer.shadowMap.autoUpdate = false;
+		const context = renderer.getContext();
+		const debugInfo = context.getExtension('WEBGL_debug_renderer_info');
+		const gpu = debugInfo
+			? String(context.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL))
+			: 'GPU name hidden';
+		const floatFiltering = renderer.extensions.has('OES_texture_float_linear')
+			? 'float filtering available'
+			: 'float filtering unavailable';
+		setGraphicsInfo(
+			`${context.getParameter(context.VERSION)} · ${gpu} · ${floatFiltering} · half-float HDR`,
+		);
 		container.appendChild(renderer.domElement);
 
 		const scene = new THREE.Scene();
@@ -733,6 +745,7 @@ export default function SceneCanvas() {
 			<details className={styles.metrics}>
 				<summary>Scene diagnostics</summary>
 				<p role="status">{status}</p>
+				<p>{graphicsInfo}</p>
 				<p>{birdStatus}</p>
 				<p>Street position: {travel} m · bounded route to the yellow house</p>
 				<label>
