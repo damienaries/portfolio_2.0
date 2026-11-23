@@ -82,6 +82,11 @@ export default function SceneCanvas() {
 		scene.backgroundIntensity = 0.65;
 		scene.environmentIntensity = 0.65;
 		let environment: THREE.DataTexture | undefined;
+		// Keep a small device-independent fill under the HDR lighting. This is
+		// intentionally subtle on desktop, but prevents unlit silhouettes when a
+		// mobile GPU cannot sample an HDR environment as expected.
+		const skyFill = new THREE.HemisphereLight('#e6d5bd', '#405b45', 0.35);
+		scene.add(skyFill);
 		// Blender's Z-up coordinates become glTF's Y-up coordinates (x, z, -y).
 		// The exported file omitted cameras, so use the saved 32mm landing view.
 		const verticalFov = THREE.MathUtils.radToDeg(2 * Math.atan(36 / (2 * 32 * 1.6)));
@@ -144,7 +149,8 @@ export default function SceneCanvas() {
 		const birdSun = sun.clone();
 		birdSun.castShadow = false;
 		birdSun.target = sun.target.clone();
-		animatedScene.add(birdSun, birdSun.target);
+		const birdSkyFill = skyFill.clone();
+		animatedScene.add(birdSun, birdSun.target, birdSkyFill);
 		let cacheDirty = true;
 		const cachedProjection = new THREE.Matrix4();
 		const cachedCamera = new THREE.Matrix4();
@@ -516,17 +522,20 @@ export default function SceneCanvas() {
 				const skyStart = performance.now();
 				const hdr = new HDRLoader().setDataType(THREE.FloatType).parse(skyData);
 				const pixels = hdr.data as Float32Array;
+				const mobilePixels = new Uint16Array(pixels.length);
 				// Same gentle warm balance used in Blender's world material.
 				for (let i = 0; i < pixels.length; i += 4) {
-					pixels[i] *= 1.06;
-					pixels[i + 2] *= 0.9;
+					mobilePixels[i] = THREE.DataUtils.toHalfFloat(pixels[i] * 1.06);
+					mobilePixels[i + 1] = THREE.DataUtils.toHalfFloat(pixels[i + 1]);
+					mobilePixels[i + 2] = THREE.DataUtils.toHalfFloat(pixels[i + 2] * 0.9);
+					mobilePixels[i + 3] = THREE.DataUtils.toHalfFloat(pixels[i + 3]);
 				}
 				environment = new THREE.DataTexture(
-					pixels,
+					mobilePixels,
 					hdr.width,
 					hdr.height,
 					THREE.RGBAFormat,
-					THREE.FloatType,
+					THREE.HalfFloatType,
 				);
 				environment.mapping = THREE.EquirectangularReflectionMapping;
 				environment.colorSpace = THREE.LinearSRGBColorSpace;
