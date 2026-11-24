@@ -1,0 +1,307 @@
+.intro {
+	position: absolute;
+	inset: auto 0 0;
+	padding: 6rem 6vw max(3rem, env(safe-area-inset-bottom));
+	color: #fff7e9;
+	background: linear-gradient(transparent, rgb(15 22 20 / 78%));
+	pointer-events: none;
+}
+
+.intro h1 {
+	margin: 0 0 1rem;
+}
+.intro a {
+	pointer-events: auto;
+}
+.subtitle {
+	max-width: 30rem;
+	margin: 0 0 1rem;
+	font-size: clamp(0.9rem, 1.3vw, 1.1rem);
+}
+.navigation {
+	position: absolute;
+	bottom: 32px;
+	right: 32px;
+	color: #fff7e9;
+	text-align: center;
+	padding: 16px;
+	border-radius: 14px;
+	background: rgb(18 30 32 / 85%);
+}
+.navigation p {
+	margin: 0 0 10px;
+	font-size: 13px;
+}
+.keyGrid {
+	display: grid;
+	grid-template-columns: repeat(3, 48px);
+	grid-template-rows: repeat(2, 48px);
+	gap: 5px;
+	justify-content: center;
+}
+.keyGrid button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 5px;
+	border: 1px solid #aebdaf;
+	border-radius: 7px;
+	background: #293c36;
+	touch-action: none;
+	user-select: none;
+}
+.keyGrid button:active {
+	background: #526c5d;
+}
+.keyGrid button:focus-visible,
+.reset:focus-visible {
+	outline: 2px solid #f4b17d;
+	outline-offset: 3px;
+}
+.w {
+	grid-column: 2;
+	grid-row: 1;
+}
+.a {
+	grid-column: 1;
+	grid-row: 2;
+}
+.s {
+	grid-column: 2;
+	grid-row: 2;
+}
+.d {
+	grid-column: 3;
+	grid-row: 2;
+}
+.navigation small {
+	display: block;
+	margin: 10px 0;
+	font-size: 11px;
+}
+.reset {
+	font-size: 12px;
+	text-decoration: underline;
+	min-height: 32px;
+}
+@media (max-width: 600px) {
+	.navigation {
+		bottom: 16px;
+		right: 12px;
+		padding: 10px;
+	}
+	.keyGrid {
+		grid-template-columns: repeat(3, 40px);
+		grid-template-rows: repeat(2, 40px);
+	}
+	.intro {
+		padding-bottom: 230px !important;
+	}
+}
+.metrics {
+	position: absolute;
+	top: max(16px, env(safe-area-inset-top));
+	right: 16px;
+	width: min(340px, calc(100% - 32px));
+	padding: 10px 14px;
+	border-radius: 6px;
+	background: rgb(18 30 32 / 94%);
+	color: #f2eee5;
+	font-size: 12px;
+	line-height: 1.5;
+}
+.metrics summary {
+	cursor: pointer;
+	min-height: 24px;
+}
+.metrics p {
+	margin: 10px 0 0;
+}
+.metrics dl {
+	display: grid;
+	grid-template-columns: 1fr auto;
+	gap: 5px 12px;
+	margin: 12px 0;
+}
+.metrics dd {
+	margin: 0;
+	font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 600px) {
+	.intro {
+		padding: 5rem 24px max(48px, env(safe-area-inset-bottom));
+	}
+	.intro h1 {
+		font-size: clamp(2.25rem, 10vw, 3.5rem);
+	}
+	.metrics {
+		width: min(310px, calc(100% - 32px));
+	}
+}
+
+.backdrop {
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(165deg, #a9bbc2 0%, #e6c7ad 45%, #777f64 75%, #293e39 100%);
+}
+.scene {
+	position: relative;
+	opacity: 0;
+	transition: opacity 1600ms ease-out;
+}
+.revealed {
+	opacity: 1;
+}
+.loading {
+	position: absolute;
+	top: 42%;
+	left: 24px;
+	right: 24px;
+	text-align: center;
+	color: #243b35;
+	font-size: 16px;
+	letter-spacing: 0.03em;
+	transition: opacity 350ms ease;
+	pointer-events: none;
+}
+.finished {
+	opacity: 0;
+}
+.timingRow {
+	display: contents;
+}
+@media (prefers-reduced-motion: reduce) {
+	.scene,
+	.loading {
+		transition: none;
+	}
+}
+
+/* Touch navigation needs direction, not keyboard instructions. */
+@media (max-width: 600px), (hover: none) and (pointer: coarse) {
+	.navigation > p,
+	.navigation > small,
+	.keyGrid kbd {
+		display: none;
+	}
+	.keyGrid {
+		grid-template-columns: repeat(3, 44px);
+		grid-template-rows: repeat(2, 44px);
+	}
+	.keyGrid button > span {
+		font-size: 22px;
+	}
+	.navigation {
+		padding: 10px;
+	}
+	.navigation .reset {
+		margin-top: 8px;
+	}
+}
+
+.aboutMarker {
+	position: absolute;
+	transform: translate(-50%, -100%);
+	padding: 9px 14px;
+	border: 1px solid #e4cf9b;
+	border-radius: 6px;
+	background: #243b35;
+	color: #fff7e9;
+	font-size: 13px;
+	box-shadow: 0 3px 14px #0005;
+	white-space: nowrap;
+}
+.aboutMarker[hidden] {
+	display: none;
+}
+.aboutMarker:focus-visible {
+	outline: 3px solid #f4b17d;
+	outline-offset: 3px;
+}
+
+.joystick {
+	display: none;
+	position: relative;
+	width: 124px;
+	height: 124px;
+	border-radius: 50%;
+	border: 1px solid #aebdaf80;
+	background: #293c3680;
+	touch-action: none;
+	user-select: none;
+	-webkit-touch-callout: none;
+}
+.joystickArrows {
+	position: absolute;
+	inset: 8px;
+	line-height: 34px;
+	color: #dce9d6aa;
+	pointer-events: none;
+}
+.joystickThumb {
+	position: absolute;
+	left: calc(50% - 22px);
+	top: calc(50% - 22px);
+	width: 44px;
+	height: 44px;
+	border-radius: 50%;
+	border: 1px solid #e4cf9b;
+	background: #829b83;
+	box-shadow: 0 2px 12px #0005;
+	pointer-events: none;
+}
+@media (max-width: 600px), (hover: none) and (pointer: coarse) {
+	.joystick {
+		display: block;
+	}
+	/* Keep directional buttons available to assistive technology. */
+	.keyGrid:not(:focus-within) {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		overflow: hidden;
+		clip-path: inset(50%);
+	}
+}
+.aboutMarker {
+	transform: translate(-50%, -50%);
+	cursor: pointer;
+	min-width: 64px;
+	min-height: 44px;
+	text-align: center;
+	align-content: center;
+	box-shadow: 0 0 16px #ffe3a870;
+}
+.aboutMarker::after {
+	content: none;
+}
+.aboutMarker[data-ready='false'] {
+	min-width: 0;
+	min-height: 0;
+	width: 12px;
+	height: 12px;
+	padding: 0;
+	border-radius: 50%;
+	background: #ffe9b9;
+	pointer-events: none;
+	animation: doorShimmer 2400ms ease-in-out infinite;
+}
+.aboutMarker[data-ready='false'] .aboutLabel {
+	display: none;
+}
+.aboutMarker[data-ready='true']:hover {
+	background: #395448;
+	box-shadow: 0 0 24px #ffe3a8aa;
+}
+@keyframes doorShimmer {
+	50% {
+		opacity: 0.55;
+		box-shadow: 0 0 20px 5px #ffe3a880;
+	}
+}
+@media (prefers-reduced-motion: reduce) {
+	.aboutMarker[data-ready='false'] {
+		animation: none;
+	}
+}
