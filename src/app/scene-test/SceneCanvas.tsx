@@ -262,7 +262,7 @@ export default function SceneCanvas() {
 					projectedAbout.z < 1 &&
 					Math.abs(projectedAbout.x) < 0.92 &&
 					Math.abs(projectedAbout.y) < 0.9;
-				const ready = visible && doorDistance < 19;
+				const ready = visible && doorDistance < 25;
 				marker.hidden = !visible;
 				marker.dataset.ready = String(ready);
 				marker.tabIndex = ready ? 0 : -1;
@@ -342,10 +342,16 @@ export default function SceneCanvas() {
 			speed = THREE.MathUtils.damp(speed, desiredSpeed, 9, dt);
 			if (Math.abs(speed) < 0.01) speed = 0;
 			distance = THREE.MathUtils.clamp(distance + speed * dt, 0, routeLength);
+			// Keep the landing composition controlled, then allow exploration once
+			// the camera has cleared the first pair of houses. The yellow house sits
+			// to the left near the end of the route, so that side opens farther.
+			const openTurn = THREE.MathUtils.smoothstep(distance, 12, 28);
+			const rightLimit = THREE.MathUtils.lerp(10, 50, openTurn);
+			const leftLimit = THREE.MathUtils.lerp(10, 90, openTurn);
 			yaw = THREE.MathUtils.clamp(
 				yaw + (Number(held.has('a')) - Number(held.has('d')) + joystick.turn) * dt * 0.7,
-				THREE.MathUtils.degToRad(-10),
-				THREE.MathUtils.degToRad(10),
+				THREE.MathUtils.degToRad(-rightLimit),
+				THREE.MathUtils.degToRad(leftLimit),
 			);
 			setAwayFromStart(distance > 0.02 || Math.abs(yaw) > 0.005);
 			updateCamera();
